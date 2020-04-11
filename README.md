@@ -102,8 +102,11 @@
 
  After Following All Steps Just Type In Terminal **hackingtool**
 #### Some tool used in hackingtool By below authors :
- [thelinuxchoice](https://github.com/thelinuxchoice.git)
- 
- ## MIT License 
+[thelinuxchoice](https://github.com/thelinuxchoice.git)
+## [MIT License](https://raw.githubusercontent.com/Z4nzu/hackingtool/master/LICENSE)
 
-## Follow on :- [GitHub](https://github.com/Z4nzu)
+## Follow on :- [GitHub](https://github.com/Z4nzu) [Twitter](https://github.com/Zinzu07)
+#### Contact Via Twitter or Email For Suggestion And Queries 
+
+#### Thank you..
+#### Don't Forgot to share with Your Friends 
