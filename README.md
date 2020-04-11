@@ -1,5 +1,13 @@
-## All in One Hacking tool For Hackers Created By :- Mr.Z4nzu
-   Please Use Only For Educational Purpose.Don't Use for illegal Activity
+### All in One Hacking tool For Hackers Created By :- Mr.Z4nzu
+![](https://img.shields.io/github/license/Z4nzu/hackingtool)
+![](https://img.shields.io/github/issues/Z4nzu/hackingtool)
+![](https://img.shields.io/badge/Python-3-blue)
+![](https://img.shields.io/github/stars/Z4nzu/hackingtool)
+![](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2F_Zinzu07)
+
+<img src ="https://img.shields.io/badge/Important-notice-red" />
+<h4>Please Use Only For Educational Purpose.Don't Use for illegal Activity</h4>
+
 ### DOn't Copy Code without give me Credits..!! 
 # Hackingtool Menu
 - AnonSurf                  
@@ -89,6 +97,8 @@
 - Whatsapp Attack
 - DroidCam (Capture Image)
 - EvilApp (Hijack Session)
+
+![](https://imgur.com/hxyymEF.png)
 
 ## Installation in Linux :
 
