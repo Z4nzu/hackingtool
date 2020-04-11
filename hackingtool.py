@@ -78,7 +78,7 @@ def menu():
     if choice == 0 or choice == 00:
         clearScr()
         print(Logo)
-        ansurf()
+        anonsurf()
     elif choice == 1 or choice == "01":
         clearScr()
         print(Logo)
