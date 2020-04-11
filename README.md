@@ -95,17 +95,24 @@
 #### This Tool Must Run As ROOT !!!
 
     git clone https://github.com/Z4nzu/hackingtool.git
-    cd hackingtool && chmod +x requirement.txt
+    
+    chmod -R 755 && cd hackingtool
+    
     sudo pip3 install -r requirement.txt
-    chmod +x install.sh && ./install.sh
+    
+    ./install.sh
+    
     sudo hackingtool
 
- After Following All Steps Just Type In Terminal **hackingtool**
+ After Following All Steps Just Type In Terminal **root@kaliLinux:~** **hackingtool**
+### This Tool is in Beta Please Check And Send Querie,Errors, Suggestion & Also Send Feedback :)
 #### Some tool used in hackingtool By below authors :
 [thelinuxchoice](https://github.com/thelinuxchoice.git)
+
+[UndeadSec](https://github.com/UndeadSec)
 ## [MIT License](https://raw.githubusercontent.com/Z4nzu/hackingtool/master/LICENSE)
 
-## Follow on :- [GitHub](https://github.com/Z4nzu) [Twitter](https://github.com/Zinzu07)
+## Follow on :- [GitHub](https://github.com/Z4nzu) [Twitter](https://twitter.com/_Zinzu07)
 #### Contact Via Twitter or Email For Suggestion And Queries 
 
 #### Thank you..
