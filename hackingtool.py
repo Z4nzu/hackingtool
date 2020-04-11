@@ -715,7 +715,7 @@ def socialfinder():
         menu()
 
 def facialfind():
-   print(Logo)
+    print(Logo)
     ffc=input("[1]Install [2]Run [99]Back >>")
     if ffc == 1:
         print("Firefox is Required So updating.....")
