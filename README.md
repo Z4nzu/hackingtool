@@ -92,12 +92,12 @@
 
 ## Installation in Linux :
 
-This Tool Must Run As ROOT !!!
+#### This Tool Must Run As ROOT !!!
 
     git clone https://github.com/Z4nzu/hackingtool.git
-    cd hackingtool
-    chmod +x install.sh
-    ./install.sh
+    cd hackingtool && chmod +x requirement.txt
+    sudo pip3 install -r requirement.txt
+    chmod +x install.sh && ./install.sh
     sudo hackingtool
 
  After Following All Steps Just Type In Terminal **hackingtool**
