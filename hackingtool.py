@@ -73,7 +73,7 @@ def menu():
     [99]Exit
     """)
     
-    choice = int(input("Z4nzu  =>> "))
+    choice = input("Z4nzu  =>> ")
     if choice == 0 or choice == 00:
         clearScr()
         print(Logo)
