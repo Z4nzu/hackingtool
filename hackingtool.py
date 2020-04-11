@@ -163,7 +163,7 @@ def anonsurf():
         [2] Multitor
         [99]Back
     """)
-    choice == input("Z4nzu =>>")
+    choice = input("Z4nzu =>>")
     if choice == 1:
         clearScr()
         ansurf()
