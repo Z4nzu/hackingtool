@@ -57,7 +57,8 @@ def menu():
     [01]Information Gathering
     [02]Password Attack
     [03]Wireless Attack
-    [04]SQL Injection Tools [05]Phishing Attack 
+    [04]SQL Injection Tools 
+    [05]Phishing Attack 
     [06]Web Attack Tool
     [07]Post exploitation
     [08]Forensic Tools
@@ -78,7 +79,7 @@ def menu():
         clearScr()
         print(Logo)
         ansurf()
-    elif choice == 1 or choice == 01:
+    elif choice == 1 or choice == "01":
         clearScr()
         print(Logo)
         info()
@@ -835,43 +836,6 @@ def autopsy():
         menu()
 
 
-    #     ifinurl()
-    # if choiceweb == '3':
-    #     clearScr()
-    #     wppjmla()
-    # if choiceweb == "4":
-    #     clearScr()
-    #     gravity()
-    # if choiceweb == "5":
-    #     clearScr()
-    #     sqlscan()
-    # if choiceweb == "6":
-    #     clearScr()
-    #     wpminiscanner()
-    # if choiceweb == "7":
-    #     clearScr()
-    #     wppluginscan()
-    # if choiceweb == "8":
-    #     clearScr()
-    #     shelltarget()
-    # if choiceweb == "9":
-    #     clearScr()
-    #     joomlarce()
-    # if choiceweb == "10":
-    #     clearScr()
-    #     vbulletinrce()
-    # if choiceweb == "11":
-    #     clearScr()
-    #     brutex()
-    # if choiceweb == "12":
-    #     clearScr()
-    #     arachni()
-    # elif choiceweb == "99":
-    #     menu()
-    # elif choiceweb == "":
-    #     menu()
-    # else:
-    #     menu()
 
 def postexp():
     print("""
