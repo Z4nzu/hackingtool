@@ -187,7 +187,7 @@ def ansurf():
     elif anc == 3:
         os.system("sudo anonsurf stop")
     elif anc == 99:
-        menu()
+        anonsurf()
     else :
         menu()
 
@@ -199,18 +199,18 @@ def multitor():
     elif userchoice == 2:
         os.system("cd multitor && bash multitor.sh")
     elif userchoice == 99:
-        menu()
+        anonsurf()
     else :
         menu()
 
 def info():
     print("""
-            [1] Nmap 
-            [2] Dracnmap
-            [3] Port Scanning
-            [4] Host To IP
-            [5] Xerosploit
-            [6] Advanced XSS Detection Suite
+            [1]  Nmap 
+            [2]  Dracnmap
+            [3]  Port Scanning
+            [4]  Host To IP
+            [5]  Xerosploit
+            [6]  Advanced XSS Detection Suite
             [99] Back To Main Menu 
         """)
     choice2 = input("Z4nzu =>> ")
@@ -218,7 +218,7 @@ def info():
         nmap()
     if choice2 == 2:
         clearScr()
-        dracmap()
+        Dracnmap()
     if choice2 == 3:
         clearScr()
         ports()
@@ -279,7 +279,7 @@ def ports():
     sys.exit()
 
 def XSStrike():
-    os.system("echo \"SStrike is a python script designed to detect and exploit XSS vulnerabilites. \"| boxes -d boy")
+    os.system("echo \"XSStrike is a python script designed to detect and exploit XSS vulnerabilites. \"| boxes -d boy")
     xc=input("[1]Install [2]Run [99]BAck >>")
     if xc == 1:
         os.system("sudo rm -rf XSStrike")
@@ -330,7 +330,7 @@ def passwd():
     if passchoice == "1" or passchoice == "01":
         clearScr()
         cupp()
-    elif choice3 == "2" or passchoice == "02":
+    elif passchoice == "2" or passchoice == "02":
         clearScr()
         wlcreator()
     elif passchoice == "99":
@@ -343,7 +343,7 @@ def passwd():
 
 def cupp():
     os.system("echo \"Common User Password Generator..!!\"| boxes -d boy")
-    cc=raw_input("[1]Install [2]Run [99]Back")
+    cc=input("[1]Install [2]Run [99]Back")
     if cc == 1:
         os.system("git clone https://github.com/Mebus/cupp.git")
         print("Download Successfully..!!!")
@@ -352,7 +352,7 @@ def cupp():
     elif cc == 99 :
         passwd()
     else :
-        main()
+        menu()
 
 def wlcreator():
     os.system("echo \" WlCreator is a C program that can create all possibilities of passwords,\n and you can choose Lenght, Lowercase, Capital, Numbers and Special Chars\" | boxes -d boy")
@@ -367,7 +367,8 @@ def wlcreator():
         menu()
 
 def wire():
-    print("""   [1] WiFi-Pumpkin
+    print("""   
+                [1] WiFi-Pumpkin
                 [2] pixiewps
                 [3] Bluetooth Honeypot GUI Framework
                 [4] Fluxion
@@ -394,7 +395,7 @@ def wire():
     elif choice4 == 6:
         clearScr()
         wifite()
-    elif choice == 7:
+    elif choice4 == 7:
         clearScr()
         eviltwin()
     elif choice4 == 99:
@@ -447,7 +448,7 @@ def bluepot():
         menu()
 
 def fluxion():
-    print("echo \"fluxion is a wifi key cracker using evil twin attack..\nyou need a wireless adaptor for this tool\"| boxes -d boy")
+    os.system("echo \"fluxion is a wifi key cracker using evil twin attack..\nyou need a wireless adaptor for this tool\"| boxes -d boy")
     choice = input("[1]Install [2]Run [99]Back >>")
     if choice == 1:
         os.system("git clone https://github.com/thehackingsage/Fluxion.git") 
@@ -533,7 +534,7 @@ def instashell():
     os.system("echo \"Instashell is an Shell Script to perform multi-threaded brute force attack against Instagram \"| boxes -d boy")
     instachoice=input("[1]install [2]Run [99]Back >> ")
     if instachoice == 1:
-        os.system("sudoo git clone https://github.com/thelinuxchoice/instashell && chmod +x install.sh && sudo ./install.sh")
+        os.system("sudo git clone https://github.com/thelinuxchoice/instashell && chmod +x install.sh && sudo ./install.sh")
     elif instachoice == 2:
         os.system("cd instashell && chmod +x instashell.sh && service tor start && sudo ./instashell.sh")
     elif instachoice == 99:
@@ -543,7 +544,7 @@ def instashell():
 
 def tweetshell():
     os.system("echo \"Tweetshell is an Shell Script to perform multi-threaded brute force attack against Twitter\"|boxes -d boy")
-    choice = input ("[1]Install [2]Run [99] >> ")
+    choice = input ("[1]Install [2]Run [99]Back >> ")
     if choice == 1:
         os.system("sudo git clone https://github.com/thelinuxchoice/tweetshell && chmod -R 775 tweetshell")
         os.system("cd tweetshell && sudo ./install.sh")
@@ -556,7 +557,7 @@ def tweetshell():
 
 def faceshell():
     os.system("echo \"Facebash is an Shell Script to perform brute force attack against FAcebook\n [!]Facebook blocks account for 1 hour after 20 wrong passwords, so this script can perform only 20 pass/h \"|boxes -d boy")
-    choice = input ("[1]Install [2]Run [99] >> ")
+    choice = input ("[1]Install [2]Run [99]Back >> ")
     if choice == 1:
         os.system("sudo git clone https://github.com/thelinuxchoice/facebash && chmod -R 775 facebash")
         os.system("cd facebash && sudo ./install.sh")
@@ -596,15 +597,12 @@ def phishattack():
         setoolkit()
     if choice == 2:
         clearScr()
-        print("This Tool is Devloped By UndeadSec ")
         socialfish()
     if choice == 3:
         clearScr()
-        print("This Tool is Developed By thelinuxchoice")
         shellphish()
     if choice == 4:
         clearScr()
-        print("This Tool is Developed By thelinuxchoice")
         blackeye()
     elif choice == 5:
         clearScr()
@@ -624,37 +622,37 @@ def phishattack():
         menu()
 
 def socialfish():
-    sfc=input("[1]install [2]Run [3]BAck >> ")
+    sfc=input("[1]install [2]Run [99]BAck >> ")
     if sfc == 1:
         os.system("sudo git clone https://github.com/UndeadSec/SocialFish.git && sudo apt-get install python3 python3-pip python3-dev -y")
         os.system("cd SocialFish && sudo python3 -m pip install -r requirements.txt")
     elif sfc ==2:
         os.system("cd SocialFish && python3 SocialFish.py root pass")
-    elif sfc ==3:
+    elif sfc ==99:
         phishattack()
     else :
         menu()
 
 def shellphish():
-    spc=input("[1]install [2]Run [3]BAck >> ")
+    spc=input("[1]install [2]Run [99]BAck >> ")
     if spc == 1:
         os.system("sudo git clone https://github.com/thelinuxchoice/shellphish")
         print("Downloaded Successfully...!! ")
     elif spc ==2:
         os.system("cd shellphish && sudo bash shellphish.sh")
-    elif spc ==3:
+    elif spc ==99:
         phishattack()
     else :
         menu()
 
 def blackeye():
-    spc=input("[1]install [2]Run [3]BAck >> ")
+    spc=input("[1]install [2]Run [99]BAck >> ")
     if spc == 1:
         os.system("sudo git clone https://github.com/thelinuxchoice/blackeye")
         print("Downloaded Successfully...!! ")
     elif spc ==2:
         os.system("cd blackeye && sudo bash blackeye.sh")
-    elif spc ==3:
+    elif spc ==99:
         phishattack()
     else :
         menu()
@@ -682,7 +680,7 @@ def saycheese():
     elif userchoice == 2:
         os.system("cd saycheese && bash saycheese.sh")
     elif userchoice == 99:
-        socialfinder()
+        phishattack()
     else :
         menu()
 
@@ -717,6 +715,7 @@ def socialfinder():
         menu()
 
 def facialfind():
+   print(Logo)
     ffc=input("[1]Install [2]Run [99]Back >>")
     if ffc == 1:
         print("Firefox is Required So updating.....")
@@ -742,7 +741,8 @@ def facialfind():
         menu()
 
 def userrecon():
-    userchoice = input("[1]Install [2]Run [99]Back")
+   print(Logo)
+    userchoice = input("[1]Install [2]Run [99]Back >> ")
     if userchoice == 1:
         os.system("sudo git clone https://github.com/thelinuxchoice/userrecon.git")
     elif userchoice == 2:
@@ -782,6 +782,7 @@ def bulkextractor():
         [2]CLI Mode
     """)
     if bc == 1:
+        print(Logo)
         os.system("git clone https://github.com/simsong/bulk_extractor.git")
         print(os.getcwd())
         os.system("ls src/ && cd .. && cd java_gui && ./BEViewer")
@@ -795,10 +796,16 @@ def bulkextractor():
         main()
 
 def guymager():
-    os.system("apt install guymager")
-    clearScr()
-    os.system("guymager")
-
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == 1:
+        os.system("apt install guymager")
+    elif choice == 2:
+        clearScr()
+        os.system("guymager")
+    elif choice == 99:
+        forensic()
+    else :
+        menu()
 def autopsy():
     os.system("echo \"Autopsy is a platform that is used by Cyber Investigators.\n[!] Works in any Os\n[!]Recover Deleted Files from any OS & MEdia \n[!]Extract Image Metadata \"|boxes -d boy ")
     print("""
@@ -810,10 +817,7 @@ def autopsy():
     if ac == 1:
         os.system("sudo autopsy")
     if ac == 2:
-        wc=input("""
-        [1]64-Bit
-        [2]32-Bit
-        """)
+        wc=input(""" [1]64-Bit [2]32-Bit [99]Back >> """)
         if wc == 1:
             url = 'https://github.com/sleuthkit/autopsy/releases/download/autopsy-4.14.0/autopsy-4.14.0-64bit.msi'
             import requests
@@ -830,6 +834,8 @@ def autopsy():
                 code.write(r.content)
             urllib.urlretrieve(url, "autopsy.zip")
             print("Downloaded Successfully..!!")
+        elif wc == 99:
+            forensic()
     elif ac ==99:
         forensic()
     else :
@@ -910,7 +916,7 @@ def fastssh():
     elif userchoice == 2:
         os.system("cd fastssh && ./fastssh.sh")
     elif userchoice == 99:
-        routersploit()
+        routexp()
     else :
         menu()
 
@@ -938,19 +944,34 @@ def webAttack():
 
 def slowloris():
     os.system("echo\"Slowloris is basically an HTTP Denial of Service attack.It send lots of HTTP Request\"|boxes -d boy ")
-    os.system("sudo pip install slowloris")
-    ts=raw_input("Enter Target Site :-")
-    os.system("slowloris %s"%ts)
+    choice = ("[1]install [2]Run [99]Back >> ")
+    if choice == 1:
+        os.system("sudo pip install slowloris")
+    elif choice == 2:
+        print(Logo)
+        ts=raw_input("Enter Target Site :-")
+        os.system("slowloris %s"%ts)
+    elif choice == 99:
+        webAttack()
+    else :
+        menu()
 
 def skipfish():
-    os.system("sudo skipfish -h")
-    os.system("echo \"skipfish -o [FolderName] targetip/site\"|boxes -d headline")
+    userchoice = input("[1]Run [99]Back >> ")
+    if userchoice == 1:
+        os.system("sudo skipfish -h")
+        os.system("echo \"skipfish -o [FolderName] targetip/site\"|boxes -d headline")
+    elif userchoice == 99:
+        webAttack()
+    else :
+        menu()
 
 def subdomain():
+    print(Logo)
     sdc=input("[1]install [2]Run [99]BAck >> ")
     if sdc == 1:
         os.system("sudo pip install requests argparse dnspython")
-        os.system("sudo git clone https://github.com/aboul3la/Sublist3r.git && cd Sublist3r && sudo pip install -r requirements.txt") 
+        os.system("sudo git clone https://github.com/aboul3la/Sublist3r.git && chmod -R 755 Sublist3r && cd Sublist3r && sudo pip install -r requirements.txt") 
         menu()
     elif sdc == 2:
         print("Go to Sublist3r and run ./sublist3r")
@@ -1003,7 +1024,7 @@ def androidhack():
         menu()
 
 def keydroid():
-    os.system("echo \"Android Keylogger + Reverse Shell\n[!]You have to install Some Manually Refer Below Link :\n\t [+]https://github.com/thelinuxchoice/keydroid \" | boxes -d boy")
+    os.system("echo \"Android Keylogger + Reverse Shell\n[!]You have to install Some Manually Refer Below Link :\n [+]https://github.com/thelinuxchoice/keydroid \" | boxes -d boy")
     userchoice = input("[1]Install [2]Run [99]Back >>")
     if userchoice == 1:
         os.system("sudo git clone https://github.com/thelinuxchoice/keydroid ")
@@ -1083,20 +1104,20 @@ def whatshack():
         os.system("echo \"If still getting error please visit \n\t[#]https://github.com/thelinuxchoice/whatshack\"|boxes -d shell")
         os.system("cd whatshack/ && bash whatshack.sh")
     elif userchoice == 99:
-        socialattack()
+        androidhack()
     else :
         menu()
 
 def droidcam():
     os.system("echo \"Script to generate an Android App to take photos from Cameras using Camera2 function on API 21\n After Installing if you getting error please go to below link \n[+]https://github.com/thelinuxchoice/DroidCam \"| boxes -d boy")
-    userchoice = input("[1]Install [2]Run [99]Back >>")
+    userchoice = input("[1]Install [2]Run [99]Back >> ")
     if userchoice == 1:
         os.system("sudo git clone https://github.com/thelinuxchoice/droidcam ")
         os.system("cd droidcam && sudo bash install.sh")
     elif userchoice == 2:
         os.system("cd droidcam && bash droidcam.sh")
     elif userchoice == 99:
-        socialattack()
+        androidhack()
     else :
         menu()
 
@@ -1108,7 +1129,7 @@ def evilapp():
     elif userchoice == 2:
         os.system("cd evilapp && bash evilapp.sh")
     elif userchoice == 99:
-        socialfinder()
+        androidhack()
     else :
         menu()
 
@@ -1160,7 +1181,7 @@ def thefatrat():
     elif fatratchoice == 3:
         os.system("cd TheFatRat && ./update && chmod +x setup.sh && ./setup.sh")
     elif fatratchoice == 99:
-        menu()
+        payloads()
     else :
         menu()
 
@@ -1200,6 +1221,7 @@ def stitch():
         menu()
 
 def MSFvenom():
+    print(Logo)
     MSFvenom= input("[1]Install [2]Run [99]Back >> ")
     if MSFvenom == 1:
         os.system("sudo git clone https://github.com/g0tmi1k/msfpc.git && cd msfpc && chmod +x msfpc.sh")
@@ -1224,7 +1246,7 @@ def venom():
     elif venomchoice == 2:
         os.system("cd venom && sudo ./venom.sh")
     elif venomchoice == 99:
-        menu()
+        payloads()
     else :
         menu()
 
@@ -1257,7 +1279,8 @@ def wifijamming():
 
 def airmon():
     # os.system("echo \" \" | boxes -d boy")
-    userchoice = input("[1]Install [2]Run [99]Back >>")
+    print(Logo)
+    userchoice = input("[1]Install [2]Run [99]Back >> ")
     if userchoice == 1:
         print("In Working")
         time.sleep(5)
@@ -1286,7 +1309,7 @@ def airmon():
 
 def portforwading():
     print("In Working ......")
-    time.sleep(3)
+    time.sleep(1)
     menu()
 
 def sqltool():
