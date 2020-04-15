@@ -1529,8 +1529,8 @@ def clearScr():
 if __name__ == "__main__":
     try:
         if system() == 'Linux':
-            if path.exists("/home/")
-                    os.chdir("/home/")
+            if path.exists("/home/"):
+                os.chdir("/home/")
                 if os.path.isdir('hackingtool'):
                     os.chdir("/home/hackingtool/")
                     menu()
