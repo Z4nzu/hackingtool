@@ -24,13 +24,14 @@ import random
 import Queue
 import subprocess
 import re
+import getpass
+from os import path
 from platform import system
 from urlparse import urlparse
 from xml.dom import minidom
 from optparse import OptionParser
 from time import sleep
 from platform import system
-
 Logo="""\033[33m
 
    ▄█    █▄       ▄████████  ▄████████    ▄█   ▄█▄  ▄█  ███▄▄▄▄      ▄██████▄           ███      ▄██████▄   ▄██████▄   ▄█       
@@ -47,15 +48,12 @@ Logo="""\033[33m
                                     \033[97m[!] https://github.com/Z4nzu
         \033[91m[!] This Tool is Only For Educational Purpose Please Don\'t use for Any illegal Activity [!]
 \033[97m """
-
-
 def menu():
-    clearScr()
     print(Logo + """\033[0m 
     \033[91m[!] This Tool Must Run as a Root..[!]] \033[97m
     [00]AnonSurf                  
     [01]Information Gathering
-    [02]Password Attack
+    [02]Password Attack && Wordlist Generator
     [03]Wireless Attack
     [04]SQL Injection Tools 
     [05]Phishing Attack 
@@ -68,93 +66,93 @@ def menu():
     [12]SocialMedia Attack
     [13]SocialMedia Finder 
     [14]Android Hack
-    [15]Port Forwading
+    [15]Steganography
     [16]Other Tools 
     [17]Update System
     [99]Exit
     """)
     
-    choice = input("Z4nzu  =>> ")
-    if choice == 0 or choice == 00:
+    choice = raw_input("Z4nzu  =>> ")
+    if choice == "0" or choice == "00":
         clearScr()
         print(Logo)
         anonsurf()
-    elif choice == 1 or choice == 01:
+    elif choice == "1" or choice == "01":
         clearScr()
         print(Logo)
         info()
-    elif choice == 2 or choice == 02:
+    elif choice == "2" or choice == "02":
         clearScr()
         print(Logo)
         passwd()
-    elif choice == 3 or choice == 03:
+    elif choice == "3" or choice == "03":
         clearScr()
         print(Logo)
         wire()
-    elif choice == 4 or choice == 04:
+    elif choice == "4" or choice == "04":
         clearScr()
         print(Logo)
         sqltool()    
-    elif choice == 5 or choice == 05:
+    elif choice == "5" or choice == "05":
         clearScr()
         print(Logo)
         phishattack()
-    elif choice == 6 or choice == 06:
+    elif choice == "6" or choice == "06":
         clearScr()
         print(Logo)
         webAttack()        
-    elif choice == 7 or choice == 07:
+    elif choice == "7" or choice == "07":
         clearScr()
         print(Logo)
         postexp()
-    elif choice == 8 :
+    elif choice == "8" or choice == "08" :
         clearScr()
         print(Logo)
         forensic()
-    elif choice == 9 :
+    elif choice == "9" or choice == "09" :
         clearScr()
         print(Logo)
         payloads()       
-    elif choice == 10:
+    elif choice == "10":
         clearScr()
         print(Logo)
         routexp()
-    elif choice == 11:
+    elif choice == "11" :
         clearScr()
         print(Logo)
         wifijamming()
-    elif choice == 12:
+    elif choice == "12" :
         clearScr()
         print(Logo)
         socialattack()       
-    elif choice == 13:
+    elif choice == "13" :
         clearScr()
         print(Logo)
         socialfinder()
-    elif choice == 14:
+    elif choice == "14":
         clearScr()
         print(Logo)
         androidhack()
-    elif choice == 15:
+    elif choice == "15":
         clearScr()
         print(Logo)
-        portforwading()
-    elif choice == 16:
+        steganography()
+    elif choice == "16":
         clearScr()
         print(Logo)
         others()
-    elif choice == 17:
+    elif choice == "17":
         clearScr()
         print(Logo)
         updatesys()
-    elif choice == 99:
+    elif choice == "99" :
         clearScr(), sys.exit()
         exit()
     elif choice == "":
         menu()
     else:
         print("Wrong Input...!!")
-        time.Sleep(3)
+        time.sleep(3)
         menu()
 
 def anonsurf():
@@ -180,7 +178,7 @@ def ansurf():
     anc=input("[1]install [2]Run [3]Stop [99]Main Menu >> ")
     if anc == 1:
         os.system("sudo git clone https://github.com/Und3rf10w/kali-anonsurf.git")
-        os.system("cd kali-anonsurf && sudo ./installer.sh")
+        os.system("cd kali-anonsurf && sudo ./installer.sh && cd .. && sudo rm -r kali-anonsurf")
         print("Successfully Installed ...!!")
     elif anc==2:
         os.system("sudo anonsurf start")
@@ -211,6 +209,7 @@ def info():
             [4]  Host To IP
             [5]  Xerosploit
             [6]  Advanced XSS Detection Suite
+            [7]  ReconSpider(For All Scaning)
             [99] Back To Main Menu 
         """)
     choice2 = input("Z4nzu =>> ")
@@ -231,6 +230,9 @@ def info():
     if choice2 == 6:
         clearScr()
         XSStrike()
+    elif choice2 == 7:
+        clearScr()
+        reconspider()
     elif choice2 == 99:
         clearScr()
         menu()
@@ -305,6 +307,19 @@ def xerosploit():
     else :
         menu()
 
+def reconspider():
+    os.system("echo \" ReconSpider is most Advanced Open Source Intelligence (OSINT) Framework for scanning IP Address, Emails, \nWebsites, Organizations and find out information from different sources.\" | boxes -d boy")
+    userchoice = input("[1]Install [2]Run [99]Back >>")
+    if userchoice == 1:
+        os.system("sudo git clone https://github.com/bhavsec/reconspider.git")
+        os.system("sudo apt install python3 python3-pip && cd reconspider && sudo python3 setup.py install")
+    elif userchoice == 2:
+        os.system("cd reconspider && python3 reconspider.py")
+    elif userchoice == 99:
+        info()
+    else :
+        menu()
+
 def setoolkit():
     os.system("echo \"The Social-Engineer Toolkit is an open-source penetration\ntesting framework designed for social engineering\"| boxes -d boy")
     choiceset = input("[1]Install [2]Run [99]BAck >>")
@@ -324,6 +339,8 @@ def passwd():
     print("""   
                 [01]Cupp
                 [02]WordlistCreator
+                [03]Goblin WordGenerator
+                [04]Credential reuse attacks
                 [99]Back To Main Menu
        """)
     passchoice = raw_input("Z4nzu ==>> ")
@@ -333,6 +350,12 @@ def passwd():
     elif passchoice == "2" or passchoice == "02":
         clearScr()
         wlcreator()
+    elif passchoice == "3" or passchoice == "03":
+        clearScr()
+        goblinword()
+    elif passchoice == "4" or passchoice == "04":
+        clearScr()
+        credentialattack()
     elif passchoice == "99":
         clearScr()
         menu()
@@ -343,25 +366,50 @@ def passwd():
 
 def cupp():
     os.system("echo \"Common User Password Generator..!!\"| boxes -d boy")
-    cc=input("[1]Install [2]Run [99]Back")
-    if cc == 1:
+    cc=raw_input("[1]Install [2]Run [99]Back >> ")
+    if cc == "1":
         os.system("git clone https://github.com/Mebus/cupp.git")
         print("Download Successfully..!!!")
-    elif cc == 2:
+    elif cc == "2":
         os.system("cd cupp && ./cupp.py -h")
-    elif cc == 99 :
+    elif cc == "99" :
         passwd()
     else :
         main()
 
 def wlcreator():
     os.system("echo \" WlCreator is a C program that can create all possibilities of passwords,\n and you can choose Lenght, Lowercase, Capital, Numbers and Special Chars\" | boxes -d boy")
-    userchoice = input("[1]Install [2]Run [99]Back >>")
-    if userchoice == 1:
+    userchoice = raw_input("[1]Install [2]Run [99]Back >>")
+    if userchoice == "1":
         os.system("sudo git clone https://github.com/thelinuxchoice/wlcreator")
-    elif userchoice == 2:
+    elif userchoice == "2":
         os.system("cd wlcreator && gcc -o wlcreator wlcreator.c && ./wlcreator 5")
-    elif userchoice == 99:
+    elif userchoice == "99":
+        passwd()
+    else :
+        menu()
+
+def goblinword():
+    os.system("echo \" GoblinWordGenerator \" | boxes -d boy")
+    userchoice = raw_input("[1]Install [2]Run [99]Back >>")
+    if userchoice == "1":
+        os.system("sudo git clone https://github.com/UndeadSec/GoblinWordGenerator.git")
+    elif userchoice == "2":
+        os.system("cd GoblinWordGenerator && python3 goblin.py")
+    elif userchoice == "99":
+        passwd()
+    else :
+        menu()
+
+def credentialattack():
+    os.system("echo \"[!]Check if the targeted email is in any leaks and then use the leaked password to check it against the websites.\n[!]Check if the target credentials you found is reused on other websites/services.\n[!]Checking if the old password you got from the target/leaks is still used in any website.\n[#]This Tool Available in MAC & Windows Os \n\t[!] https://github.com/D4Vinci/Cr3dOv3r\" | boxes -d boy")
+    userchoice = raw_input("[1]Install [2]Run [99]Back >> ")
+    if userchoice == "1":
+        os.system("sudo git clone https://github.com/D4Vinci/Cr3dOv3r.git")
+        os.system("cd Cr3dOv3r && python3 -m pip install -r requirements.txt")
+    elif userchoice == "2" :
+        os.system("cd Cr3dOv3r && python3 Cr3d0v3r.py -h")
+    elif userchoice == "99":
         passwd()
     else :
         menu()
@@ -844,13 +892,17 @@ def autopsy():
 
 def postexp():
     print("""
-        [1]Vegile - Ghost In The Shell
+        [1] Vegile - Ghost In The Shell
+        [2] Chrome Keylogger
         [99]Back 
     """)
     expchoice = input("Z4nzu =>> ")
     if expchoice == 1:
         clearScr()
         vegile()
+    if expchoice == 2:
+        clearScr()
+        chromekeylogger()
     elif expchoice == 99:
         menu()
     elif expchoice == "":
@@ -869,6 +921,19 @@ def vegile():
         os.system("echo \You can Use Command  : \n[!]Vegile -i / --inject [backdoor/rootkit] \n[!]Vegile -u / --unlimited [backdoor/rootkit] \n[!]Vegile -h / --help\"|boxes -d parchment")
         os.system("cd Vegila && sudo ./Vegila -h")
     elif vegilechoice == 99:
+        postexp()
+    else :
+        menu()
+
+def chromekeylogger():
+    os.system("echo \" Hera Chrome Keylogger \" | boxes -d boy")
+    userchoice = input("[1]Install [2]Run [99]Back >>")
+    if userchoice == 1:
+        os.system("sudo git clone https://github.com/UndeadSec/HeraKeylogger.git")
+        os.system("cd HeraKeylogger && sudo apt-get install python3-pip -y && sudo pip3 install -r requirements.txt ")
+    elif userchoice == 2:
+        os.system("cd HeraKeylogger && python3 hera.py ")
+    elif userchoice == 99:
         postexp()
     else :
         menu()
@@ -924,6 +989,8 @@ def webAttack():
         [1] SlowLoris
         [2] Skipfish
         [3] SubDomain Finder
+        [4] CheckURL
+        [5] Blazy(Also Find ClickJacking)
         [99]Back To Menu
     """)
     wc = input("Z4nzu >> ")
@@ -936,6 +1003,12 @@ def webAttack():
     elif wc == 3:
         clearScr()
         subdomain()
+    elif wc == 4:
+        clearScr()
+        checkurl()
+    elif wc == 5:
+        clearScr()
+        blazy()
     elif wc == 99:
         menu()
     else :
@@ -943,7 +1016,7 @@ def webAttack():
 
 def slowloris():
     os.system("echo\"Slowloris is basically an HTTP Denial of Service attack.It send lots of HTTP Request\"|boxes -d boy ")
-    choice = ("[1]install [2]Run [99]Back >> ")
+    choice = input("[1]install [2]Run [99]Back >> ")
     if choice == 1:
         os.system("sudo pip install slowloris")
     elif choice == 2:
@@ -965,21 +1038,47 @@ def skipfish():
     else :
         menu()
     
-
 def subdomain():
     print(Logo)
     sdc=input("[1]install [2]Run [99]BAck >> ")
     if sdc == 1:
         os.system("sudo pip install requests argparse dnspython")
-        os.system("sudo git clone https://github.com/aboul3la/Sublist3r.git && chmod -R 755 Sublist3r && cd Sublist3r && sudo pip install -r requirements.txt") 
+        os.system("sudo git clone https://github.com/aboul3la/Sublist3r.git ")
+        os.system("chmod -R 755 Sublist3r && cd Sublist3r && sudo pip install -r requirements.txt") 
         menu()
     elif sdc == 2:
         print("Go to Sublist3r and run ./sublist3r")
-        os.system("cd Sublist3r && ./sublist3r")
+        os.system("echo \" python sublist3r.py -d example.com \npython sublist3r.py -d example.com -p 80,443\"| boxes -d boy")
+        os.system("cd Sublist3r && python sublist3r -h")
     elif sdc == 99 :
         webAttack()
     else :
         main()
+
+def checkurl():
+    os.system("echo \" Detect evil urls that uses IDN Homograph Attack.\n\t[!]python3 checkURL.py --url google.com \" | boxes -d boy")
+    userchoice = input("[1]Install [2]Run [99]Back >>")
+    if userchoice == 1:
+        os.system("sudo git clone https://github.com/UndeadSec/checkURL.git")
+    elif userchoice == 2:
+        os.system("cd checkURL && python3 checkURL.py --help")
+    elif userchoice == 99:
+        webAttack()
+    else :
+        menu()
+
+def blazy():
+    os.system("echo \"Blazy is a modern login page bruteforcer \" | boxes -d boy")
+    userchoice = input("[1]Install [2]Run [99]Back >>")
+    if userchoice == 1:
+        os.system("sudo git clone https://github.com/UltimateHackers/Blazy")
+        os.system("cd Blazy && sudo pip install -r requirements.txt")
+    elif userchoice == 2:
+        os.system("cd Blazy && python blazy.py")
+    elif userchoice == 99:
+        webAttack()
+    else :
+        menu()
 
 def androidhack():
     print("""
@@ -1307,10 +1406,53 @@ def airmon():
     # z=raw_input("Enter Your wifi Interface Name :- ")
     # os.system("airmon-ng && airmon-ng start %s"%z)
 
-def portforwading():
-    print("In Working ......")
-    time.sleep(1)
-    menu()
+def steganography():
+    print("""
+        [1]SteganoHide
+        [2]StegnoCracker
+        [99]Back
+    """)
+    choice = input("Z4nz =>> ")
+    if choice == 1:
+        steganohide()
+    elif choice == 2:
+        stegnocracker()
+    elif choice == 99:
+        menu()
+    else :
+        menu()
+
+def steganohide():
+    choice = input("[1]Install [2]Run [99] >> ")
+    if choice == 1:
+        os.system("sudo apt-get install steghide -y ")
+    elif choice == 2:
+        choice1=input("[1]Hide [2]Extract >> ")
+        if choice1 ==1:
+            filehide=raw_input("Enter Filename you want to Embed(1.txt) :- ")
+            filetobehide=raw_input("Enter Cover Filename(test.jpeg) :- ")
+            os.system("steghide embed -cf {0} -ef {1}".format(filetobehide,filehide))
+        elif choice1 ==2:
+            fromfile=raw_input("Enter Filename From Extract Data :- ")
+            os.system("steghide extract -sf {0}".format(fromfile))
+    elif choice == 99:
+        steganography()
+    else :
+        menu()
+
+def stegnocracker():
+    os.system("echo \" SteganoCracker is a tool that uncover hidden data inside files\n using brute-force utility  \"|boxes -d boy")
+    choice = ("[1]Install [2]Run [99] >> ")
+    if choice == 1:
+        os.system("pip3 install stegcracker && pip3 install stegcracker -U --force-reinstall")
+    elif choice ==2:
+        file1=raw_input("Enter Filename :- ")
+        passfile=raw_input("Enter Wordlist Filename :- ")
+        os.system("stegcracker {0} {1} ".format(file1,passfile))
+    elif choice == 99:
+        steganography()
+    else :
+        menu()
 
 def sqltool():
     print("""
@@ -1388,7 +1530,22 @@ def clearScr():
 
 if __name__ == "__main__":
     try:
-        menu()
+        if system() == 'Linux':
+            os.chdir("/home/")
+            if os.path.isdir('hackingtool'):
+                os.chdir("/home/hackingtool/")
+                menu()
+            else :
+                os.system("mkdir hackingtool")
+                menu()
+        if system() == 'android':
+            os.chdir("data/data/com.termux/files/home/")
+            if os.path.isdir('hackingtool'):
+                os.chdir("data/data/com.termux/files/home/hackingtool/")
+                menu()
+            else :
+                os.system("mkdir hackingtool")
+                menu()
     except KeyboardInterrupt:
         print(" Sorry ..!!!")
         time.sleep(3)
