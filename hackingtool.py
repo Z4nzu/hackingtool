@@ -8,24 +8,26 @@ import webbrowser
 import requests
 import time
 import http.client
+import urllib.request
 import sys
 import json
 import telnetlib
 import glob
-import urllib.request
+# import urllib2
 import socket
 import base64
 from getpass import getpass
-from commands import *
+# from command import *
+import subprocess
 from sys import argv
 import random
-import Queue
+import queue
 import subprocess
 import re
 import getpass
 from os import path
 from platform import system
-from urlparse import urlparse
+from urllib.parse import urlparse
 from xml.dom import minidom
 from optparse import OptionParser
 from time import sleep
@@ -70,7 +72,7 @@ def menu():
     [99]Exit
     """)
     
-    choice = raw_input("Z4nzu  =>> ")
+    choice = input("Z4nzu  =>> ")
     if choice == "0" or choice == "00":
         clearScr()
         print(Logo)
@@ -160,13 +162,13 @@ def anonsurf():
         [99] Back
     """)
     choice = input("Z4nzu =>>")
-    if choice == 1:
+    if choice == "1":
         clearScr()
         ansurf()
-    elif choice == 2:
+    elif choice == "2":
         clearScr()
         multitor()
-    elif choice == 99:
+    elif choice == "99":
         menu()
     else :
         menu()
@@ -174,15 +176,15 @@ def anonsurf():
 def ansurf():
     os.system("echo  \"It automatically overwrites the RAM when\nthe system is shutting down AnD AlSo cHange Ip\" |boxes -d boy")
     anc=input("[1]install [2]Run [3]Stop [99]Main Menu >> ")
-    if anc == 1:
+    if anc == "1":
         os.system("sudo git clone https://github.com/Und3rf10w/kali-anonsurf.git")
         os.system("cd kali-anonsurf && sudo ./installer.sh && cd .. && sudo rm -r kali-anonsurf")
         print("Successfully Installed ...!!")
-    elif anc==2:
+    elif anc=="2":
         os.system("sudo anonsurf start")
-    elif anc == 3:
+    elif anc == "3":
         os.system("sudo anonsurf stop")
-    elif anc == 99:
+    elif anc == "99":
         anonsurf()
     else :
         menu()
@@ -190,11 +192,11 @@ def ansurf():
 def multitor():
     os.system("echo \"How to stay in multi places at the same time \" | boxes -d boy")
     userchoice = input("[1]Install [2]Run [99]Back >>")
-    if userchoice == 1:
+    if userchoice == "1":
         os.system("sudo git clone https://github.com/thelinuxchoice/multitor.git")
-    elif userchoice == 2:
+    elif userchoice == "2":
         os.system("cd multitor && bash multitor.sh")
-    elif userchoice == 99:
+    elif userchoice == "99":
         anonsurf()
     else :
         menu()
@@ -211,31 +213,29 @@ def info():
             [99] Back To Main Menu 
         """)
     choice2 = input("Z4nzu =>> ")
-    if choice2 == 1:
+    if choice2 == "1":
         nmap()
-    if choice2 == 2:
+    if choice2 == "2":
         clearScr()
         Dracnmap()
-    if choice2 == 3:
+    if choice2 == "3":
         clearScr()
         ports()
-    if choice2 == 4:
+    if choice2 == "4":
         clearScr()
         h2ip()
-    if choice2 == 5:
+    if choice2 == "5":
         clearScr()
         xerosploit()
-    if choice2 == 6:
+    if choice2 == "6":
         clearScr()
         XSStrike()
-    elif choice2 == 7:
+    elif choice2 == "7":
         clearScr()
         reconspider()
-    elif choice2 == 99:
+    elif choice2 == "99":
         clearScr()
         menu()
-    if choice2 == 9:
-        clearScr()
     elif choice2 == "":
         menu()
     else:
@@ -243,14 +243,14 @@ def info():
 
 def nmap():
     nmapchoice = input("[1]Install [2]Run [99]BAck >> ")
-    if nmapchoice == 1 :
+    if nmapchoice == "1" :
         time.sleep(1)
         print("Start Downloading....!!")
         os.system("sudo git clone https://github.com/nmap/nmap.git")
         os.system("sudo chmod -R 755 nmap && cd nmap && sudo ./configure && make && sudo make install")
-    elif nmapchoice == 2:
+    elif nmapchoice == "2":
         os.system("sudo nmap")
-    elif nmapchoice == 99:
+    elif nmapchoice == "99":
         info()
     else:
         menu()
@@ -258,36 +258,36 @@ def nmap():
 def Dracnmap():
     os.system("echo \"Dracnmap is an open source program which is using to \nexploit the network and gathering information with nmap help\" | boxes -d boy ")
     dracnap = input("[1]Install [2]Run [99]Back >> ")
-    if dracnap == 1:
+    if dracnap == "1":
         os.system("sudo git clone https://github.com/Screetsec/Dracnmap.git && cd Dracnmap && chmod +x Dracnmap.sh")
-    elif dracnap == 2:
+    elif dracnap == "2":
         os.system("cd Dracnmap && sudo ./Dracnmap.sh")
-    elif dracnap == 99:
+    elif dracnap == "99":
         info()
     else :
         menu()    
 
 def h2ip():
-    host = raw_input("Enter host name :-  ")
+    host = input("Enter host name(www.google.com) :-  ")
     ips = socket.gethostbyname(host)
     print(ips)
 
 def ports():
     clearScr()
-    target = raw_input('Select a Target IP : ')
+    target = input('Select a Target IP : ')
     os.system("sudo nmap -O -Pn %s" % target)
     sys.exit()
 
 def XSStrike():
     os.system("echo \"XSStrike is a python script designed to detect and exploit XSS vulnerabilites. \"| boxes -d boy")
     xc=input("[1]Install [2]Run [99]BAck >>")
-    if xc == 1:
+    if xc == "1":
         os.system("sudo rm -rf XSStrike")
         os.system("git clone https://github.com/UltimateHackers/XSStrike.git && cd XSStrike && pip install -r requirements.txt")
-    elif xc == 2 :
+    elif xc == "2" :
         clearScr()
         os.system("cd XSStrike && python xsstrike")
-    elif xc == 99:
+    elif xc == "99":
         info()
     else :
         info()
@@ -295,12 +295,12 @@ def XSStrike():
 def xerosploit():
     os.system("echo \"Xerosploit is a penetration testing toolkit whose goal is to perform \n man-in-th-middle attacks for testing purposes\"|boxes -d boy")
     xeros=input("[1]Install [2]Run [99]Back >>")
-    if xeros == 1:
+    if xeros == "1":
         os.system("git clone https://github.com/LionSec/xerosploit")
         os.system("cd xerosploit && sudo python install.py")
-    elif xeros == 2:
+    elif xeros == "2":
         os.system("sudo xerosploit")
-    elif xeros == 99:
+    elif xeros == "99":
         info()
     else :
         menu()
@@ -341,7 +341,7 @@ def passwd():
                 [04]Credential reuse attacks
                 [99]Back To Main Menu
        """)
-    passchoice = raw_input("Z4nzu ==>> ")
+    passchoice = input("Z4nzu ==>> ")
     if passchoice == "1" or passchoice == "01":
         clearScr()
         cupp()
@@ -364,7 +364,7 @@ def passwd():
 
 def cupp():
     os.system("echo \"Common User Password Generator..!!\"| boxes -d boy")
-    cc=raw_input("[1]Install [2]Run [99]Back >> ")
+    cc=input("[1]Install [2]Run [99]Back >> ")
     if cc == "1":
         os.system("git clone https://github.com/Mebus/cupp.git")
         print("Download Successfully..!!!")
@@ -377,7 +377,7 @@ def cupp():
 
 def wlcreator():
     os.system("echo \" WlCreator is a C program that can create all possibilities of passwords,\n and you can choose Lenght, Lowercase, Capital, Numbers and Special Chars\" | boxes -d boy")
-    userchoice = raw_input("[1]Install [2]Run [99]Back >>")
+    userchoice = input("[1]Install [2]Run [99]Back >>")
     if userchoice == "1":
         os.system("sudo git clone https://github.com/thelinuxchoice/wlcreator")
     elif userchoice == "2":
@@ -389,7 +389,7 @@ def wlcreator():
 
 def goblinword():
     os.system("echo \" GoblinWordGenerator \" | boxes -d boy")
-    userchoice = raw_input("[1]Install [2]Run [99]Back >>")
+    userchoice = input("[1]Install [2]Run [99]Back >>")
     if userchoice == "1":
         os.system("sudo git clone https://github.com/UndeadSec/GoblinWordGenerator.git")
     elif userchoice == "2":
@@ -401,7 +401,7 @@ def goblinword():
 
 def credentialattack():
     os.system("echo \"[!]Check if the targeted email is in any leaks and then use the leaked password to check it against the websites.\n[!]Check if the target credentials you found is reused on other websites/services.\n[!]Checking if the old password you got from the target/leaks is still used in any website.\n[#]This Tool Available in MAC & Windows Os \n\t[!] https://github.com/D4Vinci/Cr3dOv3r\" | boxes -d boy")
-    userchoice = raw_input("[1]Install [2]Run [99]Back >> ")
+    userchoice = input("[1]Install [2]Run [99]Back >> ")
     if userchoice == "1":
         os.system("sudo git clone https://github.com/D4Vinci/Cr3dOv3r.git")
         os.system("cd Cr3dOv3r && python3 -m pip install -r requirements.txt")
@@ -1019,7 +1019,7 @@ def slowloris():
         os.system("sudo pip install slowloris")
     elif choice == 2:
         print(Logo)
-        ts=raw_input("Enter Target Site :-")
+        ts=input("Enter Target Site :-")
         os.system("slowloris %s"%ts)
     elif choice == 99:
         webAttack()
@@ -1427,11 +1427,11 @@ def steganohide():
     elif choice == 2:
         choice1=input("[1]Hide [2]Extract >> ")
         if choice1 ==1:
-            filehide=raw_input("Enter Filename you want to Embed(1.txt) :- ")
-            filetobehide=raw_input("Enter Cover Filename(test.jpeg) :- ")
+            filehide=input("Enter Filename you want to Embed(1.txt) :- ")
+            filetobehide=input("Enter Cover Filename(test.jpeg) :- ")
             os.system("steghide embed -cf {0} -ef {1}".format(filetobehide,filehide))
         elif choice1 ==2:
-            fromfile=raw_input("Enter Filename From Extract Data :- ")
+            fromfile=input("Enter Filename From Extract Data :- ")
             os.system("steghide extract -sf {0}".format(fromfile))
     elif choice == 99:
         steganography()
@@ -1444,8 +1444,8 @@ def stegnocracker():
     if choice == 1:
         os.system("pip3 install stegcracker && pip3 install stegcracker -U --force-reinstall")
     elif choice ==2:
-        file1=raw_input("Enter Filename :- ")
-        passfile=raw_input("Enter Wordlist Filename :- ")
+        file1=input("Enter Filename :- ")
+        passfile=input("Enter Wordlist Filename :- ")
         os.system("stegcracker {0} {1} ".format(file1,passfile))
     elif choice == 99:
         steganography()
