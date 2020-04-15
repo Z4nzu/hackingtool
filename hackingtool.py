@@ -1529,20 +1529,21 @@ def clearScr():
 if __name__ == "__main__":
     try:
         if system() == 'Linux':
-            os.chdir("/home/")
-            if os.path.isdir('hackingtool'):
-                os.chdir("/home/hackingtool/")
-                menu()
-            else :
-                os.system("mkdir hackingtool")
-                menu()
-        if system() == 'android':
+            if path.exists("/home/")
+                    os.chdir("/home/")
+                if os.path.isdir('hackingtool'):
+                    os.chdir("/home/hackingtool/")
+                    menu()
+                else :
+                    os.system("mkdir hackingtool")
+                    menu()
+        elif path.exists('/data'):
             os.chdir("data/data/com.termux/files/home/")
             if os.path.isdir('hackingtool'):
                 os.chdir("data/data/com.termux/files/home/hackingtool/")
                 menu()
             else :
-                os.system("mkdir hackingtool")
+                os.system("mkdir hackingtoolstore")
                 menu()
     except KeyboardInterrupt:
         print(" Sorry ..!!!")
