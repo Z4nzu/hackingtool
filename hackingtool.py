@@ -6,15 +6,13 @@ import argparse
 import threading
 import webbrowser
 import requests
-import urllib
 import time
-import httplib
-import urllib
+import http.client
 import sys
 import json
 import telnetlib
 import glob
-import urllib2
+import urllib.request
 import socket
 import base64
 from getpass import getpass
