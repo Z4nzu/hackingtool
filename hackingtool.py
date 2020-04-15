@@ -1,5 +1,5 @@
 ##!/usr/bin/env python3
-# -*- coding: iso-8859-15 -*-
+# -*- coding: UTF-8 -*-
 import os
 import sys
 import argparse
