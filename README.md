@@ -8,7 +8,7 @@
 <img src ="https://img.shields.io/badge/Important-notice-red" />
 <h4>Please Use Only For Educational Purpose.Don't Use for illegal Activity</h4>
 
-### DOn't Copy Code without give me Credits..!! 
+### Give your Contribute :) 
 # Hackingtool Menu
 - AnonSurf                  
 - Information Gathering
@@ -25,7 +25,7 @@
 - SocialMedia Attack
 - SocialMedia Finder 
 - Android Hack
-- Port Forwading
+- Steganography
 - Other Tools 
 - Update System
 
@@ -37,11 +37,14 @@
 - Dracnmap
 - Port Scanning
 - Host To IP
- - Xerosploit
+- Xerosploit
 - Advanced XSS Detection Suite
+- ReconSpider 
 ### Password Attack
 - Cupp
 - WordlistCreator
+- Goblin WordGenerator
+- Credential reuse attacks
 ### Wireless Attack
 - WiFi-Pumpkin
 - pixiewps
@@ -64,8 +67,11 @@
 - SlowLoris
 - Skipfish
 - SubDomain Finder
+- CheckURL
+- Blazy
 ### Post Explotation
 - Vegile - Ghost In The Shell
+- Chrome Keylogger
 ### Forensic Tool
 - Bulk_extractor
 - Disk Clone and ISO Image Aquire
@@ -97,7 +103,10 @@
 - Whatsapp Attack
 - DroidCam (Capture Image)
 - EvilApp (Hijack Session)
-
+### Steganography
+- SteganoHide
+- StegnoCracker
+- Whitespace
 ![](https://imgur.com/hxyymEF.png)
 
 ## Installation in Linux :
