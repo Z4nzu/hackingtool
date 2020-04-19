@@ -55,10 +55,10 @@ echo "[✔] Installing ...";
 echo "";
 git clone https://github.com/Z4nzu/hackingtool.git "$INSTALL_DIR";
 echo "#!/bin/bash
-python $INSTALL_DIR/hackingtool.py" '${1+"$@"}' > hackingtool;
+python3 $INSTALL_DIR/hackingtool.py" '${1+"$@"}' > hackingtool;
 chmod +x hackingtool;
 sudo cp hackingtool /usr/bin/;
-rm hacktronian;
+rm hackingtool;
 
 
 if [ -d "$INSTALL_DIR" ] ;
