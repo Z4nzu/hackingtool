@@ -1407,8 +1407,9 @@ def airmon():
 
 def steganography():
     print("""
-        [1]SteganoHide
-        [2]StegnoCracker
+        [1] SteganoHide
+        [2] StegnoCracker
+        [3] WhiteSpace
         [99]Back
     """)
     choice = input("Z4nz =>> ")
@@ -1416,6 +1417,8 @@ def steganography():
         steganohide()
     elif choice == "2":
         stegnocracker()
+    elif choice == "3":
+        whitespace()
     elif choice == "99":
         menu()
     else :
@@ -1448,6 +1451,18 @@ def stegnocracker():
         file1=input("Enter Filename :- ")
         passfile=input("Enter Wordlist Filename :- ")
         os.system("stegcracker {0} {1} ".format(file1,passfile))
+    elif choice == "99":
+        steganography()
+    else :
+        menu()
+
+def whitespace():
+    choice =input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("sudo git clone https://github.com/beardog108/snow10.git ")
+        os.system("chmod -R 755 snow10")
+    elif choice == "2":
+        os.system("cd snow10 && firefox index.html")
     elif choice == "99":
         steganography()
     else :
@@ -1531,12 +1546,13 @@ if __name__ == "__main__":
     try:
         if system() == 'Linux':
             if path.exists("/home/"):
-                os.chdir("/home/")
+                os.chdir("/home")
                 if os.path.isdir('hackingtool'):
                     os.chdir("/home/hackingtool/")
                     menu()
                 else :
                     os.system("mkdir hackingtool")
+                    os.chdir("/home/hackingtool/")
                     menu()
         elif path.exists('/data'):
             os.chdir("data/data/com.termux/files/home/")
@@ -1545,6 +1561,7 @@ if __name__ == "__main__":
                 menu()
             else :
                 os.system("mkdir hackingtoolstore")
+                os.chdir("data/data/com.termux/files/home/hackingtool/")
                 menu()
     except KeyboardInterrupt:
         print(" Sorry ..!!!")
