@@ -233,7 +233,7 @@ def info():
     elif choice2 == "7":
         clearScr()
         reconspider()
-    elif choicee2 == "8":
+    elif choice2 == "8":
         clearScr()
         isitdown()
     elif choice2 == "99":
