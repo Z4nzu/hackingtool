@@ -6,9 +6,11 @@
 ![](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2F_Zinzu07)
 
 <img src ="https://img.shields.io/badge/Important-notice-red" />
-<h4>Please Use Only For Educational Purpose.Don't Use for illegal Activity</h4>
 
-### Give your Contribute :) 
+### In Beta
+This project still in BETA so you may face problems,
+Please open an issue so i'll fix them..!!
+
 # Hackingtool Menu
 - AnonSurf                  
 - Information Gathering
@@ -131,8 +133,13 @@
 [UndeadSec](https://github.com/UndeadSec)
 ## [MIT License](https://raw.githubusercontent.com/Z4nzu/hackingtool/master/LICENSE)
 
+<h4>Please Use Only For Educational Purpose.Don't Use for illegal Activity</h4>
+
 ## Follow on :- [GitHub](https://github.com/Z4nzu) [Twitter](https://twitter.com/_Zinzu07)
 #### Contact Via Twitter or Email For Suggestion And Queries 
 
-#### Thank you..
+### Contribute :)
+Feel free to make a pull request if you feel that you have improved this tool 
+
 #### Don't Forgot to share with Your Friends 
+#### Thank you..!!
