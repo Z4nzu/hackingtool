@@ -1,11 +1,9 @@
-### All in One Hacking tool For Hackers Created By :- Mr.Z4nzu
+### All in One Hacking tool For Hackers
 ![](https://img.shields.io/github/license/Z4nzu/hackingtool)
 ![](https://img.shields.io/github/issues/Z4nzu/hackingtool)
 ![](https://img.shields.io/badge/Python-3-blue)
 ![](https://img.shields.io/github/stars/Z4nzu/hackingtool)
 ![](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2F_Zinzu07)
-
-<img src ="https://img.shields.io/badge/Important-notice-red" />
 
 ### In Beta
 This project still in BETA so you may face problems,
@@ -133,7 +131,8 @@ Please open an issue so i'll fix them..!!
 [UndeadSec](https://github.com/UndeadSec)
 ## [MIT License](https://raw.githubusercontent.com/Z4nzu/hackingtool/master/LICENSE)
 
-<h4>Please Use Only For Educational Purpose.Don't Use for illegal Activity</h4>
+<img src ="https://img.shields.io/badge/Important-notice-red" />
+<h4>Please Don't Use for illegal Activity</h4>
 
 ## Follow on :- [GitHub](https://github.com/Z4nzu) [Twitter](https://twitter.com/_Zinzu07)
 #### Contact Via Twitter or Email For Suggestion And Queries 
