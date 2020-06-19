@@ -43,15 +43,13 @@ Logo="""\033[33m
   ███    ███     ███    ███ ███    █▄    ███▐██▄   ███  ███   ███   ███    ███          ███     ███    ███ ███    ███ ███       
   ███    ███     ███    ███ ███    ███   ███ ▀███▄ ███  ███   ███   ███    ███          ███     ███    ███ ███    ███ ███▌    ▄ 
   ███    █▀      ███    █▀  ████████▀    ███   ▀█▀ █▀    ▀█   █▀    ████████▀          ▄████▀    ▀██████▀   ▀██████▀  █████▄▄██ 
-                                         ▀                                                                            ▀                                
-        【T】【h】【i】【s】 【T】【o】【o】【l】 【C】【r】【e】【a】【t】【e】【d】 【B】【y】 【Z】【4】【n】【z】【u】
-                                    
+                                         ▀                                                                            ▀                             
+
                                     \033[97m[!] https://github.com/Z4nzu
-        \033[91m[!] This Tool is Only For Educational Purpose Please Don\'t use for Any illegal Activity [!]
 \033[97m """
 def menu():
     print(Logo + """\033[0m 
-    \033[91m[!] This Tool Must Run as a Root..[!]] \033[97m
+    \033[91m[!] This Tool Must Run as a Root..[!] \033[97m
     [00]AnonSurf                  
     [01]Information Gathering
     [02]Password Attack && Wordlist Generator
@@ -211,6 +209,7 @@ def info():
             [5]  Xerosploit
             [6]  Advanced XSS Detection Suite
             [7]  ReconSpider(For All Scaning)
+            [8]  IsItDown (Check Website Down/Up)
             [99] Back To Main Menu 
         """)
     choice2 = input("Z4nzu =>> ")
@@ -234,6 +233,9 @@ def info():
     elif choice2 == "7":
         clearScr()
         reconspider()
+    elif choicee2 == "8":
+        clearScr()
+        isitdown()
     elif choice2 == "99":
         clearScr()
         menu()
@@ -1490,8 +1492,8 @@ def sqlmap():
         print("Downloaded Successfully..!!")
         menu()
     elif userchoice == "2":
-        os.system("cd sqlmap && python sqlmap.py -h")
-        print("echo \"[!]python sqlmap.py -u [<http://example.com>] --batch --banner \n[!]For More Usage : https://github.com/sqlmapproject/sqlmap/wiki/Usage\"|boxes -d boy")    
+        os.system("cd sqlmap-dev && python sqlmap.py -h")
+        os.system("echo \"[!]python sqlmap.py -u [<http://example.com>] --batch --banner \n[!]For More Usage : https://github.com/sqlmapproject/sqlmap/wiki/Usage \"|boxes -d boy")    
     elif userchoice == "99":
         sqltool()
     else :
