@@ -124,7 +124,6 @@ Please open an issue so i'll fix them..!!
     sudo hackingtool
 
  After Following All Steps Just Type In Terminal **root@kaliLinux:~** **hackingtool**
-### This Tool is in Beta Please Check And Send Querie,Errors, Suggestion & Also Send Feedback :)
 #### Some tool used in hackingtool By below authors :
 [thelinuxchoice](https://github.com/thelinuxchoice.git)
 
