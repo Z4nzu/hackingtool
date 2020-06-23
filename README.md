@@ -107,6 +107,7 @@ Please open an issue so i'll fix them..!!
 - SteganoHide
 - StegnoCracker
 - Whitespace
+
 ![](https://imgur.com/hxyymEF.png)
 
 ## Installation in Linux :
@@ -135,8 +136,7 @@ Please open an issue so i'll fix them..!!
 
 ## Follow on :- [GitHub](https://github.com/Z4nzu) [Twitter](https://twitter.com/_Zinzu07)
 #### Contact Via Twitter or Email For Suggestion And Queries 
-
-### Contribute :)
+##### DM If you know better tool that is not in hackingtool 
 Feel free to make a pull request if you feel that you have improved this tool 
 
 #### Don't Forgot to share with Your Friends 
