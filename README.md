@@ -2,7 +2,9 @@
 ![](https://img.shields.io/github/license/Z4nzu/hackingtool)
 ![](https://img.shields.io/github/issues/Z4nzu/hackingtool)
 ![](https://img.shields.io/badge/Python-3-blue)
+![](https://img.shields.io/github/forks/Z4nzu/hackingtool)
 ![](https://img.shields.io/github/stars/Z4nzu/hackingtool)
+![](https://img.shields.io/github/downloads/Z4nzu/hackingtool/total)
 ![](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2F_Zinzu07)
 
 ### In Beta
@@ -109,6 +111,10 @@ Please open an issue so i'll fix them..!!
 - Whitespace
 
 ![](https://imgur.com/hxyymEF.png)
+![](https://github.com/Z4nzu/hackingtool/blob/master/A0.png)
+!https://github.com/Z4nzu/hackingtool/blob/master/A1.png]
+![](https://github.com/Z4nzu/hackingtool/blob/master/a3.png)
+![](https://github.com/Z4nzu/hackingtool/blob/master/a4.png)
 
 ## Installation in Linux :
 
