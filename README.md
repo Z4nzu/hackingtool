@@ -122,7 +122,7 @@ Please open an issue so i'll fix them..!!
 
     git clone https://github.com/Z4nzu/hackingtool.git
     
-    chmod -R 755 && cd hackingtool
+    chmod -R 755 hackingtool && cd hackingtool
     
     sudo pip3 install -r requirement.txt
     
