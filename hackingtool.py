@@ -1668,14 +1668,24 @@ if __name__ == "__main__":
                     os.chdir("/home/{0}/Desktop/hackingtool/".format(notuser))
                     menu()
             elif os.geteuid() == 0:
-                os.chdir("/home/{0}/Desktop/".format(uname))
-                if os.path.isdir('hackingtool'):
-                    os.chdir("/home/{0}/Desktop/hackingtool/".format(uname))
-                    menu()
-                else:
-                    os.system("mkdir hackingtool")
-                    os.chdir("/home/{0}/Desktop/hackingtool/".format(uname))
-                    menu()
+                if path.exists("home/{0}/Desktop/".format(notuser)):
+                    os.chdir("/home/{0}/Desktop/".format(notuser))
+                    if os.path.isdir('hackingtool'):
+                        os.chdir("/home/{0}/Desktop/hackingtool/".format(notuser))
+                        menu()
+                    else:
+                        os.system("mkdir hackingtool")
+                        os.chdir("/home/{0}/Desktop/hackingtool/".format(notuser))
+                        menu()
+                else :
+                    os.chdir("/home/{0}/Desktop/".format(uname))
+                    if os.path.isdir('hackingtool'):
+                        os.chdir("/home/{0}/Desktop/hackingtool/".format(uname))
+                        menu()
+                    else:
+                        os.system("mkdir hackingtool")
+                        os.chdir("/home/{0}/Desktop/hackingtool/".format(uname))
+                        menu()
             elif uname == 'None':
                 os.chdir("/home/{0}/Desktop/".format(notuser))
                 if os.path.isdir('hackingtool'):
