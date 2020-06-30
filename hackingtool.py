@@ -1677,15 +1677,25 @@ if __name__ == "__main__":
                         os.system("mkdir hackingtool")
                         os.chdir("/home/{0}/Desktop/hackingtool/".format(notuser))
                         menu()
-                else :
-                    os.chdir("/home/{0}/Desktop/".format(uname))
+                elif uname == 'None':
+                    os.chdir("/home/{0}/Desktop/".format(notuser))
                     if os.path.isdir('hackingtool'):
-                        os.chdir("/home/{0}/Desktop/hackingtool/".format(uname))
+                        os.chdir("/home/{0}/Desktop/hackingtool/".format(notuser))
                         menu()
                     else:
                         os.system("mkdir hackingtool")
-                        os.chdir("/home/{0}/Desktop/hackingtool/".format(uname))
+                        os.chdir("/home/{0}/Desktop/hackingtool/".format(notuser))
                         menu()
+                else :
+                    if path.exists("/home/{0}/Desktop/".format(uname)):
+                        os.chdir("/home/{0}/Desktop/".format(uname))
+                        if os.path.isdir('hackingtool'):
+                            os.chdir("/home/{0}/Desktop/hackingtool/".format(uname))
+                            menu()
+                        else:
+                            os.system("mkdir hackingtool")
+                            os.chdir("/home/{0}/Desktop/hackingtool/".format(uname))
+                            menu()
             elif uname == 'None':
                 os.chdir("/home/{0}/Desktop/".format(notuser))
                 if os.path.isdir('hackingtool'):
@@ -1706,6 +1716,8 @@ if __name__ == "__main__":
                 os.system("mkdir hackingtool")
                 os.chdir("data/data/com.termux/files/home/hackingtool/")
                 menu()
+        else :
+            print("Sorry Open New Issue..!!")
     except KeyboardInterrupt:
         
         print("\n Sorry ..!!!")
