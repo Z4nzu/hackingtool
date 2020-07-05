@@ -106,13 +106,19 @@ def menu():
         wifijamming()
     elif choice == "12" :
         clearScr()
-        socialattack()       
+        print("In working ")
+        time.sleep(3)
+        pass
+        #socialattack()       
     elif choice == "13" :
         clearScr()
         socialfinder()
     elif choice == "14":
         clearScr()
-        androidhack()
+        print("In working ")
+        time.sleep(3)
+        pass
+        #androidhack()
     elif choice == "15":
         clearScr()
         steganography()
@@ -505,7 +511,7 @@ def bluepot():
         menu()
 
 def fluxion():
-    os.system("echo \"fluxion is a wifi key cracker using evil twin attack..\nyou need a wireless adaptor for this tool\"| boxes -d boy | lolcAT")
+    os.system("echo \"fluxion is a wifi key cracker using evil twin attack..\nyou need a wireless adaptor for this tool\"| boxes -d boy | lolcat")
     choice = input("[1]Install [2]Run [99]Back >>")
     if choice == "1":
         os.system("git clone https://github.com/thehackingsage/Fluxion.git") 
