@@ -1,12 +1,15 @@
 ### All in One Hacking tool For Hackers
 ![](https://img.shields.io/github/license/Z4nzu/hackingtool)
 ![](https://img.shields.io/github/issues/Z4nzu/hackingtool)
+![](https://img.shields.io/github/issues-closed/Z4nzu/hackingtool)
 ![](https://img.shields.io/badge/Python-3-blue)
 ![](https://img.shields.io/github/forks/Z4nzu/hackingtool)
 ![](https://img.shields.io/github/stars/Z4nzu/hackingtool)
-![](https://img.shields.io/github/downloads/Z4nzu/hackingtool/total)
+![](https://img.shields.io/github/last-commit/Z4nzu/hackingtool)
+![](https://img.shields.io/badge/platform-Linux%20%7C%20KaliLinux%20%7C%20ParrotOs-blue)
 ![](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2F_Zinzu07)
 
+## Added New Tools :new:
 ### In Beta
 This project still in BETA so you may face problems,
 Please open an issue so i'll fix them..!!
@@ -109,12 +112,25 @@ Please open an issue so i'll fix them..!!
 - SteganoHide
 - StegnoCracker
 - Whitespace
+### Ddos Attack tool
+- SlowLoris
+- SYN Flood DDoS Weapon 
+- UFOnet
+- GoldenEye
+### XSS Attack tool
+- DalFox(Finder of XSS)
+- XSS Payload Generator
+- Extended XSS Searcher and Finder
+- XSS-Freak
+- XSpear 
+- XSSCon
+- XanXSS
 
-![](https://imgur.com/hxyymEF.png)
-![](https://github.com/Z4nzu/hackingtool/blob/master/A0.png)
-![](https://github.com/Z4nzu/hackingtool/blob/master/A1.png)
-![](https://github.com/Z4nzu/hackingtool/blob/master/a3.png)
-![](https://github.com/Z4nzu/hackingtool/blob/master/a4.png)
+![](https://github.com/Z4nzu/hackingtool/blob/master/images/A00.png)
+![](https://github.com/Z4nzu/hackingtool/blob/master/images/A0.png)
+![](https://github.com/Z4nzu/hackingtool/blob/master/images/A1.png)
+![](https://github.com/Z4nzu/hackingtool/blob/master/images/A2.png)
+![](https://github.com/Z4nzu/hackingtool/blob/master/images/A4.png)
 
 ## Installation in Linux :
 
@@ -131,10 +147,8 @@ Please open an issue so i'll fix them..!!
     sudo hackingtool
 
  After Following All Steps Just Type In Terminal **root@kaliLinux:~** **hackingtool**
-#### Some tool used in hackingtool By below authors :
-[thelinuxchoice](https://github.com/thelinuxchoice.git)
+#### Thanks to original Author of the tools used in hackingtool
 
-[UndeadSec](https://github.com/UndeadSec)
 ## [MIT License](https://raw.githubusercontent.com/Z4nzu/hackingtool/master/LICENSE)
 
 <img src ="https://img.shields.io/badge/Important-notice-red" />
