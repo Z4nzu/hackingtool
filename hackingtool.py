@@ -29,7 +29,6 @@ from urllib.parse import urlparse
 from xml.dom import minidom
 from optparse import OptionParser
 from time import sleep
-from platform import system
 Logo="""\033[33m
 
    ▄█    █▄       ▄████████  ▄████████    ▄█   ▄█▄  ▄█  ███▄▄▄▄      ▄██████▄           ███      ▄██████▄   ▄██████▄   ▄█       
@@ -335,6 +334,7 @@ def passwd():
                 [02]WordlistCreator
                 [03]Goblin WordGenerator
                 [04]Credential reuse attacks
+                [05]Password list((1.4 Billion Clear Text Password))
                 [99]Back To Main Menu
        """)
     passchoice = input("Z4nzu ==>> ")
@@ -350,6 +350,9 @@ def passwd():
     elif passchoice == "4" or passchoice == "04":
         clearScr()
         credentialattack()
+    elif passchoice == "5" or passchoice == "05":
+        clearScr()
+        showme()
     elif passchoice == "99":
         clearScr()
         menu()
@@ -833,21 +836,29 @@ def forensic():
     clearScr()
     os.system("figlet -f standard Forensic Tools | lolcat ")
     print("""
-        [1] Bulk_extractor
-        [2] Disk Clone and ISO Image Aquire
-        [3] AutoSpy 
+        [1] Autopsy
+        [2] Wireshark
+        [3] Bulk_extractor 
+        [4] Disk Clone and ISO Image Aquire
+        [5] Toolsley
         [99]Back to Menu
     """)
     choice = input("Z4nzu ==>>")
-    if choice == "1" :
+    if choice == "3" :
         clearScr()
         bulkextractor()
-    elif choice == "2":
+    elif choice == "4":
         clearScr()
         guymager()
-    elif choice == "3":
+    elif choice == "1":
         clearScr()
         autopsy()
+    elif choice == "2":
+        clearScr()
+        wireshark()
+    elif choice == "5":
+        clearScr()
+        toolsley()
     elif choice == "99":
         menu()
     elif choice == "":
@@ -905,6 +916,32 @@ def autopsy():
     if choice == "":
         forensic()
     elif choice =="99":
+        forensic()
+    else :
+        menu()
+
+def wireshark():
+    os.system("echo \" Wireshark is a network capture and analyzer \ntool to see what’s happening in your network.\n And also investigate Network related incident \" | boxes -d boy | lolcat")
+    choice = input("[1]Run [99]Back >> ")
+    if choice == "1":
+        os.system("sudo wireshark")
+    elif choice == "99":
+        forensic()
+    elif choice == "":
+        forensic()
+    else :
+        menu()
+
+def toolsley():
+    os.system("echo \" Toolsley got more than ten useful tools for investigation.\n\b File signature verifier\n\b File identifier \n\b Hash & Validate \n\b Binary inspector \n\bEncode text \n\b Data URI generator \n\b Password generator \" | boxes -d boy | lolcat")
+    userchoice = input("[1]Open [99]Back >> ")
+    if userchoice == "1":
+        print("Trying to open WebBrowser ")
+        time.sleep(3)
+        webbrowser.open_new_tab('https://www.toolsley.com/') 
+    elif userchoice == "99":
+        forensic()
+    elif userchoice == "":
         forensic()
     else :
         menu()
@@ -1012,23 +1049,7 @@ def fastssh():
         routexp()
     else :
         menu()
-def Ddos():
-    os.system("figlet -f standard -c DDOS Attack Tools | lolcat")
-    print("""
-        [1]SlowLoris
-        [99]Back
-    """)
-    choice =input("Z4nzu >> ")
-    if choice == "1":
-        clearScr()
-        slowloris()
-    elif choice == "2":
-        pass
-    elif choice == "99":
-        others()
-    else :
-        print("Invalid ...")
-        menu()
+
 def webAttack():
     clearScr()
     os.system("figlet 'Web Attack Tools' -f standard -c | lolcat")
@@ -1071,19 +1092,6 @@ def web2attack():
     else :
         menu()
 
-def slowloris():
-    os.system("echo\"Slowloris is basically an HTTP Denial of Service attack.It send lots of HTTP Request\"|boxes -d boy | lolcat")
-    choice = input("[1]install [2]Run [99]Back >> ")
-    if choice == "1":
-        os.system("sudo pip install slowloris")
-    elif choice == "2":
-        print(Logo)
-        ts=input("Enter Target Site :-")
-        os.system("slowloris %s"%ts)
-    elif choice == "99":
-        webAttack()
-    else :
-        menu()
 
 def skipfish():
     userchoice = input("[1]Run [99]Back >> ")
@@ -1096,7 +1104,6 @@ def skipfish():
         menu()
     
 def subdomain():
-    
     choice=input("[1]install [2]Run [99]BAck >> ")
     if choice == "1":
         os.system("sudo pip install requests argparse dnspython")
@@ -1595,9 +1602,11 @@ def sqlmap():
         menu()
 
 def others():
-    print("""
+    clearScr()
+    print(Logo + """
     [1]Ddos Attack Tools
-    [2]SMWYG-Show-Me-What-You-Got (1.4 Billion Clear Text Password)
+    [2]XSS Attack Tools
+    [3]HatCloud(Bypass CloudFlare for IP)
     [99]BAck
     """)
     choice = input("Z4nzu =>>")
@@ -1606,7 +1615,10 @@ def others():
         Ddos()
     elif choice == "2":
         clearScr()
-        showme()
+        xsstools()
+    elif choice == "3":
+        clearScr()
+        hatcloud()
     elif choice == "99":
         menu()
     elif choice == "":
@@ -1630,6 +1642,250 @@ def showme():
         others()
     else :
         menu()
+
+def hatcloud():
+    os.system("echo \"HatCloud build in Ruby. It makes bypass in CloudFlare for discover real IP.\n\b [!]https://github.com/HatBashBR/HatCloud \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/HatBashBR/HatCloud.git")
+        others()
+    elif choice == "2":
+        tsite=input("Enter Site >>")
+        os.system("cd HatCloud;sudo ruby hatcloud.rb -b {0}".format(tsite))
+    elif choice =="99":
+        others()
+    else :
+        others()
+
+def Ddos():
+    clearScr()
+    os.system("figlet -f standard -c DDOS Attack Tools | lolcat")
+    print("""
+        [1]SlowLoris
+        [2]aSYNcrone | Multifunction SYN Flood DDoS Weapon 
+        [3]UFOnet
+        [4]GoldenEye
+        [99]Back
+    """)
+    choice =input("Z4nzu >> ")
+    if choice == "1":
+        clearScr()
+        slowloris()
+    elif choice == "2":
+        asyncrone()
+    elif choice == "3":
+        ufonet()
+    elif choice == "4":
+        goldeneye()
+    elif choice == "99":
+        others()
+    else :
+        print("Invalid ...")
+        menu()
+
+def slowloris():
+    os.system("echo \"Slowloris is basically an HTTP Denial of Service attack.It send lots of HTTP Request\"|boxes -d boy | lolcat")
+    choice = input("[1]install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("sudo pip install slowloris")
+        Ddos()
+    elif choice == "2":
+        ts=input("Enter Target Site :-")
+        os.system("slowloris %s"%ts)
+    elif choice == "99":
+        Ddos()
+    else :
+        menu()
+
+def asyncrone():
+    os.system("echo \"aSYNcrone is a C language based, mulltifunction SYN Flood DDoS Weapon.\nDisable the destination system by sending a SYN packet intensively to the destination.\n\b [!] https://github.com/fatihsnsy/aSYNcrone \"|boxes -d boy | lolcat")
+    choice = input("[1]install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/fatih4842/aSYNcrone.git")
+        os.system("cd aSYNcrone;sudo gcc aSYNcrone.c -o aSYNcrone -lpthread")
+        Ddos()
+    elif choice == "2":
+        sport=input("Enter Source Port >> ")
+        tip=input("Enter Target IP >> ")
+        tport=input("Enter Target port >> ")
+        os.system("cd aSYNcrone;sudo ./aSYNcrone {0} {1} {2} 1000".format(sport,tip,tport))
+    elif choice == "99":
+        Ddos()
+    else :
+        menu()
+
+def ufonet():
+    os.system("echo \"UFONet - is a free software, P2P and cryptographic -disruptive \n toolkit- that allows to perform DoS and DDoS attacks\n\b More Usage Visit [!]https://github.com/epsylon/ufonet \"|boxes -d boy | lolcat")
+    choice = input("[1]install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("sudo git clone https://github.com/epsylon/ufonet.git")
+        os.system("cd ufonet;sudo python setup.py install")
+        Ddos()
+    elif choice == "2":
+        os.system("sudo ./ufonet --gui")
+    elif choice == "99":
+        Ddos()
+    else :
+        menu()
+    
+def goldeneye():
+    os.system("echo \"More Info [!]https://github.com/jseidl/GoldenEye \"|boxes -d boy | lolcat")
+    choice = input("[1]install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("sudo git clone https://github.com/jseidl/GoldenEye.git;chmod -R 755 GoldenEye")
+        Ddos()
+    elif choice == "2":
+        os.system("cd GoldenEye ;sudo ./goldeneye.py")
+        print("\033[96m Go to Directory \n [*] USAGE: ./goldeneye.py <url> [OPTIONS] ")
+    elif choice == "99":
+        Ddos()
+    else :
+        menu()
+
+
+def xsstools():
+    clearScr()
+    os.system("figlet -f standard -c XSS Attack Tools | lolcat")
+    print("""
+        [1] DalFox(Finder of XSS)
+        [2] XSS Payload Generator
+        [3] Extended XSS Searcher and Finder
+        [4] XSS-Freak
+        [5] XSpear 
+        [6] XSSCon
+        [7] XanXSS
+        [99]BAck
+    """)
+    choice = input("Z4nzu >> ")
+    if choice == "1":
+        dalfox()
+    elif choice =="2":
+        xsspayload()
+    elif choice == "99":
+        others()
+    elif choice == "3":
+        xssfinder()
+    elif choice == "4":
+        xssfreak()
+    elif choice == "5":
+        xspear()
+    elif choice == "6":
+        xsscon()
+    elif choice == "7":
+        xanxss()
+    elif choice == "":
+        others()
+    else :
+        others()
+
+def dalfox():
+    os.system("echo \"XSS Scanning and Parameter Analysis tool.\"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("sudo apt-get install golang")
+        os.system("sudo git clone https://github.com/hahwul/dalfox ")
+        os.system("cd dalfox;go install")
+        xsstools()
+    elif choice == "2":
+        os.system("~/go/bin/dalfox")
+        print("\033[96m You Need To Run manually by using  [!]~/go/bin/dalfox [options] ")
+    elif choice =="99":
+        xsstools()
+    else :
+        others()
+
+def xsspayload():
+    os.system("echo \" XSS PAYLOAD GENERATOR -XSS SCANNER-XSS DORK FINDER \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/capture0x/XSS-LOADER.git")
+        os.system("cd XSS-LOADER;sudo pip3 install -r requirements.txt")
+        xsstools()
+    elif choice == "2":
+        os.system("cd XSS-LOADER;sudo python3 payloader.py")
+    elif choice =="99":
+        xsstools()
+    else :
+        others()
+
+def xssfinder():
+    os.system("echo \"Extended XSS Searcher and Finder \n\b [*]https://github.com/Damian89/extended-xss-search \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("git glone https://github.com/Damian89/extended-xss-search.git")
+        print("""\033[96m 
+        Follow This Steps After Installation :-
+            \033[31m [*]Go To extended-xss-search directory,
+                and Rename the example.app-settings.conf to app-settings.conf
+        """)
+    elif choice == "2":
+            print("""\033[96m 
+            You have To Add Links to scan
+        \033[31m[!]Go to extended-xss-search
+                [*]config/urls-to-test.txt
+                [!]python3 extended-xss-search.py
+        """)
+    elif choice =="99":
+        xsstools()
+    else :
+        others()
+
+def xssfreak():
+    os.system("echo \" XSS-Freak is an XSS scanner fully written in python3 from scratch\n\b [!]https://github.com/PR0PH3CY33/XSS-Freak \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/PR0PH3CY33/XSS-Freak.git")
+        os.system("cd XSS-Freak;sudo pip3 install -r requirements.txt")
+        xsstools()
+    elif choice == "2":
+        os.system("cd XSS-Freak;sudo python3 XSS-Freak.py")
+    elif choice =="99":
+        xsstools()
+    else :
+        others()
+
+def xspear():
+    os.system("echo \" XSpear is XSS Scanner on ruby gems\n\b [!]https://github.com/hahwul/XSpear \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("gem install XSpear")
+        xsstools()
+    elif choice == "2":
+        os.system("XSpear -h")
+    elif choice =="99":
+        xsstools()
+    else :
+        others()
+
+def xsscon():
+    os.system("echo \" [!]https://github.com/menkrep1337/XSSCon \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/menkrep1337/XSSCon")
+        os.system("sudo chmod 755 -R XSSCon")
+        xsstools()
+    elif choice == "2":
+        uinput= input("Enter Website >> ")
+        os.system("cd XSSCon;python3 xsscon.py -u {0}".format(uinput))
+    elif choice =="99":
+        xsstools()
+    else :
+        others()
+
+def xanxss():
+    os.system("echo \" XanXSS is a reflected XSS searching tool\n that creates payloads based from templates\n\b [!]https://github.com/Ekultek/XanXSS \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/Ekultek/XanXSS.git ")
+        xsstools()
+    elif choice == "2":
+        os.system("cd XanXSS ;python xanxss.py -h")
+        print("\033[96m You Have to run it manually By Using \n [!]python xanxss.py [Options] ")
+    elif choice =="99":
+        xsstools()
+    else :
+        others()
+
 
 def updatesys():
     os.system("sudo apt update && sudo apt full-upgrade -y")
@@ -1707,15 +1963,6 @@ if __name__ == "__main__":
                     menu()
             else :
                 print("Sorry ...!!")
-        elif path.exists('/data'):
-            os.chdir("data/data/com.termux/files/home/")
-            if os.path.isdir('hackingtool'):
-                os.chdir("data/data/com.termux/files/home/hackingtool/")
-                menu()
-            else :
-                os.system("mkdir hackingtool")
-                os.chdir("data/data/com.termux/files/home/hackingtool/")
-                menu()
         else :
             print("Sorry Open New Issue..!!")
     except KeyboardInterrupt:
