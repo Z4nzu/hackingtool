@@ -430,7 +430,7 @@ def cupp():
     elif cc == "99" :
         passwd()
     else :
-        main()
+        menu()
 
 def wlcreator():
     os.system("echo \" WlCreator is a C program that can create all possibilities of passwords,\n and you can choose Lenght, Lowercase, Capital, Numbers and Special Chars\" | boxes -d boy | lolcat")
@@ -1174,7 +1174,7 @@ def subdomain():
     elif choice == "99" :
         webAttack()
     else :
-        main()
+        menu()
 
 def checkurl():
     os.system("echo \" Detect evil urls that uses IDN Homograph Attack.\n\t[!]python3 checkURL.py --url google.com \" | boxes -d boy | lolcat")
