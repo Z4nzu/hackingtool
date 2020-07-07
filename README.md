@@ -9,10 +9,12 @@
 ![](https://img.shields.io/badge/platform-Linux%20%7C%20KaliLinux%20%7C%20ParrotOs-blue)
 ![](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2F_Zinzu07)
 
+#### Your Favourite Tool is not in hackingtool or Suggestions Please [CLICK HERE](https://forms.gle/b235JoCKyUq5iM3t8)
 ## Update Available :new:
 - [x] Added New Tools
 - [x] Fix Errors
 - [X] Update hackingtool Directly using [17]
+
 ### In Beta
 This project still in BETA so you may face problems,
 Please open an issue so i'll fix them..!!
@@ -156,14 +158,13 @@ Please open an issue so i'll fix them..!!
 #### Thanks to original Author of the tools used in hackingtool
 
 ## [MIT License](https://raw.githubusercontent.com/Z4nzu/hackingtool/master/LICENSE)
-
 <img src ="https://img.shields.io/badge/Important-notice-red" />
 <h4>Please Don't Use for illegal Activity</h4>
 
-## Follow on :- [GitHub](https://github.com/Z4nzu) [Twitter](https://twitter.com/_Zinzu07)
-#### Contact Via Twitter or Email For Suggestion And Queries 
-##### DM If you know better tool that is not in hackingtool 
-Feel free to make a pull request if you feel that you have improved this tool 
+## Follow ➤ [GitHub](https://github.com/Z4nzu) [Twitter](https://twitter.com/_Zinzu07)
+#### Contact Via Twitter or Email
+
+Feel free to make a pull request if you feel that you have improve this tool 
 
 #### Don't Forgot to share with Your Friends 
 #### Thank you..!!
