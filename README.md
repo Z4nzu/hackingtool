@@ -9,7 +9,10 @@
 ![](https://img.shields.io/badge/platform-Linux%20%7C%20KaliLinux%20%7C%20ParrotOs-blue)
 ![](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2F_Zinzu07)
 
-## Added New Tools :new:
+## Update Available :new:
+- [x] Added New Tools
+- [x] Fix Errors
+- [X] Update hackingtool Directly using [17]
 ### In Beta
 This project still in BETA so you may face problems,
 Please open an issue so i'll fix them..!!
@@ -27,11 +30,14 @@ Please open an issue so i'll fix them..!!
 - Payload Creator
 - Router Exploit
 - Wifi Jamming
-- SocialMedia Attack
+- XSS Attack Tool
 - SocialMedia Finder 
+- DDos Attack Tools
+- Steganography Tools
+- IDN Homograph Attack 
+- Hash Cracking Tools
+- SocialMedia Attack
 - Android Hack
-- Steganography
-- Other Tools 
 - Update System
 
 ### AnonSurf
@@ -43,8 +49,11 @@ Please open an issue so i'll fix them..!!
 - Port Scanning
 - Host To IP
 - Xerosploit
-- Advanced XSS Detection Suite
+- Infoga - Email OSINT
 - ReconSpider 
+- RED HAWK (All In One Scanning)
+- ReconDog
+- Striker
 ### Password Attack
 - Cupp
 - WordlistCreator
@@ -60,6 +69,12 @@ Please open an issue so i'll fix them..!!
 - EvilTwin 
 ### SQL Injection Tools 
 - sqlmap tool
+- NoSqlMap
+- Damn Small SQLi Scanner
+- Explo
+- Blisqy - Exploit Time-based blind-SQL injection
+- Leviathan - Wide Range Mass Audit Toolkit 
+- SQLScan
 ### Phishing Attack
 - Setoolkit 
 - SocialFish
@@ -91,23 +106,9 @@ Please open an issue so i'll fix them..!!
 ### Router Exploitation
 - RouterSploit
 - Fastssh
-### SocialMedia Attack
-- Instagram Attack
-- Tweeter Attack
-- Facebook Attack
-- Application Checker
 ### SocialMedia Finder
 - Find SocialMedia By Facial Recognation System
 - Find SocialMedia By UserName
-### Android HAcking 
-- Keydroid 
-- MySMS
-- Getdroid
-- DroidFiles (Get files from Android Directories)
-- Lockphish (Grab target LOCK PIN)
-- Whatsapp Attack
-- DroidCam (Capture Image)
-- EvilApp (Hijack Session)
 ### Steganography
 - SteganoHide
 - StegnoCracker
@@ -120,11 +121,14 @@ Please open an issue so i'll fix them..!!
 ### XSS Attack tool
 - DalFox(Finder of XSS)
 - XSS Payload Generator
+- Advanced XSS Detection Suite
 - Extended XSS Searcher and Finder
 - XSS-Freak
 - XSpear 
 - XSSCon
 - XanXSS
+### Hash Cracking Tool
+- Hash Buster
 
 ![](https://github.com/Z4nzu/hackingtool/blob/master/images/A00.png)
 ![](https://github.com/Z4nzu/hackingtool/blob/master/images/A0.png)
@@ -138,7 +142,9 @@ Please open an issue so i'll fix them..!!
 
     git clone https://github.com/Z4nzu/hackingtool.git
     
-    chmod -R 755 hackingtool && cd hackingtool
+    chmod -R 755 hackingtool  
+    
+    cd hackingtool
     
     sudo pip3 install -r requirement.txt
     
