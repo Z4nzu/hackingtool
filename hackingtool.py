@@ -58,12 +58,12 @@ def menu():
     [09]Payload Creator
     [10]Router Exploit
     [11]Wifi Jamming
-    [12]SocialMedia Attack
+    [12]Ddos Attack Tools 
     [13]SocialMedia Finder 
-    [14]Android Hack
+    [14]XSS Attack Tools
     [15]Steganography
     [16]More Tools 
-    [17]Update System
+    [17]Update System OR Hackingtool
     [99]Exit
     """)
     
@@ -106,19 +106,13 @@ def menu():
         wifijamming()
     elif choice == "12" :
         clearScr()
-        print("In working ")
-        time.sleep(3)
-        pass
-        #socialattack()       
+        Ddos()    
     elif choice == "13" :
         clearScr()
         socialfinder()
     elif choice == "14":
         clearScr()
-        print("In working ")
-        time.sleep(3)
-        pass
-        #androidhack()
+        xsstools()
     elif choice == "15":
         clearScr()
         steganography()
@@ -137,7 +131,7 @@ def menu():
         menu()
     else:
         print("Wrong Input...!!")
-        time.sleep(3)
+        time.sleep(1)
         menu()
 
 def anonsurf():
@@ -189,6 +183,7 @@ def multitor():
         menu()
 
 def info():
+    clearScr()
     os.system("figlet -f standard -c Information Gathering Tools | lolcat")
     print("""
             [1]  Nmap 
@@ -196,9 +191,12 @@ def info():
             [3]  Port Scanning
             [4]  Host To IP
             [5]  Xerosploit
-            [6]  Advanced XSS Detection Suite
+            [6]  RED HAWK (All In One Scanning)
             [7]  ReconSpider(For All Scaning)
             [8]  IsItDown (Check Website Down/Up)
+            [9]  Infoga - Email OSINT
+            [10] ReconDog
+            [11] Striker
             [99] Back To Main Menu 
         """)
     choice2 = input("Z4nzu =>> ")
@@ -218,45 +216,114 @@ def info():
         xerosploit()
     if choice2 == "6":
         clearScr()
-        XSStrike()
+        redhawk()
     elif choice2 == "7":
         clearScr()
         reconspider()
     elif choice2 == "8":
-        clearScr()
         isitdown()
+    elif choice2 == "9":
+        clearScr()
+        infogaemail()
     elif choice2 == "99":
         clearScr()
         menu()
+    elif choice2 == "10":
+        clearScr()
+        recondog()
+    elif choice2 == "11":
+        clearScr()
+        striker()
     elif choice2 == "":
         menu()
     else:
         menu()
+
+def isitdown():
+    os.system("echo \"Check Website Is Online or Not \"|boxes -d boy | lolcat")
+    choice = input("[1]Open [99]Back >> ")
+    if choice == "1":
+        webbrowser.open_new_tab("https://www.isitdownrightnow.com/")
+    elif choice == "99":
+        info()
+    else :
+        menu()
+
 
 def nmap():
     nmapchoice = input("[1]Install [99]BAck >> ")
     if nmapchoice == "1" :
         os.system("sudo git clone https://github.com/nmap/nmap.git")
         os.system("sudo chmod -R 755 nmap && cd nmap && sudo ./configure && make && sudo make install")
-    # elif nmapchoice == "2":
-    #     os.system("sudo nmap")
+        info()
     elif nmapchoice == "99":
         info()
     else:
         menu()
-    
+
+def striker():
+    os.system("echo \"Recon & Vulnerability Scanning Suite [!]https://github.com/s0md3v/Striker \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/s0md3v/Striker.git")
+        os.system("cd Striker && pip3 install -r requirements.txt")
+        info()
+    elif choice == "2":
+        tsite= input("Enter Site Name (example.com) >> ")
+        os.system("cd Striker && sudo python3 striker.py {0}".format(tsite))
+    elif choice == "99":
+        info()
+    else :
+        menu()
+
+
+def redhawk():
+    os.system("echo \"All in one tool for Information Gathering and Vulnerability Scanning. \n [!]https://github.com/Tuhinshubhra/RED_HAWK \n\n [!]Please Use command [FIX] After Running Tool first time \" | boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/Tuhinshubhra/RED_HAWK")
+        info()
+    elif choice == "2":
+        os.system("cd RED_HAWK;php rhawk.php")
+    elif choice == "99":
+        info()
+    else :
+        menu()
+
+def infogaemail():
+    os.system("echo \"Infoga is a tool gathering email accounts informations\n(ip,hostname,country,...) from different public source \n[!]https://github.com/m4ll0k/Infoga \"| boxes -d boy |lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/m4ll0k/Infoga.git")
+        os.system("cd infoga;sudo python setup.py install")
+        info()
+    elif choice == "2":
+        os.system("cd infoga;python infoga.py")
+    elif choice == "99":
+        info()
+    else :
+        menu()
+
+def recondog():
+    os.system("echo \"ReconDog Information Gathering Suite  \n[!]https://github.com/s0md3v/ReconDog \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/s0md3v/ReconDog.git ")
+        info()
+    elif choice == "2":
+        os.system("cd ReconDog;sudo python dog")
+    elif choice == "99":
+        info()
+    else :
+        menu()
+
 def Dracnmap():
-    os.system("echo \"Dracnmap is an open source program which is using to \nexploit the network and gathering information with nmap help\" | boxes -d boy | lolcat")
-    dracnap = input("[1]Install [2]Run [99]Back >> ")
+    os.system("echo \"Dracnmap is an open source program which is using to \nexploit the network and gathering information with nmap help \n [!]https://github.com/Screetsec/Dracnmap \" | boxes -d boy | lolcat")
+    dracnap = input("[1]Install [99]Back >> ")
     if dracnap == "1":
         os.system("sudo git clone https://github.com/Screetsec/Dracnmap.git ")
         os.system("cd Dracnmap && chmod +x Dracnmap.sh")
-        time.sleep(2)
         info()
-    elif dracnap == "2":
-        print("Sorry You Have to Run This tool manually By Changing Path...!!")
-        print("use ./Dracnmap.sh ")
-        exit()
     elif dracnap == "99":
         info()
     else :
@@ -272,22 +339,6 @@ def ports():
     target = input('Select a Target IP : ')
     os.system("sudo nmap -O -Pn %s" % target)
     sys.exit()
-
-def XSStrike():
-    os.system("echo \"XSStrike is a python script designed to detect and exploit XSS vulnerabilites. \"| boxes -d boy | lolcat")
-    xc=input("[1]Install [99]BAck >>")
-    if xc == "1":
-        os.system("sudo rm -rf XSStrike")
-        os.system("git clone https://github.com/UltimateHackers/XSStrike.git && cd XSStrike && pip install -r requirements.txt")
-        info()
-    # elif xc == "2" :
-    #     clearScr()
-    #     os.system("echo \"YOu have to Run XSStrike as per your Requirment\n By using python3 xsstrike.py [Options]\"|boxes -d boy")
-    #     os.system("cd XSStrike && python3 xsstrike.py")
-    elif xc == "99":
-        info()
-    else :
-        info()
 
 def xerosploit():
     os.system("echo \"Xerosploit is a penetration testing toolkit whose goal is to perform \n man-in-th-middle attacks for testing purposes\"|boxes -d boy | lolcat")
@@ -305,7 +356,7 @@ def xerosploit():
 
 def reconspider():
     os.system("echo \" ReconSpider is most Advanced Open Source Intelligence (OSINT) Framework for scanning IP Address, Emails, \nWebsites, Organizations and find out information from different sources.\" | boxes -d boy | lolcat")
-    userchoice = input("[1]Install  [99]Back >>")
+    userchoice = input("[1]Install [99]Back >> ")
     if userchoice == "1":
         os.system("sudo git clone https://github.com/bhavsec/reconspider.git")
         os.system("sudo apt install python3 python3-pip && cd reconspider && sudo python3 setup.py install")
@@ -511,7 +562,7 @@ def bluepot():
         menu()
 
 def fluxion():
-    os.system("echo \"fluxion is a wifi key cracker using evil twin attack..\nyou need a wireless adaptor for this tool\"| boxes -d boy | lolcat")
+    os.system("echo \"fluxion is a wifi key cracker using evil twin attack..\nyou need a wireless adaptor for this tool\"| boxes -d boy | lolcAT")
     choice = input("[1]Install [2]Run [99]Back >>")
     if choice == "1":
         os.system("git clone https://github.com/thehackingsage/Fluxion.git") 
@@ -1304,7 +1355,7 @@ def droidcam():
         menu()
 
 def evilapp():
-    os.system("echo \"EvilApp is a script to generate Android App that can hijack authenticated sessions in cookies\"boxes -d boy | lolcat")
+    os.system("echo \"EvilApp is a script to generate Android App that can hijack authenticated sessions in cookies\" | boxes -d boy | lolcat")
     userchoice = input("[1]Install [2]Run [99]Back >>")
     if userchoice == "1":
         os.system("sudo git clone https://github.com/thelinuxchoice/evilapp")
@@ -1477,7 +1528,6 @@ def wifijamming():
         menu()
 
 def airmon():
-    # os.system("echo \" \" | boxes -d boy")
     print(Logo)
     userchoice = input("[1]Install [2]Run [99]Back >>")
     if userchoice == "1":
@@ -1505,8 +1555,6 @@ def airmon():
         wifijamming()
     else :
         menu()  
-    # z=raw_input("Enter Your wifi Interface Name :- ")
-    # os.system("airmon-ng && airmon-ng start %s"%z)
 
 def steganography():
     clearScr()
@@ -1580,29 +1628,129 @@ def sqltool():
     clearScr()
     os.system("figlet -f standard -c Sql Tools | lolcat")
     print("""
-        [1]  sqlmap tool
-        [99] Back
+        [1] Sqlmap tool
+        [2] NoSqlMap
+        [3] Damn Small SQLi Scanner
+        [4] Explo
+        [5] Blisqy - Exploit Time-based blind-SQL injection
+        [6] Leviathan - Wide Range Mass Audit Toolkit 
+        [7] SQLScan
+        [99]Back
     """)
-    choice =input("Z4nzu =>> ")
+    choice =input("\033[96m Z4nzu =>> ")
     if choice == "1":
         clearScr()
         sqlmap()
+    elif choice == "2":
+        clearScr()
+        nosqlmap()
+    elif choice == "3":
+        clearScr()
+        sqliscanner()
+    elif choice == "4":
+        clearScr()
+        explo()
+    elif choice == "5":
+        clearScr()
+        blisqy()
+    elif choice == "6":
+        clearScr()
+        leviathan()
+    elif choice == "7":
+        clearScr()
+        sqlscan()
     elif choice == "99":
         menu()
     else :
         menu()
 
+def leviathan():
+    os.system("echo \"Leviathan is a mass audit toolkit which has wide range service discovery,\nbrute force, SQL injection detection and running custom exploit capabilities. \n [*]It Requires API Keys \n More Usage [!]https://github.com/utkusen/leviathan/wiki \"|boxes -d boy | lolcat ")
+    choice = input("[1]Install [2]Run [99]BAck >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/leviathan-framework/leviathan.git")
+        os.system("cd leviathan;sudo pip install -r requirements.txt")
+        sqltool()
+    elif choice == "2":
+        os.system("cd leviathan;python leviathan.py")
+    elif choice == "99":
+        sqltool()
+    else :
+        menu()
+
+def sqlscan():
+    os.system("echo \"sqlscan is quick web scanner for find an sql inject point. not for educational, this is for hacking. \n [!]https://github.com/Cvar1984/sqlscan \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("sudo apt install php php-bz2 php-curl php-mbstring curl")
+        os.system("sudo curl https://raw.githubusercontent.com/Cvar1984/sqlscan/dev/build/main.phar --output /usr/local/bin/sqlscan")
+        os.system("chmod +x /usr/local/bin/sqlscan")
+        sqltool()
+    elif choice == "2":
+        os.system("sudo sqlscan")
+    elif choice == "99":
+        sqltool()
+    else :
+        menu()
+
+
+def blisqy():
+    os.system("echo \"Blisqy is a tool to aid Web Security researchers to find Time-based Blind SQL injection \n on HTTP Headers and also exploitation of the same vulnerability.\n For Usage >> [!]https://github.com/JohnTroony/Blisqy \"|boxes -d boy | lolcat")
+    choice =input("[1]Install [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/JohnTroony/Blisqy.git ")
+        sqltool()
+    elif choice == "99":
+        sqltool()
+    else :
+        menu()
+
+def explo():
+    os.system("echo \"explo is a simple tool to describe web security issues in a human and machine readable format.\n Usage :- \n [1]explo [--verbose|-v] testcase.yaml \n [2]explo [--verbose|-v] examples/*.yaml \n[*]https://github.com/dtag-dev-sec/explo \"|boxes -d boy | lolcat")
+    choice =input("[1]Install [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/dtag-dev-sec/explo ")
+        os.system("cd explo ;sudo python setup.py install")
+        sqltool()
+    elif choice == "99":
+        sqltool()
+    else :
+        menu()
+
+def sqliscanner():
+    os.system("echo \"Damn Small SQLi Scanner (DSSS) is a fully functional SQL injection\nvulnerability scanner also supporting GET and POST parameters.\nMore Info [!]https://github.com/stamparm/DSSS \"|boxes -d boy | lolcat")
+    choice =input("[1]Install [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/stamparm/DSSS.git")
+        sqltool()
+    elif choice == "99":
+        sqltool()
+    else :
+        menu()
+
+
 def sqlmap():
-    os.system("echo \"[!]sqlmap is an open source penetration testing tool that automates the process of \ndetecting and exploiting SQL injection flaws and taking over of database servers\"|boxes -d boy | lolcat")
-    userchoice = input("[1]Install [2]Run [99]Back >> ")
+    os.system("echo \"sqlmap is an open source penetration testing tool that automates the process of \ndetecting and exploiting SQL injection flaws and taking over of database servers \n [!]python sqlmap.py -u [<http://example.com>] --batch --banner \n More Usage [!]https://github.com/sqlmapproject/sqlmap/wiki/Usage \"|boxes -d boy | lolcat")
+    userchoice = input("[1]Install [99]Back >> ")
     if userchoice == "1":
         os.system("sudo git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev")
         print("Downloaded Successfully..!!")
         sqltool()
-    elif userchoice == "2":
-        os.system("cd sqlmap-dev && python sqlmap.py -h")
-        os.system("echo \"[!]python sqlmap.py -u [<http://example.com>] --batch --banner \n[!]For More Usage : https://github.com/sqlmapproject/sqlmap/wiki/Usage \"|boxes -d boy")    
     elif userchoice == "99":
+        sqltool()
+    else :
+        menu()
+
+def nosqlmap():
+    os.system("echo \"NoSQLMap is an open source Python tool designed to \n audit for as well as automate injection attacks and exploit.\n \033[91m [*]Please Install MongoDB \n More Info[!]https://github.com/codingo/NoSQLMap \"|boxes -d boy | lolcat")
+    choice =input("[1]install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/codingo/NoSQLMap.git")
+        os.system("sudo chmod -R 755 NoSQLMap;cd NoSQLMap;python setup.py install ")
+        sqltool()
+    elif choice == "2":
+        os.system("python NoSQLMap")
+    elif choice =="99":
         sqltool()
     else :
         menu()
@@ -1610,21 +1758,32 @@ def sqlmap():
 def others():
     clearScr()
     print(Logo + """
-    [1]Ddos Attack Tools
-    [2]XSS Attack Tools
-    [3]HatCloud(Bypass CloudFlare for IP)
-    [99]BAck
+    [1] SocialMedia Attack 
+    [2] Android Hack
+    [3] HatCloud(Bypass CloudFlare for IP)
+    [4] IDN Homograph Attack Tools
+    [5] Hash Cracking Tools
+    [99]Main Menu
     """)
     choice = input("Z4nzu =>>")
     if choice == "1":
-        clearScr()
-        Ddos()
+        print("Tool Available in Next Update..!!")
+        time.sleep(3)
+        others()
+        # socialattack()
     elif choice == "2":
-        clearScr()
-        xsstools()
+        print("Tool Available in Next Update..!!")
+        time.sleep(3)
+        others()
+        # androidhack()
     elif choice == "3":
         clearScr()
         hatcloud()
+    elif choice == "4":
+        clearScr()
+        homograph()
+    elif choice == "5":
+        hashcracktool()
     elif choice == "99":
         menu()
     elif choice == "":
@@ -1662,6 +1821,69 @@ def hatcloud():
         others()
     else :
         others()
+
+def homograph():
+    clearScr()
+    os.system("figlet -f standard -c IDN Homograph Attack tools | lolcat")
+    print("""
+        [1]  EvilURL
+        [99] Back
+    """)
+    choice =input("Z4nzu >>")
+    if choice == "1":
+        clearScr()
+        evilurl()
+    elif choice == "99":
+        others()
+    else :
+        others()
+
+def evilurl():
+    os.system("echo \"Generate unicode evil domains for IDN Homograph Attack and detect them. \n [!]https://github.com/UndeadSec/EvilURL \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/UndeadSec/EvilURL.git")
+        homograph()
+    elif choice == "2":
+        os.system("cd EvilURL;python3 evilurl.py")
+    elif choice == "99":
+        homograph()
+    else :
+        menu()
+
+def hashcracktool():
+    clearScr()
+    os.system("figlet -f standard -c Hash Cracking Tools | lolcat")
+    print("""
+        [1] Hash Buster
+        [99]Back
+    """)
+    choice = input("Z4nzu >> ")
+    if choice == "1":
+        clearScr()
+        hashbuster()
+    elif choice == "99":
+        others()
+    elif choice == "":
+        others()
+    else :
+        menu()
+
+def hashbuster():
+    os.system("echo \"Features : \n Automatic hash type identification \n Supports MD5, SHA1, SHA256, SHA384, SHA512 \n [!]https://github.com/s0md3v/Hash-Buster \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/s0md3v/Hash-Buster.git")
+        os.system("cd Hash-Buster;make install")
+        time.sleep(2)
+        hashcracktool()
+    elif choice == "2":
+        os.system("buster -h")
+    elif choice == "99":
+        hashcracktool()
+    else :
+        menu()
+
 
 def Ddos():
     clearScr()
@@ -1760,6 +1982,7 @@ def xsstools():
         [5] XSpear 
         [6] XSSCon
         [7] XanXSS
+        [8] Advanced XSS Detection Suite
         [99]BAck
     """)
     choice = input("Z4nzu >> ")
@@ -1779,10 +2002,28 @@ def xsstools():
         xsscon()
     elif choice == "7":
         xanxss()
+    elif choice == "8":
+        XSStrike()
     elif choice == "":
         others()
     else :
         others()
+
+def XSStrike():
+    os.system("echo \"XSStrike is a python script designed to detect and exploit XSS vulnerabilites. \"| boxes -d boy | lolcat")
+    xc=input("[1]Install [99]BAck >>")
+    if xc == "1":
+        os.system("sudo rm -rf XSStrike")
+        os.system("git clone https://github.com/UltimateHackers/XSStrike.git && cd XSStrike && pip install -r requirements.txt")
+        info()
+    # elif xc == "2" :
+    #     clearScr()
+    #     os.system("echo \"YOu have to Run XSStrike as per your Requirment\n By using python3 xsstrike.py [Options]\"|boxes -d boy")
+    #     os.system("cd XSStrike && python3 xsstrike.py")
+    elif xc == "99":
+        info()
+    else :
+        info()
 
 def dalfox():
     os.system("echo \"XSS Scanning and Parameter Analysis tool.\"|boxes -d boy | lolcat")
@@ -1894,10 +2135,17 @@ def xanxss():
 
 
 def updatesys():
-    os.system("sudo apt update && sudo apt full-upgrade -y")
-    os.system("sudo apt-get install tor openssl curl && sudo apt-get update tor openssl curl ")
-    os.system("sudo apt-get install python3-pip")
-    menu()
+    choice = input("[1]Update System [2]Update Hackingtool [99]Back >> ")
+    if choice == "1":
+        os.system("sudo apt update && sudo apt full-upgrade -y")
+        os.system("sudo apt-get install tor openssl curl && sudo apt-get update tor openssl curl ")
+        os.system("sudo apt-get install python3-pip")
+    elif choice == "2":
+        os.system("sudo chmod +x /etc/;sudo chmod +x /usr/share/doc;sudo rm -rf /usr/share/doc/hackingtool/;cd /etc/;sudo rm -rf /etc/hackingtool/;mkdir hackingtool;cd hackingtool;git clone https://github.com/Z4nzu/hackingtool.git;cd hackingtool;sudo chmod +x install.sh;./install.sh")
+    elif choice == "99":
+        menu()
+    else :
+        menu()
 
 def clearScr():
     if system() == 'Linux':
@@ -1906,72 +2154,89 @@ def clearScr():
         os.system('cls')
 
 if __name__ == "__main__":
-    notuser =getpass.getuser()
-    user=os.getenv("SUDO_UID")
-    uname=os.getenv("SUDO_USER")
+    # notuser =getpass.getuser()
+    # user=os.getenv("SUDO_UID")
+    # uname=os.getenv("SUDO_USER")
     try:
         if system() == 'Linux':
-            # if path.exists("/home/{0}/Desktop/".format(user)):
-            #     os.chdir("/home/{0}/Desktop/".format(user))
-            #     if os.path.isdir('hackingtool'):
-            #         os.chdir("/home/{0}/Desktop/hackingtool/".format(user))
-            #         menu()
-            #     else :
-            #         os.system("mkdir hackingtool")
-            #         os.chdir("/home/{0}/Desktop/hackingtool/".format(user))
-            #         menu()
-            if os.geteuid() != 0:
-                os.chdir("/home/{0}/Desktop/".format(notuser))
-                if os.path.isdir('hackingtool'):
-                    os.chdir("/home/{0}/Desktop/hackingtool/".format(notuser))
+            fpath="/home/hackingtoolpath.txt"
+            if os.path.isfile(fpath):
+                file1 = open(fpath,"r")
+                f=file1.readline()
+                if os.path.exists("{0}".format(f)):
+                    os.chdir(f)
+                    file1.close()
                     menu()
-                else:
-                    os.system("mkdir hackingtool")
-                    os.chdir("/home/{0}/Desktop/hackingtool/".format(notuser))
-                    menu()
-            elif os.geteuid() == 0:
-                if path.exists("home/{0}/Desktop/".format(notuser)):
-                    os.chdir("/home/{0}/Desktop/".format(notuser))
-                    if os.path.isdir('hackingtool'):
-                        os.chdir("/home/{0}/Desktop/hackingtool/".format(notuser))
-                        menu()
-                    else:
-                        os.system("mkdir hackingtool")
-                        os.chdir("/home/{0}/Desktop/hackingtool/".format(notuser))
-                        menu()
-                elif uname == 'None':
-                    os.chdir("/home/{0}/Desktop/".format(notuser))
-                    if os.path.isdir('hackingtool'):
-                        os.chdir("/home/{0}/Desktop/hackingtool/".format(notuser))
-                        menu()
-                    else:
-                        os.system("mkdir hackingtool")
-                        os.chdir("/home/{0}/Desktop/hackingtool/".format(notuser))
-                        menu()
                 else :
-                    if path.exists("/home/{0}/Desktop/".format(uname)):
-                        os.chdir("/home/{0}/Desktop/".format(uname))
-                        if os.path.isdir('hackingtool'):
-                            os.chdir("/home/{0}/Desktop/hackingtool/".format(uname))
-                            menu()
-                        else:
-                            os.system("mkdir hackingtool")
-                            os.chdir("/home/{0}/Desktop/hackingtool/".format(uname))
-                            menu()
-            elif uname == 'None':
-                os.chdir("/home/{0}/Desktop/".format(notuser))
-                if os.path.isdir('hackingtool'):
-                    os.chdir("/home/{0}/Desktop/hackingtool/".format(notuser))
-                    menu()
-                else:
-                    os.system("mkdir hackingtool")
-                    os.chdir("/home/{0}/Desktop/hackingtool/".format(notuser))
-                    menu()
+                    os.mkdir("{0}".format(f))
+                    os.chdir("{0}".format(f))
+                    file1.close()
+                    menu() 
             else :
-                print("Sorry ...!!")
+                clearScr()
+                print(Logo)
+                print("""
+                [@] Set Path (All your tools will be install in that directory) 
+                        [1]Manual 
+                        [2]Default
+                """)
+                choice = input("Z4nzu >> ")
+                if choice == "1":
+                    inpath=input("Enter Path(with Directory Name) >> ")
+                    file =open(fpath,"w")
+                    file.write(inpath)
+                    file.close()
+                    print("Successfully Path Set...!!")
+                elif choice == "2":
+                    autopath="/home/hackingtool/"
+                    file =open(fpath,"w")
+                    file.write(autopath)
+                    file.close()
+                    time.sleep(1)
+                    print("Your Default Path Is :-"+autopath)
+                    time.sleep(3)
+                else :
+                    print("Try Again..!!")
         else :
+            fpath="/home/hackingtoolpath.txt"
+            if os.path.isfile(fpath):
+                file1 = open(fpath,"r")
+                f=file1.readline()
+                if os.path.exists("{0}".format(f)):
+                    os.chdir(f)
+                    file1.close()
+                    menu()
+                else :
+                    os.mkdir("{0}".format(f))
+                    os.chdir("{0}".format(f))
+                    file1.close()
+                    menu() 
+            else :
+                clearScr()
+                print(Logo)
+                print("""
+                [@] Set Path (All your tools will be install in that directory) 
+                        [1]Manual 
+                        [2]Default
+                """)
+                choice = input("Z4nzu >> ")
+                if choice == "1":
+                    inpath=input("Enter Path(with Directory Name) >> ")
+                    file =open(fpath,"w")
+                    file.write(inpath)
+                    file.close()
+                    print("Successfully Path Set...!!")
+                elif choice == "2":
+                    autopath="/home/hackingtool/"
+                    file =open(fpath,"w")
+                    file.write(autopath)
+                    file.close()
+                    time.sleep(1)
+                    print("Your Default Path Is :-"+autopath)
+                    time.sleep(3)
+                else :
+                    print("Try Again..!!")
             print("Sorry Open New Issue..!!")
-    except KeyboardInterrupt:
-        
+    except KeyboardInterrupt:        
         print("\n Sorry ..!!!")
         time.sleep(3)
