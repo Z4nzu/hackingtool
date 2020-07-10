@@ -1,34 +1,12 @@
 ##!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 import os
-import sys
-import argparse
-import threading
-import webbrowser
-import requests
-import time
-import http.client
-import urllib.request
-import json
-import telnetlib
-import glob
-import getpass
 import socket
-import base64
-from getpass import getpass
-import subprocess
-from sys import argv
-import random
-import queue
-import subprocess
-import re
-import getpass
-from os import path
+import sys
+import time
+import webbrowser
 from platform import system
-from urllib.parse import urlparse
-from xml.dom import minidom
-from optparse import OptionParser
-from time import sleep
+
 Logo="""\033[33m
 
    ▄█    █▄       ▄████████  ▄████████    ▄█   ▄█▄  ▄█  ███▄▄▄▄      ▄██████▄           ███      ▄██████▄   ▄██████▄   ▄█       
@@ -125,8 +103,8 @@ def menu():
         print(Logo)
         updatesys()
     elif choice == "99" :
-        clearScr(), sys.exit()
-        exit()
+        clearScr()
+        sys.exit()
     elif choice == "":
         menu()
     else:
@@ -430,7 +408,7 @@ def cupp():
     elif cc == "99" :
         passwd()
     else :
-        main()
+        menu()
 
 def wlcreator():
     os.system("echo \" WlCreator is a C program that can create all possibilities of passwords,\n and you can choose Lenght, Lowercase, Capital, Numbers and Special Chars\" | boxes -d boy | lolcat")
@@ -1174,7 +1152,7 @@ def subdomain():
     elif choice == "99" :
         webAttack()
     else :
-        main()
+        menu()
 
 def checkurl():
     os.system("echo \" Detect evil urls that uses IDN Homograph Attack.\n\t[!]python3 checkURL.py --url google.com \" | boxes -d boy | lolcat")
