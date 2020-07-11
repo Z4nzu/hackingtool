@@ -2,33 +2,13 @@
 # -*- coding: UTF-8 -*-
 import os
 import sys
-import argparse
-import threading
 import webbrowser
-import requests
 import time
-import http.client
-import urllib.request
-import json
-import telnetlib
-import glob
-import getpass
 import socket
-import base64
+import requests
 from getpass import getpass
-import subprocess
-from sys import argv
-import random
-import queue
-import subprocess
-import re
-import getpass
 from os import path
 from platform import system
-from urllib.parse import urlparse
-from xml.dom import minidom
-from optparse import OptionParser
-from time import sleep
 Logo="""\033[33m
 
    ▄█    █▄       ▄████████  ▄████████    ▄█   ▄█▄  ▄█  ███▄▄▄▄      ▄██████▄           ███      ▄██████▄   ▄██████▄   ▄█       
@@ -41,14 +21,15 @@ Logo="""\033[33m
   ███    █▀      ███    █▀  ████████▀    ███   ▀█▀ █▀    ▀█   █▀    ████████▀          ▄████▀    ▀██████▀   ▀██████▀  █████▄▄██ 
                                          ▀                                                                            ▀                             
 
-                                    \033[97m[!] https://github.com/Z4nzu/hackingtool
+                                    \033[97m[!] https://github.com/Z4nzu/hackingtool \n
+                                    \033[91m[X] Please Don't Use For illegal Activity [X]
 \033[97m """
 def menu():
     print(Logo + """\033[0m 
-    \033[91m[!] This Tool Must Run as a Root..[!] \033[97m
+     \033[97m
     [00]AnonSurf                  
     [01]Information Gathering
-    [02]Password Attack && Wordlist Generator
+    [02]Wordlist Generator 
     [03]Wireless Attack
     [04]SQL Injection Tools 
     [05]Phishing Attack 
@@ -56,14 +37,14 @@ def menu():
     [07]Post exploitation
     [08]Forensic Tools
     [09]Payload Creator
-    [10]Router Exploit
+    [10]Exploit Frameworks
     [11]Wifi Jamming
     [12]Ddos Attack Tools 
     [13]SocialMedia Finder 
     [14]XSS Attack Tools
     [15]Steganography
     [16]More Tools 
-    [17]Update System OR Hackingtool
+    [17]Update or Uninstall | Hackingtool
     [99]Exit
     """)
     
@@ -123,15 +104,17 @@ def menu():
     elif choice == "17":
         clearScr()
         print(Logo)
-        updatesys()
+        update()
     elif choice == "99" :
-        clearScr(), sys.exit()
-        exit()
+        print("Happy Hacking...")
+        time.sleep(1)
+        clearScr()
+        sys.exit()
     elif choice == "":
         menu()
     else:
-        print("Wrong Input...!!")
-        time.sleep(1)
+        print("\n ERROR: Wrong Input")
+        time.sleep(2)
         menu()
 
 def anonsurf():
@@ -154,7 +137,7 @@ def anonsurf():
         menu()
 
 def ansurf():
-    os.system("echo  \"It automatically overwrites the RAM when\nthe system is shutting down AnD AlSo cHange Ip\" |boxes -d boy | lolcat")
+    os.system("echo \"It automatically overwrites the RAM when\nthe system is shutting down AnD AlSo change Ip. \" |boxes -d boy | lolcat")
     anc=input("[1]install [2]Run [3]Stop [99]Main Menu >> ")
     if anc == "1":
         os.system("sudo git clone https://github.com/Und3rf10w/kali-anonsurf.git")
@@ -197,6 +180,10 @@ def info():
             [9]  Infoga - Email OSINT
             [10] ReconDog
             [11] Striker
+            [12] SecretFinder (like API & etc)
+            [13] Find Info Using Shodan
+            [14] Port Scanner
+            [15] Breacher
             [99] Back To Main Menu 
         """)
     choice2 = input("Z4nzu =>> ")
@@ -221,6 +208,7 @@ def info():
         clearScr()
         reconspider()
     elif choice2 == "8":
+        clearScr()
         isitdown()
     elif choice2 == "9":
         clearScr()
@@ -234,9 +222,57 @@ def info():
     elif choice2 == "11":
         clearScr()
         striker()
+    elif choice2 == "12":
+        clearScr()
+        secretfinder()
+    elif choice2 == "13":
+        clearScr()
+        shodantool()
+    elif choice2 == "14":
+        clearScr()
+        portscanner()
+    elif choice2 == "15":
+        clearScr()
+        breacher()
     elif choice2 == "":
         menu()
     else:
+        menu()
+
+def breacher():
+    os.system("echo \"An advanced multithreaded admin panel finder written in python.\n Usage : python breacher -u example.com \n\t [!]https://github.com/s0md3v/Breacher \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/s0md3v/Breacher.git")
+        info()
+    elif choice == "99":
+        info()
+    else :
+        menu()
+
+
+def portscanner():
+    os.system("echo \"rang3r is a python script which scans in multi thread\n all alive hosts within your range that you specify.\n\t [!]https://github.com/floriankunushevci/rang3r \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/floriankunushevci/rang3r;sudo pip install termcolor")
+    elif choice == "2":
+        ipinput=input("Enter Ip >> ")
+        os.system("cd rang3r;sudo python rang3r.py --ip {0}".format(ipinput))
+    elif choice == "99":
+        info()
+    else :
+        menu()
+
+def shodantool():
+    os.system("echo \"Get ports,vulnerabilities,informations,banners,..etc \n for any IP with Shodan (no apikey! no rate limit!)\n[X]Don't use this tool because your ip will be blocked by Shodan![X] \n\t [!]https://github.com/m4ll0k/Shodanfy.py \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/m4ll0k/Shodanfy.py.git")
+        info()
+    elif choice == "99":
+        info()
+    else :
         menu()
 
 def isitdown():
@@ -244,6 +280,18 @@ def isitdown():
     choice = input("[1]Open [99]Back >> ")
     if choice == "1":
         webbrowser.open_new_tab("https://www.isitdownrightnow.com/")
+    elif choice == "99":
+        info()
+    else :
+        menu()
+
+def secretfinder():
+    os.system("echo \"SecretFinder - A python script for find sensitive data \nlike apikeys, accesstoken, authorizations, jwt,..etc \n and search anything on javascript files.\n\n Usage: python SecretFinder.py -h \n\t [*]https://github.com/m4ll0k/SecretFinder \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/m4ll0k/SecretFinder.git secretfinder")
+        os.system("cd secretfinder; sudo pip3 install -r requirements.txt")
+        info()
     elif choice == "99":
         info()
     else :
@@ -355,7 +403,7 @@ def xerosploit():
         menu()
 
 def reconspider():
-    os.system("echo \" ReconSpider is most Advanced Open Source Intelligence (OSINT) Framework for scanning IP Address, Emails, \nWebsites, Organizations and find out information from different sources.\" | boxes -d boy | lolcat")
+    os.system("echo \" ReconSpider is most Advanced Open Source Intelligence (OSINT) Framework for scanning IP Address, Emails, \nWebsites, Organizations and find out information from different sources.\n :~python3 reconspider.py \n\t [!]https://github.com/bhavsec/reconspider \" | boxes -d boy | lolcat")
     userchoice = input("[1]Install [99]Back >> ")
     if userchoice == "1":
         os.system("sudo git clone https://github.com/bhavsec/reconspider.git")
@@ -430,13 +478,13 @@ def cupp():
     elif cc == "99" :
         passwd()
     else :
-        main()
+        menu()
 
 def wlcreator():
     os.system("echo \" WlCreator is a C program that can create all possibilities of passwords,\n and you can choose Lenght, Lowercase, Capital, Numbers and Special Chars\" | boxes -d boy | lolcat")
     userchoice = input("[1]Install [2]Run [99]Back >>")
     if userchoice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/wlcreator")
+        os.system("sudo git clone https://github.com/Z4nzu/wlcreator")
         passwd()
     elif userchoice == "2":
         os.system("cd wlcreator && sudo gcc -o wlcreator wlcreator.c && ./wlcreator 5")
@@ -483,6 +531,7 @@ def wire():
                 [5] Wifiphisher
                 [6] Wifite
                 [7] EvilTwin 
+                [8] Howmanypeople
                 [99]Back To The Main Menu """)
     choice4 = input("Z4nzu ==>> ")
     if choice4 == "1":
@@ -506,12 +555,29 @@ def wire():
     elif choice4 == "7":
         clearScr()
         eviltwin()
+    elif choice4== "8":
+        clearScr()
+        howmanypeople()
     elif choice4 == "99":
         menu()
     elif choice4 == "":
         menu()
     else:
         menu()
+
+def howmanypeople():
+    os.system("echo \"Count the number of people around you by monitoring wifi signals.\n[@]WIFI ADAPTER REQUIRED* \n[*]It may be illegal to monitor networks for MAC addresses, \nespecially on networks that you do not own. Please check your country's laws\n\t [!]https://github.com/An0nUD4Y/howmanypeoplearearound \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("sudo apt-get install tshark;sudo pip install howmanypeoplearearound")
+        wire()
+    elif choice == "2":
+        os.system("sudo howmanypeoplearearound")
+    elif choice == "99":
+        wire()
+    else :
+        menu()
+
 
 def wifipumkin():
     os.system("echo \"The WiFi-Pumpkin is a rogue AP framework to easily create these fake networks\nall while forwarding legitimate traffic to and from the unsuspecting target.\"| boxes -d boy | lolcat")
@@ -562,16 +628,16 @@ def bluepot():
         menu()
 
 def fluxion():
-    os.system("echo \"fluxion is a wifi key cracker using evil twin attack..\nyou need a wireless adaptor for this tool\"| boxes -d boy | lolcAT")
+    os.system("echo \"Fluxion is a wifi key cracker using evil twin attack..\nyou need a wireless adaptor for this tool\"| boxes -d boy | lolcat")
     choice = input("[1]Install [2]Run [99]Back >>")
     if choice == "1":
         os.system("git clone https://github.com/thehackingsage/Fluxion.git") 
         os.system("cd Fluxion && cd install && sudo chmod +x install.sh && sudo bash install.sh")
-        os.system("cd .. && sudo chmod +x fluxion.sh")
+        os.system("cd .. ; sudo chmod +x fluxion.sh")
         time.sleep(2)
         wire()
     elif choice == "2":
-        os.system("cd Fluxion && sudo bash fluxion.sh")
+        os.system("cd Fluxion;sudo bash fluxion.sh")
     elif choice == "99" :
         wire()
     else:
@@ -599,10 +665,11 @@ def wifiphisher():
         menu()
 
 def wifite():
-    wc=input("[1]Install [2]Run [99]BAck >> ")
+    os.system("echo \"[!]https://github.com/derv82/wifite2 \"|boxes -d boy | lolcat")
+    wc=input("[1]Install [2]Run [99]Back >> ")
     if wc == "1":
-        os.system("sudo git clone https://github.com/kimocoder/wifite2.git")
-        os.system("cd wifite2 && sudo python3 setup.py install && sudo pip3 install -r requirements.txt")
+        os.system("sudo git clone https://github.com/derv82/wifite2.git")
+        os.system("cd wifite2 && sudo python3 setup.py install ; sudo pip3 install -r requirements.txt")
         time.sleep(3)
         wire()
     elif wc =="2":
@@ -616,7 +683,7 @@ def eviltwin():
     os.system("echo \"Fakeap is a script to perform Evil Twin Attack, by getting credentials using a Fake page and Fake Access Point \" | boxes -d boy | lolcat")
     userchoice = input("[1]Install [2]Run [99]Back >>")
     if userchoice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/fakeap ")
+        os.system("sudo git clone https://github.com/Z4nzu/fakeap")
         wire()
     elif userchoice == "2":
         os.system("cd fakeap && sudo bash fakeap.sh")
@@ -630,7 +697,7 @@ def socialattack():
     os.system("figlet -f standard SocialMedia Attack | lolcat")
     print("""
         [1] Instagram Attack
-        [2] Tweeter Attack
+        [2] AllinOne SocialMedia Attack 
         [3] Facebook Attack
         [4] Application Checker
         [99]Back To Menu
@@ -638,62 +705,62 @@ def socialattack():
     choice=input("Z4nzu >> ")
     if choice == "1":
         clearScr()
-        instashell()
-        socialattack()
+        instabrute()
     elif choice == "2":
         clearScr()
-        tweetshell()
-        socialattack()
+        bruteforce()
     elif choice == "3":
         clearScr()
         faceshell()
-        socialattack()
     elif choice == "4" :
         clearScr()
         appcheck()
-        socialattack()
     elif choice == "99" :
-        menu()
+        others()
     else :
         menu()
 
-def instashell():
-    os.system("echo \"Instashell is an Shell Script to perform multi-threaded brute force attack against Instagram \"| boxes -d boy | lolcat")
+def instabrute():
+    os.system("echo \"Brute force attack against Instagram \n\t [!]https://github.com/chinoogawa/instaBrute \"| boxes -d boy | lolcat")
     instachoice=input("[1]install [2]Run [99]Back >> ")
     if instachoice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/instashell ")
-        os.system("cd instashell && sudo chmod +x install.sh && sudo ./install.sh")
+        os.system("sudo git clone https://github.com/chinoogawa/instaBrute.git ")
+        os.system("cd instaBrute;sudo pip install -r requirements.txt")
         socialattack()
     elif instachoice == "2":
-        os.system("cd instashell && chmod +x instashell.sh && service tor start && sudo ./instashell.sh")
+        uname = input("Enter Username >> ")
+        passinput=input("Enter wordword list >> ")
+        os.system("cd instaBrute;sudo python instaBrute.py -u {0} -d {1}".format(uname,passinput))
     elif instachoice == "99":
         socialattack()
     else :
         menu()
 
-def tweetshell():
-    os.system("echo \"Tweetshell is an Shell Script to perform multi-threaded brute force attack against Twitter\"|boxes -d boy | lolcat")
+def bruteforce():
+    os.system("echo \"Brute_Force_Attack Gmail Hotmail Twitter Facebook Netflix \n[!]python3 Brute_Force.py -g <Account@gmail.com> -l <File_list> \n\t[!]https://github.com/Matrix07ksa/Brute_Force \"|boxes -d boy | lolcat")
     choice = input ("[1]Install [2]Run [99]BAck >> ")
     if choice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/tweetshell && chmod -R 775 tweetshell")
-        os.system("cd tweetshell && sudo ./install.sh")
+        os.system("sudo git clone https://github.com/Matrix07ksa/Brute_Force.git")
+        os.system("cd Brute_Force ;sudo pip3 install proxylist;pip3 install mechanize")
         socialattack()
     elif choice == "2":
-        os.system("cd tweetshell && service tor start && sudo ./tweetshell.sh")
+        os.system("cd Brute_Force;python3 Brute_Force.py -h")
     elif choice == "99":
         socialattack()
     else :
         menu()
 
 def faceshell():
-    os.system("echo \"Facebash is an Shell Script to perform brute force attack against FAcebook\n [!]Facebook blocks account for 1 hour after 20 wrong passwords, so this script can perform only 20 pass/h \"|boxes -d boy | lolcat")
+    os.system("echo \" Facebook BruteForcer[!]https://github.com/Matrix07ksa/Brute_Force \"|boxes -d boy | lolcat")
     choice = input ("[1]Install [2]Run [99]Back >> ")
     if choice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/facebash && chmod -R 775 facebash")
-        os.system("cd facebash && sudo ./install.sh")
+        os.system("sudo git clone https://github.com/Matrix07ksa/Brute_Force.git")
+        os.system("cd Brute_Force ;sudo pip3 install proxylist;pip3 install mechanize")
         socialattack()
     elif choice == "2":
-        os.system("cd facebash && service tor start && sudo ./facebash.sh")
+        uname=input("Enter Username >> ")
+        passinput=input("Enter Wordlist >> ")
+        os.system("cd Brute_Force;python3 Brute_Force.py -f {0} -l {1}".format(uname,passinput))
     elif choice == "99":
         socialattack()
     else :
@@ -703,10 +770,11 @@ def appcheck():
     os.system("echo \"Tool to check if an app is installed on the target device through a link.\"|boxes -d boy | lolcat")
     userchoice = input("[1]Install [2]Run [99]Back >> ")
     if userchoice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/underhanded")
+        os.system("sudo git clone https://github.com/jakuta-tech/underhanded")
+        os.system("cd underhanded && sudo chmod +x underhanded.sh")
         socialattack()
     elif userchoice == "2":
-        os.system("cd underhanded && sudo chmod +x underhanded.sh && sudo bash underhanded.sh")
+        os.system("cd underhanded ; sudo bash underhanded.sh")
     elif userchoice == "99":
         socialattack()
     else :
@@ -718,11 +786,12 @@ def phishattack():
     print("""
        [1] Setoolkit 
        [2] SocialFish
-       [3] Shellphish
-       [4] BlackEye
+       [3] HiddenEye
+       [4] Evilginx2
        [5] I-See_You(Get Location using phishing attack) 
        [6] SayCheese (Grab target's Webcam Shots)
        [7] QR Code Jacking
+       [8] ShellPhish 
        [99]Back To Main Menu
        """)
     choice = input("Z4nzu ==>> ")
@@ -734,10 +803,10 @@ def phishattack():
         socialfish()
     if choice == "3":
         clearScr()
-        shellphish()
+        hiddeneye()
     if choice == "4":
         clearScr()
-        blackeye()
+        evilginx()
     elif choice == "5":
         clearScr()
         iseeyou()
@@ -747,7 +816,10 @@ def phishattack():
     elif choice == "7":
         clearScr()
         qrjacking()
-    if choice == "99":
+    elif choice == "8":
+        clearScr()
+        shellphish()
+    elif choice == "99":
         clearScr()
         menu()
     elif choice == "":
@@ -756,7 +828,8 @@ def phishattack():
         menu()
 
 def socialfish():
-    choice=input("[1]install [2]Run [99]BAck >> ")
+    os.system("echo \"Automated Phishing Tool & Information Collector \n\t[!]https://github.com/UndeadSec/SocialFish \"|boxes -d boy | lolcat")
+    choice=input("[1]install [2]Run [99]Back >> ")
     if choice == "1":
         os.system("sudo git clone https://github.com/UndeadSec/SocialFish.git && sudo apt-get install python3 python3-pip python3-dev -y")
         os.system("cd SocialFish && sudo python3 -m pip install -r requirements.txt")
@@ -769,30 +842,48 @@ def socialfish():
     else :
         menu()
 
-def shellphish():
-    choice=input("[1]install [2]Run [99]BAck >> ")
+def hiddeneye():
+    os.system("echo \"Modern Phishing Tool With Advanced Functionality And Multiple Tunnelling Services \n\t [!]https://github.com/DarkSecDevelopers/HiddenEye \"|boxes -d boy | lolcat ")
+    choice=input("[1]install [2]Run [99]Back >> ")
     if choice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/shellphish")
+        os.system("sudo git clone https://github.com/DarkSecDevelopers/HiddenEye.git ;sudo chmod 777 HiddenEye")
+        os.system("cd HiddenEye;sudo pip3 install -r requirements.txt;sudo pip3 install requests;pip3 install pyngrok")
         phishattack()
     elif choice =="2":
-        os.system("cd shellphish && sudo bash shellphish.sh")
+        os.system("cd HiddenEye;sudo python3 HiddenEye.py")
     elif choice =="99":
         phishattack()
     else :
         menu()
 
-def blackeye():
-    choice=input("[1]install [2]Run [99]BAck >> ")
+def evilginx():
+    os.system("echo \"evilginx2 is a man-in-the-middle attack framework used for phishing login credentials along with session cookies,\nwhich in turn allows to bypass 2-factor authentication protection.\n\n\t [+]Make sure you have installed GO of version at least 1.14.0 \n[+]After installation, add this to your ~/.profile, assuming that you installed GO in /usr/local/go\n\t [+]export GOPATH=$HOME/go \n [+]export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin \n[+]Then load it with source ~/.profiles.\n [*]https://github.com/An0nUD4Y/evilginx2 \"|boxes -d boy | lolcat")
+    choice=input("[1]install [2]Run [99]Back >> ")
     if choice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/blackeye")
+        os.system("sudo apt-get install git make;go get -u github.com/kgretzky/evilginx2")
+        os.system("cd $GOPATH/src/github.com/kgretzky/evilginx2;make")
+        os.system("sudo make install;sudo evilginx")
         time.sleep(2)
         phishattack()
     elif choice =="2":
-        os.system("cd blackeye && sudo bash blackeye.sh")
+        os.system("sudo evilginx")
     elif choice =="99":
         phishattack()
     else :
         menu()
+
+def shellphish():
+    os.system("echo \"Phishing Tool for 18 social media \n [!]https://github.com/An0nUD4Y/shellphish \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/An0nUD4Y/shellphish")
+    elif choice == "2":
+        os.system("cd shellphish;sudo bash shellphish.sh")
+    elif choice == "99":
+        phishattack()
+    else :
+        menu()
+
 
 def iseeyou():
     os.system("echo \"[!] ISeeYou is a tool to find Exact Location of Victom By User SocialEngineering or Phishing Engagment..\n[!]Users can expose their local servers to the Internet and decode the location coordinates by looking at the log file\"|boxes -d boy | lolcat")
@@ -812,7 +903,7 @@ def saycheese():
     os.system("echo \"Take webcam shots from target just sending a malicious link\"|boxes -d boy | lolcat")
     userchoice = input("[1]Install [2]Run [99]Back >> ")
     if userchoice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/saycheese")
+        os.system("sudo git clone https://github.com/hangetzzu/saycheese")
         phishattack()
     elif userchoice == "2":
         os.system("cd saycheese && sudo bash saycheese.sh")
@@ -825,7 +916,7 @@ def qrjacking():
     os.system("echo \"QR Code Jacking (Any Website) \" | boxes -d boy | lolcat")
     userchoice = input("[1]Install [2]Run [99]Back >>")
     if userchoice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/ohmyqr && sudo apt-get install scrot")
+        os.system("sudo git clone https://github.com/cryptedwolf/ohmyqr && sudo apt-get install scrot")
         phishattack()
     elif userchoice == "2":
         os.system("cd ohmyqr && sudo bash ohmyqr.sh")
@@ -840,50 +931,88 @@ def socialfinder():
     print("""
         [1]Find SocialMedia By Facial Recognation System
         [2]Find SocialMedia By UserName
+        [3]Sherlock
+        [4]SocialScan | Username or Email
         [99]Back To Main Menu
     """)
     choice =input("Z4nzu =>>")
     if choice == "1":
+        clearScr()
         facialfind()
     elif choice == "2":
-        userrecon()
+        clearScr()
+        finduser()
+    elif choice == "3":
+        clearScr()
+        sherlock()
+    elif choice == "4":
+        clearScr()
+        socialscan()
     elif choice == "99":
         menu()
     else :
         menu()
 
+def socialscan():
+    os.system("echo \"Check email address and username availability on online platforms with 100% accuracy \n\t[*]https://github.com/iojw/socialscan \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("sudo pip install socialscan")
+    elif choice == "2":
+        uname =input("Enter Username or Emailid (if both then please space between email & username) >>")
+        os.system("sudo socialscan {0}".format(uname))
+    elif choice == "99":
+        socialfinder()
+    else :
+        menu()
+
+
+def sherlock():
+    os.system("echo \"Hunt down social media accounts by username across social networks \n For More Usege \n\t >>python3 sherlock --help \n [!]https://github.com/sherlock-project/sherlock \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/sherlock-project/sherlock.git")
+        os.system("cd sherlock ;sudo python3 -m pip install -r requirements.txt")
+    elif choice == "2":
+        uname= input("Enter Username >> ")
+        os.system("cd sherlock ;sudo python3 sherlock {0}".format(uname))
+    elif choice == "99":
+        socialfinder()
+    else :
+        menu()
+
 def facialfind():
-    choice=input("[1]Install [2]Run [99]Back >>")
+    os.system("echo \"A Social Media Mapping Tool that correlates profiles\n via facial recognition across different sites. \n\t[!]https://github.com/Greenwolf/social_mapper \"|boxes -d boy | lolcat")
+    choice=input("[1]Install [2]Run [99]Back >> ")
     if choice == "1":
         os.system("sudo add-apt-repository ppa:mozillateam/firefox-next && sudo apt update && sudo apt upgrade")
-        os.system("echo \"[!]Now You have To do some Manually\n[!]Install the Geckodriver for your operating system\n[!]Copy & Paste Link And Download File As System Configuration\n[#]https://github.com/mozilla/geckodriver/releases\n[!!]On Linux you can place it in /usr/bin \"| boxes -d boy")
-        time.sleep(5)
         os.system("sudo git clone https://github.com/Greenwolf/social_mapper.git")
         os.system("cd social_mapper/setup")
         os.system("sudo python3 -m pip install --no-cache-dir -r requirements.txt")
-        socialfinder()
+        os.system("echo \"[!]Now You have To do some Manually\n[!]Install the Geckodriver for your operating system\n[!]Copy & Paste Link And Download File As System Configuration\n[#]https://github.com/mozilla/geckodriver/releases\n[!!]On Linux you can place it in /usr/bin \"| boxes | lolcat")
     elif choice == "2":
         os.system("cd social_mapper/setup")
         os.system("sudo python social_mapper.py -h")
         print("""\033[95m 
                 You have to set Username and password of your AC Or Any Fack Account
-                {0}Type in Terminal nano social_mapper.py
-        \n ]""")
-        os.system("echo \"python social_mapper.py -f [<imageFoldername>] -i [<imgFolderPath>] -m fast [<AcName>] -fb -tw\"| boxes -d headline | lolcat")
+                [#]Type in Terminal nano social_mapper.py
+        """)
+        os.system("echo \"python social_mapper.py -f [<imageFoldername>] -i [<imgFolderPath>] -m fast [<AcName>] -fb -tw\"| boxes | lolcat")
     elif choice == "99" :
         socialfinder()
     else :
         menu()
 
-def userrecon():
+def finduser():
+    os.system("echo \"Find usernames across over 75 social networks \n [!]https://github.com/xHak9x/finduser \"|boxes -d boy | lolcat")
     userchoice = input("[1]Install [2]Run [99]Back >> ")
     if userchoice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/userrecon.git")
-        os.system("cd userrecon && sudo chmod +x userrecon.sh ")
+        os.system("sudo git clone https://github.com/xHak9x/finduser.git")
+        os.system("cd finduser && sudo chmod +x finduser.sh")
         time.sleep(3)
         socialfinder()
     elif userchoice == "2":
-        os.system("cd userrecon && sudo ./userrecon.sh")
+        os.system("cd finduser && sudo bash finduser.sh")
     elif userchoice == "99":
         socialfinder()
     else :
@@ -902,7 +1031,6 @@ def forensic():
     """)
     choice = input("Z4nzu ==>>")
     if choice == "3" :
-        clearScr()
         bulkextractor()
     elif choice == "4":
         clearScr()
@@ -948,6 +1076,7 @@ def bulkextractor():
         menu()
 
 def guymager():
+    os.system("echo \"Guymager is a free forensic imager for media acquisition.\n [!]https://guymager.sourceforge.io/ \"|boxes -d boy | lolcat")
     choice = input("[1]Install [2]Run [99]Back >> ")
     if choice == "1":
         os.system("sudo apt install guymager")
@@ -964,10 +1093,7 @@ def guymager():
 
 def autopsy():
     os.system("echo \"Autopsy is a platform that is used by Cyber Investigators.\n[!] Works in any Os\n[!]Recover Deleted Files from any OS & MEdia \n[!]Extract Image Metadata \"|boxes -d boy | lolcat")
-    print("""
-        [1]Run [99]Back  
-    """)
-    choice=input("Z4nzu >> ")
+    choice=input(" [1]Run [99]Back >> ")
     if choice == "1":
         os.system("sudo autopsy")
     if choice == "":
@@ -990,7 +1116,7 @@ def wireshark():
         menu()
 
 def toolsley():
-    os.system("echo \" Toolsley got more than ten useful tools for investigation.\n\b File signature verifier\n\b File identifier \n\b Hash & Validate \n\b Binary inspector \n\bEncode text \n\b Data URI generator \n\b Password generator \" | boxes -d boy | lolcat")
+    os.system("echo \" Toolsley got more than ten useful tools for investigation.\n[+]File signature verifier\n[+]File identifier \n[+]Hash & Validate \n[+]Binary inspector \n [+]Encode text \n[+]Data URI generator \n[+]Password generator \" | boxes -d boy | lolcat")
     userchoice = input("[1]Open [99]Back >> ")
     if userchoice == "1":
         print("Trying to open WebBrowser ")
@@ -1057,10 +1183,13 @@ def chromekeylogger():
 
 def routexp():
     clearScr()
-    os.system("figlet -f standard Router Exploit | lolcat ")
+    os.system("figlet -f standard Exploit Framework | lolcat ")
     print("""
         [1] RouterSploit
-        [2] Fastssh 
+        [2] WebSploit
+        [3] Commix
+        [4] Web2Attack
+        [5] Fastssh 
         [99]Back to menu
     """)
     choice=input("Z4nzu =>> ")
@@ -1069,14 +1198,45 @@ def routexp():
         routersploit()
     elif choice=="99":
         menu()
-    elif choice=="2":
+    elif choice=="5":
         clearScr()
         fastssh()
+    elif choice == "3":
+        clearScr()
+        commix()
+    elif choice == "4":
+        clearScr()
+        web2attack()
+    elif choice == "2":
+        clearScr()
+        websploit()
     elif choice== "":
         routexp()
     else :
-        print("You Entered wrong Choice :")
+        print("Error Wrong Input..")
         routexp()
+
+def commix():
+    os.system("echo \"Automated All-in-One OS command injection and exploitation tool.\nCommix can be used from web developers, penetration testers or even security researchers\n in order to test web-based applications with the view to find bugs,\n errors or vulnerabilities related to command injection attacks.\n Usage: python commix.py [option(s)] \n\n\t[!]https://github.com/commixproject/commix  \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/commixproject/commix.git commix")
+    elif choice == "99":
+        routexp()
+    else :
+        menu()
+
+def websploit():
+    os.system("echo \"Websploit is an advanced MITM framework.\n\t [!]https://github.com/The404Hacking/websploit \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("https://github.com/The404Hacking/websploit.git")
+    elif choice == "2":
+        os.system("cd websploit;python3 websploit.py")
+    elif choice == "99":
+        routexp()
+    else :
+        menu()
 
 def routersploit():
     os.system("echo \"The RouterSploit Framework is an open-source exploitation framework dedicated to embedded devices\"|boxes -d boy | lolcat")
@@ -1098,7 +1258,7 @@ def fastssh():
     os.system("echo \"Fastssh is an Shell Script to perform multi-threaded scan \n and brute force attack against SSH protocol using the most commonly credentials. \" | boxes -d boy | lolcat")
     userchoice = input("[1]Install [2]Run [99]Back >>")
     if userchoice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/fastssh && cd fastssh && sudo chmod +x fastssh.sh")
+        os.system("sudo git clone https://github.com/Z4nzu/fastssh && cd fastssh && sudo chmod +x fastssh.sh")
         os.system("sudo apt-get install -y sshpass netcat")
     elif userchoice == "2":
         os.system("cd fastssh && sudo bash fastssh.sh --scan")
@@ -1116,11 +1276,11 @@ def webAttack():
         [3] SubDomain Finder
         [4] CheckURL
         [5] Blazy(Also Find ClickJacking)
+        [6] Sub-Domain TakeOver
         [99]Back To Menu
     """)
     choice = input("Z4nzu >> ")
     if choice == "1":
-        clearScr()
         web2attack()
     elif choice == "2":
         skipfish()
@@ -1130,27 +1290,44 @@ def webAttack():
         clearScr()
         checkurl()
     elif choice == "5":
-    
+        clearScr()
         blazy()
+    elif choice == "6":
+        clearScr()
+        subdomaintakeover()
     elif choice == "99":
         menu()
+    else :
+        print("Wrong Input..")
+        webAttack()
+
+def subdomaintakeover():
+    os.system("echo \"Sub-domain takeover vulnerability occur when a sub-domain \n (subdomain.example.com) is pointing to a service (e.g: GitHub, AWS/S3,..)\nthat has been removed or deleted.\nUsage :python3 takeover.py -d www.domain.com -v \n\t[!]https://github.com/m4ll0k/takeover \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/m4ll0k/takeover.git")
+        os.system("cd takeover;sudo python3 setup.py install")
+        webAttack()
+    elif choice == "99":
+        webAttack()
     else :
         menu()
 
 def web2attack():
+    os.system("echo \"Web hacking framework with tools, exploits by python \n[!]https://github.com/santatic/web2attack \"| boxes -d boy | lolcat")
     userchoice = input("[1]Install [2]Run [99]Back >> ")
     if userchoice == "1":
         os.system("sudo git clone https://github.com/santatic/web2attack.git")
-        webAttack()
+        menu()
     elif userchoice == "2":
-        os.system("cd web2attack && ./w2aconsole")
+        os.system("cd web2attack && sudo bash w2aconsole")
     elif userchoice == "99":
         webAttack()
     else :
         menu()
 
-
 def skipfish():
+    os.system("echo \"Skipfish – Fully automated, active web application security reconnaissance tool \n Usage : skipfish -o [FolderName] targetip/site \n[!]https://tools.kali.org/web-applications/skipfish \"|boxes -d headline | lolcat")
     userchoice = input("[1]Run [99]Back >> ")
     if userchoice == "1":
         os.system("sudo skipfish -h")
@@ -1161,20 +1338,19 @@ def skipfish():
         menu()
     
 def subdomain():
-    choice=input("[1]install [2]Run [99]BAck >> ")
+    os.system("echo \"Sublist3r is a python tool designed to enumerate subdomains of websites using OSINT \n Usage:\n\t[1]python sublist3r.py -d example.com \n[2]python sublist3r.py -d example.com -p 80,443\"| boxes -d boy | lolcat")
+    choice=input("[1]install [2]Run [99]Back >> ")
     if choice == "1":
         os.system("sudo pip install requests argparse dnspython")
         os.system("sudo git clone https://github.com/aboul3la/Sublist3r.git ")
         os.system("cd Sublist3r && sudo pip install -r requirements.txt") 
         webAttack()
     elif choice == "2":
-        print("Go to Sublist3r and run ./sublist3r")
-        os.system("echo \" python sublist3r.py -d example.com \npython sublist3r.py -d example.com -p 80,443\"| boxes -d boy | lolcat")
         os.system("cd Sublist3r && python sublist3r.py -h")
     elif choice == "99" :
         webAttack()
     else :
-        main()
+        menu()
 
 def checkurl():
     os.system("echo \" Detect evil urls that uses IDN Homograph Attack.\n\t[!]python3 checkURL.py --url google.com \" | boxes -d boy | lolcat")
@@ -1209,12 +1385,9 @@ def androidhack():
     print("""
         [1] Keydroid 
         [2] MySMS
-        [3] Getdroid
-        [4] DroidFiles (Get files from Android Directories)
-        [5] Lockphish (Grab target LOCK PIN)
-        [6] Whatsapp Attack
-        [7] DroidCam (Capture Image)
-        [8] EvilApp (Hijack Session)
+        [3] Lockphish (Grab target LOCK PIN)
+        [4] DroidCam (Capture Image)
+        [5] EvilApp (Hijack Session)
         [99]Main Menu
     """)
     choice = input("Z4nzu =>>")
@@ -1224,34 +1397,38 @@ def androidhack():
     elif choice == "2":
         clearScr()
         mysms()
+    # elif choice == "3":
+    #     print("Sorry This Tool Not Available")
+    #     time.sleep(1)
+    #     androidhack()
+    #     # getdroid()
     elif choice == "3":
         clearScr()
-        getdroid()
-    elif choice == "5":
-        clearScr()
         lock()
+    # elif choice == "4":
+    #     print("Sorry This Tool Not Available")
+    #     time.sleep(1)
+    #     androidhack()
+    #     # droidfile()
+    # elif choice  == "6":
+    #     clearScr()
+    #     whatshack()
     elif choice == "4":
         clearScr()
-        droidfile()
-    elif choice  == "6":
-        clearScr()
-        whatshack()
-    elif choice == "7":
-        clearScr()
         droidcam()
-    elif choice == "8":
+    elif choice == "5":
         clearScr()
         evilapp()
     elif choice == "99":
-        menu()
+        others()
     else :
         menu()
 
 def keydroid():
-    os.system("echo \"Android Keylogger + Reverse Shell\n[!]You have to install Some Manually Refer Below Link :\n [+]https://github.com/thelinuxchoice/keydroid \" | boxes -d boy | lolcat")
+    os.system("echo \"Android Keylogger + Reverse Shell\n[!]You have to install Some Manually Refer Below Link :\n [+]https://github.com/F4dl0/keydroid \" | boxes -d boy | lolcat")
     userchoice = input("[1]Install [2]Run [99]Back >>")
     if userchoice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/keydroid ")
+        os.system("sudo git clone https://github.com/F4dl0/keydroid")
         androidhack()
     elif userchoice == "2":
         os.system("cd keydroid && bash keydroid.sh")
@@ -1261,10 +1438,10 @@ def keydroid():
         menu()
 
 def mysms():
-    os.system("echo \" Script that generates an Android App to hack SMS through WAN \n[!]You have to install Some Manually Refer Below Link :\n\t [+]https://github.com/thelinuxchoice/mysms \" | boxes -d boy | lolcat")
+    os.system("echo \" Script that generates an Android App to hack SMS through WAN \n[!]You have to install Some Manually Refer Below Link :\n\t [+]https://github.com/papusingh2sms/mysms \" | boxes -d boy | lolcat")
     userchoice = input("[1]Install [2]Run [99]Back >>")
     if userchoice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/mysms")
+        os.system("sudo git clone https://github.com/papusingh2sms/mysms")
         androidhack()
     elif userchoice == "2":
         os.system("cd mysms && bash mysms.sh")
@@ -1273,24 +1450,24 @@ def mysms():
     else :
         menu()
 
-def getdroid():
-    os.system("echo \"FUD Android Payload (Reverse Shell) and Listener using Serveo.net (no need config port forwarding) \" | boxes -d boy | lolcat")
-    userchoice = input("[1]Install [2]Run [99]Back >>")
-    if userchoice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/getdroid && apt-get install android-sdk apksigner -y")
-        androidhack()
-    elif userchoice == "2":
-        os.system("cd getdroid && bash getdroid.sh")
-    elif userchoice == "99":
-        androidhack()
-    else :
-        menu()
+# def getdroid():
+#     os.system("echo \"FUD Android Payload (Reverse Shell) and Listener using Serveo.net (no need config port forwarding) \" | boxes -d boy | lolcat")
+#     userchoice = input("[1]Install [2]Run [99]Back >>")
+#     if userchoice == "1":
+#         os.system("sudo git clone https://github.com/thelinuxchoice/getdroid && apt-get install android-sdk apksigner -y")
+#         androidhack()
+#     elif userchoice == "2":
+#         os.system("cd getdroid && bash getdroid.sh")
+#     elif userchoice == "99":
+#         androidhack()
+#     else :
+#         menu()
 
 def lock():
     os.system("echo \"Lockphish it's the first tool for phishing attacks on the lock screen, designed to\n Grab Windows credentials,Android PIN and iPhone Passcode using a https link. \"| boxes -d boy | lolcat")
     userchoice = input("[1]Install [2]Run [99]Back >> ")
     if userchoice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/lockphish")
+        os.system("sudo git clone git clone https://github.com/JasonJerry/lockphish")
         androidhack()
     elif userchoice == "2":
         os.system("cd lockphish && bash lockphish.sh")
@@ -1299,66 +1476,65 @@ def lock():
     else :
         menu()
 
-def droidfile():
-    os.system("echo \"Get files from Android directories\"|boxes -d boy | lolcat")
-    userchoice = input("[1]Install [2]Run [3] Packges Install(Required) [99]Back >>")
-    if userchoice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/droidfiles")
-    elif userchoice == "2":
-        os.system("cd droidfiles && bash droidfiles.sh")
-    elif userchoice == "3":
-        os.system("apt-get install default-jdk apksigner")
-        os.system("apt-get install libc6-dev-i386 lib32z1")
-        os.system("wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip && mkdir -p $HOME/Android/Sdk && unzip sdk-tools-linux* -d $HOME/Android/Sdk")
-        os.system("curl -s \"https://get.sdkman.io\" | bash && source $HOME/.sdkman/bin/sdkman-init.sh && echo \"Y\" | sdk install java 8.0.191-oracle && sdk use java 8.0.191-oracle && sdk install gradle 2.14.1 && sdk use gradle 2.14.1")
-    elif userchoice == "99":
-        androidhack()
-    else :
-        menu()
+# def droidfile():
+#     os.system("echo \"Get files from Android directories\"|boxes -d boy | lolcat")
+#     userchoice = input("[1]Install [2]Run [3] Packges Install(Required) [99]Back >>")
+#     if userchoice == "1":
+#         os.system("sudo git clone https://github.com/thelinuxchoice/droidfiles")
+#     elif userchoice == "2":
+#         os.system("cd droidfiles && bash droidfiles.sh")
+#     elif userchoice == "3":
+#         os.system("apt-get install default-jdk apksigner")
+#         os.system("apt-get install libc6-dev-i386 lib32z1")
+#         os.system("wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip && mkdir -p $HOME/Android/Sdk && unzip sdk-tools-linux* -d $HOME/Android/Sdk")
+#         os.system("curl -s \"https://get.sdkman.io\" | bash && source $HOME/.sdkman/bin/sdkman-init.sh && echo \"Y\" | sdk install java 8.0.191-oracle && sdk use java 8.0.191-oracle && sdk install gradle 2.14.1 && sdk use gradle 2.14.1")
+#     elif userchoice == "99":
+#         androidhack()
+#     else :
+#         menu()
 
-def whatshack():
-    os.system("echo \"Script to generate Android App to Hack All WhatsApp Media Files.\n\t[!]Download Android Studio:\n[+]https://developer.android.com/studio \n\t[!]Installing Android Studio:\n[+]unzip ~/Downloads/android*.zip -d /opt \nRun Android Studio: \n[+] cd /opt/android-studio/bin \n[+] ./studio.sh \n[!]Go to SDK Manager (Configure -> SDK Manager) and Download:\n[!]Android SDK Build-tools, Android SDK-tools, Android SDK platform-tools, Support Repository\" | boxes -d shell | lolcat")
-    userchoice = input("[1]Install [2]Run [99]Back >>")
-    if userchoice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/whatshack")
-        time.sleep(5)
-        print("Installing Required Packges..!! It Take More Time ")
-        time.sleep(3)
-        os.system("apt-get install openjdk-8-jdk && apt-get install gradle")
-        os.system("update-alternatives --list java")
-        os.system("update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java")
-        time.sleep(2)
-        androidhack()
-    elif userchoice == "2":
-        os.system("echo \"[#]On First Time, Choose \"n\" when asks to build, then open the project on Android Studio:\n[!]cd /opt/android-studio/bin \n[!]./studio.sh \n[#]Import Gradle Project:\n[!]Choose whatshack app folder: whatshack/app/ \n[#]Wait all dependencies downloading, if you got errors, click on showed links to solve. \n[#]Try build from Android Studio: Build > build APK's \n[#]Click on showed links if you got errors. \n[#]Close Android after building successfully.\n[#]open with any Text Editor the file app/build.gradle\n[!]remove \"google\" \n[#]change gradle version from: 3.4.1 to: 2.2.0 \n[!]save and exit. \n[#]After this Run Script As Root: \n[!]bash whatshack.sh \"| boxes -d shell")
-        os.system("echo \"If still getting error please visit \n\t[#]https://github.com/thelinuxchoice/whatshack\"|boxes -d shell")
-        os.system("cd whatshack/ && bash whatshack.sh")
-    elif userchoice == "99":
-        androidhack()
-    elif userchoice=="":
-        androidhack()
-    else :
-        menu()
+# def whatshack():
+#     os.system("echo \"Script to generate Android App to Hack All WhatsApp Media Files.\n\t[!]Download Android Studio:\n[+]https://developer.android.com/studio \n\t[!]Installing Android Studio:\n[+]unzip ~/Downloads/android*.zip -d /opt \nRun Android Studio: \n[+] cd /opt/android-studio/bin \n[+] ./studio.sh \n[!]Go to SDK Manager (Configure -> SDK Manager) and Download:\n[!]Android SDK Build-tools, Android SDK-tools, Android SDK platform-tools, Support Repository\" | boxes -d shell | lolcat")
+#     userchoice = input("[1]Install [2]Run [99]Back >>")
+#     if userchoice == "1":
+#         os.system("sudo git clone https://github.com/thelinuxchoice/whatshack")
+#         time.sleep(5)
+#         print("Installing Required Packges..!! It Take More Time ")
+#         time.sleep(3)
+#         os.system("apt-get install openjdk-8-jdk && apt-get install gradle")
+#         os.system("update-alternatives --list java")
+#         os.system("update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java")
+#         time.sleep(2)
+#         androidhack()
+#     elif userchoice == "2":
+#         os.system("echo \"[#]On First Time, Choose \"n\" when asks to build, then open the project on Android Studio:\n[!]cd /opt/android-studio/bin \n[!]./studio.sh \n[#]Import Gradle Project:\n[!]Choose whatshack app folder: whatshack/app/ \n[#]Wait all dependencies downloading, if you got errors, click on showed links to solve. \n[#]Try build from Android Studio: Build > build APK's \n[#]Click on showed links if you got errors. \n[#]Close Android after building successfully.\n[#]open with any Text Editor the file app/build.gradle\n[!]remove \"google\" \n[#]change gradle version from: 3.4.1 to: 2.2.0 \n[!]save and exit. \n[#]After this Run Script As Root: \n[!]bash whatshack.sh \"| boxes -d shell")
+#         os.system("echo \"If still getting error please visit \n\t[#]https://github.com/thelinuxchoice/whatshack\"|boxes -d shell")
+#         os.system("cd whatshack/ && bash whatshack.sh")
+#     elif userchoice == "99":
+#         androidhack()
+#     elif userchoice=="":
+#         androidhack()
+#     else :
+#         menu()
 
 def droidcam():
-    os.system("echo \"Script to generate an Android App to take photos from Cameras using Camera2 function on API 21\n After Installing if you getting error please go to below link \n[+]https://github.com/thelinuxchoice/DroidCam \"| boxes -d boy | lolcat")
+    os.system("echo \"Powerful Tool For Grab Front Camera Snap Using A Link  \n[+]https://github.com/kinghacker0/WishFish \"| boxes -d boy | lolcat")
     userchoice = input("[1]Install [2]Run [99]Back >>")
     if userchoice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/droidcam ")
-        os.system("cd droidcam && sudo bash install.sh")
+        os.system("sudo git clone https://github.com/kinghacker0/WishFish; sudo apt install php wget openssh")
         androidhack()
     elif userchoice == "2":
-        os.system("cd droidcam && bash droidcam.sh")
+        os.system("cd wishfish && sudo bash wishfish.sh")
     elif userchoice == "99":
         androidhack()
     else :
         menu()
 
 def evilapp():
-    os.system("echo \"EvilApp is a script to generate Android App that can hijack authenticated sessions in cookies\" | boxes -d boy | lolcat")
+    os.system("echo \"EvilApp is a script to generate Android App that can hijack authenticated sessions in cookies.\n [!]https://github.com/crypticterminal/EvilApp \" | boxes -d boy | lolcat")
     userchoice = input("[1]Install [2]Run [99]Back >>")
     if userchoice == "1":
-        os.system("sudo git clone https://github.com/thelinuxchoice/evilapp")
+        os.system("sudo git clone https://github.com/crypticterminal/EvilApp")
         androidhack()
     elif userchoice == "2":
         os.system("cd evilapp && bash evilapp.sh")
@@ -1377,6 +1553,7 @@ def payloads():
         [4] MSFvenom Payload Creator
         [5] Venom Shellcode Generator 
         [6] Spycam
+        [7] Mob-Droid
         [99]Back 
     """)
     choice =input("Z4nzu >> ")
@@ -1386,6 +1563,9 @@ def payloads():
     elif choice == "2":
         clearScr()
         Brutal()
+    elif choice == "7":
+        clearScr()
+        mobdroid()
     elif choice == "3":
         clearScr()
         stitch()
@@ -1404,6 +1584,19 @@ def payloads():
         payloads()
     else :
         menu()
+
+def mobdroid():
+    os.system("echo \"Mob-Droid helps you to generate metasploit payloads in easy way\n without typing long commands and save your time.\n[!]https://github.com/kinghacker0/Mob-Droid \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/kinghacker0/mob-droid")
+    elif choice == "2":
+        os.system("cd Mob-Droid;sudo python mob-droid.py")
+    elif choice == "99":
+        payloads()
+    else :
+        menu()
+
 
 def thefatrat():
     os.system("echo \"TheFatRat Provides An Easy way to create Backdoors and \nPayload which can bypass most anti-virus\"|boxes -d boy | lolcat")
@@ -1463,12 +1656,14 @@ def stitch():
         menu()
 
 def MSFvenom():
+    os.system("echo \"MSFvenom Payload Creator (MSFPC) is a wrapper to generate \nmultiple types of payloads, based on users choice.\nThe idea is to be as simple as possible (only requiring one input) \nto produce their payload. [!]https://github.com/g0tmi1k/msfpc \" |boxes -d boy | lolcat ")
     choice= input("[1]Install [2]Run [99]Back >> ")
     if choice == "1":
-        os.system("sudo git clone https://github.com/g0tmi1k/msfpc.git && cd msfpc && chmod +x msfpc.sh")
+        os.system("sudo git clone https://github.com/g0tmi1k/msfpc.git")
+        os.system("cd msfpc;sudo chmod +x msfpc.sh")
         payloads()
     elif choice == "2":
-        os.system("cd msfpc && sudo bash msfpc.sh -h -v")
+        os.system("cd msfpc;sudo bash msfpc.sh -h -v")
     elif choice == "99":
         payloads()
     elif choice == "":
@@ -1483,10 +1678,7 @@ def venom():
         os.system("sudo git clone https://github.com/r00t-3xp10it/venom.git")
         os.system("sudo chmod -R 775 venom*/ && cd venom*/ && cd aux && sudo bash setup.sh")
         os.system("sudo ./venom.sh -u")
-        print("Download Successfully...!!!")
         payloads()
-        #sudo find ./ -name "*.sh" -exec chmod +x {} \; sudo find ./ -name "*.py" -exec chmod +x {} \;
-        # print("Give Permission to .sh & .py Files")
     elif choice == "2":
         os.system("cd venom && sudo ./venom.sh")
     elif choice == "99":
@@ -1514,18 +1706,36 @@ def wifijamming():
     clearScr()
     os.system("figlet -f standard -c Wifi Deautheticate | lolcat")
     print("""
-        [1] Using Airmon
+        [1]WifiJammer-NG
+        [2] Using Airmon
         [99]Back
     """)
     choice = input("Z4nzu =>> ")
     if choice == "1":
         clearScr()
-        # airmon()
-        pass
+        wifijammingng()
+    elif choice == "2":
+        clearScr()
+        airmon()
     elif choice == "99":
         menu()
     else :
         menu()
+
+def wifijammingng():
+    os.system("echo \"Continuously jam all wifi clients and access points within range.\n\t [!]https://github.com/MisterBianco/wifijammer-ng \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [2]Run [99]Back >> ")
+    if choice == "1":
+        os.system("sudo git clone https://github.com/MisterBianco/wifijammer-ng.git")
+        os.system("cd wifijammer-ng;sudo pip3 install -r requirements.txt")
+    elif choice == "2":
+        os.system("echo \"python wifijammer.py [-a AP MAC] [-c CHANNEL] [-d] [-i INTERFACE] [-m MAXIMUM] [-k] [-p PACKETS] [-s SKIP] [-t TIME INTERVAL] [-D]\"| boxes | lolcat")
+        os.system("cd wifijammer-ng;sudo python3 wifijammer.py")
+    elif choice == "99":
+        wifijamming()
+    else :
+        menu()
+
 
 def airmon():
     print(Logo)
@@ -1569,8 +1779,10 @@ def steganography():
     if choice == "1":
         steganohide()
     elif choice == "2":
+        clearScr()
         stegnocracker()
     elif choice == "3":
+        clearScr()
         whitespace()
     elif choice == "99":
         menu()
@@ -1585,11 +1797,11 @@ def steganohide():
     elif choice == "2":
         choice1=input("[1]Hide [2]Extract >> ")
         if choice1 =="1":
-            filehide=input("Enter Filename you want to Embed(1.txt) :- ")
-            filetobehide=input("Enter Cover Filename(test.jpeg) :- ")
+            filehide=input("Enter Filename you want to Embed(1.txt) >> ")
+            filetobehide=input("Enter Cover Filename(test.jpeg) >> ")
             os.system("steghide embed -cf {0} -ef {1}".format(filetobehide,filehide))
         elif choice1 =="2":
-            fromfile=input("Enter Filename From Extract Data :- ")
+            fromfile=input("Enter Filename From Extract Data >> ")
             os.system("steghide extract -sf {0}".format(fromfile))
     elif choice == "99":
         steganography()
@@ -1597,8 +1809,8 @@ def steganohide():
         menu()
 
 def stegnocracker():
-    os.system("echo \" SteganoCracker is a tool that uncover hidden data inside files\n using brute-force utility  \"|boxes -d boy| lolcat")
-    choice = ("[1]Install [2]Run [99]BAck  >> ")
+    os.system("echo \"SteganoCracker is a tool that uncover hidden data inside files\n using brute-force utility  \"|boxes -d boy| lolcat")
+    choice = input("[1]Install [2]Run [99]Back  >> ")
     if choice == "1":
         os.system("pip3 install stegcracker && pip3 install stegcracker -U --force-reinstall")
         steganography()
@@ -1612,6 +1824,7 @@ def stegnocracker():
         menu()
 
 def whitespace():
+    os.system("echo \"Use whitespace and unicode chars for steganography \n\t [!]https://github.com/beardog108/snow10 \"|boxes -d boy | lolcat")
     choice =input("[1]Install [2]Run [99]Back >> ")
     if choice == "1":
         os.system("sudo git clone https://github.com/beardog108/snow10.git ")
@@ -1718,7 +1931,7 @@ def explo():
         menu()
 
 def sqliscanner():
-    os.system("echo \"Damn Small SQLi Scanner (DSSS) is a fully functional SQL injection\nvulnerability scanner also supporting GET and POST parameters.\nMore Info [!]https://github.com/stamparm/DSSS \"|boxes -d boy | lolcat")
+    os.system("echo \"Damn Small SQLi Scanner (DSSS) is a fully functional SQL injection\nvulnerability scanner also supporting GET and POST parameters.\n[*]python3 dsss.py -h[help] | -u[URL] \n\tMore Info [!]https://github.com/stamparm/DSSS \"|boxes -d boy | lolcat")
     choice =input("[1]Install [99]Back >> ")
     if choice == "1":
         os.system("git clone https://github.com/stamparm/DSSS.git")
@@ -1762,20 +1975,17 @@ def others():
     [2] Android Hack
     [3] HatCloud(Bypass CloudFlare for IP)
     [4] IDN Homograph Attack Tools
-    [5] Hash Cracking Tools
+    [5] Email Verifier
+    [6] Hash Cracking Tools
     [99]Main Menu
     """)
     choice = input("Z4nzu =>>")
     if choice == "1":
-        print("Tool Available in Next Update..!!")
-        time.sleep(3)
-        others()
-        # socialattack()
+        clearScr()
+        socialattack()
     elif choice == "2":
-        print("Tool Available in Next Update..!!")
-        time.sleep(3)
-        others()
-        # androidhack()
+        clearScr()
+        androidhack()
     elif choice == "3":
         clearScr()
         hatcloud()
@@ -1783,6 +1993,10 @@ def others():
         clearScr()
         homograph()
     elif choice == "5":
+        clearScr()
+        emailverify()
+    elif choice == "6":
+        clearScr()
         hashcracktool()
     elif choice == "99":
         menu()
@@ -1792,7 +2006,9 @@ def others():
         menu()
 
 def showme():
-    print("""This tool allows you to perform OSINT and reconnaissance on an organisation or an individual. 
+    print("""
+    
+    [*] This tool allows you to perform OSINT and reconnaissance on an organisation or an individual. 
         It allows one to search 1.4 Billion clear text credentials which was dumped as part of BreachCompilation 
         leak This database makes finding passwords faster and easier than ever before.
             """)
@@ -1800,11 +2016,11 @@ def showme():
     if userchoice == "1":
         os.system("sudo git clone https://github.com/Viralmaniar/SMWYG-Show-Me-What-You-Got.git")
         os.system("cd SMWYG-Show-Me-What-You-Got && pip3 install -r requirements.txt ")
-        others()
+        passwd()
     elif userchoice == "2":
         os.system("cd SMWYG-Show-Me-What-You-Got && python SMWYG.py")
     elif userchoice == "99":
-        others()
+        passwd()
     else :
         menu()
 
@@ -1821,6 +2037,38 @@ def hatcloud():
         others()
     else :
         others()
+
+def emailverify():
+    clearScr()
+    os.system("figlet -f standard -c Email Verify tools | lolcat")
+    print("""
+        [1]  KnockMail
+        [99] Back
+    """)
+    choice =input("Z4nzu >>")
+    if choice == "1":
+        clearScr()
+        knockmail()
+    elif choice == "99":
+        others()
+    else :
+        others()
+
+def knockmail():
+    os.system("echo \"KnockMail Tool Verify If Email Exists [!]https://github.com/4w4k3/KnockMail \"|boxes -d boy | lolcat")
+    choice = input("[1]Install [99]Back >> ")
+    if choice == "1":
+        os.system("git clone https://github.com/4w4k3/KnockMail.git")
+        os.system("cd KnockMail;sudo pip install -r requeriments.txt")
+        emailverify()
+    elif choice == "2":
+        os.system("cd KnockMail;python knock.py")
+    elif choice == "99":
+        emailverify()
+    else :
+        menu()
+
+
 
 def homograph():
     clearScr()
@@ -1900,13 +2148,16 @@ def Ddos():
         clearScr()
         slowloris()
     elif choice == "2":
+        clearScr()
         asyncrone()
     elif choice == "3":
+        clearScr()
         ufonet()
     elif choice == "4":
+        clearScr()
         goldeneye()
     elif choice == "99":
-        others()
+        menu()
     else :
         print("Invalid ...")
         menu()
@@ -1957,7 +2208,7 @@ def ufonet():
         menu()
     
 def goldeneye():
-    os.system("echo \"More Info [!]https://github.com/jseidl/GoldenEye \"|boxes -d boy | lolcat")
+    os.system("echo \"GoldenEye is an python3 app for SECURITY TESTING PURPOSES ONLY!\nGoldenEye is a HTTP DoS Test Tool. \n\t [!]https://github.com/jseidl/GoldenEye \"|boxes -d boy | lolcat")
     choice = input("[1]install [2]Run [99]Back >> ")
     if choice == "1":
         os.system("sudo git clone https://github.com/jseidl/GoldenEye.git;chmod -R 755 GoldenEye")
@@ -1987,43 +2238,47 @@ def xsstools():
     """)
     choice = input("Z4nzu >> ")
     if choice == "1":
+        clearScr()
         dalfox()
     elif choice =="2":
+        clearScr()
         xsspayload()
     elif choice == "99":
-        others()
+        menu()
     elif choice == "3":
+        clearScr()
         xssfinder()
     elif choice == "4":
+        clearScr()
         xssfreak()
     elif choice == "5":
+        clearScr()
         xspear()
     elif choice == "6":
+        clearScr()
         xsscon()
     elif choice == "7":
+        clearScr()
         xanxss()
     elif choice == "8":
+        clearScr()
         XSStrike()
     elif choice == "":
-        others()
+        menu()
     else :
-        others()
+        menu()
 
 def XSStrike():
     os.system("echo \"XSStrike is a python script designed to detect and exploit XSS vulnerabilites. \"| boxes -d boy | lolcat")
-    xc=input("[1]Install [99]BAck >>")
+    xc=input("[1]Install [99]Back >>")
     if xc == "1":
         os.system("sudo rm -rf XSStrike")
         os.system("git clone https://github.com/UltimateHackers/XSStrike.git && cd XSStrike && pip install -r requirements.txt")
-        info()
-    # elif xc == "2" :
-    #     clearScr()
-    #     os.system("echo \"YOu have to Run XSStrike as per your Requirment\n By using python3 xsstrike.py [Options]\"|boxes -d boy")
-    #     os.system("cd XSStrike && python3 xsstrike.py")
+        xsstools()
     elif xc == "99":
-        info()
+        xsstools()
     else :
-        info()
+        xsstools()
 
 def dalfox():
     os.system("echo \"XSS Scanning and Parameter Analysis tool.\"|boxes -d boy | lolcat")
@@ -2134,6 +2389,22 @@ def xanxss():
         others()
 
 
+def update():
+    print("""
+        [1] Update Tool or System 
+        [2] Uninstall HackingTool
+        [99]Back
+    """)
+    choice =input("Z4nzu >> ")
+    if choice == "1":
+        updatesys() 
+    elif choice == "2":
+        uninstall()
+    elif choice == "99":
+        menu()
+    else :
+        menu()
+
 def updatesys():
     choice = input("[1]Update System [2]Update Hackingtool [99]Back >> ")
     if choice == "1":
@@ -2147,6 +2418,22 @@ def updatesys():
     else :
         menu()
 
+def uninstall():
+    choice = input("[1]Uninstall [99]Back >> ")
+    if choice == "1":
+        print("hackingtool started to uninstall..")
+        time.sleep(2)
+        os.system("sudo chmod +x /etc/;sudo chmod +x /usr/share/doc;sudo rm -rf /usr/share/doc/hackingtool/;cd /etc/;sudo rm -rf /etc/hackingtool/;")
+        time.sleep(3)
+        print("Hackingtool Successfully Uninstall..")
+        time.sleep(1)
+        print("Happy Hacking..!!")
+    elif choice == "99":
+        update()
+    else :
+        print("Wrong Input...!!")
+        uninstall()
+
 def clearScr():
     if system() == 'Linux':
         os.system('clear')
@@ -2154,9 +2441,6 @@ def clearScr():
         os.system('cls')
 
 if __name__ == "__main__":
-    # notuser =getpass.getuser()
-    # user=os.getenv("SUDO_UID")
-    # uname=os.getenv("SUDO_USER")
     try:
         if system() == 'Linux':
             fpath="/home/hackingtoolpath.txt"
