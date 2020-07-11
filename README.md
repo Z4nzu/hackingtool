@@ -10,12 +10,13 @@
 ![](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2F_Zinzu07)
 
 #### Your Favourite Tool is not in hackingtool or Suggestions Please [CLICK HERE](https://forms.gle/b235JoCKyUq5iM3t8)
-## Update Available :new:
-- [x] Added New Tools
+## Update Available 🚀 
+- [x] Added New Tools 
 - [x] Fix Errors
-- [X] Update hackingtool Directly using [17]
+- [X] Uninstall hackingtool Script Available
+- [X] Removed Unused Library
 
-### In Beta
+### In Beta 
 This project still in BETA so you may face problems,
 Please open an issue so i'll fix them..!!
 
@@ -56,11 +57,15 @@ Please open an issue so i'll fix them..!!
 - RED HAWK (All In One Scanning)
 - ReconDog
 - Striker
+- SecretFinder
+- Port Scanner
+- Breacher
 ### Password Attack
 - Cupp
 - WordlistCreator
 - Goblin WordGenerator
 - Credential reuse attacks
+- Wordlist (Contain 1.4 Billion Pass)
 ### Wireless Attack
 - WiFi-Pumpkin
 - pixiewps
@@ -77,12 +82,25 @@ Please open an issue so i'll fix them..!!
 - Blisqy - Exploit Time-based blind-SQL injection
 - Leviathan - Wide Range Mass Audit Toolkit 
 - SQLScan
+### SocialMedia Attack       
+- Instagram Attack
+- AllinOne SocialMedia Attack 
+- Facebook Attack
+- Application Checker
+### Android Attack
+- Keydroid 
+- MySMS
+- Lockphish (Grab target LOCK PIN)
+- DroidCam (Capture Image)
+- EvilApp (Hijack Session)
 ### Phishing Attack
 - Setoolkit 
 - SocialFish
+- HiddenEye
+- Evilginx2
 - Shellphish
 - BlackEye
-- I-See_You(Get Location using phishing attack) 
+- I-See-You(Get Location using phishing attack) 
 - SayCheese (Grab target's Webcam Shots)
 - QR Code Jacking
 ### Web Attack
@@ -91,6 +109,7 @@ Please open an issue so i'll fix them..!!
 - SubDomain Finder
 - CheckURL
 - Blazy
+- Sub-Domain TakeOver
 ### Post Explotation
 - Vegile - Ghost In The Shell
 - Chrome Keylogger
@@ -98,6 +117,8 @@ Please open an issue so i'll fix them..!!
 - Bulk_extractor
 - Disk Clone and ISO Image Aquire
 - AutoSpy
+- Toolsley
+- Wireshark
 ### Payload Generator
 - The FatRat*
 - Brutal
@@ -105,12 +126,18 @@ Please open an issue so i'll fix them..!!
 - MSFvenom Payload Creator
 - Venom Shellcode Generator 
 - Spycam 
-### Router Exploitation
+- Mob-Droid
+### Exploit Framework
 - RouterSploit
+- WebSploit
+- Commix
+- Web2Attack
 - Fastssh
 ### SocialMedia Finder
 - Find SocialMedia By Facial Recognation System
 - Find SocialMedia By UserName
+- Sherlock
+- SocialScan
 ### Steganography
 - SteganoHide
 - StegnoCracker
@@ -129,6 +156,10 @@ Please open an issue so i'll fix them..!!
 - XSpear 
 - XSSCon
 - XanXSS
+### IDN Homograph 
+- EvilURL
+### Email Verifier
+- KnockMail
 ### Hash Cracking Tool
 - Hash Buster
 
@@ -162,6 +193,9 @@ Please open an issue so i'll fix them..!!
 <h4>Please Don't Use for illegal Activity</h4>
 
 ## Follow ➤ [GitHub](https://github.com/Z4nzu) [Twitter](https://twitter.com/_Zinzu07)
+<a href="https://www.buymeacoffee.com/Zinzu" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/arial-yellow.png" alt="Buy Me A Coffee" style="height: 50px !important;width: 50px !important;"></a>
+
+
 #### Contact Via Twitter or Email
 
 Feel free to make a pull request if you feel that you have improve this tool 
