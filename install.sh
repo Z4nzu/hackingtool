@@ -67,6 +67,7 @@ if [ $choice == 1 ]; then
 		sudo pip3 install lolcat
 		sudo apt-get install -y figlet
 		sudo pip3 install boxes
+		sudo apt-get install boxes
 		sudo pip3 install flask
 		sudo pip3 install requests
 	else 
