@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 # Version 1.1.0
 import os
+import subprocess
 import sys
 import webbrowser
 import socket
@@ -246,7 +247,7 @@ class Main:
     def ports(self):
         self.clear_scr()
         target = input('Select a Target IP: ')
-        os.system(f"sudo nmap -O -Pn {target}")
+        subprocess.run(["sudo", "nmap", "-O", "-Pn", f"{target}"])
         input('\nPress Enter to back...')
         self.info()
 
@@ -378,7 +379,8 @@ class Main:
 
         if choice == "2":
             site = input("Enter Site Name (example.com) >> ")
-            os.system(f"cd Striker && sudo python3 striker.py {site}")
+            os.system(f"cd Striker")
+            subprocess.run(["sudo", "python3", "striker.py", f"{site}"])
             self.striker()
 
         if choice == "99":
@@ -426,7 +428,7 @@ class Main:
 
         if choice == "2":
             ip = input("Enter Ip >> ")
-            os.system(f"cd rang3r;sudo python rang3r.py --ip {ip}")
+            subprocess.run(["sudo", "python", "./rang3r/rang3r.py", "--ip", f"{ip}"])
             self.portscanner()
 
         if choice == "99":
@@ -1641,12 +1643,12 @@ class Main:
             if choice_run == "1":
                 file_hide = input("Enter Filename you want to Embed (1.txt) >> ")
                 file_to_be_hide = input("Enter Cover Filename(test.jpeg) >> ")
-                os.system(f"steghide embed -cf {file_to_be_hide} -ef {file_hide}")
+                subprocess.run(["steghide", "embed", "-cf", f"{file_to_be_hide}", "-ef", f"{file_hide}"])
                 self.steganohide()
 
             if choice_run == "2":
                 from_file = input("Enter Filename From Extract Data >> ")
-                os.system(f"steghide extract -sf {from_file}")
+                subprocess.run(["steghide", "extract", "-sf", f"{from_file}"])
                 self.steganohide()
 
             if choice_run == '99':
@@ -1669,7 +1671,7 @@ class Main:
         if choice == "2":
             filename = input("Enter Filename:- ")
             passfile = input("Enter Wordlist Filename:- ")
-            os.system(f"stegcracker {filename} {passfile}")
+            subprocess.run(["stegcracker", f"{filename}", f"{passfile}"])
             self.stegnocracker()
 
         if choice == "99":
@@ -1917,7 +1919,8 @@ class Main:
         if choice == "2":
             name = input("Enter Username >> ")
             wordlist = input("Enter wordword list >> ")
-            os.system(f"cd instaBrute;sudo python instaBrute.py -u {name} -d {wordlist}")
+            os.system(f"cd instaBrute")
+            subprocess.run(["sudo", "python", "instaBrute.py", "-u", f"{name}", "-d", f"{wordlist}"])
             self.instabrute()
 
         if choice == "99":
@@ -1957,7 +1960,8 @@ class Main:
         if choice == "2":
             name = input("Enter Username >> ")
             wordlist = input("Enter Wordlist >> ")
-            os.system(f"cd Brute_Force;python3 Brute_Force.py -f {name} -l {wordlist}")
+            os.system("cd Brute_Force")
+            subprocess.run("python3", "Brute_Force.py", "-f", f"{name}", "-l", f"{wordlist}")
             self.faceshell()
 
         if choice == "99":
@@ -2376,7 +2380,8 @@ class Main:
 
         if choice == "2":
             name = input("Enter Username >> ")
-            os.system(f"cd sherlock ;sudo python3 sherlock {name}")
+            os.system("cd sherlock")
+            subprocess.run(["sudo", "python3", "sherlock", f"{name}"])
             self.sherlock()
 
         if choice == "99":
@@ -2395,7 +2400,7 @@ class Main:
 
         if choice == "2":
             name = input("Enter Username or Emailid (if both then please space between email & username) >> ")
-            os.system(f"sudo socialscan {name}")
+            subprocess.run(["sudo", "socialscan", f"{name}"])
             self.socialscan()
 
         if choice == "99":
@@ -2570,7 +2575,7 @@ class Main:
 
         if choice == "2":
             uinput = input("Enter (.apk) File >> ")
-            os.system("sudo apk2gold {0}".format(uinput))
+            subprocess.run(["sudo", "apk2gold", "{0}".format(uinput)])
 
         if choice == "99":
             self.reversetool()
@@ -2629,7 +2634,7 @@ class Main:
 
         if choice == "2":
             target_site = input("Enter Target Site:- ")
-            os.system(f"slowloris {target_site}")
+            subprocess.run(["slowloris", f"{target_site}"])
             self.slowloris()
 
         if choice == "99":
@@ -2651,7 +2656,8 @@ class Main:
             source_port = input("Enter Source Port >> ")
             target_ip = input("Enter Target IP >> ")
             target_port = input("Enter Target port >> ")
-            os.system(f"cd aSYNcrone;sudo ./aSYNcrone {source_port} {target_ip} {target_port} 1000")
+            os.system(f"cd aSYNcrone")
+            subprocess.run(["sudo", "./aSYNcrone", f"{source_port}", f"{target_ip}", f"{target_port}", "1000"])
             self.asyncrone()
 
         if choice == "99":
@@ -2922,7 +2928,8 @@ class Main:
 
         if choice == "2":
             website = input("Enter Website >> ")
-            os.system(f"cd XSSCon;python3 xsscon.py -u {website}")
+            os.system("cd XSSCon")
+            subprocess.run(["python3", "xsscon.py", "-u", f"{website}"])
             self.xsscon()
 
         if choice == "99":
