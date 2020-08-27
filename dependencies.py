@@ -24,4 +24,4 @@ def agreed():
     time.sleep(0.5)
     print("Exiting...")
     exit()
-agreed
+agreed()
