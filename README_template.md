@@ -68,5 +68,5 @@
 
 <a href="https://www.buymeacoffee.com/Zinzu" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/arial-yellow.png" alt="Buy Me A Coffee" style="height: 50px !important;width: 50px !important;"></a>
 
-#### Don't Forgot to share with Your Friends 
+#### Don't Forgot to share with Your Friends and Family
 #### Thank you..!!
