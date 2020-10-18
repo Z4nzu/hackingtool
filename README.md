@@ -160,6 +160,7 @@
 - SteganoHide
 - StegnoCracker
 - [Whitespace](https://github.com/beardog108/snow10)
+- [Stegbrute](https://github.com/R4yGM/stegbrute)
 ### Other tools
 #### SocialMedia Bruteforce
 - [Instagram Attack](https://github.com/chinoogawa/instaBrute)
