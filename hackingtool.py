@@ -36,7 +36,7 @@ def run_command(cmd_string, cwd='', **kwargs):
     """
     piped_commands, exit_codes, procs = cmd_string.split('|'), [], []
     tasks, output = list(map(str.strip, piped_commands)), None
-    cwd = cwd if cwd.startswith('$') else os.path.join(get_path(), cwd)
+    cwd = cwd[1:] if cwd.startswith('$') else os.path.join(get_path(), cwd)
 
     for task in tasks:
         args = task.split()
@@ -949,7 +949,7 @@ class Main:
         if choice == "1":
             run_command("sudo apt-get install git make")
             run_command("go get -u github.com/kgretzky/evilginx2")
-            run_command("make", cwd="$GOPATH/src/github.com/kgretzky/evilginx2")
+            run_command("make", cwd=f"${os.environ['GOPATH']}/src/github.com/kgretzky/evilginx2")
             run_command("sudo make install")
             run_command("sudo evilginx")
             self.evilginx()
@@ -1006,11 +1006,12 @@ class Main:
         self.check_input(choice, self.qrjacking, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/cryptedwolf/ohmyqr && sudo apt-get install scrot")
+            run_command("sudo git clone https://github.com/cryptedwolf/ohmyqr")
+            run_command("sudo apt-get install scrot")
             self.qrjacking()
 
         if choice == "2":
-            os.system("cd ohmyqr && sudo bash ohmyqr.sh")
+            run_command("sudo bash ohmyqr.sh", cwd="ohmyqr")
             self.qrjacking()
 
         if choice == "99":
@@ -1018,17 +1019,17 @@ class Main:
 
     def shellphish(self):
         self.clear_scr()
-        os.system("echo \"Phishing Tool for 18 social media \n\t[!]https://github.com/An0nUD4Y/shellphish \"|boxes -d boy | lolcat")
+        run_command("echo \"Phishing Tool for 18 social media \n\t[!]https://github.com/An0nUD4Y/shellphish \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.shellphish, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/An0nUD4Y/shellphish")
+            run_command("git clone https://github.com/An0nUD4Y/shellphish")
             self.shellphish()
 
         if choice == "2":
-            os.system("cd shellphish;sudo bash shellphish.sh")
+            run_command("sudo bash shellphish.sh", cwd="shellphish")
             self.shellphish()
 
         if choice == "99":
@@ -1037,7 +1038,7 @@ class Main:
                                                 ### Forensic Tools ####
     def forensic(self):
         self.clear_scr()
-        os.system("figlet -f standard Forensic Tools | lolcat ")
+        run_command("figlet -f standard Forensic Tools | lolcat ")
 
         print("""
              [1] Autopsy
@@ -1064,13 +1065,13 @@ class Main:
 
     def autopsy(self):
         self.clear_scr()
-        os.system("echo \"Autopsy is a platform that is used by Cyber Investigators.\n[!] Works in any Os\n[!]Recover Deleted Files from any OS & MEdia \n[!]Extract Image Metadata \"|boxes -d boy | lolcat")
+        run_command("echo \"Autopsy is a platform that is used by Cyber Investigators.\n[!] Works in any Os\n[!]Recover Deleted Files from any OS & MEdia \n[!]Extract Image Metadata \"|boxes -d boy | lolcat")
         choice = input("[1]Run [99]Back >> ")
 
         self.check_input(choice, self.autopsy, ['1', '99'])
 
         if choice == "1":
-            os.system("sudo autopsy")
+            run_command("sudo autopsy")
             self.autopsy()
         
         if choice =="99":
@@ -1078,13 +1079,13 @@ class Main:
 
     def wireshark(self):
         self.clear_scr()
-        os.system("echo \" Wireshark is a network capture and analyzer \ntool to see what’s happening in your network.\n And also investigate Network related incident \" | boxes -d boy | lolcat")
+        run_command("echo \" Wireshark is a network capture and analyzer \ntool to see what’s happening in your network.\n And also investigate Network related incident \" | boxes -d boy | lolcat")
         choice = input("[1]Run [99]Back >> ")
 
         self.check_input(choice, self.wireshark, ['1', '99'])
 
         if choice == "1":
-            os.system("sudo wireshark")
+            run_command("sudo wireshark")
             self.wireshark()
 
         if choice == "99":
@@ -1102,17 +1103,17 @@ class Main:
         self.check_input(choice, self.bulkextractor, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/simsong/bulk_extractor.git")
-            os.system("ls src/ && cd .. && cd java_gui && ./BEViewer")
+            run_command("sudo git clone https://github.com/simsong/bulk_extractor.git")
+            run_command("./BEViewer", cwd="java_gui")
             print("If you getting error after clone go to /java_gui/src/ And Compile .Jar file && run ./BEViewer")
             print("Please Visit For More Details About Installation >> https://github.com/simsong/bulk_extractor ")
             self.bulkextractor()
 
         if choice == "2":
-            os.system("sudo apt-get install bulk_extractor")
+            run_command("sudo apt-get install bulk_extractor")
             print("bulk_extractor and options")
-            os.system("bulk_extractor")
-            os.system("echo \"bulk_extractor [options] imagefile\" | boxes -d headline | lolcat")
+            run_command("bulk_extractor")
+            run_command("echo \"bulk_extractor [options] imagefile\" | boxes -d headline | lolcat")
             self.bulkextractor()
 
         if choice == "99":
@@ -1120,17 +1121,17 @@ class Main:
 
     def guymager(self):
         self.clear_scr()
-        os.system("echo \"Guymager is a free forensic imager for media acquisition.\n [!]https://guymager.sourceforge.io/ \"|boxes -d boy | lolcat")
+        run_command("echo \"Guymager is a free forensic imager for media acquisition.\n [!]https://guymager.sourceforge.io/ \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.guymager, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo apt install guymager")
+            run_command("sudo apt install guymager")
             self.guymager()
 
         if choice == "2":
-            os.system("sudo guymager")
+            run_command("sudo guymager")
             self.guymager()
 
         if choice == "99":
@@ -1138,7 +1139,7 @@ class Main:
         
     def toolsley(self):
         self.clear_scr()
-        os.system("echo \" Toolsley got more than ten useful tools for investigation.\n[+]File signature verifier\n[+]File identifier \n[+]Hash & Validate \n[+]Binary inspector \n [+]Encode text \n[+]Data URI generator \n[+]Password generator \" | boxes -d boy | lolcat")
+        run_command("echo \" Toolsley got more than ten useful tools for investigation.\n[+]File signature verifier\n[+]File identifier \n[+]Hash & Validate \n[+]Binary inspector \n [+]Encode text \n[+]Data URI generator \n[+]Password generator \" | boxes -d boy | lolcat")
         choice = input("[1]Open [99]Back >> ")
 
         self.check_input(choice, self.toolsley, ['1', '99'])
@@ -1152,7 +1153,7 @@ class Main:
 
     def postexp(self):
         self.clear_scr()
-        os.system("figlet -f standard post explotations | lolcat")
+        run_command("figlet -f standard post explotations | lolcat")
 
         print("""
              [1] Vegile - Ghost In The Shell
@@ -1174,19 +1175,19 @@ class Main:
 
     def vegile(self):
         self.clear_scr()
-        os.system("echo \"[!]This tool will set up your backdoor/rootkits when backdoor is already setup it will be \nhidden your specific process,unlimited your session in metasploit and transparent.\"|boxes -d boy | lolcat")
+        run_command("echo \"[!]This tool will set up your backdoor/rootkits when backdoor is already setup it will be \nhidden your specific process,unlimited your session in metasploit and transparent.\"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.vegile, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/Screetsec/Vegile.git")
-            os.system("cd Vegile && sudo chmod +x Vegile")
+            run_command("sudo git clone https://github.com/Screetsec/Vegile.git")
+            run_command("sudo chmod +x Vegile", cwd="Vegile")
             self.vegile()
 
         if choice == "2":
-            os.system("echo \"You can Use Command: \n[!]Vegile -i / --inject [backdoor/rootkit] \n[!]Vegile -u / --unlimited [backdoor/rootkit] \n[!]Vegile -h / --help\"|boxes -d parchment")
-            os.system("cd Vegile && sudo bash Vegile ")
+            run_command("echo \"You can Use Command: \n[!]Vegile -i / --inject [backdoor/rootkit] \n[!]Vegile -u / --unlimited [backdoor/rootkit] \n[!]Vegile -h / --help\"|boxes -d parchment")
+            run_command("sudo bash Vegile", cwd="Vegile")
             self.vegile()
 
         if choice == "99":
@@ -1194,18 +1195,19 @@ class Main:
 
     def chromekeylogger(self):
         self.clear_scr()
-        os.system("echo \" Hera Chrome Keylogger \" | boxes -d boy | lolcat")
+        run_command("echo \" Hera Chrome Keylogger \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.chromekeylogger, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/UndeadSec/HeraKeylogger.git")
-            os.system("cd HeraKeylogger && sudo apt-get install python3-pip -y && sudo pip3 install -r requirements.txt ")
+            run_command("sudo git clone https://github.com/UndeadSec/HeraKeylogger.git")
+            run_command("sudo apt-get install python3-pip -y", cwd="HeraKeylogger")
+            run_command("sudo pip3 install -r requirements.txt", cwd="HeraKeylogger")
             self.chromekeylogger()
 
         if choice == "2":
-            os.system("cd HeraKeylogger && sudo python3 hera.py ")
+            run_command("sudo python3 hera.py", cwd="HeraKeylogger")
             self.chromekeylogger()
 
         if choice == "99":
@@ -1213,7 +1215,7 @@ class Main:
                             #### FrameWORKS 
     def routexp(self):
         self.clear_scr()
-        os.system("figlet -f standard Exploit Framework | lolcat ")
+        run_command("figlet -f standard Exploit Framework | lolcat ")
 
         print("""
              [1] RouterSploit
@@ -1238,18 +1240,18 @@ class Main:
 
     def routersploit(self):
         self.clear_scr()
-        os.system("echo \"The RouterSploit Framework is an open-source exploitation framework dedicated to embedded devices\"|boxes -d boy | lolcat")
+        run_command("echo \"The RouterSploit Framework is an open-source exploitation framework dedicated to embedded devices\"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.routersploit, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://www.github.com/threat9/routersploit")
-            os.system("cd routersploit && sudo python3 -m pip install -r requirements.txt")
+            run_command("sudo git clone https://www.github.com/threat9/routersploit")
+            run_command("sudo python3 -m pip install -r requirements.txt", cwd="routersploit")
             self.routersploit()
 
         if choice == "2":
-            os.system("cd routersploit && sudo python3 rsf.py")
+            run_command("sudo python3 rsf.py", cwd="routersploit")
             self.routersploit()
 
         if choice == "99":
@@ -1257,17 +1259,17 @@ class Main:
 
     def websploit(self):
         self.clear_scr()
-        os.system("echo \"Websploit is an advanced MITM framework.\n\t [!]https://github.com/The404Hacking/websploit \"|boxes -d boy | lolcat")
+        run_command("echo \"Websploit is an advanced MITM framework.\n\t [!]https://github.com/The404Hacking/websploit \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.websploit, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("https://github.com/The404Hacking/websploit.git")
+            run_command("https://github.com/The404Hacking/websploit.git")
             self.websploit()
 
         if choice == "2":
-            os.system("cd websploit;python3 websploit.py")
+            run_command("python3 websploit.py", cwd="websploit")
             self.websploit()
 
         if choice == "99":
@@ -1275,13 +1277,13 @@ class Main:
 
     def commix(self):
         self.clear_scr()
-        os.system("echo \"Automated All-in-One OS command injection and exploitation tool.\nCommix can be used from web developers, penetration testers or even security researchers\n in order to test web-based applications with the view to find bugs,\n errors or vulnerabilities related to command injection attacks.\n Usage: python commix.py [option(s)] \n\n\t[!]https://github.com/commixproject/commix  \"|boxes -d boy | lolcat")
+        run_command("echo \"Automated All-in-One OS command injection and exploitation tool.\nCommix can be used from web developers, penetration testers or even security researchers\n in order to test web-based applications with the view to find bugs,\n errors or vulnerabilities related to command injection attacks.\n Usage: python commix.py [option(s)] \n\n\t[!]https://github.com/commixproject/commix  \"|boxes -d boy | lolcat")
         choice = input("[1]Install [99]Back >> ")
 
         self.check_input(choice, self.commix, ['1', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/commixproject/commix.git commix")
+            run_command("git clone https://github.com/commixproject/commix.git")
             self.commix()
 
         if choice == "99":
@@ -1290,7 +1292,7 @@ class Main:
                             ### Web Attack Function
     def webAttack(self):
         self.clear_scr()
-        os.system("figlet 'Web Attack Tools' -f standard -c | lolcat")
+        run_command("figlet 'Web Attack Tools' -f standard -c | lolcat")
 
         print("""
              [1] Web2Attack
@@ -1321,36 +1323,37 @@ class Main:
 
     def dirb(self):
         self.clear_scr()
-        os.system("echo \"DIRB is a Web Content Scanner. It looks for existing (and/or hidden) Web Objects.\nIt basically works by launching a dictionary based attack against \n a web server and analizing the response.\n\t [!]https://gitlab.com/kalilinux/packages/dirb \" | boxes -d boy | lolcat")
+        run_command("echo \"DIRB is a Web Content Scanner. It looks for existing (and/or hidden) Web Objects.\nIt basically works by launching a dictionary based attack against \n a web server and analizing the response.\n\t [!]https://gitlab.com/kalilinux/packages/dirb \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.dirb, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://gitlab.com/kalilinux/packages/dirb.git")
-            os.system("cd dirb;sudo ./configure;make")
+            run_command("sudo git clone https://gitlab.com/kalilinux/packages/dirb.git")
+            run_command("sudo ./configure", cwd="dirb")
+            run_command("make", cwd="dirb")
             self.dirb()
 
         if choice == "2":
             uinput = input("Enter Url >> ")
-            os.system("sudo dirb {0}".format(uinput))
+            run_command("sudo dirb {0}".format(uinput))
 
         if choice == "99":
             self.webAttack()
 
     def web2attack(self):
         self.clear_scr()
-        os.system("echo \"Web hacking framework with tools, exploits by python \n[!]https://github.com/santatic/web2attack \"| boxes -d boy | lolcat")
+        run_command("echo \"Web hacking framework with tools, exploits by python \n[!]https://github.com/santatic/web2attack \"| boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.web2attack, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/santatic/web2attack.git")
+            run_command("sudo git clone https://github.com/santatic/web2attack.git")
             self.web2attack()
 
         if choice == "2":
-            os.system("cd web2attack && sudo bash w2aconsole")
+            run_command("sudo bash w2aconsole", cwd="web2attack")
             self.web2attack()
 
         if choice == "99":
@@ -1358,14 +1361,14 @@ class Main:
 
     def skipfish(self):
         self.clear_scr()
-        os.system("echo \"Skipfish – Fully automated, active web application security reconnaissance tool \n Usage: skipfish -o [FolderName] targetip/site \n[!]https://tools.kali.org/web-applications/skipfish \"|boxes -d headline | lolcat")
+        run_command("echo \"Skipfish – Fully automated, active web application security reconnaissance tool \n Usage: skipfish -o [FolderName] targetip/site \n[!]https://tools.kali.org/web-applications/skipfish \"|boxes -d headline | lolcat")
         choice = input("[1]Run [99]Back >> ")
 
         self.check_input(choice, self.skipfish, ['1', '99'])
 
         if choice == "1":
-            os.system("sudo skipfish -h")
-            os.system("echo \"skipfish -o [FolderName] targetip/site\"|boxes -d headline | lolcat")
+            run_command("sudo skipfish -h")
+            run_command("echo \"skipfish -o [FolderName] targetip/site\"|boxes -d headline | lolcat")
             self.skipfish()
 
         if choice == "99":
@@ -1373,19 +1376,19 @@ class Main:
         
     def subdomain(self):
         self.clear_scr()
-        os.system("echo \"Sublist3r is a python tool designed to enumerate subdomains of websites using OSINT \n Usage:\n\t[1]python sublist3r.py -d example.com \n[2]python sublist3r.py -d example.com -p 80,443\"| boxes -d boy | lolcat")
+        run_command("echo \"Sublist3r is a python tool designed to enumerate subdomains of websites using OSINT \n Usage:\n\t[1]python sublist3r.py -d example.com \n[2]python sublist3r.py -d example.com -p 80,443\"| boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.subdomain, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo pip install requests argparse dnspython")
-            os.system("sudo git clone https://github.com/aboul3la/Sublist3r.git ")
-            os.system("cd Sublist3r && sudo pip install -r requirements.txt") 
+            run_command("sudo pip install requests argparse dnspython")
+            run_command("sudo git clone https://github.com/aboul3la/Sublist3r.git ")
+            run_command("sudo pip install -r requirements.txt", cwd="Sublist3r") 
             self.subdomain()
 
         if choice == "2":
-            os.system("cd Sublist3r && python sublist3r.py -h")
+            run_command("python sublist3r.py -h", cwd="Sublist3r")
             self.subdomain()
 
         if choice == "99":
@@ -1393,17 +1396,17 @@ class Main:
 
     def checkurl(self):
         self.clear_scr()
-        os.system("echo \" Detect evil urls that uses IDN Homograph Attack.\n\t[!]python3 checkURL.py --url google.com \" | boxes -d boy | lolcat")
+        run_command("echo \" Detect evil urls that uses IDN Homograph Attack.\n\t[!]python3 checkURL.py --url google.com \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.checkurl, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/UndeadSec/checkURL.git")
+            run_command("sudo git clone https://github.com/UndeadSec/checkURL.git")
             self.checkurl()
 
         if choice == "2":
-            os.system("cd checkURL && python3 checkURL.py --help")
+            run_command("python3 checkURL.py --help", cwd="checkURL")
             self.checkurl()
 
         if choice == "99":
@@ -1411,14 +1414,14 @@ class Main:
 
     def blazy(self):
         self.clear_scr()
-        os.system("echo \"Blazy is a modern login page bruteforcer \" | boxes -d boy | lolcat")
+        run_command("echo \"Blazy is a modern login page bruteforcer \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.blazy, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/UltimateHackers/Blazy")
-            os.system("cd Blazy && sudo pip install -r requirements.txt")
+            run_command("sudo git clone https://github.com/UltimateHackers/Blazy")
+            run_command("sudo pip install -r requirements.txt", cwd="Blazy")
             self.blazy()
 
         if choice == "2":
