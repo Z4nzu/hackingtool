@@ -24,6 +24,45 @@ logo = """\033[33m
                                     \033[91m[X] Please Don't Use For illegal Activity  [X]
 \033[97m """
 
+def get_path():
+    """
+    Absolute path of current working directory.
+    """
+    return os.path.dirname(os.path.realpath(__file__)) 
+
+def run_command(cmd_string, cwd='', **kwargs):
+    """
+    Runs an os command using subprocess module.
+    """
+    piped_commands, exit_codes, procs = cmd_string.split('|'), [], []
+    tasks, output = list(map(str.strip, piped_commands)), None
+    cwd = os.path.join(get_path(), cwd)
+
+    for task in tasks:
+        args = task.split()
+        print(f"CMD: {args}")
+        if len(procs):
+            proc = subprocess.Popen(
+                args, 
+                stdin=procs[-1].stdout, 
+                stdout=subprocess.PIPE,
+                cwd=cwd,
+            )
+        else:
+            proc = subprocess.Popen(
+                args, 
+                stdout=subprocess.PIPE,
+                cwd=cwd,
+            )
+        procs.append(proc)
+    else:
+        if len(procs):
+            output = procs[-1].communicate()[0]
+            print(output.decode('utf-8'))
+    exit_codes = [ps.wait() for ps in procs]
+    return exit_codes
+    
+
 class Main:
     def __init__(self):
         self.logo = logo
@@ -97,9 +136,9 @@ class Main:
 
     def clear_scr(self):
         if system() == 'Linux':
-            os.system('clear')
+            run_command('clear')
         if system() == 'Windows':
-            os.system('cls')
+            run_command('cls')
 
     def exit_app(self):
         print("Happy Hacking...")
@@ -110,7 +149,7 @@ class Main:
 ###########OPTION[0]############
     def anonsurf(self):
         self.clear_scr()
-        os.system("figlet -f standard -c Anonmously Hiding Tool | lolcat")
+        run_command("figlet -f standard -c Anonmously Hiding Tool | lolcat")
 
         print("""
             [1]  Anonmously Surf
@@ -131,22 +170,23 @@ class Main:
 
     def ansurf(self):
         self.clear_scr()
-        os.system("echo \"It automatically overwrites the RAM when\nthe system is shutting down AnD AlSo change Ip. \" |boxes -d boy | lolcat")
+        run_command("echo \"It automatically overwrites the RAM when\nthe system is shutting down AnD AlSo change Ip. \" |boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [3]Stop [99]Main Menu >> ")
 
         self.check_input(choice, self.ansurf, ['1', '2', '3', '99'])
         
         if choice == "1":
-            os.system("sudo git clone https://github.com/Und3rf10w/kali-anonsurf.git")
-            os.system("cd kali-anonsurf && sudo ./installer.sh && cd .. && sudo rm -r kali-anonsurf")
+            run_command("sudo git clone https://github.com/Und3rf10w/kali-anonsurf.git")
+            run_command("sudo ./installer.sh", cwd="kali-anonsurf")
+            run_command("sudo rm -r kali-anonsurf")
             self.ansurf()
 
         if choice == '2':
-            os.system("sudo anonsurf start")
+            run_command("sudo anonsurf start")
             self.ansurf()
 
         if choice == '3':
-            os.system("sudo anonsurf stop")
+            run_command("sudo anonsurf stop")
             self.ansurf()
 
         if choice == "99":
@@ -154,14 +194,14 @@ class Main:
 
     def multitor(self):
         self.clear_scr()
-        os.system("echo \"How to stay in multi places at the same time\n [!]https://github.com/trimstray/multitor \" | boxes -d boy | lolcat")
+        run_command("echo \"How to stay in multi places at the same time\n [!]https://github.com/trimstray/multitor \" | boxes -d boy | lolcat")
         choice = input("[1]Install [99]Back >> ")
 
         self.check_input(choice, self.multitor, ['1', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/trimstray/multitor")
-            os.system("cd multitor;sudo bash setup.sh install")
+            run_command("sudo git clone https://github.com/trimstray/multitor")
+            run_command("sudo bash setup.sh install", cwd="multitor")
             self.multitor()
 
         if choice == "99":
@@ -170,7 +210,7 @@ class Main:
 ##################OPTION[1]########################
     def info(self):
         self.clear_scr()
-        os.system("figlet -f standard -c Information Gathering Tools | lolcat")
+        run_command("figlet -f standard -c Information Gathering Tools | lolcat")
 
         print("""
                  [1] Nmap 
@@ -222,8 +262,11 @@ class Main:
         self.check_input(choice, self.nmap, ['1', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/nmap/nmap.git")
-            os.system("sudo chmod -R 755 nmap && cd nmap && sudo ./configure && make && sudo make install")
+            run_command("sudo git clone https://github.com/nmap/nmap.git")
+            run_command("sudo chmod -R 755 nmap")
+            run_command("sudo ./configure", cwd="nmap")
+            run_command("make", cwd="nmap")
+            run_command("sudo make install", cwd="nmap")
             self.nmap()
 
         if choice == "99":
@@ -231,14 +274,14 @@ class Main:
 
     def dracnmap(self):
         self.clear_scr()
-        os.system("echo \"Dracnmap is an open source program which is using to \nexploit the network and gathering information with nmap help \n [!]https://github.com/Screetsec/Dracnmap \" | boxes -d boy | lolcat")
+        run_command("echo \"Dracnmap is an open source program which is using to \nexploit the network and gathering information with nmap help \n [!]https://github.com/Screetsec/Dracnmap \" | boxes -d boy | lolcat")
         choice = input("[1]Install [99]Back >> ")
 
         self.check_input(choice, self.dracnmap, ['1', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/Screetsec/Dracnmap.git ")
-            os.system("cd Dracnmap && chmod +x Dracnmap.sh")
+            run_command("sudo git clone https://github.com/Screetsec/Dracnmap.git")
+            run_command("chmod +x Dracnmap.sh", cwd='Dracnmap')
             self.dracnmap()
 
         if choice == "99":
@@ -261,18 +304,18 @@ class Main:
         
     def xerosploit(self):
         self.clear_scr()
-        os.system("echo \"Xerosploit is a penetration testing toolkit whose goal is to perform \n man-in-th-middle attacks for testing purposes\"|boxes -d boy | lolcat")
+        run_command("echo \"Xerosploit is a penetration testing toolkit whose goal is to perform \n man-in-th-middle attacks for testing purposes\"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.xerosploit, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/LionSec/xerosploit")
-            os.system("cd xerosploit && sudo python install.py")
+            run_command("git clone https://github.com/LionSec/xerosploit")
+            run_command("sudo python install.py", cwd="xerosploit")
             self.xerosploit()
 
         if choice == "2":
-            os.system("sudo xerosploit")
+            run_command("sudo xerosploit")
             self.xerosploit()
 
         if choice == "99":
@@ -280,17 +323,17 @@ class Main:
 
     def redhawk(self):
         self.clear_scr()
-        os.system("echo \"All in one tool for Information Gathering and Vulnerability Scanning. \n [!]https://github.com/Tuhinshubhra/RED_HAWK \n\n [!]Please Use command [FIX] After Running Tool first time \" | boxes -d boy | lolcat")
+        run_command("echo \"All in one tool for Information Gathering and Vulnerability Scanning. \n [!]https://github.com/Tuhinshubhra/RED_HAWK \n\n [!]Please Use command [FIX] After Running Tool first time \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.redhawk, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/Tuhinshubhra/RED_HAWK")
+            run_command("git clone https://github.com/Tuhinshubhra/RED_HAWK")
             self.redhawk()
 
         if choice == "2":
-            os.system("cd RED_HAWK;php rhawk.php")
+            run_command("php rhawk.php", cwd="RED_HAWK")
             self.redhawk()
 
         if choice == "99":
@@ -298,25 +341,26 @@ class Main:
 
     def reconspider(self):
         self.clear_scr()
-        os.system("echo \" ReconSpider is most Advanced Open Source Intelligence (OSINT) Framework for scanning IP Address, Emails, \nWebsites, Organizations and find out information from different sources.\n:~python3 reconspider.py \n\t [!]https://github.com/bhavsec/reconspider \" | boxes -d boy | lolcat")
+        run_command("echo \" ReconSpider is most Advanced Open Source Intelligence (OSINT) Framework for scanning IP Address, Emails, \nWebsites, Organizations and find out information from different sources.\n:~python3 reconspider.py \n\t [!]https://github.com/bhavsec/reconspider \" | boxes -d boy | lolcat")
         choice = input("[1]Install [99]Back >> ")
 
         self.check_input(choice, self.reconspider, ['1', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/bhavsec/reconspider.git")
-            os.system("sudo apt install python3 python3-pip && cd reconspider && sudo python3 setup.py install")
+            run_command("sudo git clone https://github.com/bhavsec/reconspider.git")
+            run_command("sudo apt install python3 python3-pip")
+            run_command("sudo python3 setup.py install", cwd="reconspider")
             self.reconspider()
 
         # elif choice == "2":
-        #     os.system("cd reconspider && python3 reconspider.py")
+        #     run_command("cd reconspider && python3 reconspider.py")
 
         if choice == "99":
             self.info()
 
     def isitdown(self):
         self.clear_scr()
-        os.system("echo \"Check Website Is Online or Not \"|boxes -d boy | lolcat")
+        run_command("echo \"Check Website Is Online or Not \"|boxes -d boy | lolcat")
         choice = input("[1]Open [99]Back >> ")
 
         self.check_input(choice, self.isitdown, ['1', '99'])
@@ -330,18 +374,18 @@ class Main:
 
     def infogaemail(self):
         self.clear_scr()
-        os.system("echo \"Infoga is a tool gathering email accounts informations\n(ip, hostname, country,...) from different public source \n[!]https://github.com/m4ll0k/Infoga \"| boxes -d boy |lolcat")
+        run_command("echo \"Infoga is a tool gathering email accounts informations\n(ip, hostname, country,...) from different public source \n[!]https://github.com/m4ll0k/Infoga \"| boxes -d boy |lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.infogaemail, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/m4ll0k/Infoga.git")
-            os.system("cd infoga;sudo python setup.py install")
+            run_command("git clone https://github.com/m4ll0k/Infoga.git")
+            run_command("sudo python setup.py install", cwd="infoga")
             self.infogaemail()
 
         if choice == "2":
-            os.system("cd infoga;python infoga.py")
+            run_command("python infoga.py", cwd="infoga")
             self.infogaemail()
 
         if choice == "99":
@@ -349,17 +393,17 @@ class Main:
 
     def recondog(self):
         self.clear_scr()
-        os.system("echo \"ReconDog Information Gathering Suite  \n[!]https://github.com/s0md3v/ReconDog \"|boxes -d boy | lolcat")
+        run_command("echo \"ReconDog Information Gathering Suite  \n[!]https://github.com/s0md3v/ReconDog \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.recondog, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/s0md3v/ReconDog.git ")
+            run_command("git clone https://github.com/s0md3v/ReconDog.git ")
             self.recondog()
 
         if choice == "2":
-            os.system("cd ReconDog;sudo python dog")
+            run_command("sudo python dog", cwd="ReconDog")
             self.recondog()
 
         if choice == "99":
@@ -367,20 +411,19 @@ class Main:
 
     def striker(self):
         self.clear_scr()
-        os.system("echo \"Recon & Vulnerability Scanning Suite [!]https://github.com/s0md3v/Striker \"|boxes -d boy | lolcat")
+        run_command("echo \"Recon & Vulnerability Scanning Suite [!]https://github.com/s0md3v/Striker \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.striker, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/s0md3v/Striker.git")
-            os.system("cd Striker && pip3 install -r requirements.txt")
+            run_command("git clone https://github.com/s0md3v/Striker.git")
+            run_command("pip3 install -r requirements.txt", cwd="Striker")
             self.striker()
 
         if choice == "2":
             site = input("Enter Site Name (example.com) >> ")
-            os.system(f"cd Striker")
-            subprocess.run(["sudo", "python3", "striker.py", f"{site}"])
+            run_command("sudo python3 striker.py", cwd="Striker")
             self.striker()
 
         if choice == "99":
@@ -388,14 +431,14 @@ class Main:
 
     def secretfinder(self):
         self.clear_scr()
-        os.system("echo \"SecretFinder - A python script for find sensitive data \nlike apikeys, accesstoken, authorizations, jwt,..etc \n and search anything on javascript files.\n\n Usage: python SecretFinder.py -h \n\t [*]https://github.com/m4ll0k/SecretFinder \"|boxes -d boy | lolcat")
+        run_command("echo \"SecretFinder - A python script for find sensitive data \nlike apikeys, accesstoken, authorizations, jwt,..etc \n and search anything on javascript files.\n\n Usage: python SecretFinder.py -h \n\t [*]https://github.com/m4ll0k/SecretFinder \"|boxes -d boy | lolcat")
         choice = input("[1]Install [99]Back >> ")
 
         self.check_input(choice, self.secretfinder, ['1', '99'])
         
         if choice == "1":
-            os.system("git clone https://github.com/m4ll0k/SecretFinder.git secretfinder")
-            os.system("cd secretfinder; sudo pip3 install -r requirements.txt")
+            run_command("git clone https://github.com/m4ll0k/SecretFinder.git secretfinder")
+            run_command("sudo pip3 install -r requirements.txt", cwd="secretfinder")
             self.secretfinder()
 
         if choice == "99":
@@ -403,13 +446,13 @@ class Main:
 
     def shodantool(self):
         self.clear_scr()
-        os.system("echo \"Get ports,vulnerabilities,informations,banners,..etc \n for any IP with Shodan (no apikey! no rate limit!)\n[X]Don't use this tool because your ip will be blocked by Shodan![X] \n\t [!]https://github.com/m4ll0k/Shodanfy.py \"|boxes -d boy | lolcat")
+        run_command("echo \"Get ports,vulnerabilities,informations,banners,..etc \n for any IP with Shodan (no apikey! no rate limit!)\n[X]Don't use this tool because your ip will be blocked by Shodan![X] \n\t [!]https://github.com/m4ll0k/Shodanfy.py \"|boxes -d boy | lolcat")
         choice = input("[1]Install [99]Back >> ")
 
         self.check_input(choice, self.shodantool, ['1', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/m4ll0k/Shodanfy.py.git")
+            run_command("git clone https://github.com/m4ll0k/Shodanfy.py.git")
             self.shodantool()
 
         if choice == "99":
@@ -417,13 +460,14 @@ class Main:
 
     def portscanner(self):
         self.clear_scr()
-        os.system("echo \"rang3r is a python script which scans in multi thread\n all alive hosts within your range that you specify.\n\t [!]https://github.com/floriankunushevci/rang3r \"|boxes -d boy | lolcat")
+        run_command("echo \"rang3r is a python script which scans in multi thread\n all alive hosts within your range that you specify.\n\t [!]https://github.com/floriankunushevci/rang3r \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.portscanner, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/floriankunushevci/rang3r;sudo pip install termcolor")
+            run_command("git clone https://github.com/floriankunushevci/rang3r")
+            run_command("sudo pip install termcolor")
             self.portscanner()
 
         if choice == "2":
@@ -436,13 +480,13 @@ class Main:
 
     def breacher(self):
         self.clear_scr()
-        os.system("echo \"An advanced multithreaded admin panel finder written in python.\n Usage: python breacher -u example.com \n\t [!]https://github.com/s0md3v/Breacher \"|boxes -d boy | lolcat")
+        run_command("echo \"An advanced multithreaded admin panel finder written in python.\n Usage: python breacher -u example.com \n\t [!]https://github.com/s0md3v/Breacher \"|boxes -d boy | lolcat")
         choice = input("[1]Install [99]Back >> ")
 
         self.check_input(choice, self.breacher, ['1', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/s0md3v/Breacher.git")
+            run_command("git clone https://github.com/s0md3v/Breacher.git")
             self.breacher()
 
         if choice == "99":
@@ -451,7 +495,7 @@ class Main:
 ## == Wordlist Functions == 
     def passwd(self):
         self.clear_scr()
-        os.system("figlet -f standard -c Wordlist Generator | lolcat")
+        run_command("figlet -f standard -c Wordlist Generator | lolcat")
 
         print("""   
                      [1] Cupp
@@ -478,34 +522,35 @@ class Main:
 
     def cupp(self):
         self.clear_scr()
-        os.system("echo \"Common User Password Generator..!!\"| boxes -d boy | lolcat ")
+        run_command("echo \"Common User Password Generator..!!\"| boxes -d boy | lolcat ")
         choice = input("[1]Install [99]Back >> ")
 
         self.check_input(choice, self.cupp, ['1', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/Mebus/cupp.git")
+            run_command("git clone https://github.com/Mebus/cupp.git")
             self.cupp()
 
         # if choice == "2":
-        #    os.system("cd cupp && ./cupp.py -h")
+        #    run_command("cd cupp && ./cupp.py -h")
 
         if choice == "99":
             self.passwd()
 
     def wlcreator(self):
         self.clear_scr()
-        os.system("echo \" WlCreator is a C program that can create all possibilities of passwords,\n and you can choose Lenght, Lowercase, Capital, Numbers and Special Chars\" | boxes -d boy | lolcat")
+        run_command("echo \" WlCreator is a C program that can create all possibilities of passwords,\n and you can choose Lenght, Lowercase, Capital, Numbers and Special Chars\" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.wlcreator, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/Z4nzu/wlcreator")
+            run_command("sudo git clone https://github.com/Z4nzu/wlcreator")
             self.wlcreator()
 
         if choice == "2":
-            os.system("cd wlcreator && sudo gcc -o wlcreator wlcreator.c && ./wlcreator 5")
+            run_command("sudo gcc -o wlcreator wlcreator.c", cwd="wlcreator")
+            run_command("./wlcreator 5", cwd="wlcreator")
             self.wlcreator()
 
         if choice == "99":
@@ -513,17 +558,17 @@ class Main:
 
     def goblinword(self):
         self.clear_scr()
-        os.system("echo \" GoblinWordGenerator \" | boxes -d boy | lolcat")
+        run_command("echo \" GoblinWordGenerator \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.goblinword, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/UndeadSec/GoblinWordGenerator.git")
+            run_command("sudo git clone https://github.com/UndeadSec/GoblinWordGenerator.git")
             self.goblinword()
 
         if choice == "2":
-            os.system("cd GoblinWordGenerator && python3 goblin.py")
+            run_command("python3 goblin.py", cwd="GoblinWordGenerator")
             self.goblinword()
 
         if choice == "99":
@@ -542,12 +587,12 @@ class Main:
         self.check_input(choice, self.showme, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/Viralmaniar/SMWYG-Show-Me-What-You-Got.git")
-            os.system("cd SMWYG-Show-Me-What-You-Got && pip3 install -r requirements.txt ")
+            run_command("sudo git clone https://github.com/Viralmaniar/SMWYG-Show-Me-What-You-Got.git")
+            run_command("pip3 install -r requirements.txt", cwd="SMWYG-Show-Me-What-You-Got")
             self.showme()
 
         if choice == "2":
-            os.system("cd SMWYG-Show-Me-What-You-Got && python SMWYG.py")
+            run_command("python SMWYG.py", cwd="SMWYG-Show-Me-What-You-Got")
             self.showme()
 
         if choice == "99":
@@ -556,7 +601,7 @@ class Main:
                                             ##  Wireless Attack =====
     def wire(self):
         self.clear_scr()
-        os.system("figlet -f standard -c Wireless Attack Tools | lolcat")
+        run_command("figlet -f standard -c Wireless Attack Tools | lolcat")
 
         print("""  
                 [1]  WiFi-Pumpkin
@@ -590,18 +635,19 @@ class Main:
 
     def fastssh(self):
         self.clear_scr()
-        os.system("echo \"Fastssh is an Shell Script to perform multi-threaded scan \n and brute force attack against SSH protocol using the most commonly credentials. \" | boxes -d boy | lolcat")
+        run_command("echo \"Fastssh is an Shell Script to perform multi-threaded scan \n and brute force attack against SSH protocol using the most commonly credentials. \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.fastssh, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/Z4nzu/fastssh && cd fastssh && sudo chmod +x fastssh.sh")
-            os.system("sudo apt-get install -y sshpass netcat")
+            run_command("sudo git clone https://github.com/Z4nzu/fastssh")
+            run_command("sudo chmod +x fastssh.sh", cwd="fastssh")
+            run_command("sudo apt-get install -y sshpass netcat")
             self.fastssh()
 
         if choice == "2":
-            os.system("cd fastssh && sudo bash fastssh.sh --scan")
+            run_command("sudo bash fastssh.sh --scan", cwd="fastssh")
             self.fastssh()
 
         if choice == "99":
@@ -610,21 +656,21 @@ class Main:
 
     def wifipumkin(self):
         self.clear_scr()
-        os.system("echo \"The WiFi-Pumpkin is a rogue AP framework to easily create these fake networks\nall while forwarding legitimate traffic to and from the unsuspecting target.\"| boxes -d boy | lolcat")
+        run_command("echo \"The WiFi-Pumpkin is a rogue AP framework to easily create these fake networks\nall while forwarding legitimate traffic to and from the unsuspecting target.\"| boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.wifipumkin, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo apt install libssl-dev libffi-dev build-essential")
-            os.system("sudo git clone https://github.com/P0cL4bs/wifipumpkin3.git")
-            os.system("chmod -R 755 wifipumpkin3 && cd wifipumpkin3")
-            os.system("sudo apt install python3-pyqt5 ")
-            os.system("sudo python3 setup.py install")
+            run_command("sudo apt install libssl-dev libffi-dev build-essential")
+            run_command("sudo git clone https://github.com/P0cL4bs/wifipumpkin3.git")
+            run_command("chmod -R 755 wifipumpkin3")
+            run_command("sudo apt install python3-pyqt5 ")
+            run_command("sudo python3 setup.py install", cwd="wifipumpkin3")
             self.wifipumkin()
 
         if choice == "2":
-            os.system("sudo wifipumpkin3")
+            run_command("sudo wifipumpkin3")
             self.wifipumkin()
 
         if choice == "99":
@@ -632,7 +678,7 @@ class Main:
 
     def pixiewps(self):
         self.clear_scr()
-        os.system("echo \"Pixiewps is a tool written in C used to bruteforce offline the WPS pin\n exploiting the low or non-existing entropy of some Access Points, the so-called pixie dust attack\"| boxes -d boy | lolcat")
+        run_command("echo \"Pixiewps is a tool written in C used to bruteforce offline the WPS pin\n exploiting the low or non-existing entropy of some Access Points, the so-called pixie dust attack\"| boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.pixiewps, ['1', '2', '99'])
