@@ -36,7 +36,7 @@ def run_command(cmd_string, cwd='', **kwargs):
     """
     piped_commands, exit_codes, procs = cmd_string.split('|'), [], []
     tasks, output = list(map(str.strip, piped_commands)), None
-    cwd = os.path.join(get_path(), cwd)
+    cwd = cwd if cwd.startswith('$') else os.path.join(get_path(), cwd)
 
     for task in tasks:
         args = task.split()
@@ -684,13 +684,15 @@ class Main:
         self.check_input(choice, self.pixiewps, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/wiire/pixiewps.git && apt-get -y install build-essential")
-            os.system("cd pixiewps*/ && make ")
-            os.system("cd pixiewps*/ && sudo make install && wget https://pastebin.com/y9Dk1Wjh")
+            run_command("sudo git clone https://github.com/wiire/pixiewps.git")
+            run_command("sudo apt-get -y install build-essential")
+            run_command("make", cwd="pixiewps*")
+            run_command("sudo make install", cwd="pixiewps*")
+            run_command("wget https://pastebin.com/y9Dk1Wjh", cwd="pixiewps*")
             self.pixiewps()
 
         if choice == "2":
-            os.system("echo \"1.>Put your interface into monitor mode using 'airmon-ng start {wireless interface}\n2.>wash -i {monitor-interface like mon0}'\n3.>reaver -i {monitor interface} -b {BSSID of router} -c {router channel} -vvv -K 1 -f\"| boxes -d boy")
+            run_command("echo \"1.>Put your interface into monitor mode using 'airmon-ng start {wireless interface}\n2.>wash -i {monitor-interface like mon0}'\n3.>reaver -i {monitor interface} -b {BSSID of router} -c {router channel} -vvv -K 1 -f\"| boxes -d boy")
             print("You Have To Run Manually By USing >>pixiewps -h ")
             self.pixiewps()
     
@@ -699,17 +701,19 @@ class Main:
 
     def bluepot(self):
         self.clear_scr()
-        os.system("echo \"you need to have at least 1 bluetooh receiver (if you have many it will work wiht those, too).\nYou must install/libbluetooth-dev on Ubuntu/bluez-libs-devel on Fedora/bluez-devel on openSUSE\"|boxes -d boy | lolcat")
+        run_command("echo \"you need to have at least 1 bluetooh receiver (if you have many it will work wiht those, too).\nYou must install/libbluetooth-dev on Ubuntu/bluez-libs-devel on Fedora/bluez-devel on openSUSE\"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.bluepot, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("wget https://github.com/andrewmichaelsmith/bluepot/raw/master/bin/bluepot-0.1.tar.gz && tar xfz bluepot-0.1.tar.gz && sudo java -jar bluepot/BluePot-0.1.jar")
+            run_command("wget https://github.com/andrewmichaelsmith/bluepot/raw/master/bin/bluepot-0.1.tar.gz")
+            run_command("tar xfz bluepot-0.1.tar.gz")
+            run_command("sudo java -jar bluepot/BluePot-0.1.jar")
             self.bluepot()
 
         if choice == "2":
-            os.system("cd bluepot-0.1 && sudo java -jar bluepot/BluePot-0.1.jar")
+            run_command("sudo java -jar bluepot/BluePot-0.1.jar", cwd="bluepot-0.1")
             self.bluepot()
 
         if choice == "99":
@@ -717,19 +721,21 @@ class Main:
 
     def fluxion(self):
         self.clear_scr()
-        os.system("echo \"Fluxion is a wifi key cracker using evil twin attack..\nyou need a wireless adaptor for this tool\"| boxes -d boy | lolcat")
+        run_command("echo \"Fluxion is a wifi key cracker using evil twin attack..\nyou need a wireless adaptor for this tool\"| boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.fluxion, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/thehackingsage/Fluxion.git") 
-            os.system("cd Fluxion && cd install && sudo chmod +x install.sh && sudo bash install.sh")
-            os.system("cd .. ; sudo chmod +x fluxion.sh")
+            run_command("git clone https://github.com/thehackingsage/Fluxion.git") 
+            run_command("install", cwd="Fluxion")
+            run_command("sudo chmod +x install.sh", cwd="Fluxion")
+            run_command("sudo bash install.sh", cwd="Fluxion")
+            run_command("sudo chmod +x fluxion.sh", cwd="Fluxion")
             self.fluxion()
 
         if choice == "2":
-            os.system("cd Fluxion;sudo bash fluxion.sh")
+            run_command("sudo bash fluxion.sh", cwd="Fluxion")
             self.fluxion()
 
         if choice == "99":
@@ -751,47 +757,48 @@ class Main:
         self.check_input(choice, self.wifiphisher, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/wifiphisher/wifiphisher.git")
-            os.system("cd wifiphisher;sudo python3 setup.py install")   
+            run_command("git clone https://github.com/wifiphisher/wifiphisher.git")
+            run_command("sudo python3 setup.py install", cwd="wifiphisher")   
             self.wifiphisher()
 
         if choice == "2":
-            os.system("cd wifiphisher;sudo wifiphisher")
+            run_command("sudo wifiphisher", cwd="wifiphisher")
 
         if choice == "99":
             self.wire()
 
     def wifite(self):
         self.clear_scr()
-        os.system("echo \"[!]https://github.com/derv82/wifite2 \"|boxes -d boy | lolcat")
+        run_command("echo \"[!]https://github.com/derv82/wifite2 \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.wifite, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/derv82/wifite2.git")
-            os.system("cd wifite2 && sudo python3 setup.py install ; sudo pip3 install -r requirements.txt")
+            run_command("sudo git clone https://github.com/derv82/wifite2.git")
+            run_command("sudo python3 setup.py install", cwd="wifite2")
+            run_command("sudo pip3 install -r requirements.txt", cwd="wifite2")
             self.wifite()
 
         if choice == "2":
-            os.system("cd wifite2; sudo wifite")
+            run_command("sudo wifite", cwd="wifite2")
             self.wifite()
         if choice == "99":
             self.wire()
 
     def eviltwin(self):
         self.clear_scr()
-        os.system("echo \"Fakeap is a script to perform Evil Twin Attack, by getting credentials using a Fake page and Fake Access Point \" | boxes -d boy | lolcat")
+        run_command("echo \"Fakeap is a script to perform Evil Twin Attack, by getting credentials using a Fake page and Fake Access Point \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.eviltwin, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/Z4nzu/fakeap")
+            run_command("sudo git clone https://github.com/Z4nzu/fakeap")
             self.eviltwin()
 
         if choice == "2":
-            os.system("cd fakeap && sudo bash fakeap.sh")
+            run_command("sudo bash fakeap.sh", cwd="fakeap")
             self.eviltwin()
 
         if choice == "99":
@@ -799,17 +806,18 @@ class Main:
 
     def howmanypeople(self):
         self.clear_scr()
-        os.system("echo \"Count the number of people around you by monitoring wifi signals.\n[@]WIFI ADAPTER REQUIRED* \n[*]It may be illegal to monitor networks for MAC addresses, \nespecially on networks that you do not own. Please check your country's laws\n\t [!]https://github.com/An0nUD4Y/howmanypeoplearearound \"|boxes -d boy | lolcat")
+        run_command("echo \"Count the number of people around you by monitoring wifi signals.\n[@]WIFI ADAPTER REQUIRED* \n[*]It may be illegal to monitor networks for MAC addresses, \nespecially on networks that you do not own. Please check your country's laws\n\t [!]https://github.com/An0nUD4Y/howmanypeoplearearound \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.howmanypeople, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo apt-get install tshark;sudo pip install howmanypeoplearearound")
+            run_command("sudo apt-get install tshark")
+            run_command("sudo pip install howmanypeoplearearound")
             self.howmanypeople()
 
         if choice == "2":
-            os.system("sudo howmanypeoplearearound")
+            run_command("sudo howmanypeoplearearound")
             self.howmanypeople()
 
         if choice == "99":
@@ -817,7 +825,7 @@ class Main:
                                                     ## PHISHING ATTACK START ###
     def phishattack(self):
         self.clear_scr()
-        os.system("figlet -f standard -c Phishing Attack Tools | lolcat")
+        run_command("figlet -f standard -c Phishing Attack Tools | lolcat")
 
         print("""
          [1] Setoolkit 
@@ -852,38 +860,38 @@ class Main:
 
     def blackphish(self):
         self.clear_scr()
-        os.system("echo \"BlackPhish  [!]https://github.com/iinc0gnit0/BlackPhish \" | boxes -d boy | lolcat")
+        run_command("echo \"BlackPhish  [!]https://github.com/iinc0gnit0/BlackPhish \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [3]Update [99]Back >> ")
 
         self.check_input(choice, self.blackphish, ['1', '2','3', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/iinc0gnit0/BlackPhish ")
-            os.system("cd BlackPhish;sudo bash install.sh")
+            run_command("sudo git clone https://github.com/iinc0gnit0/BlackPhish ")
+            run_command("sudo bash install.sh", cwd="BlackPhish")
             self.blackphish()
 
         if choice == "2":
-            os.system("cd BlackPhish;sudo python3 blackphish.py")
+            run_command("sudo python3 blackphish.py", cwd="BlackPhish")
         if choice == "3":
-            os.system("cd BlackPhish;sudo bash update.sh")
+            run_command("sudo bash update.sh", cwd="BlackPhish")
         if choice == "99":
             self.phishattack()
 
     def setoolkit(self):
         self.clear_scr()
-        os.system("echo \"The Social-Engineer Toolkit is an open-source penetration\ntesting framework designed for social engineering\"| boxes -d boy | lolcat")
+        run_command("echo \"The Social-Engineer Toolkit is an open-source penetration\ntesting framework designed for social engineering\"| boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.setoolkit, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/trustedsec/social-engineer-toolkit.git")
-            os.system("sudo python social-engineer-toolkit/setup.py")
+            run_command("git clone https://github.com/trustedsec/social-engineer-toolkit.git")
+            run_command("sudo python social-engineer-toolkit/setup.py")
             self.setoolkit()
 
         if choice == "2":
             self.clear_scr()
-            os.system("sudo setoolkit")
+            run_command("sudo setoolkit")
             self.setoolkit()
 
         if choice == "99":
@@ -891,18 +899,19 @@ class Main:
 
     def socialfish(self):
         self.clear_scr()
-        os.system("echo \"Automated Phishing Tool & Information Collector \n\t[!]https://github.com/UndeadSec/SocialFish \"|boxes -d boy | lolcat")
+        run_command("echo \"Automated Phishing Tool & Information Collector \n\t[!]https://github.com/UndeadSec/SocialFish \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.socialfish, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/UndeadSec/SocialFish.git && sudo apt-get install python3 python3-pip python3-dev -y")
-            os.system("cd SocialFish && sudo python3 -m pip install -r requirements.txt")
+            run_command("sudo git clone https://github.com/UndeadSec/SocialFish.git")
+            run_command("sudo apt-get install python3 python3-pip python3-dev -y")
+            run_command("sudo python3 -m pip install -r requirements.txt", cwd="SocialFish")
             self.socialfish()
 
         if choice == "2":
-            os.system("cd SocialFish && sudo python3 SocialFish.py root pass")
+            run_command("sudo python3 SocialFish.py root pass", cwd="SocialFish")
             self.socialfish()
 
         if choice == "99":
@@ -910,18 +919,21 @@ class Main:
 
     def hiddeneye(self):
         self.clear_scr()
-        os.system("echo \"Modern Phishing Tool With Advanced Functionality And Multiple Tunnelling Services \n\t [!]https://github.com/DarkSecDevelopers/HiddenEye \"|boxes -d boy | lolcat ")
+        run_command("echo \"Modern Phishing Tool With Advanced Functionality And Multiple Tunnelling Services \n\t [!]https://github.com/DarkSecDevelopers/HiddenEye \"|boxes -d boy | lolcat ")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.hiddeneye, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/DarkSecDevelopers/HiddenEye.git ;sudo chmod 777 HiddenEye")
-            os.system("cd HiddenEye;sudo pip3 install -r requirements.txt;sudo pip3 install requests;pip3 install pyngrok")
+            run_command("sudo git clone https://github.com/DarkSecDevelopers/HiddenEye.git")
+            run_command("sudo chmod 777 HiddenEye")
+            run_command("sudo pip3 install -r requirements.txt", cwd="HiddenEye")
+            run_command("sudo pip3 install requests", cwd="HiddenEye")
+            run_command("pip3 install pyngrok", cwd="HiddenEye")
             self.hiddeneye()
 
         if choice == "2":
-            os.system("cd HiddenEye;sudo python3 HiddenEye.py")
+            run_command("sudo python3 HiddenEye.py", cwd="HiddenEye")
             self.hiddeneye()
 
         if choice == "99":
@@ -929,19 +941,21 @@ class Main:
 
     def evilginx(self):
         self.clear_scr()
-        os.system("echo \"evilginx2 is a man-in-the-middle attack framework used for phishing login credentials along with session cookies,\nwhich in turn allows to bypass 2-factor authentication protection.\n\n\t [+]Make sure you have installed GO of version at least 1.14.0 \n[+]After installation, add this to your ~/.profile, assuming that you installed GO in /usr/local/go\n\t [+]export GOPATH=$HOME/go \n [+]export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin \n[+]Then load it with source ~/.profiles.\n [*]https://github.com/An0nUD4Y/evilginx2 \"|boxes -d boy | lolcat")
+        run_command("echo \"evilginx2 is a man-in-the-middle attack framework used for phishing login credentials along with session cookies,\nwhich in turn allows to bypass 2-factor authentication protection.\n\n\t [+]Make sure you have installed GO of version at least 1.14.0 \n[+]After installation, add this to your ~/.profile, assuming that you installed GO in /usr/local/go\n\t [+]export GOPATH=$HOME/go \n [+]export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin \n[+]Then load it with source ~/.profiles.\n [*]https://github.com/An0nUD4Y/evilginx2 \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.evilginx, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo apt-get install git make;go get -u github.com/kgretzky/evilginx2")
-            os.system("cd $GOPATH/src/github.com/kgretzky/evilginx2;make")
-            os.system("sudo make install;sudo evilginx")
+            run_command("sudo apt-get install git make")
+            run_command("go get -u github.com/kgretzky/evilginx2")
+            run_command("make", cwd="$GOPATH/src/github.com/kgretzky/evilginx2")
+            run_command("sudo make install")
+            run_command("sudo evilginx")
             self.evilginx()
 
         if choice == "2":
-            os.system("sudo evilginx")
+            run_command("sudo evilginx")
             self.evilginx()
             
         if choice == "99":
@@ -949,18 +963,18 @@ class Main:
 
     def iseeyou(self):
         self.clear_scr()
-        os.system("echo \"[!] ISeeYou is a tool to find Exact Location of Victom By User SocialEngineering or Phishing Engagment..\n[!]Users can expose their local servers to the Internet and decode the location coordinates by looking at the log file\"|boxes -d boy | lolcat")
+        run_command("echo \"[!] ISeeYou is a tool to find Exact Location of Victom By User SocialEngineering or Phishing Engagment..\n[!]Users can expose their local servers to the Internet and decode the location coordinates by looking at the log file\"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.iseeyou, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/Viralmaniar/I-See-You.git")
-            os.system("cd I-See-You && sudo chmod u+x ISeeYou.sh")
+            run_command("sudo git clone https://github.com/Viralmaniar/I-See-You.git")
+            run_command("sudo chmod u+x ISeeYou.sh", cwd="I-See-You")
             self.iseeyou()
 
         if choice == "2":
-            os.system("cd I-See-You && sudo bash ISeeYou.sh")
+            run_command("sudo bash ISeeYou.sh", cwd="I-See-You")
             self.iseeyou()
 
         if choice == "99":
@@ -968,17 +982,17 @@ class Main:
 
     def saycheese(self):
         self.clear_scr()
-        os.system("echo \"Take webcam shots from target just sending a malicious link\"|boxes -d boy | lolcat")
+        run_command("echo \"Take webcam shots from target just sending a malicious link\"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.saycheese, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/hangetzzu/saycheese")
+            run_command("sudo git clone https://github.com/hangetzzu/saycheese")
             self.saycheese()
 
         if choice == "2":
-            os.system("cd saycheese && sudo bash saycheese.sh")
+            run_command("sudo bash saycheese.sh", cwd="saycheese")
             self.saycheese()
 
         if choice == "99":
@@ -986,7 +1000,7 @@ class Main:
 
     def qrjacking(self):
         self.clear_scr()
-        os.system("echo \"QR Code Jacking (Any Website) \" | boxes -d boy | lolcat")
+        run_command("echo \"QR Code Jacking (Any Website) \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.qrjacking, ['1', '2', '99'])
