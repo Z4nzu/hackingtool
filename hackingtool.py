@@ -1425,7 +1425,7 @@ class Main:
             self.blazy()
 
         if choice == "2":
-            os.system("cd Blazy && sudo python blazy.py")
+            run_command("sudo python blazy.py", cwd="Blazy")
             self.blazy()
 
         if choice == "99":
@@ -1433,14 +1433,14 @@ class Main:
 
     def subdomaintakeover(self):
         self.clear_scr()
-        os.system("echo \"Sub-domain takeover vulnerability occur when a sub-domain \n (subdomain.example.com) is pointing to a service (e.g: GitHub, AWS/S3,..)\nthat has been removed or deleted.\nUsage:python3 takeover.py -d www.domain.com -v \n\t[!]https://github.com/m4ll0k/takeover \"|boxes -d boy | lolcat")
+        run_command("echo \"Sub-domain takeover vulnerability occur when a sub-domain \n (subdomain.example.com) is pointing to a service (e.g: GitHub, AWS/S3,..)\nthat has been removed or deleted.\nUsage:python3 takeover.py -d www.domain.com -v \n\t[!]https://github.com/m4ll0k/takeover \"|boxes -d boy | lolcat")
         choice = input("[1]Install [99]Back >> ")
 
         self.check_input(choice, self.subdomaintakeover, ['1', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/m4ll0k/takeover.git")
-            os.system("cd takeover;sudo python3 setup.py install")
+            run_command("git clone https://github.com/m4ll0k/takeover.git")
+            run_command("sudo python3 setup.py install", cwd="takeover")
             self.subdomaintakeover()
 
         if choice == "99":
@@ -1448,7 +1448,7 @@ class Main:
 
     def payloads(self):
         self.clear_scr()
-        os.system("figlet -f standard -c Payloads | lolcat")
+        run_command("figlet -f standard -c Payloads | lolcat")
 
         print("""
              [1] The FatRat 
@@ -1481,26 +1481,29 @@ class Main:
 
     def thefatrat(self):
         self.clear_scr()
-        os.system("echo \"TheFatRat Provides An Easy way to create Backdoors and \nPayload which can bypass most anti-virus\"|boxes -d boy | lolcat")
+        run_command("echo \"TheFatRat Provides An Easy way to create Backdoors and \nPayload which can bypass most anti-virus\"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [3]Update [4]TroubleShoot (if not run) [99]Back >>  ")
 
         self.check_input(choice, self.thefatrat, ['1', '2', '3', '4', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/Screetsec/TheFatRat.git") 
-            os.system("cd TheFatRat && sudo chmod +x setup.sh")
+            run_command("sudo git clone https://github.com/Screetsec/TheFatRat.git") 
+            run_command("sudo chmod +x setup.sh", cwd="TheFatRat")
             self.thefatrat()
 
         if choice == "2":
-            os.system("cd TheFatRat && sudo bash setup.sh")
+            run_command("sudo bash setup.sh", cwd="TheFatRat")
             self.thefatrat()
 
         if choice == "3":
-            os.system("cd TheFatRat && bash update && chmod +x setup.sh && bash setup.sh")
+            run_command("bash update", cwd='TheFatRat')
+            run_command("chmod +x setup.sh", cwd='TheFatRat')
+            run_command("bash setup.sh", cwd='TheFatRat')
             self.thefatrat()
 
         if choice == "4":
-            os.system("cd TheFatRat && sudo chmod +x chk_tools && ./chk_tools")
+            run_command("sudo chmod +x chk_tools", cwd='TheFatRat')
+            run_command("./chk_tools", cwd='TheFatRat')
             self.thefatrat()
 
         if choice == "99":
@@ -1508,7 +1511,7 @@ class Main:
 
     def brutal(self):
         self.clear_scr()
-        os.system("echo \"Brutal is a toolkit to quickly create various payload,powershell attack,\nvirus attack and launch listener for a Human Interface Device\"|boxes -d boy | lolcat")
+        run_command("echo \"Brutal is a toolkit to quickly create various payload,powershell attack,\nvirus attack and launch listener for a Human Interface Device\"|boxes -d boy | lolcat")
         
         print("""
         [!]Requirement
@@ -1526,12 +1529,12 @@ class Main:
         self.check_input(choice, self.brutal, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/Screetsec/Brutal.git")
-            os.system("cd Brutal && sudo chmod +x Brutal.sh ")
+            run_command("sudo git clone https://github.com/Screetsec/Brutal.git")
+            run_command("sudo chmod +x Brutal.sh", cwd="Brutal")
             self.brutal()
 
         if choice == "2":
-            os.system("cd Brutal && sudo bash Brutal.sh")
+            run_command("sudo bash Brutal.sh", cwd="Brutal")
             self.brutal()
 
         if choice == "99":
@@ -1539,18 +1542,18 @@ class Main:
 
     def stitch(self):
         self.clear_scr()
-        os.system("echo \"Stitch is Cross Platform Python Remote Administrator Tool\n\t[!]Refer Below Link For Wins & MAc Os\n\t(!)https://nathanlopez.github.io/Stitch \" | boxes -d boy | lolcat")
+        run_command("echo \"Stitch is Cross Platform Python Remote Administrator Tool\n\t[!]Refer Below Link For Wins & MAc Os\n\t(!)https://nathanlopez.github.io/Stitch \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> " )
 
         self.check_input(choice, self.stitch, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/nathanlopez/Stitch.git")
-            os.system("cd Stitch && sudo pip install -r lnx_requirements.txt")
+            run_command("sudo git clone https://github.com/nathanlopez/Stitch.git")
+            run_command("sudo pip install -r lnx_requirements.txt", cwd="Stitch")
             self.stitch()
 
         if choice == "2":
-            os.system("cd Stitch && sudo python main.py")
+            run_command("sudo python main.py", cwd="Stitch")
             self.stitch()
 
         if choice == "99":
@@ -1558,18 +1561,18 @@ class Main:
 
     def msf_venom(self):
         self.clear_scr()
-        os.system("echo \"MSFvenom Payload Creator (MSFPC) is a wrapper to generate \nmultiple types of payloads, based on users choice.\nThe idea is to be as simple as possible (only requiring one input) \nto produce their payload. [!]https://github.com/g0tmi1k/msfpc \" |boxes -d boy | lolcat ")
+        run_command("echo \"MSFvenom Payload Creator (MSFPC) is a wrapper to generate \nmultiple types of payloads, based on users choice.\nThe idea is to be as simple as possible (only requiring one input) \nto produce their payload. [!]https://github.com/g0tmi1k/msfpc \" |boxes -d boy | lolcat ")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.msf_venom, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/g0tmi1k/msfpc.git")
-            os.system("cd msfpc;sudo chmod +x msfpc.sh")
+            run_command("sudo git clone https://github.com/g0tmi1k/msfpc.git")
+            run_command("sudo chmod +x msfpc.sh", cwd="msfpc")
             self.msf_venom()
 
         if choice == "2":
-            os.system("cd msfpc;sudo bash msfpc.sh -h -v")
+            run_command("sudo bash msfpc.sh -h -v", cwd="msfpc")
             self.msf_venom()
 
         if choice == "99":
@@ -1577,19 +1580,20 @@ class Main:
 
     def venom(self):
         self.clear_scr()
-        os.system("echo \"venom 1.0.11 (malicious_server) was build to take advantage of \n apache2 webserver to deliver payloads (LAN) using a fake webpage writen in html\"| boxes -d boy| lolcat")
+        run_command("echo \"venom 1.0.11 (malicious_server) was build to take advantage of \n apache2 webserver to deliver payloads (LAN) using a fake webpage writen in html\"| boxes -d boy| lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.venom, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/r00t-3xp10it/venom.git")
-            os.system("sudo chmod -R 775 venom*/ && cd venom*/ && cd aux && sudo bash setup.sh")
-            os.system("sudo ./venom.sh -u")
+            run_command("sudo git clone https://github.com/r00t-3xp10it/venom.git")
+            run_command("sudo chmod -R 775 venom*")
+            run_command("sudo bash setup.sh", cwd="venom")
+            run_command("sudo ./venom.sh -u", cwd="venom")
             self.venom()
 
         if choice == "2":
-            os.system("cd venom && sudo ./venom.sh")
+            run_command("sudo ./venom.sh", cwd="venom")
             self.venom()
 
         if choice == "99":
@@ -1597,18 +1601,19 @@ class Main:
 
     def spycam(self):
         self.clear_scr()
-        os.system("echo \"Script to generate a Win32 payload that takes the webcam image every 1 minute and send it to the attacker\"|boxes -d boy | lolcat")
+        run_command("echo \"Script to generate a Win32 payload that takes the webcam image every 1 minute and send it to the attacker\"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.spycam, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/thelinuxchoice/spycam ")
-            os.system("cd spycam && bash install.sh && chmod +x spycam")
+            run_command("sudo git clone https://github.com/thelinuxchoice/spycam ")
+            run_command("sudo bash install.sh", cwd="spycam")
+            run_command("sudo chmod +x spycam", cwd="spycam")
             self.spycam()
 
         if choice == "2":
-            os.system("cd spycam && ./spycam")
+            run_command("./spycam", cwd="spycam")
             self.spycam()
 
         if choice == "99":
@@ -1616,17 +1621,17 @@ class Main:
 
     def mobdroid(self):
         self.clear_scr()
-        os.system("echo \"Mob-Droid helps you to generate metasploit payloads in easy way\n without typing long commands and save your \n[!]https://github.com/kinghacker0/Mob-Droid \"|boxes -d boy | lolcat")
+        run_command("echo \"Mob-Droid helps you to generate metasploit payloads in easy way\n without typing long commands and save your \n[!]https://github.com/kinghacker0/Mob-Droid \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.mobdroid, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/kinghacker0/mob-droid")
+            run_command("git clone https://github.com/kinghacker0/mob-droid")
             self.spycam()
 
         if choice == "2":
-            os.system("cd Mob-Droid;sudo python mob-droid.py")
+            run_command("sudo python mob-droid.py", cwd="Mob-Droid")
             self.mobdroid()
 
         if choice == "99":
@@ -1634,32 +1639,32 @@ class Main:
 
     def enigma(self):
         self.clear_scr()
-        os.system("echo \"Enigma is a Multiplatform payload dropper \n\t [!]https://github.com/UndeadSec/Enigma \" | boxes -d boy | lolcat")
+        run_command("echo \"Enigma is a Multiplatform payload dropper \n\t [!]https://github.com/UndeadSec/Enigma \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.enigma, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/UndeadSec/Enigma.git ")
+            run_command("sudo git clone https://github.com/UndeadSec/Enigma.git ")
             self.enigma()
 
         if choice == "2":
-            os.system("cd Enigma;sudo python3 enigma3.py")
+            run_command("sudo python3 enigma3.py", cwd="Enigma")
 
         if choice == "99":
             self.payloads()
     
     def fud(self):
         self.clear_scr()
-        os.system("echo \"FUD Tool Use To Bypass Window 10 Defender Firewall & Bypass UAC \n\t [!]https://github.com/Ignitetch/FUD \"| boxes -d boy | lolcat ")
+        run_command("echo \"FUD Tool Use To Bypass Window 10 Defender Firewall & Bypass UAC \n\t [!]https://github.com/Ignitetch/FUD \"| boxes -d boy | lolcat ")
         choice = input("[1]Install [2]Run [99]Back >> ")
         self.check_input(choice, self.fud, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/Ignitetch/FUD.git")
+            run_command("sudo git clone https://github.com/Ignitetch/FUD.git")
 
         if choice == "2":
-            os.system("cd FUD;bash FUD.sh")
+            run_command("bash FUD.sh", cwd="FUD")
         
         if choice == "99":
             self.payloads
@@ -1667,7 +1672,7 @@ class Main:
                         #### Steganography Tools            
     def steganography(self):
         self.clear_scr()
-        os.system("figlet -f standard -c SteganoGraphy | lolcat")
+        run_command("figlet -f standard -c SteganoGraphy | lolcat")
 
         print("""
              [1] SteganoHide
@@ -1695,7 +1700,7 @@ class Main:
         self.check_input(choice, self.steganohide, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo apt-get install steghide -y ")
+            run_command("sudo apt-get install steghide -y ")
             self.steganohide()
 
         if choice == "2":
@@ -1722,13 +1727,14 @@ class Main:
 
     def stegnocracker(self):
         self.clear_scr()
-        os.system("echo \"SteganoCracker is a tool that uncover hidden data inside files\n using brute-force utility  \"|boxes -d boy| lolcat")
+        run_command("echo \"SteganoCracker is a tool that uncover hidden data inside files\n using brute-force utility  \"|boxes -d boy| lolcat")
         choice = input("[1]Install [2]Run [99]Back  >> ")
 
         self.check_input(choice, self.stegnocracker, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("pip3 install stegcracker && pip3 install stegcracker -U --force-reinstall")
+            run_command("pip3 install stegcracker")
+            run_command("pip3 install stegcracker -U --force-reinstall")
             self.stegnocracker()
 
         if choice == "2":
@@ -1742,18 +1748,18 @@ class Main:
 
     def whitespace(self):
         self.clear_scr()
-        os.system("echo \"Use whitespace and unicode chars for steganography \n\t [!]https://github.com/beardog108/snow10 \"|boxes -d boy | lolcat")
+        run_command("echo \"Use whitespace and unicode chars for steganography \n\t [!]https://github.com/beardog108/snow10 \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.whitespace, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/beardog108/snow10.git ")
-            os.system("sudo chmod -R 755 snow10")
+            run_command("sudo git clone https://github.com/beardog108/snow10.git ")
+            run_command("sudo chmod -R 755 snow10")
             self.whitespace()
 
         if choice == "2":
-            os.system("cd snow10 && firefox index.html")
+            run_command("firefox index.html", cwd="snow10")
             self.whitespace()
 
         if choice == "99":
@@ -1761,7 +1767,7 @@ class Main:
 
     def sqltool(self):
         self.clear_scr()
-        os.system("figlet -f standard -c Sql Tools | lolcat")
+        run_command("figlet -f standard -c Sql Tools | lolcat")
 
         print("""
              [1] Sqlmap tool
@@ -1792,13 +1798,13 @@ class Main:
 
     def sqlmap(self):
         self.clear_scr()
-        os.system("echo \"sqlmap is an open source penetration testing tool that automates the process of \ndetecting and exploiting SQL injection flaws and taking over of database servers \n [!]python sqlmap.py -u [<http://example.com>] --batch --banner \n More Usage [!]https://github.com/sqlmapproject/sqlmap/wiki/Usage \"|boxes -d boy | lolcat")
+        run_command("echo \"sqlmap is an open source penetration testing tool that automates the process of \ndetecting and exploiting SQL injection flaws and taking over of database servers \n [!]python sqlmap.py -u [<http://example.com>] --batch --banner \n More Usage [!]https://github.com/sqlmapproject/sqlmap/wiki/Usage \"|boxes -d boy | lolcat")
         choice = input("[1]Install [99]Back >> ")
 
         self.check_input(choice, self.sqlmap, ['1', '99'])
 
         if choice == "1":
-            os.system("sudo git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev")
+            run_command("sudo git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev")
             print("Downloaded Successfully..!!")
             self.sqlmap()
 
@@ -1807,18 +1813,19 @@ class Main:
 
     def nosqlmap(self):
         self.clear_scr()
-        os.system("echo \"NoSQLMap is an open source Python tool designed to \n audit for as well as automate injection attacks and exploit.\n \033[91m [*]Please Install MongoDB \n More Info[!]https://github.com/codingo/NoSQLMap \"|boxes -d boy | lolcat")
+        run_command("echo \"NoSQLMap is an open source Python tool designed to \n audit for as well as automate injection attacks and exploit.\n \033[91m [*]Please Install MongoDB \n More Info[!]https://github.com/codingo/NoSQLMap \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.nosqlmap, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/codingo/NoSQLMap.git")
-            os.system("sudo chmod -R 755 NoSQLMap;cd NoSQLMap;python setup.py install ")
+            run_command("git clone https://github.com/codingo/NoSQLMap.git")
+            run_command("sudo chmod -R 755 NoSQLMap")
+            run_command("python setup.py install", cwd="NoSQLMap")
             self.nosqlmap()
 
         if choice == "2":
-            os.system("python NoSQLMap")
+            run_command("python NoSQLMap")
             self.nosqlmap()
 
         if choice == "99":
@@ -1826,13 +1833,13 @@ class Main:
 
     def sqliscanner(self):
         self.clear_scr()
-        os.system("echo \"Damn Small SQLi Scanner (DSSS) is a fully functional SQL injection\nvulnerability scanner also supporting GET and POST parameters.\n[*]python3 dsss.py -h[help] | -u[URL] \n\tMore Info [!]https://github.com/stamparm/DSSS \"|boxes -d boy | lolcat")
+        run_command("echo \"Damn Small SQLi Scanner (DSSS) is a fully functional SQL injection\nvulnerability scanner also supporting GET and POST parameters.\n[*]python3 dsss.py -h[help] | -u[URL] \n\tMore Info [!]https://github.com/stamparm/DSSS \"|boxes -d boy | lolcat")
         choice = input("[1]Install [99]Back >> ")
 
         self.check_input(choice, self.sqliscanner, ['1', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/stamparm/DSSS.git")
+            run_command("git clone https://github.com/stamparm/DSSS.git")
             self.sqliscanner()
 
         if choice == "99":
@@ -1840,14 +1847,14 @@ class Main:
 
     def explo(self):
         self.clear_scr()
-        os.system("echo \"Explo is a simple tool to describe web security issues in a human and machine readable format.\n Usage:- \n [1]explo [--verbose|-v] testcase.yaml \n [2]explo [--verbose|-v] examples/*.yaml \n[*]https://github.com/dtag-dev-sec/explo \"|boxes -d boy | lolcat")
+        run_command("echo \"Explo is a simple tool to describe web security issues in a human and machine readable format.\n Usage:- \n [1]explo [--verbose|-v] testcase.yaml \n [2]explo [--verbose|-v] examples/*.yaml \n[*]https://github.com/dtag-dev-sec/explo \"|boxes -d boy | lolcat")
         choice = input("[1]Install [99]Back >> ")
 
         self.check_input(choice, self.explo, ['1', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/dtag-dev-sec/explo ")
-            os.system("cd explo ;sudo python setup.py install")
+            run_command("git clone https://github.com/dtag-dev-sec/explo ")
+            run_command("sudo python setup.py install", cwd="explo")
             self.explo()
 
         if choice == "99":
@@ -1855,13 +1862,13 @@ class Main:
 
     def blisqy(self):
         self.clear_scr()
-        os.system("echo \"Blisqy is a tool to aid Web Security researchers to find Time-based Blind SQL injection \n on HTTP Headers and also exploitation of the same vulnerability.\n For Usage >> [!]https://github.com/JohnTroony/Blisqy \"|boxes -d boy | lolcat")
+        run_command("echo \"Blisqy is a tool to aid Web Security researchers to find Time-based Blind SQL injection \n on HTTP Headers and also exploitation of the same vulnerability.\n For Usage >> [!]https://github.com/JohnTroony/Blisqy \"|boxes -d boy | lolcat")
         choice = input("[1]Install [99]Back >> ")
 
         self.check_input(choice, self.blisqy, ['1', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/JohnTroony/Blisqy.git ")
+            run_command("git clone https://github.com/JohnTroony/Blisqy.git ")
             self.blisqy()
 
         if choice == "99":
@@ -1869,37 +1876,37 @@ class Main:
 
     def leviathan(self):
         self.clear_scr()
-        os.system("echo \"Leviathan is a mass audit toolkit which has wide range service discovery,\nbrute force, SQL injection detection and running custom exploit capabilities. \n [*]It Requires API Keys \n More Usage [!]https://github.com/utkusen/leviathan/wiki \"|boxes -d boy | lolcat ")
+        run_command("echo \"Leviathan is a mass audit toolkit which has wide range service discovery,\nbrute force, SQL injection detection and running custom exploit capabilities. \n [*]It Requires API Keys \n More Usage [!]https://github.com/utkusen/leviathan/wiki \"|boxes -d boy | lolcat ")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.leviathan, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/leviathan-framework/leviathan.git")
-            os.system("cd leviathan;sudo pip install -r requirements.txt")
+            run_command("git clone https://github.com/leviathan-framework/leviathan.git")
+            run_command("sudo pip install -r requirements.txt", cwd="leviathan")
             self.leviathan()
 
         if choice == "2":
-            os.system("cd leviathan;python leviathan.py")
+            run_command("python leviathan.py", cwd="leviathan")
 
         if choice == "99":
             self.sqltool()
 
     def sqlscan(self):
         self.clear_scr()
-        os.system("echo \"sqlscan is quick web scanner for find an sql inject point. not for educational, this is for hacking. \n [!]https://github.com/Cvar1984/sqlscan \"|boxes -d boy | lolcat")
+        run_command("echo \"sqlscan is quick web scanner for find an sql inject point. not for educational, this is for hacking. \n [!]https://github.com/Cvar1984/sqlscan \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.sqlscan, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo apt install php php-bz2 php-curl php-mbstring curl")
-            os.system("sudo curl https://raw.githubusercontent.com/Cvar1984/sqlscan/dev/build/main.phar --output /usr/local/bin/sqlscan")
-            os.system("chmod +x /usr/local/bin/sqlscan")
+            run_command("sudo apt install php php-bz2 php-curl php-mbstring curl")
+            run_command("sudo curl https://raw.githubusercontent.com/Cvar1984/sqlscan/dev/build/main.phar --output /usr/local/bin/sqlscan")
+            run_command("chmod +x /usr/local/bin/sqlscan")
             self.sqlscan()
 
         if choice == "2":
-            os.system("sudo sqlscan")
+            run_command("sudo sqlscan")
             self.sqlscan()
 
         if choice == "99":
@@ -1944,7 +1951,7 @@ class Main:
                 ######  SOCIALMEDIA ATTACK TOOLS
     def social_attack(self):
         self.clear_scr()
-        os.system("figlet -f standard SocialMedia Attack | lolcat")
+        run_command("figlet -f standard SocialMedia Attack | lolcat")
 
         print("""
              [1] Instagram Attack
@@ -1969,14 +1976,14 @@ class Main:
 
     def instabrute(self):
         self.clear_scr()
-        os.system("echo \"Brute force attack against Instagram \n\t [!]https://github.com/chinoogawa/instaBrute \"| boxes -d boy | lolcat")
+        run_command("echo \"Brute force attack against Instagram \n\t [!]https://github.com/chinoogawa/instaBrute \"| boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.bruteforce, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/chinoogawa/instaBrute.git ")
-            os.system("cd instaBrute;sudo pip install -r requirements.txt")
+            run_command("sudo git clone https://github.com/chinoogawa/instaBrute.git ")
+            run_command("sudo pip install -r requirements.txt", cwd="instaBrute")
             self.instabrute()
 
         if choice == "2":
