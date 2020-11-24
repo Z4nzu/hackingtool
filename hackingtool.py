@@ -1989,8 +1989,7 @@ class Main:
         if choice == "2":
             name = input("Enter Username >> ")
             wordlist = input("Enter wordword list >> ")
-            os.system(f"cd instaBrute")
-            subprocess.run(["sudo", "python", "instaBrute.py", "-u", f"{name}", "-d", f"{wordlist}"])
+            run_command(f"sudo python instaBrute.py -u {name} -d {wordlist}", cwd="instaBrute")
             self.instabrute()
 
         if choice == "99":
@@ -1998,18 +1997,19 @@ class Main:
 
     def bruteforce(self):
         self.clear_scr()
-        os.system("echo \"Brute_Force_Attack Gmail Hotmail Twitter Facebook Netflix \n[!]python3 Brute_Force.py -g <Account@gmail.com> -l <File_list> \n\t[!]https://github.com/Matrix07ksa/Brute_Force \"|boxes -d boy | lolcat")
+        run_command("echo \"Brute_Force_Attack Gmail Hotmail Twitter Facebook Netflix \n[!]python3 Brute_Force.py -g <Account@gmail.com> -l <File_list> \n\t[!]https://github.com/Matrix07ksa/Brute_Force \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.bruteforce, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/Matrix07ksa/Brute_Force.git")
-            os.system("cd Brute_Force ;sudo pip3 install proxylist;pip3 install mechanize")
+            run_command("sudo git clone https://github.com/Matrix07ksa/Brute_Force.git")
+            run_command("sudo pip3 install proxylist", cwd="Brute_Force")
+            run_command("pip3 install mechanize", cwd="Brute_Force")
             self.bruteforce()
 
         if choice == "2":
-            os.system("cd Brute_Force;python3 Brute_Force.py -h")
+            run_command("python3 Brute_Force.py -h", cwd="Brute_Force")
             self.bruteforce()
 
         if choice == "99":
@@ -2017,14 +2017,15 @@ class Main:
 
     def faceshell(self):
         self.clear_scr()
-        os.system("echo \" Facebook BruteForcer[!]https://github.com/Matrix07ksa/Brute_Force \"|boxes -d boy | lolcat")
+        run_command("echo \" Facebook BruteForcer[!]https://github.com/Matrix07ksa/Brute_Force \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.faceshell, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/Matrix07ksa/Brute_Force.git")
-            os.system("cd Brute_Force ;sudo pip3 install proxylist;pip3 install mechanize")
+            run_command("sudo git clone https://github.com/Matrix07ksa/Brute_Force.git")
+            run_command("sudo pip3 install proxylist", cwd="Brute_Force")
+            run_command("pip3 install mechanize", cwd="Brute_Force")
             self.faceshell()
 
         if choice == "2":
