@@ -33,6 +33,8 @@ def get_path():
 def run_command(cmd_string, cwd='', **kwargs):
     """
     Runs an os command using subprocess module.
+    Supports pipe operator.
+    `;`, `&&` and other shell operators not recommended.
     """
     piped_commands, exit_codes, procs = cmd_string.split('|'), [], []
     tasks, output = list(map(str.strip, piped_commands)), None
@@ -40,7 +42,6 @@ def run_command(cmd_string, cwd='', **kwargs):
 
     for task in tasks:
         args = task.split()
-        print(f"CMD: {args}")
         if len(procs):
             proc = subprocess.Popen(
                 args, 
@@ -3077,8 +3078,8 @@ class Main:
             self.updatesys()
 
         if choice == "2":
-            # os.system("sudo chmod +x /etc/;sudo chmod +x /usr/share/doc;sudo rm -rf /usr/share/doc/hackingtool/;cd /etc/;sudo rm -rf /etc/hackingtool/;mkdir hackingtool;cd hackingtool;git clone https://github.com/Z4nzu/hackingtool.git;cd hackingtool;sudo chmod +x install.sh;./install.sh")
-            run_command("sudo chmod +x /etc/;sudo chmod +x /usr/share/doc;")
+            run_command("sudo chmod +x /etc/")
+            run_command("sudo chmod +x /usr/share/doc")
             run_command("sudo rm -rf /usr/share/doc/hackingtool/")
             run_command("sudo rm -rf /etc/hackingtool/", cwd="$/etc/")
             run_command("mkdir hackingtool", cwd="$/etc/")
