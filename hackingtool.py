@@ -2347,18 +2347,18 @@ class Main:
 
     def kawaiideauther(self):
         self.clear_scr()
-        os.system("echo \"Kawaii Deauther is a pentest toolkit whose goal is to perform \n jam on WiFi clients/routers and spam many fake AP for testing purposes. \n\t [!]https://github.com/aryanrtm/KawaiiDeauther \" | boxes -d boy | lolcat ")
+        run_command("echo \"Kawaii Deauther is a pentest toolkit whose goal is to perform \n jam on WiFi clients/routers and spam many fake AP for testing purposes. \n\t [!]https://github.com/aryanrtm/KawaiiDeauther \" | boxes -d boy | lolcat ")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.kawaiideauther, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/aryanrtm/KawaiiDeauther")
-            os.system("cd KawaiiDeauther;sudo bash install.sh")
+            run_command("sudo git clone https://github.com/aryanrtm/KawaiiDeauther")
+            run_command("sudo bash install.sh", cwd="KawaiiDeauther")
             self.kawaiideauther()
         
         if choice == "2":
-            os.system("cd KawaiiDeauther;sudo KawaiiDeauther.sh")
+            run_command("sudo KawaiiDeauther.sh", cwd="KawaiiDeauther")
 
         if choice == "99":
             self.wifijamming()
@@ -2366,7 +2366,7 @@ class Main:
                                 ### SOCIALFINDER TOOLS
     def socialfinder(self):
         self.clear_scr()
-        os.system("figlet -f standard SocialMedia Finder | lolcat")
+        run_command("figlet -f standard SocialMedia Finder | lolcat")
 
         print("""
              [1]  Find SocialMedia By Facial Recognation System
@@ -2390,29 +2390,29 @@ class Main:
 
     def facialfind(self):
         self.clear_scr()
-        os.system("echo \"A Social Media Mapping Tool that correlates profiles\n via facial recognition across different sites. \n\t[!]https://github.com/Greenwolf/social_mapper \"|boxes -d boy | lolcat")
+        run_command("echo \"A Social Media Mapping Tool that correlates profiles\n via facial recognition across different sites. \n\t[!]https://github.com/Greenwolf/social_mapper \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.facialfind, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo add-apt-repository ppa:mozillateam/firefox-next && sudo apt update && sudo apt upgrade")
-            os.system("sudo git clone https://github.com/Greenwolf/social_mapper.git")
-            os.system("cd social_mapper/setup")
-            os.system("sudo python3 -m pip install --no-cache-dir -r requirements.txt")
-            os.system("echo \"[!]Now You have To do some Manually\n[!]Install the Geckodriver for your operating system\n[!]Copy & Paste Link And Download File As System Configuration\n[#]https://github.com/mozilla/geckodriver/releases\n[!!]On Linux you can place it in /usr/bin \"| boxes | lolcat")
+            run_command("sudo add-apt-repository ppa:mozillateam/firefox-next")
+            run_command("sudo apt update")
+            run_command("sudo apt upgrade")
+            run_command("sudo git clone https://github.com/Greenwolf/social_mapper.git")
+            run_command("sudo python3 -m pip install --no-cache-dir -r requirements.txt", cwd="social_mapper/setup")
+            run_command("echo \"[!]Now You have To do some Manually\n[!]Install the Geckodriver for your operating system\n[!]Copy & Paste Link And Download File As System Configuration\n[#]https://github.com/mozilla/geckodriver/releases\n[!!]On Linux you can place it in /usr/bin \"| boxes | lolcat")
             self.facialfind()
 
         if choice == "2":
-            os.system("cd social_mapper/setup")
-            os.system("sudo python social_mapper.py -h")
+            run_command("sudo python social_mapper.py -h", cwd="social_mapper/setup")
 
             print("""\033[95m 
                     You have to set Username and password of your AC Or Any Fack Account
                     [#]Type in Terminal nano social_mapper.py
             """)
 
-            os.system("echo \"python social_mapper.py -f [<imageFoldername>] -i [<imgFolderPath>] -m fast [<AcName>] -fb -tw\"| boxes | lolcat")
+            run_command("echo \"python social_mapper.py -f [<imageFoldername>] -i [<imgFolderPath>] -m fast [<AcName>] -fb -tw\"| boxes | lolcat")
             self.facialfind()
 
         if choice == "99":
@@ -2420,18 +2420,18 @@ class Main:
 
     def finduser(self):
         self.clear_scr()
-        os.system("echo \"Find usernames across over 75 social networks \n [!]https://github.com/xHak9x/finduser \"|boxes -d boy | lolcat")
+        run_command("echo \"Find usernames across over 75 social networks \n [!]https://github.com/xHak9x/finduser \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.finduser, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/xHak9x/finduser.git")
-            os.system("cd finduser && sudo chmod +x finduser.sh")            
+            run_command("sudo git clone https://github.com/xHak9x/finduser.git")
+            run_command("sudo chmod +x finduser.sh", cwd="finduser")            
             self.finduser()
 
         if choice == "2":
-            os.system("cd finduser && sudo bash finduser.sh")
+            run_command("sudo bash finduser.sh", cwd="finduser")
             self.finduser()
 
         if choice == "99":
@@ -2439,20 +2439,20 @@ class Main:
 
     def sherlock(self):
         self.clear_scr()
-        os.system("echo \"Hunt down social media accounts by username across social networks \n For More Usege \n\t >>python3 sherlock --help \n [!]https://github.com/sherlock-project/sherlock \"|boxes -d boy | lolcat")
+        run_command("echo \"Hunt down social media accounts by username across social networks \n For More Usege \n\t >>python3 sherlock --help \n [!]https://github.com/sherlock-project/sherlock \"|boxes -d boy | lolcat")
         choice = input("[1]Install [99]Back >> ")
 
         self.check_input(choice, self.sherlock, ['1', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/sherlock-project/sherlock.git")
-            os.system("cd sherlock ;sudo python3 -m pip install -r requirements.txt")
+            run_command("git clone https://github.com/sherlock-project/sherlock.git")
+            run_command("sudo python3 -m pip install -r requirements.txt", cwd="finduser")
             self.sherlock()
 
         if choice == "2":
             name = input("Enter Username >> ")
-            os.system("cd sherlock")
-            subprocess.run(["sudo", "python3", "sherlock", f"{name}"])
+            run_command(f"sudo python3 sherlock {name}", cwd="sherlock")
+            subprocess.run([])
             self.sherlock()
 
         if choice == "99":
@@ -2460,13 +2460,13 @@ class Main:
 
     def socialscan(self):
         self.clear_scr()
-        os.system("echo \"Check email address and username availability on online platforms with 100% accuracy \n\t[*]https://github.com/iojw/socialscan \"|boxes -d boy | lolcat")
+        run_command("echo \"Check email address and username availability on online platforms with 100% accuracy \n\t[*]https://github.com/iojw/socialscan \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.socialscan, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo pip install socialscan")
+            run_command("sudo pip install socialscan")
             self.socialscan()
 
         if choice == "2":
@@ -2480,7 +2480,7 @@ class Main:
                     ########### PYTHON INJECTOR TOOLS 
     def pyinject(self):
         self.clear_scr()
-        os.system("figlet -f standard -c Payload Injector | lolcat ")
+        run_command("figlet -f standard -c Payload Injector | lolcat ")
         print("""
              [1] Debinject 
              [2] Pixload 
@@ -2499,28 +2499,28 @@ class Main:
 
     def debinject(self):
         self.clear_scr()
-        os.system("echo \"Debinject is a tool that inject malicious code into *.debs \n\t [!]https://github.com/UndeadSec/Debinject  \" | boxes -d boy | lolcat")
+        run_command("echo \"Debinject is a tool that inject malicious code into *.debs \n\t [!]https://github.com/UndeadSec/Debinject  \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
         self.check_input(choice, self.debinject, ['1', '2', '99'])
         if choice == "1":
-            os.system("sudo git clone https://github.com/UndeadSec/Debinject.git ")
+            run_command("sudo git clone https://github.com/UndeadSec/Debinject.git ")
             self.debinject()
         if choice == "2":
-            os.system("cd Debinject;python debinject.py")
+            run_command("python debinject.py", cwd="Debinject")
         if choice == "99":
             self.pyinject()
 
     def pixload(self):
-        os.system("echo \"Pixload -- Image Payload Creating tools \n Pixload is Set of tools for creating/injecting payload into images.\n\t [!]https://github.com/chinarulezzz/pixload \" | boxes -d boy | lolcat")
+        run_command("echo \"Pixload -- Image Payload Creating tools \n Pixload is Set of tools for creating/injecting payload into images.\n\t [!]https://github.com/chinarulezzz/pixload \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]How To Use [99]Back >> ")
         self.check_input(choice, self.pixload, ['1', '99'])
         if choice == "1":
             print("Installing Packeges...")
             time.sleep(2)
-            os.system("sudo apt install libgd-perl libimage-exiftool-perl libstring-crc32-perl")
+            run_command("sudo apt install libgd-perl libimage-exiftool-perl libstring-crc32-perl")
             print("Downloading Repository ...")
             time.sleep(1)
-            os.system("sudo git clone https://github.com/chinarulezzz/pixload.git ")
+            run_command("sudo git clone https://github.com/chinarulezzz/pixload.git ")
             self.pixload()
         if choice == "2":
             print("Trying to open Webbrowser ...")
@@ -2531,7 +2531,7 @@ class Main:
 
     def webcrawling(self):
         self.clear_scr()
-        os.system("figlet -f standard Web Crawling | lolcat ")
+        run_command("figlet -f standard Web Crawling | lolcat ")
         print("""
              [1] Gospider
             [99] Back
@@ -2547,13 +2547,13 @@ class Main:
         functions_webcrawling[choice]()
 
     def gospider(self):
-        os.system("echo \"Gospider - Fast web spider written in Go \n\t [!]https://github.com/jaeles-project/gospider \" | boxes -d boy | lolcat")
+        run_command("echo \"Gospider - Fast web spider written in Go \n\t [!]https://github.com/jaeles-project/gospider \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]How to Use [99]Back >> ")
 
         self.check_input(choice, self.gospider, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo go get -u github.com/jaeles-project/gospider")
+            run_command("sudo go get -u github.com/jaeles-project/gospider")
             self.gospider()
 
         if choice == "2":
@@ -2566,7 +2566,7 @@ class Main:
                             #########     MIX TOOLS
     def mixtools(self):
         self.clear_scr()
-        os.system("figlet -f standard -l Mix Tools | lolcat")
+        run_command("figlet -f standard -l Mix Tools | lolcat")
         print("""
              [1] Terminal Multiplexer
             [99] Back
@@ -2583,13 +2583,13 @@ class Main:
 
     def terminaltool(self):
         self.clear_scr()
-        os.system("echo \"Terminal Multiplexer is a tiling terminal emulator that allows us to open \n several terminal sessions inside one single window. \" | boxes -d boy | lolcat")
+        run_command("echo \"Terminal Multiplexer is a tiling terminal emulator that allows us to open \n several terminal sessions inside one single window. \" | boxes -d boy | lolcat")
         choice = input("[1]Install [99]Back >> ")
 
         self.check_input(choice, self.terminaltool, ['1', '99'])
 
         if choice == "1":
-            os.system("sudo apt-get install tilix")
+            run_command("sudo apt-get install tilix")
             time.sleep(2)
             self.others()
 
@@ -2599,7 +2599,7 @@ class Main:
                             ###### OPTION REVERSE ###
     def reversetool(self):
         self.clear_scr()
-        os.system("figlet -f standard -l Reverse Engineering Tools | lolcat")
+        run_command("figlet -f standard -l Reverse Engineering Tools | lolcat")
         print("""
              [1] Androguard
              [2] Apk2Gold
@@ -2620,13 +2620,13 @@ class Main:
 
     def androguard(self):
         self.clear_scr()
-        os.system("echo \"Androguard is a Reverse engineering, Malware and goodware analysis of Android applications and more \n\t[!]https://github.com/androguard/androguard \" | boxes -d boy | lolcat")
+        run_command("echo \"Androguard is a Reverse engineering, Malware and goodware analysis of Android applications and more \n\t[!]https://github.com/androguard/androguard \" | boxes -d boy | lolcat")
         choice = input("[1]Install [99]Back >> ")
 
         self.check_input(choice, self.androguard, ['1', '99'])
 
         if choice == "1":
-            os.system("sudo pip install -U androguard")
+            run_command("sudo pip install -U androguard")
             self.androguard()
 
         if choice == "99":
@@ -2634,14 +2634,14 @@ class Main:
 
     def apk2gold(self):
         self.clear_scr()
-        os.system("echo \"Apk2Gold is a CLI tool for decompiling Android apps to Java [!]https://github.com/lxdvs/apk2gold \" | boxes -d boy | lolcat")
+        run_command("echo \"Apk2Gold is a CLI tool for decompiling Android apps to Java [!]https://github.com/lxdvs/apk2gold \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.apk2gold, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/lxdvs/apk2gold.git")
-            os.system("cd apk2gold;sudo bash make.sh")
+            run_command("sudo git clone https://github.com/lxdvs/apk2gold.git")
+            run_command("sudo bash make.sh", cwd="apk2gold")
             self.apk2gold()
 
         if choice == "2":
@@ -2653,14 +2653,14 @@ class Main:
 
     def jadx(self):
         self.clear_scr()
-        os.system("echo \"Jadx is Dex to Java decompiler.\n[*]decompile Dalvik bytecode to java classes from APK, dex, aar and zip files\n[*]decode AndroidManifest.xml and other resources from resources.arsc\n\t [+]https://github.com/skylot/jadx \" | boxes -d boy | lolcat")
+        run_command("echo \"Jadx is Dex to Java decompiler.\n[*]decompile Dalvik bytecode to java classes from APK, dex, aar and zip files\n[*]decode AndroidManifest.xml and other resources from resources.arsc\n\t [+]https://github.com/skylot/jadx \" | boxes -d boy | lolcat")
         choice = input("[1]Install [99]Back >> ")
 
         self.check_input(choice, self.jadx, ['1', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/skylot/jadx.git")
-            os.system("cd jadx;./gradlew dist")
+            run_command("sudo git clone https://github.com/skylot/jadx.git")
+            run_command("./gradlew dist", cwd="jadx")
             self.jadx()
 
         if choice == "99":
@@ -2669,7 +2669,7 @@ class Main:
 ###### OPTION[11] ###
     def ddos(self):
         self.clear_scr()
-        os.system("figlet -f standard -c DDOS Attack Tools | lolcat")
+        run_command("figlet -f standard -c DDOS Attack Tools | lolcat")
 
         print("""
              [1] SlowLoris
@@ -2694,13 +2694,13 @@ class Main:
 
     def slowloris(self):
         self.clear_scr()
-        os.system("echo \"Slowloris is basically an HTTP Denial of Service attack.It send lots of HTTP Request\"|boxes -d boy | lolcat")
+        run_command("echo \"Slowloris is basically an HTTP Denial of Service attack.It send lots of HTTP Request\"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.slowloris, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo pip install slowloris")
+            run_command("sudo pip install slowloris")
             self.slowloris()
 
         if choice == "2":
@@ -2713,22 +2713,21 @@ class Main:
 
     def asyncrone(self):
         self.clear_scr()
-        os.system("echo \"aSYNcrone is a C language based, mulltifunction SYN Flood DDoS Weapon.\nDisable the destination system by sending a SYN packet intensively to the destination.\n\b [!] https://github.com/fatihsnsy/aSYNcrone \"|boxes -d boy | lolcat")
+        run_command("echo \"aSYNcrone is a C language based, mulltifunction SYN Flood DDoS Weapon.\nDisable the destination system by sending a SYN packet intensively to the destination.\n\b [!] https://github.com/fatihsnsy/aSYNcrone \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.asyncrone, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/fatih4842/aSYNcrone.git")
-            os.system("cd aSYNcrone;sudo gcc aSYNcrone.c -o aSYNcrone -lpthread")
+            run_command("git clone https://github.com/fatih4842/aSYNcrone.git")
+            run_command("sudo gcc aSYNcrone.c -o aSYNcrone -lpthread", cwd="aSYNcrone")
             self.asyncrone()
 
         if choice == "2":
             source_port = input("Enter Source Port >> ")
             target_ip = input("Enter Target IP >> ")
             target_port = input("Enter Target port >> ")
-            os.system(f"cd aSYNcrone")
-            subprocess.run(["sudo", "./aSYNcrone", f"{source_port}", f"{target_ip}", f"{target_port}", "1000"])
+            run_command(f"sudo ./aSYNcrone {source_port} {target_ip} {target_port} 1000", cwd="aSYNcrone")
             self.asyncrone()
 
         if choice == "99":
@@ -2736,18 +2735,18 @@ class Main:
 
     def ufonet(self):
         self.clear_scr()
-        os.system("echo \"UFONet - is a free software, P2P and cryptographic -disruptive \n toolkit- that allows to perform DoS and DDoS attacks\n\b More Usage Visit [!]https://github.com/epsylon/ufonet \"|boxes -d boy | lolcat")
+        run_command("echo \"UFONet - is a free software, P2P and cryptographic -disruptive \n toolkit- that allows to perform DoS and DDoS attacks\n\b More Usage Visit [!]https://github.com/epsylon/ufonet \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.ufonet, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/epsylon/ufonet.git")
-            os.system("cd ufonet;sudo python setup.py install")
+            run_command("sudo git clone https://github.com/epsylon/ufonet.git")
+            run_command(" sudo python setup.py install", cwd="ufonet")
             self.ufonet()
 
         if choice == "2":
-            os.system("sudo ./ufonet --gui")
+            run_command("sudo ./ufonet --gui")
             self.ufonet()
 
         if choice == "99":
@@ -2755,17 +2754,18 @@ class Main:
         
     def goldeneye(self):
         self.clear_scr()
-        os.system("echo \"GoldenEye is an python3 app for SECURITY TESTING PURPOSES ONLY!\nGoldenEye is a HTTP DoS Test Tool. \n\t [!]https://github.com/jseidl/GoldenEye \"|boxes -d boy | lolcat")
+        run_command("echo \"GoldenEye is an python3 app for SECURITY TESTING PURPOSES ONLY!\nGoldenEye is a HTTP DoS Test Tool. \n\t [!]https://github.com/jseidl/GoldenEye \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.goldeneye, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/jseidl/GoldenEye.git;chmod -R 755 GoldenEye")
+            run_command("sudo git clone https://github.com/jseidl/GoldenEye.git")
+            run_command("chmod -R 755 GoldenEye")
             self.goldeneye()
 
         if choice == "2":
-            os.system("cd GoldenEye ;sudo ./goldeneye.py")
+            run_command("sudo ./goldeneye.py", cwd="GoldenEye")
             print("\033[96m Go to Directory \n [*] USAGE: ./goldeneye.py <url> [OPTIONS] ")
             self.goldeneye()
 
@@ -2775,7 +2775,7 @@ class Main:
                     ###########  RAT TOOLS  #####
     def rattools(self):
         self.clear_scr()
-        os.system("figlet -f standard -c RAT Tools | lolcat ")
+        run_command("figlet -f standard -c RAT Tools | lolcat ")
         print("""
              [1] Stitch
              [2] Pyshell
@@ -2793,34 +2793,35 @@ class Main:
 
     def stitch(self):
         self.clear_scr()
-        os.system("echo \"Stitch is a cross platform python framework.\nwhich allows you to build custom payloads\nFor Windows, Mac and Linux. \n\t [!]https://github.com/nathanlopez/Stitch \" | boxes -d boy | lolcat")
+        run_command("echo \"Stitch is a cross platform python framework.\nwhich allows you to build custom payloads\nFor Windows, Mac and Linux. \n\t [!]https://github.com/nathanlopez/Stitch \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.stitch, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/nathanlopez/Stitch.git")
-            os.system("cd Stitch;sudo pip install -r lnx_requirements.txt")
+            run_command("sudo git clone https://github.com/nathanlopez/Stitch.git")
+            run_command("sudo pip install -r lnx_requirements.txt", cwd="Stitch")
             self.stitch()
 
         if choice == "2":
-            os.system("cd Stitch;python main.py")
+            run_command("python main.py", cwd="Stitch")
 
         if choice == "99":
             self.rattools()        
 
     def pyshell(self):
         self.clear_scr()
-        os.system("echo \"Pyshell is a Rat Tool that can be able to download & upload files,\n Execute OS Command and more.. \n\t [!]https://github.com/knassar702/pyshell \"| boxes -d boy | lolcat ")
+        run_command("echo \"Pyshell is a Rat Tool that can be able to download & upload files,\n Execute OS Command and more.. \n\t [!]https://github.com/knassar702/pyshell \"| boxes -d boy | lolcat ")
         choice = input("[1]Install [2]Run [99]Back >> ")
         self.check_input(choice,self.pyshell, ['1', '2', '99'])
 
         if choice == "1" :
-            os.system("sudo git clone https://github.com/khalednassar702/Pyshell;sudo pip install pyscreenshot python-nmap requests")
+            run_command("sudo git clone https://github.com/khalednassar702/Pyshell")
+            run_command("sudo pip install pyscreenshot python-nmap requests")
             self.pyshell()
         
         if choice == "2":
-            os.system("cd Pyshell;./Pyshell")
+            run_command("./Pyshell", cwd="Pyshell")
             self.pyshell()
         if choice == "99":
             self.rattools()
@@ -2829,7 +2830,7 @@ class Main:
                     ###########  XSS Attack Tools ##
     def xsstools(self):
         self.clear_scr()
-        os.system("figlet -f standard -c XSS Attack Tools | lolcat")
+        run_command("figlet -f standard -c XSS Attack Tools | lolcat")
 
         print("""
              [1] DalFox(Finder of XSS)
@@ -2862,37 +2863,39 @@ class Main:
 
         functions_xsstools[choice]()
     def rvuln(self):
-        os.system("echo \"RVuln is multi-threaded and Automated Web Vulnerability Scanner written in Rust\n\t [!]https://github.com/iinc0gnit0/RVuln \" | boxes -d boy | lolcat")
+        run_command("echo \"RVuln is multi-threaded and Automated Web Vulnerability Scanner written in Rust\n\t [!]https://github.com/iinc0gnit0/RVuln \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.rvuln, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/iinc0gnit0/RVuln;curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh;source $HOME/.cargo/env")
-            os.system("sudo apt install openssl-dev;sudo cp -r RVuln/ /usr/bin")
+            run_command("sudo git clone https://github.com/iinc0gnit0/RVuln;curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh")
+            run_command("source $HOME/.cargo/env")
+            run_command("sudo apt install openssl-dev")
+            run_command("sudo cp -r RVuln/ /usr/bin")
             self.rvuln()
 
         if choice == "2":
-            os.system("RVuln")
+            run_command("RVuln")
 
         if choice == "99":
             self.xsstools()
 
     def dalfox(self):
         self.clear_scr()
-        os.system("echo \"XSS Scanning and Parameter Analysis tool.\"|boxes -d boy | lolcat")
+        run_command("echo \"XSS Scanning and Parameter Analysis tool.\"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.dalfox, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo apt-get install golang")
-            os.system("sudo git clone https://github.com/hahwul/dalfox ")
-            os.system("cd dalfox;go install")
+            run_command("sudo apt-get install golang")
+            run_command("sudo git clone https://github.com/hahwul/dalfox ")
+            run_command("go install", cwd="dalfox")
             self.dalfox()
 
         if choice == "2":
-            os.system("~/go/bin/dalfox")
+            run_command("~/go/bin/dalfox")
             print("\033[96m You Need To Run manually by using [!]~/go/bin/dalfox [options] ")
             self.dalfox()
 
@@ -2901,18 +2904,18 @@ class Main:
 
     def xsspayload(self):
         self.clear_scr()
-        os.system("echo \" XSS PAYLOAD GENERATOR -XSS SCANNER-XSS DORK FINDER \"|boxes -d boy | lolcat")
+        run_command("echo \" XSS PAYLOAD GENERATOR -XSS SCANNER-XSS DORK FINDER \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.xsspayload, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/capture0x/XSS-LOADER.git")
-            os.system("cd XSS-LOADER;sudo pip3 install -r requirements.txt")
+            run_command("git clone https://github.com/capture0x/XSS-LOADER.git")
+            run_command("sudo pip3 install -r requirements.txt", cwd="XSS-LOADER")
             self.xsspayload()
 
         if choice == "2":
-            os.system("cd XSS-LOADER;sudo python3 payloader.py")
+            run_command("sudo python3 payloader.py", cwd="XSS-LOADER")
             self.xsspayload()
 
         if choice == "99":
@@ -2920,13 +2923,13 @@ class Main:
 
     def xssfinder(self):
         self.clear_scr()
-        os.system("echo \"Extended XSS Searcher and Finder \n\b [*]https://github.com/Damian89/extended-xss-search \"|boxes -d boy | lolcat")
+        run_command("echo \"Extended XSS Searcher and Finder \n\b [*]https://github.com/Damian89/extended-xss-search \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.xssfinder, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git glone https://github.com/Damian89/extended-xss-search.git")
+            run_command("git glone https://github.com/Damian89/extended-xss-search.git")
             print("""\033[96m 
             Follow This Steps After Installation:-
                 \033[31m [*]Go To extended-xss-search directory,
@@ -2950,18 +2953,18 @@ class Main:
 
     def xssfreak(self):
         self.clear_scr()
-        os.system("echo \" XSS-Freak is an XSS scanner fully written in python3 from scratch\n\b [!]https://github.com/PR0PH3CY33/XSS-Freak \"|boxes -d boy | lolcat")
+        run_command("echo \" XSS-Freak is an XSS scanner fully written in python3 from scratch\n\b [!]https://github.com/PR0PH3CY33/XSS-Freak \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.xssfreak), ['1', '2', '99']
 
         if choice == "1":
-            os.system("git clone https://github.com/PR0PH3CY33/XSS-Freak.git")
-            os.system("cd XSS-Freak;sudo pip3 install -r requirements.txt")
+            run_command("git clone https://github.com/PR0PH3CY33/XSS-Freak.git")
+            run_command("sudo pip3 install -r requirements.txt", cwd="XSS-Freak")
             self.xssfreak()
 
         if choice == "2":
-            os.system("cd XSS-Freak;sudo python3 XSS-Freak.py")
+            run_command("sudo python3 XSS-Freak.py", cwd="XSS-Freak")
             self.xssfreak()
 
         if choice == "99":
@@ -2969,17 +2972,17 @@ class Main:
 
     def xspear(self):
         self.clear_scr()
-        os.system("echo \" XSpear is XSS Scanner on ruby gems\n\b [!]https://github.com/hahwul/XSpear \"|boxes -d boy | lolcat")
+        run_command("echo \" XSpear is XSS Scanner on ruby gems\n\b [!]https://github.com/hahwul/XSpear \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.xspear, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("gem install XSpear")
+            run_command("gem install XSpear")
             self.xspear()
 
         if choice == "2":
-            os.system("XSpear -h")
+            run_command("XSpear -h")
             self.xspear()
 
         if choice == "99":
@@ -2987,20 +2990,19 @@ class Main:
 
     def xsscon(self):
         self.clear_scr()
-        os.system("echo \" [!]https://github.com/menkrep1337/XSSCon \"|boxes -d boy | lolcat")
+        run_command("echo \" [!]https://github.com/menkrep1337/XSSCon \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.xsscon, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/menkrep1337/XSSCon")
-            os.system("sudo chmod 755 -R XSSCon")
+            run_command("git clone https://github.com/menkrep1337/XSSCon")
+            run_command("sudo chmod 755 -R XSSCon")
             self.xsscon()
 
         if choice == "2":
             website = input("Enter Website >> ")
-            os.system("cd XSSCon")
-            subprocess.run(["python3", "xsscon.py", "-u", f"{website}"])
+            run_command(f"python3 xsscon.py -u {website}", cwd="XSSCon")
             self.xsscon()
 
         if choice == "99":
@@ -3008,17 +3010,17 @@ class Main:
 
     def xanxss(self):
         self.clear_scr()
-        os.system("echo \" XanXSS is a reflected XSS searching tool\n that creates payloads based from templates\n\b [!]https://github.com/Ekultek/XanXSS \"|boxes -d boy | lolcat")
+        run_command("echo \" XanXSS is a reflected XSS searching tool\n that creates payloads based from templates\n\b [!]https://github.com/Ekultek/XanXSS \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.xanxss, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/Ekultek/XanXSS.git ")
+            run_command("git clone https://github.com/Ekultek/XanXSS.git ")
             self.xanxss
 
         if choice == "2":
-            os.system("cd XanXSS ;python xanxss.py -h")
+            run_command("python xanxss.py -h", cwd="XanXSS")
             print("\033[96m You Have to run it manually By Using \n [!]python xanxss.py [Options] ")
             self.xanxss()
 
@@ -3027,14 +3029,15 @@ class Main:
 
     def xss_strike(self):
         self.clear_scr()
-        os.system("echo \"XSStrike is a python script designed to detect and exploit XSS vulnerabilites. \"| boxes -d boy | lolcat")
+        run_command("echo \"XSStrike is a python script designed to detect and exploit XSS vulnerabilites. \"| boxes -d boy | lolcat")
         choice = input("[1]Install [99]Back >> ")
         
         self.check_input(choice, self.xss_strike, ['1', '99'])
 
         if choice == "1":
-            os.system("sudo rm -rf XSStrike")
-            os.system("git clone https://github.com/UltimateHackers/XSStrike.git && cd XSStrike && pip install -r requirements.txt")
+            run_command("sudo rm -rf XSStrike")
+            run_command("git clone https://github.com/UltimateHackers/XSStrike.git")
+            run_command("pip install -r requirements.txt", cwd="XSStrike")
             self.xss_strike()
 
         if choice == "99":
@@ -3066,13 +3069,22 @@ class Main:
         self.check_input(choice, self.updatesys, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo apt update && sudo apt full-upgrade -y")
-            os.system("sudo apt-get install tor openssl curl && sudo apt-get update tor openssl curl ")
-            os.system("sudo apt-get install python3-pip")
+            run_command("sudo apt update")
+            run_command("sudo apt full-upgrade -y")
+            run_command("sudo apt-get install tor openssl curl")
+            run_command("sudo apt-get update tor openssl curl")
+            run_command("sudo apt-get install python3-pip")
             self.updatesys()
 
         if choice == "2":
-            os.system("sudo chmod +x /etc/;sudo chmod +x /usr/share/doc;sudo rm -rf /usr/share/doc/hackingtool/;cd /etc/;sudo rm -rf /etc/hackingtool/;mkdir hackingtool;cd hackingtool;git clone https://github.com/Z4nzu/hackingtool.git;cd hackingtool;sudo chmod +x install.sh;./install.sh")
+            # os.system("sudo chmod +x /etc/;sudo chmod +x /usr/share/doc;sudo rm -rf /usr/share/doc/hackingtool/;cd /etc/;sudo rm -rf /etc/hackingtool/;mkdir hackingtool;cd hackingtool;git clone https://github.com/Z4nzu/hackingtool.git;cd hackingtool;sudo chmod +x install.sh;./install.sh")
+            run_command("sudo chmod +x /etc/;sudo chmod +x /usr/share/doc;")
+            run_command("sudo rm -rf /usr/share/doc/hackingtool/")
+            run_command("sudo rm -rf /etc/hackingtool/", cwd="$/etc/")
+            run_command("mkdir hackingtool", cwd="$/etc/")
+            run_command("git clone https://github.com/Z4nzu/hackingtool.git", cwd="$/etc/hackingtool/")
+            run_command("sudo chmod +x install.sh;./install.sh", cwd="$/etc/hackingtool/hackingtool/")
+            run_command("./install.sh", cwd="$/etc/hackingtool/hackingtool/")
             self.updatesys()
 
         if choice == "99":
@@ -3087,7 +3099,10 @@ class Main:
         if choice == "1":
             print("hackingtool started to uninstall..\n")
             sleep(1)
-            os.system("sudo chmod +x /etc/;sudo chmod +x /usr/share/doc;sudo rm -rf /usr/share/doc/hackingtool/;cd /etc/;sudo rm -rf /etc/hackingtool/;")
+            run_command("sudo chmod +x /etc/")
+            run_command("sudo chmod +x /usr/share/doc")
+            run_command("sudo rm -rf /usr/share/doc/hackingtool/")
+            run_command("sudo rm -rf /etc/hackingtool/")
             print("\nHackingtool Successfully Uninstall..")
             print("Happy Hacking..!!")
             sleep(1)
@@ -3116,7 +3131,7 @@ if __name__ == "__main__":
                         run.menu()
 
             except FileNotFoundError:
-                os.system('clear')
+                run_command('clear')
                 run.menu()
 
                 print("""
