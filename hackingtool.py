@@ -2031,8 +2031,7 @@ class Main:
         if choice == "2":
             name = input("Enter Username >> ")
             wordlist = input("Enter Wordlist >> ")
-            os.system("cd Brute_Force")
-            subprocess.run("python3", "Brute_Force.py", "-f", f"{name}", "-l", f"{wordlist}")
+            run_command(f"python3 Brute_Force.py -f {name} -l {wordlist}", cwd="Brute_Force")
             self.faceshell()
 
         if choice == "99":
@@ -2040,18 +2039,18 @@ class Main:
 
     def appcheck(self):
         self.clear_scr()
-        os.system("echo \"Tool to check if an app is installed on the target device through a link.\"|boxes -d boy | lolcat")
+        run_command("echo \"Tool to check if an app is installed on the target device through a link.\"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.appcheck, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/jakuta-tech/underhanded")
-            os.system("cd underhanded && sudo chmod +x underhanded.sh")
+            run_command("sudo git clone https://github.com/jakuta-tech/underhanded")
+            run_command("sudo chmod +x underhanded.sh", cwd="underhanded")
             self.appcheck()
 
         if choice == "2":
-            os.system("cd underhanded ; sudo bash underhanded.sh")
+            run_command("sudo bash underhanded.sh", cwd="underhanded")
             self.appcheck()
 
         if choice == "99":
@@ -2059,7 +2058,7 @@ class Main:
 
     def androidhack(self):
         self.clear_scr()
-        os.system("figlet -f standard -c Android Hacking Tools | lolcat")
+        run_command("figlet -f standard -c Android Hacking Tools | lolcat")
 
         print("""
              [1] Keydroid 
@@ -2086,17 +2085,17 @@ class Main:
 
     def keydroid(self):
         self.clear_scr()
-        os.system("echo \"Android Keylogger + Reverse Shell\n[!]You have to install Some Manually Refer Below Link:\n [+]https://github.com/F4dl0/keydroid \" | boxes -d boy | lolcat")
+        run_command("echo \"Android Keylogger + Reverse Shell\n[!]You have to install Some Manually Refer Below Link:\n [+]https://github.com/F4dl0/keydroid \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.keydroid, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/F4dl0/keydroid")
+            run_command("sudo git clone https://github.com/F4dl0/keydroid")
             self.keydroid()
 
         if choice == "2":
-            os.system("cd keydroid && bash keydroid.sh")
+            run_command("bash keydroid.sh", cwd="keydroid")
             self.keydroid()
 
         if choice == "99":
@@ -2104,17 +2103,17 @@ class Main:
 
     def mysms(self):
         self.clear_scr()
-        os.system("echo \" Script that generates an Android App to hack SMS through WAN \n[!]You have to install Some Manually Refer Below Link:\n\t [+]https://github.com/papusingh2sms/mysms \" | boxes -d boy | lolcat")
+        run_command("echo \" Script that generates an Android App to hack SMS through WAN \n[!]You have to install Some Manually Refer Below Link:\n\t [+]https://github.com/papusingh2sms/mysms \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.mysms, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/papusingh2sms/mysms")
+            run_command("sudo git clone https://github.com/papusingh2sms/mysms")
             self.mysms()
 
         if choice == "2":
-            os.system("cd mysms && bash mysms.sh")
+            run_command("bash mysms.sh", cwd="mysms")
             self.mysms()
 
         if choice == "99":
@@ -2122,17 +2121,17 @@ class Main:
 
     def lock(self):
         self.clear_scr()
-        os.system("echo \"Lockphish it's the first tool for phishing attacks on the lock screen, designed to\n Grab Windows credentials,Android PIN and iPhone Passcode using a https link. \"| boxes -d boy | lolcat")
+        run_command("echo \"Lockphish it's the first tool for phishing attacks on the lock screen, designed to\n Grab Windows credentials,Android PIN and iPhone Passcode using a https link. \"| boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.lock, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone git clone https://github.com/JasonJerry/lockphish")
+            run_command("sudo git clone https://github.com/JasonJerry/lockphish")
             self.lock()
 
         if choice == "2":
-            os.system("cd lockphish && bash lockphish.sh")
+            run_command("bash lockphish.sh", cwd="lockphish")
             self.lock()
 
         if choice == "99":
@@ -2140,17 +2139,18 @@ class Main:
 
     def droidcam(self):
         self.clear_scr()
-        os.system("echo \"Powerful Tool For Grab Front Camera Snap Using A Link  \n[+]https://github.com/kinghacker0/WishFish \"| boxes -d boy | lolcat")
+        run_command("echo \"Powerful Tool For Grab Front Camera Snap Using A Link  \n[+]https://github.com/kinghacker0/WishFish \"| boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.droidcam, ['1', '2', '99'])
         
         if choice == "1":
-            os.system("sudo git clone https://github.com/kinghacker0/WishFish; sudo apt install php wget openssh")
+            run_command("sudo git clone https://github.com/kinghacker0/WishFish")
+            run_command("sudo apt install php wget openssh")
             self.droidcam()
 
         if choice == "2":
-            os.system("cd wishfish && sudo bash wishfish.sh")
+            run_command("sudo bash wishfish.sh", cwd="wishfish")
             self.droidcam()
 
         if choice == "99":
@@ -2158,17 +2158,17 @@ class Main:
 
     def evilapp(self):
         self.clear_scr()
-        os.system("echo \"EvilApp is a script to generate Android App that can hijack authenticated sessions in cookies.\n [!]https://github.com/crypticterminal/EvilApp \" | boxes -d boy | lolcat")
+        run_command("echo \"EvilApp is a script to generate Android App that can hijack authenticated sessions in cookies.\n [!]https://github.com/crypticterminal/EvilApp \" | boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.evilapp, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/crypticterminal/EvilApp")
+            run_command("sudo git clone https://github.com/crypticterminal/EvilApp")
             self.evilapp()
 
         if choice == "2":
-            os.system("cd evilapp && bash evilapp.sh")
+            run_command("bash evilapp.sh", cwd="evilapp")
             self.evilapp()
 
         if choice == "99":
@@ -2176,18 +2176,18 @@ class Main:
 
     def hatcloud(self):
         self.clear_scr()
-        os.system("echo \"HatCloud build in Ruby. It makes bypass in CloudFlare for discover real IP.\n\b [!]https://github.com/HatBashBR/HatCloud \"|boxes -d boy | lolcat")
+        run_command("echo \"HatCloud build in Ruby. It makes bypass in CloudFlare for discover real IP.\n\b [!]https://github.com/HatBashBR/HatCloud \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.hatcloud, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/HatBashBR/HatCloud.git")
+            run_command("git clone https://github.com/HatBashBR/HatCloud.git")
             self.hatcloud()
 
         if choice == "2":
             site = input("Enter Site >> ")
-            os.system("cd HatCloud;sudo ruby hatcloud.rb -b {site}")
+            run_command(f"sudo ruby hatcloud.rb -b {site}", cwd="HatCloud")
             self.hatcloud()
 
         if choice == "99":
@@ -2195,7 +2195,7 @@ class Main:
                                 ####  HOMOGRAPH TOOLS
     def homograph(self):
         self.clear_scr()
-        os.system("figlet -f standard -c IDN Homograph Attack tools | lolcat")
+        run_command("figlet -f standard -c IDN Homograph Attack tools | lolcat")
 
         print("""
              [1] EvilURL
@@ -2213,17 +2213,17 @@ class Main:
 
     def evilurl(self):
         self.clear_scr()
-        os.system("echo \"Generate unicode evil domains for IDN Homograph Attack and detect them. \n [!]https://github.com/UndeadSec/EvilURL \"|boxes -d boy | lolcat")
+        run_command("echo \"Generate unicode evil domains for IDN Homograph Attack and detect them. \n [!]https://github.com/UndeadSec/EvilURL \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.evilurl, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/UndeadSec/EvilURL.git")
+            run_command("git clone https://github.com/UndeadSec/EvilURL.git")
             self.evilurl()
 
         if choice == "2":
-            os.system("cd EvilURL;python3 evilurl.py")
+            run_command("python3 evilurl.py", cwd="EvilURL")
             self.evilurl()
 
         if choice == "99":
@@ -2231,7 +2231,7 @@ class Main:
                             #### EMAIL VERIFY TOOLS
     def emailverify(self):
         self.clear_scr()
-        os.system("figlet -f standard -c Email Verify tools | lolcat")
+        run_command("figlet -f standard -c Email Verify tools | lolcat")
 
         print("""
              [1] KnockMail
@@ -2250,25 +2250,25 @@ class Main:
 
     def knockmail(self):
         self.clear_scr()
-        os.system("echo \"KnockMail Tool Verify If Email Exists [!]https://github.com/4w4k3/KnockMail \"|boxes -d boy | lolcat")
+        run_command("echo \"KnockMail Tool Verify If Email Exists [!]https://github.com/4w4k3/KnockMail \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.knockmail, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/4w4k3/KnockMail.git")
-            os.system("cd KnockMail;sudo pip install -r requeriments.txt")
+            run_command("git clone https://github.com/4w4k3/KnockMail.git")
+            run_command("sudo pip install -r requeriments.txt", cwd="KnockMail")
             self.knockmail()
 
         if choice == "2":
-            os.system("cd KnockMail;python knock.py")
+            run_command("python knock.py", cwd="KnockMail")
 
         if choice == "99":
             self.emailverify()
 
     def hashcracktool(self):
         self.clear_scr()
-        os.system("figlet -f standard -c Hash Cracking Tools | lolcat")
+        run_command("figlet -f standard -c Hash Cracking Tools | lolcat")
 
         print("""
              [1] Hash Buster
@@ -2286,18 +2286,18 @@ class Main:
 
     def hashbuster(self):
         self.clear_scr()
-        os.system("echo \"Features: \n Automatic hash type identification \n Supports MD5, SHA1, SHA256, SHA384, SHA512 \n [!]https://github.com/s0md3v/Hash-Buster \"|boxes -d boy | lolcat")
+        run_command("echo \"Features: \n Automatic hash type identification \n Supports MD5, SHA1, SHA256, SHA384, SHA512 \n [!]https://github.com/s0md3v/Hash-Buster \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.hashbuster, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("git clone https://github.com/s0md3v/Hash-Buster.git")
-            os.system("cd Hash-Buster;make install")
+            run_command("git clone https://github.com/s0md3v/Hash-Buster.git")
+            run_command("make install", cwd="Hash-Buster")
             self.hashbuster()
 
         if choice == "2":
-            os.system("buster -h")
+            run_command("buster -h")
             self.hashbuster()
 
         if choice == "99":
@@ -2306,7 +2306,7 @@ class Main:
                         #### WIFI JAMMING TOOLS
     def wifijamming(self):
         self.clear_scr()
-        os.system("figlet -f standard -c Wifi Deautheticate | lolcat")
+        run_command("figlet -f standard -c Wifi Deautheticate | lolcat")
 
         print("""
              [1] WifiJammer-NG
@@ -2327,19 +2327,19 @@ class Main:
 
     def wifijammingng(self):
         self.clear_scr()
-        os.system("echo \"Continuously jam all wifi clients and access points within range.\n\t [!]https://github.com/MisterBianco/wifijammer-ng \"|boxes -d boy | lolcat")
+        run_command("echo \"Continuously jam all wifi clients and access points within range.\n\t [!]https://github.com/MisterBianco/wifijammer-ng \"|boxes -d boy | lolcat")
         choice = input("[1]Install [2]Run [99]Back >> ")
 
         self.check_input(choice, self.wifijammingng, ['1', '2', '99'])
 
         if choice == "1":
-            os.system("sudo git clone https://github.com/MisterBianco/wifijammer-ng.git")
-            os.system("cd wifijammer-ng;sudo pip3 install -r requirements.txt")
+            run_command("sudo git clone https://github.com/MisterBianco/wifijammer-ng.git")
+            run_command("sudo pip3 install -r requirements.txt", cwd="wifijammer-ng")
             self.wifijammingng()
 
         if choice == "2":
-            os.system("echo \"python wifijammer.py [-a AP MAC] [-c CHANNEL] [-d] [-i INTERFACE] [-m MAXIMUM] [-k] [-p PACKETS] [-s SKIP] [-t TIME INTERVAL] [-D]\"| boxes | lolcat")
-            os.system("cd wifijammer-ng;sudo python3 wifijammer.py")
+            run_command("echo \"python wifijammer.py [-a AP MAC] [-c CHANNEL] [-d] [-i INTERFACE] [-m MAXIMUM] [-k] [-p PACKETS] [-s SKIP] [-t TIME INTERVAL] [-D]\"| boxes | lolcat")
+            run_command("sudo python3 wifijammer.py", cwd="wifijammer-ng")
             self.wifijammingng()
 
         if choice == "99":
