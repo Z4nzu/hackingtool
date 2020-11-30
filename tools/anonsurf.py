@@ -23,15 +23,15 @@ class AnonymouslySurf(HackingTool):
         super(AnonymouslySurf, self).__init__([('Stop', self.stop)])
 
     def stop(self):
-        os.system("sudo anonsurf stop")
+        run_command("sudo anonsurf stop")
 
 
 class Multitor(HackingTool):
     TITLE = "Multitor"
     DESCRIPTION = "How to stay in multi places at the same time"
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/trimstray/multitor.git",
-        "cd multitor;sudo bash setup.sh install"
+        dict(cmd="sudo git clone https://github.com/trimstray/multitor.git"),
+        dict(cmd="sudo bash setup.sh install", cwd="multitor"),
     ]
     PROJECT_URL = "https://github.com/trimstray/multitor"
 

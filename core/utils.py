@@ -5,7 +5,13 @@ def get_path():
     """
     Absolute path of current working directory.
     """
-    return os.path.dirname(os.path.realpath(__file__))
+    try:
+        with open('/home/hackingtoolpath.txt') as path_file:
+            path = path_file.read().strip()
+    except FileNotFoundError:
+        path = os.path.dirname(os.path.realpath(__file__))
+    finally:
+        return path
 
 
 def run_command(cmd_string, cwd='', **kwargs):
@@ -20,6 +26,7 @@ def run_command(cmd_string, cwd='', **kwargs):
 
     for task in tasks:
         args = task.split()
+        print(args, cwd)
         if len(procs):
             proc = subprocess.Popen(
                 args,

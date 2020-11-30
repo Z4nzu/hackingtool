@@ -7,6 +7,7 @@ from platform import system
 from time import sleep
 
 from core import HackingToolsCollection
+from core.utils import run_command
 from tools.anonsurf import AnonSurfTools
 from tools.ddos import DDOSTools
 from tools.exploit_frameworks import ExploitFrameworkTools
@@ -76,7 +77,7 @@ if __name__ == "__main__":
         if system() == 'Linux':
             fpath = "/home/hackingtoolpath.txt"
             if not os.path.exists(fpath):
-                os.system('clear')
+                run_command('clear')
                 # run.menu()
                 print("""
                         [@] Set Path (All your tools will be install in that directory)
