@@ -9,10 +9,12 @@ class HashBuster(HackingTool):
                   "Automatic hash type identification \n " \
                   "Supports MD5, SHA1, SHA256, SHA384, SHA512"
     INSTALL_COMMANDS = [
-        "git clone https://github.com/s0md3v/Hash-Buster.git",
-        "cd Hash-Buster;make install"
+        dict(cmd="git clone https://github.com/s0md3v/Hash-Buster.git"),
+        dict(cmd="make install", cwd="Hash-Buster")
     ]
-    RUN_COMMANDS = ["buster -h"]
+    RUN_COMMANDS = [
+        dict(cmd="buster -h")
+    ]
     PROJECT_URL = "https://github.com/s0md3v/Hash-Buster"
 
 
