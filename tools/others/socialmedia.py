@@ -4,24 +4,26 @@ import subprocess
 
 from core import HackingTool
 from core import HackingToolsCollection
+from core.utils import run_command
 
 
 class InstaBrute(HackingTool):
     TITLE = "Instagram Attack"
     DESCRIPTION = "Brute force attack against Instagram"
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/chinoogawa/instaBrute.git",
-        "cd instaBrute;sudo pip install -r requirements.txt"
+        dict(
+            cmd="sudo git clone https://github.com/chinoogawa/instaBrute.git"),
+        dict(cmd="sudo pip install -r requirements.txt", cwd="instaBrute")
     ]
     PROJECT_URL = "https://github.com/chinoogawa/instaBrute"
 
     def run(self):
         name = input("Enter Username >> ")
         wordlist = input("Enter wordword list >> ")
-        os.system("cd instaBrute;")
-        subprocess.run(
-            ["sudo", "python", "instaBrute.py", "-u", f"{name}", "-d",
-             f"{wordlist}"])
+        run_command(
+            f"sudo python instaBrute.py -u {name} -d {wordlist}",
+            cwd="instaBrute",
+        )
 
 
 class BruteForce(HackingTool):
@@ -29,10 +31,15 @@ class BruteForce(HackingTool):
     DESCRIPTION = "Brute_Force_Attack Gmail Hotmail Twitter Facebook Netflix \n" \
                   "[!] python3 Brute_Force.py -g <Account@gmail.com> -l <File_list>"
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/Matrix07ksa/Brute_Force.git",
-        "cd Brute_Force;sudo pip3 install proxylist;pip3 install mechanize"
+        dict(
+            cmd="sudo git clone https://github.com/Matrix07ksa/Brute_Force.git"
+        ),
+        dict(
+            cmd="sudo pip3 install proxylist;pip3 install mechanize",
+            cwd="Brute_Force",
+        )
     ]
-    RUN_COMMANDS = ["cd Brute_Force;python3 Brute_Force.py -h"]
+    RUN_COMMANDS = [dict(cmd="python3 Brute_Force.py -h", cwd="Brute_Force")]
     PROJECT_URL = "https://github.com/Matrix07ksa/Brute_Force"
 
 
@@ -40,35 +47,40 @@ class Faceshell(HackingTool):
     TITLE = "Facebook Attack"
     DESCRIPTION = "Facebook BruteForcer"
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/Matrix07ksa/Brute_Force.git",
-        "cd Brute_Force;sudo pip3 install proxylist;pip3 install mechanize"
+        dict(
+            cmd="sudo git clone https://github.com/Matrix07ksa/Brute_Force.git"
+        ),
+        dict(
+            cmd="sudo pip3 install proxylist;pip3 install mechanize",
+            cwd="Brute_Force",
+        )
     ]
     PROJECT_URL = "https://github.com/Matrix07ksa/Brute_Force"
 
     def run(self):
         name = input("Enter Username >> ")
         wordlist = input("Enter Wordlist >> ")
-        os.system("cd Brute_Force;")
-        subprocess.run(
-            ["python3", "Brute_Force.py", "-f", f"{name}", "-l", f"{wordlist}"])
+        run_command(
+            f"python3 Brute_Force.py -f {name} -l {wordlist}",
+            cwd="Brute_Force",
+        )
 
 
 class AppCheck(HackingTool):
     TITLE = "Application Checker"
     DESCRIPTION = "Tool to check if an app is installed on the target device through a link."
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/jakuta-tech/underhanded.git",
-        "cd underhanded && sudo chmod +x underhanded.sh"
+        dict(
+            cmd="sudo git clone https://github.com/jakuta-tech/underhanded.git"
+        ),
+        dict(cmd="sudo chmod +x underhanded.sh", cwd="underhanded")
     ]
-    RUN_COMMANDS = ["cd underhanded;sudo bash underhanded.sh"]
+    RUN_COMMANDS = [
+        dict(cmd="sudo bash underhanded.sh", cwd="underhanded"),
+    ]
     PROJECT_URL = "https://github.com/jakuta-tech/underhanded"
 
 
 class SocialMediaBruteforceTools(HackingToolsCollection):
     TITLE = "SocialMedia Bruteforce"
-    TOOLS = [
-        InstaBrute(),
-        BruteForce(),
-        Faceshell(),
-        AppCheck()
-    ]
+    TOOLS = [InstaBrute(), BruteForce(), Faceshell(), AppCheck()]
