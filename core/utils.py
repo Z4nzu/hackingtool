@@ -6,9 +6,12 @@ def get_path():
     Absolute path of current working directory.
     """
     try:
+        # opens hackingtoolpath and 
+        # retrieves configured path
         with open('/home/hackingtoolpath.txt') as path_file:
             path = path_file.read().strip()
-    except FileNotFoundError:
+    except Exception as e:
+        print(f"[+] Error: {str(e)}")
         path = os.path.dirname(os.path.realpath(__file__))
     finally:
         return path
