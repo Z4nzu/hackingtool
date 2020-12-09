@@ -3,6 +3,7 @@ import os
 
 from core import HackingTool
 from core import HackingToolsCollection
+from core.utils import run_command
 
 
 class TheFatRat(HackingTool):
@@ -10,24 +11,23 @@ class TheFatRat(HackingTool):
     DESCRIPTION = "TheFatRat Provides An Easy way to create Backdoors and \n" \
                   "Payload which can bypass most anti-virus"
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/Screetsec/TheFatRat.git",
-        "cd TheFatRat && sudo chmod +x setup.sh"
+        dict(cmd="sudo git clone https://github.com/Screetsec/TheFatRat.git"),
+        dict(cmd="sudo chmod +x setup.sh", cwd="TheFatRat"),
     ]
     RUN_COMMANDS = ["cd TheFatRat && sudo bash setup.sh"]
     PROJECT_URL = "https://github.com/Screetsec/TheFatRat"
 
     def __init__(self):
-        super(TheFatRat, self).__init__([
-            ('Update', self.update),
-            ('Troubleshoot', self.troubleshoot)
-        ])
+        super(TheFatRat, self).__init__([('Update', self.update),
+                                         ('Troubleshoot', self.troubleshoot)])
 
     def update(self):
-        os.system(
-            "cd TheFatRat && bash update && chmod +x setup.sh && bash setup.sh")
+        run_command("bash update && chmod +x setup.sh", cwd="TheFatRat")
+        run_command("bash setup.sh", cwd="TheFatRat")
 
     def troubleshoot(self):
-        os.system("cd TheFatRat && sudo chmod +x chk_tools && ./chk_tools")
+        run_command("sudo chmod +x chk_tools", cwd="TheFatRat")
+        run_command("./chk_tools", cwd="TheFatRat")
 
 
 class Brutal(HackingTool):
@@ -36,10 +36,12 @@ class Brutal(HackingTool):
                   "powershell attack,\nvirus attack and launch listener for " \
                   "a Human Interface Device"
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/Screetsec/Brutal.git",
-        "cd Brutal && sudo chmod +x Brutal.sh"
+        dict(cmd="sudo git clone https://github.com/Screetsec/Brutal.git"),
+        dict(cmd="sudo chmod +x Brutal.sh", cwd="Brutal"),
     ]
-    RUN_COMMANDS = ["cd Brutal && sudo bash Brutal.sh"]
+    RUN_COMMANDS = [
+        dict(cmd="sudo bash Brutal.sh", cwd="Brutal"),
+    ]
     PROJECT_URL = "https://github.com/Screetsec/Brutal"
 
     def show_info(self):
@@ -61,10 +63,12 @@ class Stitch(HackingTool):
     DESCRIPTION = "Stitch is Cross Platform Python Remote Administrator Tool\n\t" \
                   "[!] Refer Below Link For Wins & MAc Os"
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/nathanlopez/Stitch.git",
-        "cd Stitch && sudo pip install -r lnx_requirements.txt"
+        dict(cmd="sudo git clone https://github.com/nathanlopez/Stitch.git"),
+        dict(cmd="sudo pip install -r lnx_requirements.txt", cwd="Stitch")
     ]
-    RUN_COMMANDS = ["cd Stitch && sudo python main.py"]
+    RUN_COMMANDS = [
+        dict(cmd="sudo python main.py", cwd="Stitch"),
+    ]
     PROJECT_URL = "https://nathanlopez.github.io/Stitch"
 
 
@@ -75,10 +79,12 @@ class MSFVenom(HackingTool):
                   "The idea is to be as simple as possible (only requiring " \
                   "one input) \nto produce their payload."
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/g0tmi1k/msfpc.git",
-        "cd msfpc;sudo chmod +x msfpc.sh"
+        dict(cmd="sudo git clone https://github.com/g0tmi1k/msfpc.git"),
+        dict(cdm="sudo chmod +x msfpc.sh", cwd="msfpc"),
     ]
-    RUN_COMMANDS = ["cd msfpc;sudo bash msfpc.sh -h -v"]
+    RUN_COMMANDS = [
+        dict(cmd="sudo bash msfpc.sh -h -v", cwd="msfpc"),
+    ]
     PROJECT_URL = "https://github.com/g0tmi1k/msfpc"
 
 
@@ -88,11 +94,14 @@ class Venom(HackingTool):
                   "advantage of \n apache2 webserver to deliver payloads " \
                   "(LAN) using a fake webpage writen in html"
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/r00t-3xp10it/venom.git",
-        "sudo chmod -R 775 venom*/ && cd venom*/ && cd aux && sudo bash setup.sh",
-        "sudo ./venom.sh -u"
+        dict(cmd="sudo git clone https://github.com/r00t-3xp10it/venom.git"),
+        dict(cmd="sudo chmod -R 775 venom*/"),
+        dict(cmd="sudo bash setup.sh", cwd="venom/aux"),
+        dict(cmd="sudo ./venom.sh -u"),
     ]
-    RUN_COMMANDS = ["cd venom && sudo ./venom.sh"]
+    RUN_COMMANDS = [
+        dict(cmd="sudo ./venom.sh", cwd="venom"),
+    ]
     PROJECT_URL = "https://github.com/r00t-3xp10it/venom"
 
 
@@ -101,10 +110,14 @@ class Spycam(HackingTool):
     DESCRIPTION = "Script to generate a Win32 payload that takes the webcam " \
                   "image every 1 minute and send it to the attacker"
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/thelinuxchoice/spycam.git",
-        "cd spycam && bash install.sh && chmod +x spycam"
+        dict(
+            cmd="sudo git clone https://github.com/thelinuxchoice/spycam.git"),
+        dict(cmd="bash install.sh", cwd="spycam"),
+        dict(cmd="chmod +x spycam", cwd="spycam"),
     ]
-    RUN_COMMANDS = ["cd spycam && ./spycam"]
+    RUN_COMMANDS = [
+        dict(cmd="./spycam", cwd="spycam"),
+    ]
     PROJECT_URL = "https://github.com/thelinuxchoice/spycam"
 
 
@@ -113,8 +126,11 @@ class MobDroid(HackingTool):
     DESCRIPTION = "Mob-Droid helps you to generate metasploit payloads in " \
                   "easy way\n without typing long commands and save your time"
     INSTALL_COMMANDS = [
-        "git clone https://github.com/kinghacker0/mob-droid.git"]
-    RUN_COMMANDS = ["cd Mob-Droid;sudo python mob-droid.py"]
+        dict(cmd="git clone https://github.com/kinghacker0/mob-droid.git"),
+    ]
+    RUN_COMMANDS = [
+        dict(cmd="sudo python mob-droid.py", cwd="Mob-Droid"),
+    ]
     PROJECT_URL = "https://github.com/kinghacker0/Mob-Droid"
 
 
@@ -122,7 +138,8 @@ class Enigma(HackingTool):
     TITLE = "Enigma"
     DESCRIPTION = "Enigma is a Multiplatform payload dropper"
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/UndeadSec/Enigma.git"]
+        dict(cmd="sudo git clone https://github.com/UndeadSec/Enigma.git"),
+    ]
     RUN_COMMANDS = ["cd Enigma;sudo python3 enigma3.py"]
     PROJECT_URL = "https://github.com/UndeadSec/Enigma"
 
