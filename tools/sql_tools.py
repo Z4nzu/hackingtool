@@ -12,11 +12,15 @@ class Sqlmap(HackingTool):
                   "[!] python sqlmap.py -u [<http://example.com>] --batch --banner \n " \
                   "More Usage [!] https://github.com/sqlmapproject/sqlmap/wiki/Usage"
     INSTALL_COMMANDS = [
-        "sudo git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev"]
+        dict(
+            cmd=
+            "sudo git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git"
+        ),
+    ]
     PROJECT_URL = "https://github.com/sqlmapproject/sqlmap"
 
     def __init__(self):
-        super(Sqlmap, self).__init__(runnable = False)
+        super(Sqlmap, self).__init__(runnable=False)
 
 
 class NoSqlMap(HackingTool):
@@ -26,8 +30,9 @@ class NoSqlMap(HackingTool):
                   "\033[91m " \
                   "[*] Please Install MongoDB \n "
     INSTALL_COMMANDS = [
-        "git clone https://github.com/codingo/NoSQLMap.git",
-        "sudo chmod -R 755 NoSQLMap;cd NoSQLMap;python setup.py install"
+        dict(cmd="git clone https://github.com/codingo/NoSQLMap.git"),
+        dict(cmd="sudo chmod -R 755 NoSQLMap", cwd="NoSQLMap"),
+        dict(cmd="python setup.py install", cwd="NoSQLMap"),
     ]
     RUN_COMMANDS = ["python NoSQLMap"]
     PROJECT_URL = "https://github.com/codingo/NoSQLMap"
@@ -39,11 +44,13 @@ class SQLiScanner(HackingTool):
                   "injection\nvulnerability scanner also supporting GET and " \
                   "POST parameters.\n" \
                   "[*]python3 dsss.py -h[help] | -u[URL]"
-    INSTALL_COMMANDS = ["git clone https://github.com/stamparm/DSSS.git"]
+    INSTALL_COMMANDS = [
+        dict(cmd="git clone https://github.com/stamparm/DSSS.git"),
+    ]
     PROJECT_URL = "https://github.com/stamparm/DSSS"
 
     def __init__(self):
-        super(SQLiScanner, self).__init__(runnable = False)
+        super(SQLiScanner, self).__init__(runnable=False)
 
 
 class Explo(HackingTool):
@@ -54,13 +61,13 @@ class Explo(HackingTool):
                   "[1] explo [--verbose|-v] testcase.yaml \n " \
                   "[2] explo [--verbose|-v] examples/*.yaml"
     INSTALL_COMMANDS = [
-        "git clone https://github.com/dtag-dev-sec/explo.git",
-        "cd explo;sudo python setup.py install"
+        dict(cmd="git clone https://github.com/dtag-dev-sec/explo.git"),
+        dict(cmd="sudo python setup.py install", cwd="explo"),
     ]
     PROJECT_URL = "https://github.com/dtag-dev-sec/explo"
 
     def __init__(self):
-        super(Explo, self).__init__(runnable = False)
+        super(Explo, self).__init__(runnable=False)
 
 
 class Blisqy(HackingTool):
@@ -69,11 +76,13 @@ class Blisqy(HackingTool):
                   "Time-based Blind SQL injection \n on HTTP Headers and also " \
                   "exploitation of the same vulnerability.\n " \
                   "For Usage >> \n"
-    INSTALL_COMMANDS = ["git clone https://github.com/JohnTroony/Blisqy.git"]
+    INSTALL_COMMANDS = [
+        dict(cmd="git clone https://github.com/JohnTroony/Blisqy.git"),
+    ]
     PROJECT_URL = "https://github.com/JohnTroony/Blisqy"
 
     def __init__(self):
-        super(Blisqy, self).__init__(runnable = False)
+        super(Blisqy, self).__init__(runnable=False)
 
 
 class Leviathan(HackingTool):
@@ -84,10 +93,14 @@ class Leviathan(HackingTool):
                   "[*] It Requires API Keys \n " \
                   "More Usage [!] https://github.com/utkusen/leviathan/wiki"
     INSTALL_COMMANDS = [
-        "git clone https://github.com/leviathan-framework/leviathan.git",
-        "cd leviathan;sudo pip install -r requirements.txt"
+        dict(
+            cmd="git clone https://github.com/leviathan-framework/leviathan.git"
+        ),
+        dict(cmd="sudo pip install -r requirements.txt", cwd="leviathan"),
     ]
-    RUN_COMMANDS = ["cd leviathan;python leviathan.py"]
+    RUN_COMMANDS = [
+        dict(cmd="python leviathan.py", cwd="leviathan"),
+    ]
     PROJECT_URL = "https://github.com/leviathan-framework/leviathan"
 
 
@@ -96,11 +109,16 @@ class SQLScan(HackingTool):
     DESCRIPTION = "sqlscan is quick web scanner for find an sql inject point." \
                   " not for educational, this is for hacking."
     INSTALL_COMMANDS = [
-        "sudo apt install php php-bz2 php-curl php-mbstring curl",
-        "sudo curl https://raw.githubusercontent.com/Cvar1984/sqlscan/dev/build/main.phar --output /usr/local/bin/sqlscan",
-        "chmod +x /usr/local/bin/sqlscan"
+        dict(cmd="sudo apt install php php-bz2 php-curl php-mbstring curl"),
+        dict(
+            cmd=
+            "sudo curl https://raw.githubusercontent.com/Cvar1984/sqlscan/dev/build/main.phar --output /usr/local/bin/sqlscan"
+        ),
+        dict(cmd="chmod +x /usr/local/bin/sqlscan"),
     ]
-    RUN_COMMANDS = ["sudo sqlscan"]
+    RUN_COMMANDS = [
+        dict(cmd="sudo sqlscan"),
+    ]
     PROJECT_URL = "https://github.com/Cvar1984/sqlscan"
 
 
