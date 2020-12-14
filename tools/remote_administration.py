@@ -9,10 +9,12 @@ class Stitch(HackingTool):
                   "which allows you to build custom payloads\n" \
                   "For Windows, Mac and Linux."
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/nathanlopez/Stitch.git",
-        "cd Stitch;sudo pip install -r lnx_requirements.txt"
+        dict(cmd="sudo git clone https://github.com/nathanlopez/Stitch.git"),
+        dict(cmd="sudo pip install -r lnx_requirements.txt", cwd="Stitch"),
     ]
-    RUN_COMMANDS = ["cd Stitch;python main.py"]
+    RUN_COMMANDS = [
+        dict(cmd="python main.py", cwd="Stitch"),
+    ]
     PROJECT_URL = "https://github.com/nathanlopez/Stitch"
 
 
@@ -21,16 +23,15 @@ class Pyshell(HackingTool):
     DESCRIPTION = "Pyshell is a Rat Tool that can be able to download & upload " \
                   "files,\n Execute OS Command and more.."
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/khalednassar702/Pyshell.git;"
-        "sudo pip install pyscreenshot python-nmap requests"
+        dict(cmd="sudo git clone https://github.com/khalednassar702/Pyshell.git;"),
+        dict(cmd="sudo pip install pyscreenshot python-nmap requests"),
     ]
-    RUN_COMMANDS = ["cd Pyshell;./Pyshell"]
+    RUN_COMMANDS = [
+        dict(cmd="./Pyshell", cwd="Pyshell")
+    ]
     PROJECT_URL = "https://github.com/knassar702/pyshell"
 
 
 class RemoteAdministrationTools(HackingToolsCollection):
     TITLE = "Remote Administrator Tools (RAT)"
-    TOOLS = [
-        Stitch(),
-        Pyshell()
-    ]
+    TOOLS = [Stitch(), Pyshell()]
