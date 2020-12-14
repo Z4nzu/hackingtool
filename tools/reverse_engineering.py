@@ -9,7 +9,9 @@ class AndroGuard(HackingTool):
     TITLE = "Androguard"
     DESCRIPTION = "Androguard is a Reverse engineering, Malware and goodware " \
                   "analysis of Android applications and more"
-    INSTALL_COMMANDS = ["sudo pip install -U androguard"]
+    INSTALL_COMMANDS = [
+        dict(cmd="sudo pip install -U androguard"),
+    ]
     PROJECT_URL = "https://github.com/androguard/androguard "
 
     def __init__(self):
@@ -20,8 +22,8 @@ class Apk2Gold(HackingTool):
     TITLE = "Apk2Gold"
     DESCRIPTION = "Apk2Gold is a CLI tool for decompiling Android apps to Java"
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/lxdvs/apk2gold.git",
-        "cd apk2gold;sudo bash make.sh"
+        dict(cmd="sudo git clone https://github.com/lxdvs/apk2gold.git"),
+        dict(cmd="sudo bash make.sh", cwd="apk2gold"),
     ]
     PROJECT_URL = "https://github.com/lxdvs/apk2gold "
 
@@ -38,8 +40,8 @@ class Jadx(HackingTool):
                   "[*] decode AndroidManifest.xml and other resources from " \
                   "resources.arsc"
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/skylot/jadx.git",
-        "cd jadx;./gradlew dist"
+        dict(cmd="sudo git clone https://github.com/skylot/jadx.git"),
+        dict(cmd="./gradlew dist", cwd="jadx"),
     ]
     PROJECT_URL = "https://github.com/skylot/jadx"
 
