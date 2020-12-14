@@ -21,7 +21,7 @@ class Pyshell(HackingTool):
     DESCRIPTION = "Pyshell is a Rat Tool that can be able to download & upload " \
                   "files,\n Execute OS Command and more.."
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/khalednassar702/Pyshell.git;"
+        "sudo git clone https://github.com/knassar702/Pyshell.git;"
         "sudo pip install pyscreenshot python-nmap requests"
     ]
     RUN_COMMANDS = ["cd Pyshell;./Pyshell"]
