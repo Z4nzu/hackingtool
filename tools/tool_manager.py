@@ -4,6 +4,7 @@ from time import sleep
 
 from core import HackingTool
 from core import HackingToolsCollection
+from core.utils import run_command
 
 
 class UpdateTool(HackingTool):
@@ -11,29 +12,30 @@ class UpdateTool(HackingTool):
     DESCRIPTION = "Update Tool or System"
 
     def __init__(self):
-        super(UpdateTool, self).__init__([
-            ("Update System", self.update_sys),
-            ("Update Hackingtool", self.update_ht)
-        ], installable = False, runnable = False)
+        super(UpdateTool,
+              self).__init__([("Update System", self.update_sys),
+                              ("Update Hackingtool", self.update_ht)],
+                             installable=False,
+                             runnable=False)
 
     def update_sys(self):
-        os.system("sudo apt update && sudo apt full-upgrade -y")
-        os.system(
-            "sudo apt-get install tor openssl curl && sudo apt-get update tor openssl curl")
-        os.system("sudo apt-get install python3-pip")
+        run_command("sudo apt update && sudo apt full-upgrade -y")
+        run_command("sudo apt-get install tor openssl curl")
+        run_command("sudo apt-get update tor openssl curl")
+        run_command("sudo apt-get install python3-pip")
 
     def update_ht(self):
-        os.system("sudo chmod +x /etc/;"
-                  "sudo chmod +x /usr/share/doc;"
-                  "sudo rm -rf /usr/share/doc/hackingtool/;"
-                  "cd /etc/;"
-                  "sudo rm -rf /etc/hackingtool/;"
-                  "mkdir hackingtool;"
-                  "cd hackingtool;"
-                  "git clone https://github.com/Z4nzu/hackingtool.git;"
-                  "cd hackingtool;"
-                  "sudo chmod +x install.sh;"
-                  "./install.sh")
+        run_command("sudo chmod +x /etc/;")
+        run_command("sudo chmod +x /usr/share/doc;")
+        run_command("sudo rm -rf /usr/share/doc/hackingtool/;")
+        run_command("sudo rm -rf /etc/hackingtool/;", cwd="$/etc/")
+        run_command("mkdir hackingtool;", cwd="$/etc/")
+        run_command(
+            "git clone https://github.com/Z4nzu/hackingtool.git;",
+            cwd="$/etc/hackingtool",
+        )
+        run_command("sudo chmod +x install.sh;", cwd="$/etc/hackingtool")
+        run_command("./install.sh", cwd="$/etc/hackingtool")
 
 
 class UninstallTool(HackingTool):
@@ -41,18 +43,19 @@ class UninstallTool(HackingTool):
     DESCRIPTION = "Uninstall HackingTool"
 
     def __init__(self):
-        super(UninstallTool, self).__init__([
-            ('Uninstall', self.uninstall)
-        ], installable = False, runnable = False)
+        super(UninstallTool, self).__init__(
+            [('Uninstall', self.uninstall)],
+            installable=False,
+            runnable=False,
+        )
 
     def uninstall(self):
         print("hackingtool started to uninstall..\n")
         sleep(1)
-        os.system("sudo chmod +x /etc/;"
-                  "sudo chmod +x /usr/share/doc;"
-                  "sudo rm -rf /usr/share/doc/hackingtool/;"
-                  "cd /etc/;"
-                  "sudo rm -rf /etc/hackingtool/;")
+        run_command("sudo chmod +x /etc/;")
+        run_command("sudo chmod +x /usr/share/doc;")
+        run_command("sudo rm -rf /usr/share/doc/hackingtool/;")
+        run_command("sudo rm -rf /etc/hackingtool/;", cwd="$/etc/")
         print("\nHackingtool Successfully Uninstalled..")
         print("Happy Hacking..!!")
         sleep(1)
@@ -60,7 +63,4 @@ class UninstallTool(HackingTool):
 
 class ToolManager(HackingToolsCollection):
     TITLE = "Update or Uninstall | Hackingtool"
-    TOOLS = [
-        UpdateTool(),
-        UninstallTool()
-    ]
+    TOOLS = [UpdateTool(), UninstallTool()]
