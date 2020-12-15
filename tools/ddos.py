@@ -10,7 +10,7 @@ class SlowLoris(HackingTool):
     TITLE = "SlowLoris"
     DESCRIPTION = "Slowloris is basically an HTTP Denial of Service attack." \
                   "It send lots of HTTP Request"
-    INSTALL_COMMANDS = ["sudo pip install slowloris"]
+    INSTALL_COMMANDS = ["sudo pip3 install slowloris"]
 
     def run(self):
         target_site = input("Enter Target Site:- ")
