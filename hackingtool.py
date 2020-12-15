@@ -79,7 +79,7 @@ if __name__ == "__main__":
                 os.system('clear')
                 # run.menu()
                 print("""
-                        [@] Set Path (All your tools will be install in that directory)
+                        [@] Set Path (All your tools will be installed in that directory)
                         [1] Manual 
                         [2] Default
                 """)
@@ -89,12 +89,12 @@ if __name__ == "__main__":
                     inpath = input("Enter Path (with Directory Name) >> ")
                     with open(fpath, "w") as f:
                         f.write(inpath)
-                    print("Successfully Path Set...!!")
+                    print(f"Successfully Set Path to: {inpath}")
                 elif choice == "2":
                     autopath = "/home/hackingtool/"
                     with open(fpath, "w") as f:
                         f.write(autopath)
-                    print(f"Your Default Path Is:- {autopath}")
+                    print(f"Your Default Path Is: {autopath}")
                     sleep(3)
                 else:
                     print("Try Again..!!")
@@ -111,12 +111,12 @@ if __name__ == "__main__":
         # If not Linux and probably Windows
         elif system() == "Windows":
             print(
-                "\033[91m Please Run This Tool In Debian System For Best Result " "\e[00m")
+                "\033[91m Please Run This Tool On A Debian System For Best Results " "\e[00m")
             sleep(2)
             webbrowser.open_new_tab("https://tinyurl.com/y522modc")
 
         else:
-            print("Please Check Your Sytem or Open new issue ...")
+            print("Please Check Your System or Open New Issue ...")
 
     except KeyboardInterrupt:
         print("\nExiting ..!!!")
