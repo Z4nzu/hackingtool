@@ -136,7 +136,7 @@ class Howmanypeople(HackingTool):
         "sudo apt-get install tshark"
         ";sudo python3 -m pip install howmanypeoplearearound"
     ]
-    RUN_COMMANDS = ["sudo howmanypeoplearearound"]
+    RUN_COMMANDS = ["howmanypeoplearearound"]
 
 
 class WirelessAttackTools(HackingToolsCollection):
