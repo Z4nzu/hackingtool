@@ -30,6 +30,7 @@ class Dracnmap(HackingTool):
         "sudo git clone https://github.com/Screetsec/Dracnmap.git",
         "cd Dracnmap && chmod +x Dracnmap.sh"
     ]
+    RUN_COMMANDS = ["sudo ./Dracnmap.sh"]
     PROJECT_URL = "https://github.com/Screetsec/Dracnmap"
 
     def __init__(self):
