@@ -11,7 +11,7 @@ class Setoolkit(HackingTool):
                   "testing framework designed for social engineering"
     INSTALL_COMMANDS = [
         "git clone https://github.com/trustedsec/social-engineer-toolkit/",
-        "cd social-engineer-toolkit && pip3 install -r requirements.txt && python3 setup.py"
+        "cd social-engineer-toolkit && sudo python3 setup.py"
     ]
     RUN_COMMANDS = ["sudo setoolkit"]
     PROJECT_URL = "https://github.com/trustedsec/social-engineer-toolkit"
