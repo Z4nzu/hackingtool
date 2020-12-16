@@ -86,7 +86,7 @@ class QRJacking(HackingTool):
     TITLE = "QR Code Jacking"
     DESCRIPTION = "QR Code Jacking (Any Website)"
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/cryptedwolf/ohmyqr.git && sudo apt-get install scrot"]
+        "sudo git clone https://github.com/cryptedwolf/ohmyqr.git && sudo apt -y install scrot"]
     RUN_COMMANDS = ["cd ohmyqr && sudo bash ohmyqr.sh"]
     PROJECT_URL = "https://github.com/cryptedwolf/ohmyqr"
 
