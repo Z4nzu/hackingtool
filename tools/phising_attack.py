@@ -19,7 +19,7 @@ class Setoolkit(HackingTool):
 
 class SocialFish(HackingTool):
     TITLE = "SocialFish"
-    DESCRIPTION = "Automated Phishing Tool & Information Collector"
+    DESCRIPTION = "Automated Phishing Tool & Information Collector NOTE: username is "root" and password is "pass""
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/UndeadSec/SocialFish.git && sudo apt-get install python3 python3-pip python3-dev -y",
         "cd SocialFish && sudo python3 -m pip install -r requirements.txt"
