@@ -28,9 +28,9 @@ class Dracnmap(HackingTool):
                   "exploit the network and gathering information with nmap help."
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/Screetsec/Dracnmap.git",
-        "cd Dracnmap && chmod +x Dracnmap.sh"
+        "cd Dracnmap && chmod +x dracnmap-v2.2-dracOs.sh  dracnmap-v2.2.sh"
     ]
-    RUN_COMMANDS = ["sudo ./Dracnmap.sh"]
+    RUN_COMMANDS = ["sudo ./dracnmap-v2.2.sh"]
     PROJECT_URL = "https://github.com/Screetsec/Dracnmap"
 
     def __init__(self):
