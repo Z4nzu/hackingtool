@@ -123,7 +123,7 @@ class Enigma(HackingTool):
     DESCRIPTION = "Enigma is a Multiplatform payload dropper"
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/UndeadSec/Enigma.git"]
-    RUN_COMMANDS = ["cd Enigma;sudo python3 enigma3.py"]
+    RUN_COMMANDS = ["cd Enigma;sudo python enigma.py"]
     PROJECT_URL = "https://github.com/UndeadSec/Enigma"
 
 
