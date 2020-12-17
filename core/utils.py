@@ -29,6 +29,7 @@ def run_command(cmd_string, cwd='', **kwargs):
 
     for task in tasks:
         args = task.split()
+        # TODO: Debug and remove print
         print(args, cwd)
         if len(procs):
             proc = subprocess.Popen(
