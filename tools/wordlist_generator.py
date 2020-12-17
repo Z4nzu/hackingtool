@@ -7,11 +7,13 @@ class Cupp(HackingTool):
     TITLE = "Cupp"
     DESCRIPTION = "WlCreator is a C program that can create all possibilities of passwords,\n " \
                   "and you can choose Length, Lowercase, Capital, Numbers and Special Chars"
-    INSTALL_COMMANDS = ["git clone https://github.com/Mebus/cupp.git"]
+    INSTALL_COMMANDS = [
+        dict(cmd="git clone https://github.com/Mebus/cupp.git"),
+    ]
     PROJECT_URL = "https://github.com/Mebus/cupp.git"
 
     def __init__(self):
-        super(Cupp, self).__init__(runnable = False)
+        super(Cupp, self).__init__(runnable=False)
 
 
 class WlCreator(HackingTool):
@@ -19,9 +21,13 @@ class WlCreator(HackingTool):
     DESCRIPTION = "WlCreator is a C program that can create all possibilities" \
                   " of passwords,\n and you can choose Lenght, Lowercase, " \
                   "Capital, Numbers and Special Chars"
-    INSTALL_COMMANDS = ["sudo git clone https://github.com/Z4nzu/wlcreator.git"]
+    INSTALL_COMMANDS = [
+        dict(cmd="sudo git clone https://github.com/Z4nzu/wlcreator.git"),
+    ]
     RUN_COMMANDS = [
-        "cd wlcreator && sudo gcc -o wlcreator wlcreator.c && ./wlcreator 5"]
+        dict(cmd="sudo gcc -o wlcreator wlcreator.c", cwd="wlcreator"),
+        dict(cmd="./wlcreator 5", cwd="wlcreator"),
+    ]
     PROJECT_URL = "https://github.com/Z4nzu/wlcreator"
 
 
@@ -29,8 +35,14 @@ class GoblinWordGenerator(HackingTool):
     TITLE = "Goblin WordGenerator"
     DESCRIPTION = "Goblin WordGenerator"
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/UndeadSec/GoblinWordGenerator.git"]
-    RUN_COMMANDS = ["cd GoblinWordGenerator && python3 goblin.py"]
+        dict(
+            cmd=
+            "sudo git clone https://github.com/UndeadSec/GoblinWordGenerator.git"
+        ),
+    ]
+    RUN_COMMANDS = [
+        dict(cmd="python3 goblin.py", cwd="GoblinWordGenerator"),
+    ]
     PROJECT_URL = "https://github.com/UndeadSec/GoblinWordGenerator.git"
 
 
@@ -42,18 +54,21 @@ class showme(HackingTool):
                   "part of BreachCompilation leak. This database makes " \
                   "finding passwords faster and easier than ever before."
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/Viralmaniar/SMWYG-Show-Me-What-You-Got.git",
-        "cd SMWYG-Show-Me-What-You-Got && pip3 install -r requirements.txt"
+        dict(
+            cmd=
+            "sudo git clone https://github.com/Viralmaniar/SMWYG-Show-Me-What-You-Got.git"
+        ),
+        dict(
+            cmd="pip3 install -r requirements.txt",
+            cwd="SMWYG-Show-Me-What-You-Got",
+        ),
     ]
-    RUN_COMMANDS = ["cd SMWYG-Show-Me-What-You-Got && python SMWYG.py"]
+    RUN_COMMANDS = [
+        dict(cmd="python SMWYG.py", cwd="SMWYG-Show-Me-What-You-Got"),
+    ]
     PROJECT_URL = "https://github.com/Viralmaniar/SMWYG-Show-Me-What-You-Got"
 
 
 class WordlistGeneratorTools(HackingToolsCollection):
     TITLE = "Wordlist Generator"
-    TOOLS = [
-        Cupp(),
-        WlCreator(),
-        GoblinWordGenerator(),
-        showme()
-    ]
+    TOOLS = [Cupp(), WlCreator(), GoblinWordGenerator(), showme()]
