@@ -114,7 +114,7 @@ class MobDroid(HackingTool):
                   "easy way\n without typing long commands and save your time"
     INSTALL_COMMANDS = [
         "git clone https://github.com/kinghacker0/mob-droid.git"]
-    RUN_COMMANDS = ["cd Mob-Droid;sudo python mob-droid.py"]
+    RUN_COMMANDS = ["cd mob-droid;sudo python mob-droid.py"]
     PROJECT_URL = "https://github.com/kinghacker0/Mob-Droid"
 
 
