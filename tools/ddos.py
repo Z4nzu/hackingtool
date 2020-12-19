@@ -47,7 +47,7 @@ class UFONet(HackingTool):
         "sudo git clone https://github.com/epsylon/ufonet.git",
         "cd ufonet;sudo python3 setup.py install;sudo pip3 install GeoIP;sudo pip3 install python-geoip;sudo pip3 install pygeoip;sudo pip3 install requests;sudo pip3 install pycrypto;sudo pip3 install pycurl;sudo pip3 install whois;sudo pip3 install scapy-python3"
     ]
-    RUN_COMMANDS = ["sudo ./ufonet --gui"]
+    RUN_COMMANDS = ["sudo python3 ufonet --gui"]
     PROJECT_URL = "https://github.com/epsylon/ufonet"
 
 
