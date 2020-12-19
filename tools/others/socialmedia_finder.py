@@ -11,8 +11,10 @@ class FacialFind(HackingTool):
     DESCRIPTION = "A Social Media Mapping Tool that correlates profiles\n " \
                   "via facial recognition across different sites."
     INSTALL_COMMANDS = [
+        "sudo apt install -y software-properties-common",
         "sudo add-apt-repository ppa:mozillateam/firefox-next && sudo apt update && sudo apt upgrade",
         "sudo git clone https://github.com/Greenwolf/social_mapper.git",
+        "sudo apt install -y build-essential cmake libgtk-3-dev libboost-all-dev",
         "cd social_mapper/setup",
         "sudo python3 -m pip install --no-cache-dir -r requirements.txt",
         'echo "[!]Now You have To do some Manually\n'
