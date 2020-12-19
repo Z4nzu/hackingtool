@@ -123,8 +123,9 @@ class RVuln(HackingTool):
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/iinc0gnit0/RVuln.git;"
         "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh;"
-        "source $HOME/.cargo/env",
-        "sudo apt install librust-openssl-dev;cd RVuln;cargo build --release;mv target/release/RVuln"
+        "source $HOME/.cargo/env;"
+        "sudo apt install librust-openssl-dev;"
+        "cd RVuln;cargo build --release;mv target/release/RVuln"
     ]
     RUN_COMMANDS = ["RVuln"]
     PROJECT_URL = "https://github.com/iinc0gnit0/RVuln"
