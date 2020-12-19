@@ -25,7 +25,7 @@ class KawaiiDeauther(HackingTool):
         "sudo git clone https://github.com/aryanrtm/KawaiiDeauther.git",
         "cd KawaiiDeauther;sudo bash install.sh"
     ]
-    RUN_COMMANDS = ["cd KawaiiDeauther;sudo KawaiiDeauther.sh"]
+    RUN_COMMANDS = ["cd KawaiiDeauther;sudo bash KawaiiDeauther.sh"]
     PROJECT_URL = "https://github.com/aryanrtm/KawaiiDeauther"
 
 
