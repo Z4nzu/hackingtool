@@ -30,8 +30,8 @@ class Multitor(HackingTool):
         "sudo git clone https://github.com/trimstray/multitor.git",
         "cd multitor;sudo bash setup.sh install"
     ]
-     RUN_COMMANDS = ["multitor --init 2 --user debian-tor --socks-port 9000 --control-port 9900 --proxy privoxy --haproxy"]
-     PROJECT_URL = "https://github.com/trimstray/multitor"
+    RUN_COMMANDS = ["multitor --init 2 --user debian-tor --socks-port 9000 --control-port 9900 --proxy privoxy --haproxy"]
+    PROJECT_URL = "https://github.com/trimstray/multitor"
 
     def __init__(self):
         super(Multitor, self).__init__(runnable = False)
