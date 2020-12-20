@@ -29,8 +29,6 @@ def run_command(cmd_string, cwd='', **kwargs):
 
     for task in tasks:
         args = task.split()
-        # TODO: Debug and remove print
-        print(args, cwd)
         if len(procs):
             proc = subprocess.Popen(
                 args,
@@ -53,7 +51,7 @@ def run_command(cmd_string, cwd='', **kwargs):
     return exit_codes
 
 
-def get_go_path(key='GOPATH', raise_err=False):
+def get_go_path(key='GOPATH', recursive=False):
     """
     Returns Go working directory.
     For version 1.8+, default value -> $HOME/go
@@ -62,10 +60,10 @@ def get_go_path(key='GOPATH', raise_err=False):
     try:
         go_dir = os.environ[key]
     except KeyError:
+        if recursive:
+            raise
         go_dir = get_go_path(key='GOROOT')
-    except KeyError:
+    except:
         go_dir = f"{os.environ['HOME']}/go"
-    except Exception as e:
-        print(f"[+] Error occurred: {str(e)}")
     return go_dir
 

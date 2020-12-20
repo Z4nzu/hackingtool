@@ -133,17 +133,12 @@ class QRJacking(HackingTool):
     TITLE = "QR Code Jacking"
     DESCRIPTION = "QR Code Jacking (Any Website)"
     INSTALL_COMMANDS = [
-<<<<<<< HEAD
         dict(cmd="sudo git clone https://github.com/cryptedwolf/ohmyqr.git"),
-        dict(cmd="sudo apt-get install scrot"),
+        dict(cmd="sudo apt-get -y install scrot"),
     ]
     RUN_COMMANDS = [
         dict(cmd="sudo bash ohmyqr.sh", cwd="ohmyqr"),
     ]
-=======
-        "sudo git clone https://github.com/cryptedwolf/ohmyqr.git && sudo apt -y install scrot"]
-    RUN_COMMANDS = ["cd ohmyqr && sudo bash ohmyqr.sh"]
->>>>>>> master
     PROJECT_URL = "https://github.com/cryptedwolf/ohmyqr"
 
 

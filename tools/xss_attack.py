@@ -42,14 +42,10 @@ class XSSFinder(HackingTool):
     TITLE = "Extended XSS Searcher and Finder"
     DESCRIPTION = "Extended XSS Searcher and Finder"
     INSTALL_COMMANDS = [
-<<<<<<< HEAD
         dict(
-            cmd="git glone https://github.com/Damian89/extended-xss-search.git"
+            cmd="git clone https://github.com/Damian89/extended-xss-search.git"
         ),
     ]
-=======
-        "git clone https://github.com/Damian89/extended-xss-search.git"]
->>>>>>> master
     PROJECT_URL = "https://github.com/Damian89/extended-xss-search"
 
     def after_install(self):

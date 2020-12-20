@@ -110,9 +110,9 @@ class Spycam(HackingTool):
     DESCRIPTION = "Script to generate a Win32 payload that takes the webcam " \
                   "image every 1 minute and send it to the attacker"
     INSTALL_COMMANDS = [
-<<<<<<< HEAD
         dict(
-            cmd="sudo git clone https://github.com/thelinuxchoice/spycam.git"),
+            cmd="sudo git clone https://github.com/indexnotfound404/spycam.git"
+        ),
         dict(cmd="bash install.sh", cwd="spycam"),
         dict(cmd="chmod +x spycam", cwd="spycam"),
     ]
@@ -120,13 +120,6 @@ class Spycam(HackingTool):
         dict(cmd="./spycam", cwd="spycam"),
     ]
     PROJECT_URL = "https://github.com/thelinuxchoice/spycam"
-=======
-        "sudo git clone https://github.com/indexnotfound404/spycam.git",
-        "cd spycam && bash install.sh && chmod +x spycam"
-    ]
-    RUN_COMMANDS = ["cd spycam && ./spycam"]
-    PROJECT_URL = "https://github.com/indexnotfound404/spycam"
->>>>>>> master
 
 
 class MobDroid(HackingTool):
