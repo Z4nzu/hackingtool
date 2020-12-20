@@ -51,3 +51,21 @@ def run_command(cmd_string, cwd='', **kwargs):
             print(output.decode('utf-8'))
     exit_codes = [ps.wait() for ps in procs]
     return exit_codes
+
+
+def get_go_path(key='GOPATH', raise_err=False):
+    """
+    Returns Go working directory.
+    For version 1.8+, default value -> $HOME/go
+    Prior version 1.8, $GOPATH or $GOROOT
+    """
+    try:
+        go_dir = os.environ[key]
+    except KeyError:
+        go_dir = get_go_path(key='GOROOT')
+    except KeyError:
+        go_dir = f"{os.environ['HOME']}/go"
+    except Exception as e:
+        print(f"[+] Error occurred: {str(e)}")
+    return go_dir
+

@@ -3,7 +3,7 @@ import os
 
 from core import HackingTool
 from core import HackingToolsCollection
-from core.utils import run_command
+from core.utils import run_command, get_go_path
 
 
 class Setoolkit(HackingTool):
@@ -83,15 +83,15 @@ class Evilginx2(HackingTool):
         dict(cmd="go get -u github.com/kgretzky/evilginx2"),
         dict(
             cmd="make",
-            cwd=f"${os.environ['GOPATH']}/src/github.com/kgretzky/evilginx2",
+            cwd=f"${get_go_path()}/src/github.com/kgretzky/evilginx2",
         ),
         dict(
             cmd="sudo make install",
-            cwd=f"${os.environ['GOPATH']}/src/github.com/kgretzky/evilginx2",
+            cwd=f"${get_go_path()}/src/github.com/kgretzky/evilginx2",
         ),
         dict(
             cmd="sudo evilginx",
-            cwd=f"${os.environ['GOPATH']}/src/github.com/kgretzky/evilginx2",
+            cwd=f"${get_go_path()}/src/github.com/kgretzky/evilginx2",
         ),
     ]
     RUN_COMMANDS = [
