@@ -10,7 +10,7 @@ class Web2Attack(HackingTool):
     DESCRIPTION = "Web hacking framework with tools, exploits by python"
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/santatic/web2attack.git"]
-    RUN_COMMANDS = ["cd web2attack && sudo bash w2aconsole"]
+    RUN_COMMANDS = ["cd web2attack && sudo python3 w2aconsole"]
     PROJECT_URL = "https://github.com/santatic/web2attack"
 
 

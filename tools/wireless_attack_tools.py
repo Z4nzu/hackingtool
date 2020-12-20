@@ -134,9 +134,9 @@ class Howmanypeople(HackingTool):
                   "Please check your country's laws"
     INSTALL_COMMANDS = [
         "sudo apt-get install tshark"
-        ";sudo pip install howmanypeoplearearound"
+        ";sudo python3 -m pip install howmanypeoplearearound"
     ]
-    RUN_COMMANDS = ["sudo howmanypeoplearearound"]
+    RUN_COMMANDS = ["howmanypeoplearearound"]
 
 
 class WirelessAttackTools(HackingToolsCollection):
