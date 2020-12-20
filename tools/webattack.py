@@ -13,7 +13,7 @@ class Web2Attack(HackingTool):
         dict(cmd="sudo git clone https://github.com/santatic/web2attack.git"),
     ]
     RUN_COMMANDS = [
-        dict(cmd="sudo bash w2aconsole", cwd="web2attack"),
+        dict(cmd="sudo python3 w2aconsole", cwd="web2attack"),
     ]
     PROJECT_URL = "https://github.com/santatic/web2attack"
 

@@ -159,10 +159,10 @@ class Howmanypeople(HackingTool):
                   "Please check your country's laws"
     INSTALL_COMMANDS = [
         dict(cmd="sudo apt-get install tshark"),
-        dict(cmd="sudo pip install howmanypeoplearearound"),
+        dict(cmd="sudo python3 -m pip install howmanypeoplearearound"),
     ]
     RUN_COMMANDS = [
-        dict(cmd="sudo howmanypeoplearearound"),
+        dict(cmd="howmanypeoplearearound"),
     ]
 
 

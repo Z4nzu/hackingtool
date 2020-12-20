@@ -10,7 +10,7 @@ class AndroGuard(HackingTool):
     DESCRIPTION = "Androguard is a Reverse engineering, Malware and goodware " \
                   "analysis of Android applications and more"
     INSTALL_COMMANDS = [
-        dict(cmd="sudo pip install -U androguard"),
+        dict(cmd="sudo pip3 install -U androguard"),
     ]
     PROJECT_URL = "https://github.com/androguard/androguard "
 

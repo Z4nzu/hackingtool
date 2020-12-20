@@ -33,7 +33,7 @@ class KawaiiDeauther(HackingTool):
         dict(cmd="sudo bash install.sh", cwd="KawaiiDeauther")
     ]
     RUN_COMMANDS = [
-        dict(cmd="sudo KawaiiDeauther.sh", cwd="KawaiiDeauther"),
+        dict(cmd="sudo bash KawaiiDeauther.sh", cwd="KawaiiDeauther"),
     ]
     PROJECT_URL = "https://github.com/aryanrtm/KawaiiDeauther"
 

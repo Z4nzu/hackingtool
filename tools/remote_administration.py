@@ -23,11 +23,11 @@ class Pyshell(HackingTool):
     DESCRIPTION = "Pyshell is a Rat Tool that can be able to download & upload " \
                   "files,\n Execute OS Command and more.."
     INSTALL_COMMANDS = [
-        dict(cmd="sudo git clone https://github.com/khalednassar702/Pyshell.git;"),
+        dict(cmd="sudo git clone https://github.com/knassar702/Pyshell.git"),
         dict(cmd="sudo pip install pyscreenshot python-nmap requests"),
     ]
     RUN_COMMANDS = [
-        dict(cmd="./Pyshell", cwd="Pyshell")
+        dict(cmd="./Pyshell", cwd="Pyshell"),
     ]
     PROJECT_URL = "https://github.com/knassar702/pyshell"
 

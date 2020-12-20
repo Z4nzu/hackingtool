@@ -33,6 +33,12 @@ class Multitor(HackingTool):
         dict(cmd="sudo git clone https://github.com/trimstray/multitor.git"),
         dict(cmd="sudo bash setup.sh install", cwd="multitor"),
     ]
+    RUN_COMMANDS = [
+        dict(
+            cmd=
+            "multitor --init 2 --user debian-tor --socks-port 9000 --control-port 9900 --proxy privoxy --haproxy"
+        ),
+    ]
     PROJECT_URL = "https://github.com/trimstray/multitor"
 
     def __init__(self):

@@ -12,7 +12,7 @@ class SlowLoris(HackingTool):
     DESCRIPTION = "Slowloris is basically an HTTP Denial of Service attack." \
                   "It send lots of HTTP Request"
     INSTALL_COMMANDS = [
-        dict(cmd="sudo pip install slowloris"),
+        dict(cmd="sudo pip3 install slowloris"),
     ]
 
     def run(self):
@@ -50,11 +50,16 @@ class UFONet(HackingTool):
                   "More Usage Visit"
     INSTALL_COMMANDS = [
         dict(cmd="sudo git clone https://github.com/epsylon/ufonet.git"),
-        dict(cmd="sudo python setup.py install", cwd="ufonet"),
+        dict(cmd="sudo python3 setup.py install", cwd="ufonet"),
+        dict(
+            cmd=
+            "sudo pip3 install GeoIP python-geoip pygeoip requests pycrypto pycurl whois scapy-python3"
+        ),
     ]
     RUN_COMMANDS = [
         dict(cmd="sudo ./ufonet --gui"),
     ]
+    RUN_COMMANDS = ["sudo python3 ufonet --gui"]
     PROJECT_URL = "https://github.com/epsylon/ufonet"
 
 

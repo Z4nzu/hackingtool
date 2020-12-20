@@ -42,10 +42,14 @@ class XSSFinder(HackingTool):
     TITLE = "Extended XSS Searcher and Finder"
     DESCRIPTION = "Extended XSS Searcher and Finder"
     INSTALL_COMMANDS = [
+<<<<<<< HEAD
         dict(
             cmd="git glone https://github.com/Damian89/extended-xss-search.git"
         ),
     ]
+=======
+        "git clone https://github.com/Damian89/extended-xss-search.git"]
+>>>>>>> master
     PROJECT_URL = "https://github.com/Damian89/extended-xss-search"
 
     def after_install(self):
@@ -141,9 +145,11 @@ class RVuln(HackingTool):
         dict(
             cmd=
             "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh;"),
-        dict(cmd="source $HOME/.cargo/env"),
-        dict(cmd="sudo apt install openssl-dev"),
-        dict(cmd="sudo cp -r RVuln/ /usr/bin"),
+        dict(cmd=f"source {os.environ['HOME']}/.cargo/env"),
+        dict(cmd="sudo apt install librust-openssl-dev"),
+        dict(cmd="sudo su", cwd="RVuln"),
+        dict(cmd="cargo build --release", cwd="RVuln"),
+        dict(cmd="mv target/release/RVuln", cwd="RVuln"),
     ]
     RUN_COMMANDS = [
         dict(cmd="RVuln"),

@@ -110,6 +110,7 @@ class Spycam(HackingTool):
     DESCRIPTION = "Script to generate a Win32 payload that takes the webcam " \
                   "image every 1 minute and send it to the attacker"
     INSTALL_COMMANDS = [
+<<<<<<< HEAD
         dict(
             cmd="sudo git clone https://github.com/thelinuxchoice/spycam.git"),
         dict(cmd="bash install.sh", cwd="spycam"),
@@ -119,6 +120,13 @@ class Spycam(HackingTool):
         dict(cmd="./spycam", cwd="spycam"),
     ]
     PROJECT_URL = "https://github.com/thelinuxchoice/spycam"
+=======
+        "sudo git clone https://github.com/indexnotfound404/spycam.git",
+        "cd spycam && bash install.sh && chmod +x spycam"
+    ]
+    RUN_COMMANDS = ["cd spycam && ./spycam"]
+    PROJECT_URL = "https://github.com/indexnotfound404/spycam"
+>>>>>>> master
 
 
 class MobDroid(HackingTool):
@@ -129,7 +137,7 @@ class MobDroid(HackingTool):
         dict(cmd="git clone https://github.com/kinghacker0/mob-droid.git"),
     ]
     RUN_COMMANDS = [
-        dict(cmd="sudo python mob-droid.py", cwd="Mob-Droid"),
+        dict(cmd="sudo python mob-droid.py", cwd="mob-droid"),
     ]
     PROJECT_URL = "https://github.com/kinghacker0/Mob-Droid"
 
@@ -140,7 +148,9 @@ class Enigma(HackingTool):
     INSTALL_COMMANDS = [
         dict(cmd="sudo git clone https://github.com/UndeadSec/Enigma.git"),
     ]
-    RUN_COMMANDS = ["cd Enigma;sudo python3 enigma3.py"]
+    RUN_COMMANDS = [
+        dict(cmd="sudo python enigma.py", cwd="Enigma"),
+    ]
     PROJECT_URL = "https://github.com/UndeadSec/Enigma"
 
 

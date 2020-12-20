@@ -12,11 +12,16 @@ class FacialFind(HackingTool):
     DESCRIPTION = "A Social Media Mapping Tool that correlates profiles\n " \
                   "via facial recognition across different sites."
     INSTALL_COMMANDS = [
+        dict(cmd="sudo apt install -y software-properties-common"),
         dict(cmd="sudo add-apt-repository ppa:mozillateam/firefox-next"),
         dict(cmd="sudo apt update"),
         dict(cmd="sudo apt upgrade"),
         dict(
             cmd="sudo git clone https://github.com/Greenwolf/social_mapper.git"
+        ),
+        dict(
+            cmd=
+            "sudo apt install -y build-essential cmake libgtk-3-dev libboost-all-dev"
         ),
         dict(
             cmd=
@@ -34,7 +39,8 @@ class FacialFind(HackingTool):
     PROJECT_URL = "https://github.com/Greenwolf/social_mapper"
 
     def run(self):
-        run_command("sudo python social_mapper.py -h", cwd="social_mapper/setup")
+        run_command("sudo python social_mapper.py -h",
+                    cwd="social_mapper/setup")
         print("""\033[95m 
                 You have to set Username and password of your AC Or Any Fack Account
                 [#] Type in Terminal nano social_mapper.py
@@ -51,9 +57,7 @@ class FindUser(HackingTool):
         dict(cmd="sudo git clone https://github.com/xHak9x/finduser.git"),
         dict(cmd="sudo chmod +x finduser.sh", cwd="finduser")
     ]
-    RUN_COMMANDS = [
-        dict(cmd="sudo bash finduser.sh", cwd="finduser")
-    ]
+    RUN_COMMANDS = [dict(cmd="sudo bash finduser.sh", cwd="finduser")]
     PROJECT_URL = "https://github.com/xHak9x/finduser"
 
 
@@ -64,7 +68,8 @@ class Sherlock(HackingTool):
                   "\t >>python3 sherlock --help"
     INSTALL_COMMANDS = [
         dict(cmd="git clone https://github.com/sherlock-project/sherlock.git"),
-        dict(cmd="sudo python3 -m pip install -r requirements.txt", cwd="sherlock")
+        dict(cmd="sudo python3 -m pip install -r requirements.txt",
+             cwd="sherlock")
     ]
     PROJECT_URL = "https://github.com/sherlock-project/sherlock"
 

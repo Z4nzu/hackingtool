@@ -15,7 +15,7 @@ class Setoolkit(HackingTool):
             cmd=
             "git clone https://github.com/trustedsec/social-engineer-toolkit.git"
         ),
-        dict(cmd="sudo python social-engineer-toolkit/setup.py"),
+        dict(cmd="sudo python3 setup.py", cwd="social-engineer-toolkit"),
     ]
     RUN_COMMANDS = [
         dict(cmd="sudo setoolkit"),
@@ -25,7 +25,7 @@ class Setoolkit(HackingTool):
 
 class SocialFish(HackingTool):
     TITLE = "SocialFish"
-    DESCRIPTION = "Automated Phishing Tool & Information Collector"
+    DESCRIPTION = "Automated Phishing Tool & Information Collector NOTE: username is 'root' and password is 'pass'"
     INSTALL_COMMANDS = [
         dict(cmd="sudo git clone https://github.com/UndeadSec/SocialFish.git"),
         dict(cmd="sudo apt-get install python3 python3-pip python3-dev -y"),
@@ -133,12 +133,17 @@ class QRJacking(HackingTool):
     TITLE = "QR Code Jacking"
     DESCRIPTION = "QR Code Jacking (Any Website)"
     INSTALL_COMMANDS = [
+<<<<<<< HEAD
         dict(cmd="sudo git clone https://github.com/cryptedwolf/ohmyqr.git"),
         dict(cmd="sudo apt-get install scrot"),
     ]
     RUN_COMMANDS = [
         dict(cmd="sudo bash ohmyqr.sh", cwd="ohmyqr"),
     ]
+=======
+        "sudo git clone https://github.com/cryptedwolf/ohmyqr.git && sudo apt -y install scrot"]
+    RUN_COMMANDS = ["cd ohmyqr && sudo bash ohmyqr.sh"]
+>>>>>>> master
     PROJECT_URL = "https://github.com/cryptedwolf/ohmyqr"
 
 
