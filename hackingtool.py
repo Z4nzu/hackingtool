@@ -81,7 +81,7 @@ if __name__ == "__main__":
                 print("""
                         [@] Set Path (All your tools will be installed in that directory)
                         [1] Manual 
-                        [2] Defaultl
+                        [2] Default
                 """)
                 choice = input("Z4nzu =>> ")
 
