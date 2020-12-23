@@ -72,7 +72,7 @@ class HackingTool(object):
         for index, option in enumerate(self.OPTIONS):
             print(f"[{index + 1}] {option[0]}")
         if self.PROJECT_URL:
-            print(f"[{98}] Open project page}")
+            print(f"[{98}] Open project page")
         print(f"[{99}] Back to {parent.TITLE if parent is not None else 'Exit'}")
         option_index = input("Select an option : ")
         try:
