@@ -8,11 +8,11 @@ class WifiJammerNG(HackingTool):
     DESCRIPTION = "Continuously jam all wifi clients and access points within range."
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/MisterBianco/wifijammer-ng.git",
-        "cd wifijammer-ng;sudo pip3 install -r requirements.txt"
+        "cd wifijammer-ng;sudo pip install -r requirements.txt"
     ]
     RUN_COMMANDS = [
         'echo "python wifijammer.py [-a AP MAC] [-c CHANNEL] [-d] [-i INTERFACE] [-m MAXIMUM] [-k] [-p PACKETS] [-s SKIP] [-t TIME INTERVAL] [-D]"| boxes | lolcat',
-        "cd wifijammer-ng;sudo python3 wifijammer.py"
+        "cd wifijammer-ng;sudo python wifijammer.py"
     ]
     PROJECT_URL = "https://github.com/MisterBianco/wifijammer-ng"
 
@@ -25,7 +25,7 @@ class KawaiiDeauther(HackingTool):
         "sudo git clone https://github.com/aryanrtm/KawaiiDeauther.git",
         "cd KawaiiDeauther;sudo bash install.sh"
     ]
-    RUN_COMMANDS = ["cd KawaiiDeauther;sudo KawaiiDeauther.sh"]
+    RUN_COMMANDS = ["cd KawaiiDeauther;sudo bash KawaiiDeauther.sh"]
     PROJECT_URL = "https://github.com/aryanrtm/KawaiiDeauther"
 
 
