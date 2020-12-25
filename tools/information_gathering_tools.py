@@ -93,6 +93,7 @@ class ReconSpider(HackingTool):
         "sudo git clone https://github.com/bhavsec/reconspider.git",
         "sudo apt install python3 python3-pip && cd reconspider && sudo python3 setup.py install"
     ]
+    RUN_COMMANDS = ["python3 reconspider.py"]
     PROJECT_URL = "https://github.com/bhavsec/reconspider"
 
     def __init__(self):
