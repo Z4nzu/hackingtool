@@ -118,9 +118,9 @@ class Infoga(HackingTool):
                   "(ip, hostname, country,...) from different public source"
     INSTALL_COMMANDS = [
         "git clone https://github.com/m4ll0k/Infoga.git",
-        "cd infoga;sudo python setup.py install"
+        "cd Infoga;sudo python3 setup.py install"
     ]
-    RUN_COMMANDS = ["cd infoga;python infoga.py"]
+    RUN_COMMANDS = ["cd Infoga;python3 infoga.py"]
     PROJECT_URL = "https://github.com/m4ll0k/Infoga"
 
 
