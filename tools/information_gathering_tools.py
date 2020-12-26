@@ -30,11 +30,11 @@ class Dracnmap(HackingTool):
         "sudo git clone https://github.com/Screetsec/Dracnmap.git",
         "cd Dracnmap && chmod +x dracnmap-v2.2-dracOs.sh  dracnmap-v2.2.sh"
     ]
-    RUN_COMMANDS = ["sudo ./dracnmap-v2.2.sh"]
+    RUN_COMMANDS = ["cd Dracnmap;sudo ./dracnmap-v2.2.sh"]
     PROJECT_URL = "https://github.com/Screetsec/Dracnmap"
 
-    def __init__(self):
-        super(Dracnmap, self).__init__(runnable = False)
+#    def __init__(self):
+#        super(Dracnmap, self).__init__(runnable = False)
 
 
 class PortScan(HackingTool):
