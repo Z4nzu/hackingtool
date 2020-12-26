@@ -53,7 +53,7 @@ class BluePot(HackingTool):
                   "You must install/libbluetooth-dev on " \
                   "Ubuntu/bluez-libs-devel on Fedora/bluez-devel on openSUSE"
     INSTALL_COMMANDS = [
-        "wget https://github.com/andrewmichaelsmith/bluepot/raw/master/bin/bluepot-0.2.tar.gz"
+        "sudo wget https://github.com/andrewmichaelsmith/bluepot/raw/master/bin/bluepot-0.2.tar.gz"
         "sudo tar xfz bluepot-0.2.tar.gz"
     ]
     RUN_COMMANDS = ["cd bluepot && sudo java -jar bluepot.jar"]
