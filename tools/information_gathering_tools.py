@@ -186,7 +186,7 @@ class PortScannerRanger(HackingTool):
 
     def run(self):
         ip = input("Enter Ip >> ")
-        os.system("cd rang3r;")
+        os.chdir("rang3r")
         subprocess.run(["sudo", "python", "rang3r.py", "--ip", ip])
 
 
