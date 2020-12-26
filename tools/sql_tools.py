@@ -13,7 +13,7 @@ class Sqlmap(HackingTool):
                   "More Usage [!] https://github.com/sqlmapproject/sqlmap/wiki/Usage"
     INSTALL_COMMANDS = [
         "sudo git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev"]
-    RUN_COMMANDS = ["python3 sqlmap.py --wizard"]
+    RUN_COMMANDS = ["cd sqlmap-dev;python3 sqlmap.py --wizard"]
     PROJECT_URL = "https://github.com/sqlmapproject/sqlmap"
 
 class NoSqlMap(HackingTool):
