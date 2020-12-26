@@ -97,7 +97,7 @@ class Wifite(HackingTool):
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/derv82/wifite2.git",
         "cd wifite2 && sudo python3 setup.py install"
-        ";sudo pip3 install -r requirements.txt"
+        "sudo pip3 install -r requirements.txt"
     ]
     RUN_COMMANDS = ["cd wifite2; sudo wifite"]
     PROJECT_URL = "https://github.com/derv82/wifite2"
