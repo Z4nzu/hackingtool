@@ -14,9 +14,9 @@ class WIFIPumpkin(HackingTool):
     INSTALL_COMMANDS = [
         "sudo apt install libssl-dev libffi-dev build-essential",
         "sudo git clone https://github.com/P0cL4bs/wifipumpkin3.git",
-        "chmod -R 755 wifipumpkin3 && cd wifipumpkin3",
+        "chmod -R 755 wifipumpkin3",
         "sudo apt install python3-pyqt5",
-        "sudo python3 setup.py install"
+        "cd wifipumpkin3;sudo python3 setup.py install"
     ]
     RUN_COMMANDS = ["sudo wifipumpkin3"]
     PROJECT_URL = "https://github.com/P0cL4bs/wifipumpkin3"
