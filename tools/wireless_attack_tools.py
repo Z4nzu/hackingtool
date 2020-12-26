@@ -93,6 +93,7 @@ class Wifiphisher(HackingTool):
 
 class Wifite(HackingTool):
     TITLE = "Wifite"
+    DESCRIPTION = "Wifite is an automated wireless attack tool"
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/derv82/wifite2.git",
         "cd wifite2 && sudo python3 setup.py install"
