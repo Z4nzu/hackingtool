@@ -195,10 +195,11 @@ class Breacher(HackingTool):
     DESCRIPTION = "An advanced multithreaded admin panel finder written in python."
     INSTALL_COMMANDS = ["git clone https://github.com/s0md3v/Breacher.git"]
     PROJECT_URL = "https://github.com/s0md3v/Breacher"
-
-    def __init__(self):
-        super(Breacher, self).__init__(runnable = False)
-
+    
+    def run(self):
+        domain = input("Enter domain (example.com) >> ")
+        os.chdir("Breacher")
+        subprocess.run(["python3", "breacher.py", "-u", domain])
 
 class InformationGatheringTools(HackingToolsCollection):
     TITLE = "Information gathering tools"
