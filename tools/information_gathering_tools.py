@@ -143,7 +143,7 @@ class Striker(HackingTool):
 
     def run(self):
         site = input("Enter Site Name (example.com) >> ")
-        os.system("cd Striker;")
+        os.chdir("Striker")
         subprocess.run(["sudo", "python3", "striker.py", site])
 
 
