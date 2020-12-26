@@ -48,9 +48,9 @@ class pixiewps(HackingTool):
 
 class BluePot(HackingTool):
     TITLE = "Bluetooth Honeypot GUI Framework"
-    DESCRIPTION = "You need to have at least 1 bluetooh receiver " \n
-                  "(if you have many it will work with those, too).\n" \n
-                  "You must install/libbluetooth-dev on " \n
+    DESCRIPTION = "You need to have at least 1 bluetooh receiver " \
+                  "(if you have many it will work with those, too).\n" \
+                  "You must install/libbluetooth-dev on " \
                   "Ubuntu/bluez-libs-devel on Fedora/bluez-devel on openSUSE"
     INSTALL_COMMANDS = [
         "wget https://github.com/andrewmichaelsmith/bluepot/raw/master/bin/bluepot-0.2.tar.gz"
