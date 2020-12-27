@@ -89,7 +89,7 @@ class Dirb(HackingTool):
                   "attack against \n a web server and analizing the response."
     INSTALL_COMMANDS = [
         "sudo git clone https://gitlab.com/kalilinux/packages/dirb.git",
-        "cd dirb;sudo ./configure;make"
+        "cd dirb;sudo bash configure;make"
     ]
     PROJECT_URL = "https://gitlab.com/kalilinux/packages/dirb"
 
