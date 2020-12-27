@@ -78,13 +78,8 @@ class SubDomainTakeOver(HackingTool):
     ]
     PROJECT_URL = "https://github.com/m4ll0k/takeover"
 
-#    def __init__(self):
-#        super(SubDomainTakeOver, self).__init__(runnable = False)
-    
-    def run(self):
-        domain = input("Enter domain (www.example.com) >> ")
-        os.chdir(takeover)
-        subprocess.run(["sudo", "python3", "takeover.py", "-d", domain, "-v"])
+    def __init__(self):
+    super(SubDomainTakeOver, self).__init__(runnable = False)
 
 class Dirb(HackingTool):
     TITLE = "Dirb"
