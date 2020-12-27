@@ -30,7 +30,7 @@ class Wireshark(HackingTool):
 
 class BulkExtractor(HackingTool):
     TITLE = "Bulk extractor"
-    DESCRIPTION = ""
+    DESCRIPTION = "Extract useful information without parsing the file system"
     PROJECT_URL = "https://github.com/simsong/bulk_extractor"
 
     def __init__(self):
