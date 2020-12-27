@@ -59,9 +59,9 @@ class Blazy(HackingTool):
     DESCRIPTION = "Blazy is a modern login page bruteforcer"
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/UltimateHackers/Blazy.git",
-        "cd Blazy && sudo pip install -r requirements.txt"
+        "cd Blazy && sudo pip2.7 install -r requirements.txt"
     ]
-    RUN_COMMANDS = ["cd Blazy && sudo python blazy.py"]
+    RUN_COMMANDS = ["cd Blazy && sudo python2.7 blazy.py"]
     PROJECT_URL = "https://github.com/UltimateHackers/Blazy"
 
 
