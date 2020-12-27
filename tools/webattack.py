@@ -33,14 +33,14 @@ class SubDomainFinder(HackingTool):
     DESCRIPTION = "Sublist3r is a python tool designed to enumerate " \
                   "subdomains of websites using OSINT \n " \
                   "Usage:\n\t" \
-                  "[1] python sublist3r.py -d example.com \n" \
-                  "[2] python sublist3r.py -d example.com -p 80,443"
+                  "[1] python3 sublist3r.py -d example.com \n" \
+                  "[2] python3 sublist3r.py -d example.com -p 80,443"
     INSTALL_COMMANDS = [
-        "sudo pip install requests argparse dnspython",
+        "sudo pip3 install requests argparse dnspython",
         "sudo git clone https://github.com/aboul3la/Sublist3r.git",
-        "cd Sublist3r && sudo pip install -r requirements.txt"
+        "cd Sublist3r && sudo pip3 install -r requirements.txt"
     ]
-    RUN_COMMANDS = ["cd Sublist3r && python sublist3r.py -h"]
+    RUN_COMMANDS = ["cd Sublist3r && python3 sublist3r.py -h"]
     PROJECT_URL = "https://github.com/aboul3la/Sublist3r"
 
 
