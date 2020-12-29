@@ -25,7 +25,7 @@ class HatCloud(HackingTool):
 
     def run(self):
         site = input("Enter Site >> ")
-        os.system("cd HatCloud;")
+        os.chdir("HatCloud")
         subprocess.run(["sudo", "ruby", "hatcloud.rb", "-b", site])
 
 
