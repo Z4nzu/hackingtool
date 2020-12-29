@@ -52,7 +52,7 @@ class EvilApp(HackingTool):
                   "hijack authenticated sessions in cookies."
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/crypticterminal/EvilApp.git"]
-    RUN_COMMANDS = ["cd evilapp && bash evilapp.sh"]
+    RUN_COMMANDS = ["cd EvilApp && bash evilapp.sh"]
     PROJECT_URL = "https://github.com/crypticterminal/EvilApp"
 
 
