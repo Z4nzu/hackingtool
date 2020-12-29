@@ -11,7 +11,7 @@ class InstaBrute(HackingTool):
     DESCRIPTION = "Brute force attack against Instagram"
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/chinoogawa/instaBrute.git",
-        "cd instaBrute;sudo pip install -r requirements.txt"
+        "cd instaBrute;sudo pip2.7 install -r requirements.txt"
     ]
     PROJECT_URL = "https://github.com/chinoogawa/instaBrute"
 
