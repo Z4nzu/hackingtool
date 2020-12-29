@@ -18,7 +18,7 @@ class InstaBrute(HackingTool):
     def run(self):
         name = input("Enter Username >> ")
         wordlist = input("Enter wordword list >> ")
-        os.system("cd instaBrute;")
+        os.chdir("instaBrute")
         subprocess.run(
             ["sudo", "python", "instaBrute.py", "-u", f"{name}", "-d",
              f"{wordlist}"])
@@ -48,7 +48,7 @@ class Faceshell(HackingTool):
     def run(self):
         name = input("Enter Username >> ")
         wordlist = input("Enter Wordlist >> ")
-        os.system("cd Brute_Force;")
+        os.chdir("Brute_Force")
         subprocess.run(
             ["python3", "Brute_Force.py", "-f", f"{name}", "-l", f"{wordlist}"])
 
