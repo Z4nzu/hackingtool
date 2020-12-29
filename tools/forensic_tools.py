@@ -49,9 +49,9 @@ class BulkExtractor(HackingTool):
             "Please Visit For More Details About Installation >> https://github.com/simsong/bulk_extractor")
 
     def cli_mode(self):
-        os.system("sudo apt-get install bulk_extractor")
+        os.system("sudo apt install bulk-extractor")
         print("bulk_extractor and options")
-        os.system("bulk_extractor")
+        os.system("bulk_extractor -h")
         os.system(
             'echo "bulk_extractor [options] imagefile" | boxes -d headline | lolcat')
 
