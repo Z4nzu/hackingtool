@@ -42,7 +42,7 @@ class Droidcam(HackingTool):
         "sudo git clone https://github.com/kinghacker0/WishFish.git;"
         "sudo apt install php wget openssh-client"
     ]
-    RUN_COMMANDS = ["cd wishfish && sudo bash wishfish.sh"]
+    RUN_COMMANDS = ["cd WishFish && sudo bash wishfish.sh"]
     PROJECT_URL = "https://github.com/kinghacker0/WishFish"
 
 
