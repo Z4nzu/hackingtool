@@ -79,7 +79,7 @@ class SubDomainTakeOver(HackingTool):
     PROJECT_URL = "https://github.com/m4ll0k/takeover"
 
     def __init__(self):
-    super(SubDomainTakeOver, self).__init__(runnable = False)
+        super(SubDomainTakeOver, self).__init__(runnable = False)
 
 class Dirb(HackingTool):
     TITLE = "Dirb"
