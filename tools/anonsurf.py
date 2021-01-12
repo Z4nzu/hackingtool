@@ -6,7 +6,7 @@ from core import HackingToolsCollection
 
 
 class AnonymouslySurf(HackingTool):
-    TITLE = "Anonmously Surf"
+    TITLE = "Anonymously Surf"
     DESCRIPTION = "It automatically overwrites the RAM when\n" \
                   "the system is shutting down and also change Ip."
     INSTALL_COMMANDS = [
