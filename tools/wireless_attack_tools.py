@@ -62,15 +62,13 @@ class BluePot(HackingTool):
 
 class Fluxion(HackingTool):
     TITLE = "Fluxion"
-    DESCRIPTION = "Fluxion is a wifi key cracker using evil twin attack..\n" \
-                  "you need a wireless adaptor for this tool"
+    DESCRIPTION = "Fluxion is a remake of linset by vk496 with enhanced functionality."
     INSTALL_COMMANDS = [
-        "git clone https://github.com/thehackingsage/Fluxion.git",
-        "cd Fluxion && cd install && sudo chmod +x install.sh && sudo bash install.sh",
-        "cd .. ; sudo chmod +x fluxion.sh"
+        "git clone https://github.com/FluxionNetwork/fluxion.git",
+        "cd fluxion && sudo chmod +x fluxion.sh",
     ]
-    RUN_COMMANDS = ["cd Fluxion;sudo bash fluxion.sh"]
-    PROJECT_URL = "https://github.com/thehackingsage/Fluxion"
+    RUN_COMMANDS = ["cd fluxion;sudo bash fluxion.sh -i"]
+    PROJECT_URL = "https://github.com/FluxionNetwork/fluxion"
 
 
 class Wifiphisher(HackingTool):
