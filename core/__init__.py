@@ -67,7 +67,7 @@ class HackingTool(object):
         if self.PROJECT_URL:
             desc += '\n\t[*] '
             desc += self.PROJECT_URL
-        os.system(f'echo "{desc}"|boxes -d boy | lolcat')
+        run_command(f'echo "{desc}"|boxes -d boy | lolcat')
         # print(desc)
 
     def show_options(self, parent=None):
@@ -93,6 +93,7 @@ class HackingTool(object):
                     sys.exit()
                 return 99
         except (TypeError, ValueError):
+            # raise
             print("Please enter a valid option")
             input("\n\nPress ENTER to continue:")
         except Exception:
@@ -103,15 +104,25 @@ class HackingTool(object):
     def before_install(self):
         pass
 
+    def execute(self, commands):
+        """
+        Executes commands.
+        """
+        if isinstance(commands, (list, tuple)):
+            for cmd in commands:
+                if isinstance(cmd, str):
+                    run_command(cmd)
+                elif isinstance(cmd, dict):
+                    cmd, cwd, sh = cmd.get('cmd', ''), cmd.get('cwd', ''), cmd.get('shell', False)
+                    run_command(cmd, cwd=cwd, shell=sh)
+            else:
+                return True
+
+
     def install(self):
         self.before_install()
-        if isinstance(self.INSTALL_COMMANDS, (list, tuple)):
-            for INSTALL_COMMAND in self.INSTALL_COMMANDS:
-                if isinstance(INSTALL_COMMAND, str):
-                    run_command(INSTALL_COMMAND)
-                elif isinstance(INSTALL_COMMAND, dict):
-                    cmd, cwd = INSTALL_COMMAND.get('cmd', ''), INSTALL_COMMAND.get('cwd', '')
-                    run_command(cmd, cwd=cwd)
+        installed = self.execute(self.INSTALL_COMMANDS)
+        if installed:
             self.after_install()
 
     def after_install(self):
@@ -123,10 +134,9 @@ class HackingTool(object):
 
     def uninstall(self):
         if self.before_uninstall():
-            if isinstance(self.UNINSTALL_COMMANDS, (list, tuple)):
-                for UNINSTALL_COMMAND in self.UNINSTALL_COMMANDS:
-                    os.system(UNINSTALL_COMMAND)
-            self.after_uninstall()
+            uninstalled = self.execute(self.UNINSTALL_COMMANDS)
+            if uninstalled:
+                self.after_uninstall()
 
     def after_uninstall(self):
         pass
@@ -136,9 +146,8 @@ class HackingTool(object):
 
     def run(self):
         self.before_run()
-        if isinstance(self.RUN_COMMANDS, (list, tuple)):
-            for RUN_COMMAND in self.RUN_COMMANDS:
-                os.system(RUN_COMMAND)
+        ran = self.execute(self.RUN_COMMANDS)
+        if ran:
             self.after_run()
 
     def after_run(self):
@@ -161,7 +170,7 @@ class HackingToolsCollection(object):
         pass
 
     def show_info(self):
-        os.system("figlet -f standard -c {} | lolcat".format(self.TITLE))
+        run_command("figlet -f standard -c {} | lolcat".format(self.TITLE))
         # os.system(f'echo "{self.DESCRIPTION}"|boxes -d boy | lolcat')
         # print(self.DESCRIPTION)
 
@@ -184,6 +193,7 @@ class HackingToolsCollection(object):
                     sys.exit()
                 return 99
         except (TypeError, ValueError):
+            # raise
             print("Please enter a valid option")
             input("\n\nPress ENTER to continue:")
         except Exception as e:

@@ -16,7 +16,7 @@ class Dalfox(HackingTool):
         dict(cmd="go install", cwd="dalfox"),
     ]
     RUN_COMMANDS = [
-        dict(cmd=f"{os.environ['HOME']}/go/bin/dalfox"),
+        dict(cmd=f"{os.environ['HOME']}/go/bin/dalfox", shell=True),
         dict(
             cmd=
             'echo "You Need To Run manually by using [!]~/go/bin/dalfox [options]"'

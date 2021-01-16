@@ -3,6 +3,7 @@ import os
 
 from core import HackingTool
 from core import HackingToolsCollection
+from core.utils import run_command
 
 
 class AnonymouslySurf(HackingTool):
