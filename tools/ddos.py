@@ -39,6 +39,7 @@ class Asyncrone(HackingTool):
         run_command(
             f"sudo ./aSYNcrone {source_port} {target_ip} {target_port} 1000",
             cwd="aSYNcrone",
+            shell=True,
         )
 
 
@@ -50,6 +51,13 @@ class UFONet(HackingTool):
                   "More Usage Visit"
     INSTALL_COMMANDS = [
         dict(cmd="sudo git clone https://github.com/epsylon/ufonet.git"),
+        dict(
+            cmd=
+            "sudo apt-get install python3-pycurl python3-geoip python3-whois"),
+        dict(
+            cmd=
+            "sudo apt-get install python3-crypto python3-requests python3-scapy"
+        ),
         dict(cmd="sudo python3 setup.py install", cwd="ufonet"),
         dict(
             cmd=
@@ -57,9 +65,12 @@ class UFONet(HackingTool):
         ),
     ]
     RUN_COMMANDS = [
-        dict(cmd="sudo ./ufonet --gui"),
+        dict(
+            cmd="sudo python3 ./ufonet --gui",
+            cwd="ufonet",
+            shell=True,
+        ),
     ]
-    RUN_COMMANDS = ["sudo python3 ufonet --gui"]
     PROJECT_URL = "https://github.com/epsylon/ufonet"
 
 
@@ -69,7 +80,7 @@ class GoldenEye(HackingTool):
                   "GoldenEye is a HTTP DoS Test Tool."
     INSTALL_COMMANDS = [
         dict(cmd="sudo git clone https://github.com/jseidl/GoldenEye.git"),
-        dict(cmd="chmod -R 755 GoldenEye"),
+        dict(cmd="sudo chmod -R 755 GoldenEye"),
     ]
     PROJECT_URL = "https://github.com/jseidl/GoldenEye"
 
