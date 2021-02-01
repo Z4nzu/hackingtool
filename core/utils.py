@@ -21,8 +21,15 @@ def run_inshell(*args, **kwargs):
     """
     Abstract method to mask subprocess API for running commands as in shell.
     """
-    # print(args, kwargs)
-    return subprocess.run(*args, **kwargs)
+    result = None
+    try:
+        # print(args, kwargs)
+        result = subprocess.run(args, **kwargs)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        return result
+
 
 
 def run_asprocess(*args, **kwargs):
@@ -45,29 +52,33 @@ def run_command(cmd_string, cwd='', shell=False, **kwargs):
     cwd = cwd[1:] if cwd.startswith('$') else os.path.join(get_path(), cwd)
 
     if shell:
-        return run_inshell(*tasks[0].split(), shell=True, cwd=cwd)
+        # print(tasks)
+        return run_inshell(*tasks[0].split(), cwd=cwd)
 
-    for task in tasks:
-        args = task.split()
-        if len(procs):
-            proc = run_asprocess(
-                args,
-                stdin=procs[-1].stdout,
-                stdout=subprocess.PIPE,
-                cwd=cwd,
-            )
+    try:
+        for task in tasks:
+            args = task.split()
+            if len(procs):
+                proc = run_asprocess(
+                    args,
+                    stdin=procs[-1].stdout,
+                    stdout=subprocess.PIPE,
+                    cwd=cwd,
+                )
+            else:
+                proc = run_asprocess(
+                    args,
+                    stdout=subprocess.PIPE,
+                    cwd=cwd,
+                )
+            procs.append(proc)
         else:
-            proc = run_asprocess(
-                args,
-                stdout=subprocess.PIPE,
-                cwd=cwd,
-            )
-        procs.append(proc)
-    else:
-        if len(procs):
-            output = procs[-1].communicate()[0]
-            print(output.decode('utf-8'))
-    exit_codes = [ps.wait() for ps in procs]
+            if len(procs):
+                output = procs[-1].communicate()[0]
+                print(output.decode('utf-8'))
+        exit_codes = [ps.wait() for ps in procs]
+    except KeyboardInterrupt:
+        pass
     return exit_codes
 
 
