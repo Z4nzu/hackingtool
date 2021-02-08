@@ -1,4 +1,7 @@
 import subprocess, os
+from functools import reduce, partial
+from collections import Sequence
+from itertools import groupby
 
 
 def get_path():
@@ -23,7 +26,7 @@ def run_inshell(*args, **kwargs):
     """
     result = None
     try:
-        # print(args, kwargs)
+        print("shell -- ", args, kwargs)
         result = subprocess.run(args, **kwargs)
     except KeyboardInterrupt:
         pass
@@ -31,55 +34,72 @@ def run_inshell(*args, **kwargs):
         return result
 
 
-
-def run_asprocess(*args, **kwargs):
+def run_asprocess(*args, stdout=subprocess.PIPE, **kwargs):
     """
     Abstract method to mask subprocess API to execute commands.
     Returns the process.
     """
-    # print(args, kwargs)
-    return subprocess.Popen(*args, **kwargs)
+    print("process -- ", args, kwargs)
+    return subprocess.Popen(*args, stdout=stdout, **kwargs)
 
 
-def run_command(cmd_string, cwd='', shell=False, **kwargs):
+def pipe_process(proc, task, cwd=get_path()):
+    """
+    """
+    if proc is None:
+        return run_asprocess(task, cwd=cwd)
+    return run_asprocess(task, stdin=proc.stdout, cwd=cwd)
+
+
+def get_command_args(command):
+    """
+    """
+    if isinstance(command, str):
+        return command.split()
+
+    if isinstance(command, Sequence):
+        return command
+
+    raise Exception("Invalid command")
+
+
+def parse_tasks(command):
+    """
+    """
+    t = list(map(str.strip, get_command_args(command)))
+    print("t", t)
+    g = [list(group) for k, group in groupby(t, lambda x: x == "|") if not k]
+    print(g)
+    return g if len(g) else t
+
+
+def run_command(command, cwd='', shell=False, **kwargs):
     """
     Runs an os command using subprocess module.
     Supports pipe operator.
     `;`, `&&` and other shell operators not recommended.
     """
-    piped_commands, exit_codes, procs = cmd_string.split('|'), [], []
-    tasks, output = list(map(str.strip, piped_commands)), None
+    tasks = parse_tasks(command)
+    print(tasks)
+    status, procs = 1, []
     cwd = cwd[1:] if cwd.startswith('$') else os.path.join(get_path(), cwd)
 
     if shell:
         # print(tasks)
-        return run_inshell(*tasks[0].split(), cwd=cwd)
+        return run_inshell(*tasks[0], cwd=cwd)
 
     try:
-        for task in tasks:
-            args = task.split()
-            if len(procs):
-                proc = run_asprocess(
-                    args,
-                    stdin=procs[-1].stdout,
-                    stdout=subprocess.PIPE,
-                    cwd=cwd,
-                )
-            else:
-                proc = run_asprocess(
-                    args,
-                    stdout=subprocess.PIPE,
-                    cwd=cwd,
-                )
-            procs.append(proc)
-        else:
-            if len(procs):
-                output = procs[-1].communicate()[0]
-                print(output.decode('utf-8'))
-        exit_codes = [ps.wait() for ps in procs]
+        process = reduce(
+            partial(pipe_process, cwd=cwd),
+            tasks,
+            None,
+        )
+        output = process.communicate()[0]
+        if output is not None:
+            print(output.decode('utf-8'))
     except KeyboardInterrupt:
         pass
-    return exit_codes
+    return status
 
 
 def get_go_path(key='GOPATH', recursive=False):

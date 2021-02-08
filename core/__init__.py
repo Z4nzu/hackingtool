@@ -67,7 +67,7 @@ class HackingTool(object):
         if self.PROJECT_URL:
             desc += '\n\t[*] '
             desc += self.PROJECT_URL
-        run_command(f'echo "{desc}"|boxes -d boy | lolcat')
+        run_command(['echo', desc, '|', 'boxes', '-d', 'boy', '|', 'lolcat'])
         # print(desc)
 
     def show_options(self, parent=None):
