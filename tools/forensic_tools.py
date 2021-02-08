@@ -12,12 +12,20 @@ class Autopsy(HackingTool):
                   "[!] Works in any Os\n" \
                   "[!] Recover Deleted Files from any OS & MEdia \n" \
                   "[!] Extract Image Metadata"
+
+    INSTALL_COMMANDS = [
+        dict(cmd="sudo apt install autopsy"),
+    ]
+
     RUN_COMMANDS = [
-        dict(cmd="sudo autopsy"),
+        dict(
+            cmd="sudo autopsy",
+            shell=True,
+        ),
     ]
 
     def __init__(self):
-        super(Autopsy, self).__init__(installable=False)
+        super(Autopsy, self).__init__(installable=True)
 
 
 class Wireshark(HackingTool):
@@ -25,12 +33,20 @@ class Wireshark(HackingTool):
     DESCRIPTION = "Wireshark is a network capture and analyzer \n" \
                   "tool to see what’s happening in your network.\n " \
                   "And also investigate Network related incident"
+
+    INSTALL_COMMANDS = [
+        dict(cmd="sudo apt install wireshark"),
+    ]
+
     RUN_COMMANDS = [
-        dict(cmd="sudo wireshark"),
+        dict(
+            cmd="sudo wireshark",
+            shell=True,
+        ),
     ]
 
     def __init__(self):
-        super(Wireshark, self).__init__(installable=False)
+        super(Wireshark, self).__init__(installable=True)
 
 
 class BulkExtractor(HackingTool):
@@ -39,11 +55,12 @@ class BulkExtractor(HackingTool):
     PROJECT_URL = "https://github.com/simsong/bulk_extractor"
 
     def __init__(self):
-        super(BulkExtractor,
-              self).__init__([('GUI Mode (Download required)', self.gui_mode),
-                              ('CLI Mode', self.cli_mode)],
-                             installable=False,
-                             runnable=False)
+        super(BulkExtractor, self).__init__(
+            [('GUI Mode (Download required)', self.gui_mode),
+             ('CLI Mode', self.cli_mode)],
+            installable=False,
+            runnable=False,
+        )
 
     def gui_mode(self):
         run_command(
@@ -68,7 +85,9 @@ class BulkExtractor(HackingTool):
 class Guymager(HackingTool):
     TITLE = "Disk Clone and ISO Image Aquire"
     DESCRIPTION = "Guymager is a free forensic imager for media acquisition."
-    INSTALL_COMMANDS = ["sudo apt install guymager"]
+    INSTALL_COMMANDS = [
+        dict(cmd="sudo apt install guymager -y"),
+    ]
     RUN_COMMANDS = [
         dict(cmd="sudo guymager"),
     ]
