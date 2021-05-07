@@ -9,15 +9,12 @@ class Sqlmap(HackingTool):
                   "automates the process of \n" \
                   "detecting and exploiting SQL injection flaws and taking " \
                   "over of database servers \n " \
-                  "[!] python sqlmap.py -u [<http://example.com>] --batch --banner \n " \
+                  "[!] python3 sqlmap.py -u [<http://example.com>] --batch --banner \n " \
                   "More Usage [!] https://github.com/sqlmapproject/sqlmap/wiki/Usage"
     INSTALL_COMMANDS = [
         "sudo git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev"]
+    RUN_COMMANDS = ["cd sqlmap-dev;python3 sqlmap.py --wizard"]
     PROJECT_URL = "https://github.com/sqlmapproject/sqlmap"
-
-    def __init__(self):
-        super(Sqlmap, self).__init__(runnable = False)
-
 
 class NoSqlMap(HackingTool):
     TITLE = "NoSqlMap"

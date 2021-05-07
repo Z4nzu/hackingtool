@@ -60,7 +60,7 @@ class Sherlock(HackingTool):
 
     def run(self):
         name = input("Enter Username >> ")
-        os.system("cd sherlock;")
+        os.chdir('sherlock')
         subprocess.run(["sudo", "python3", "sherlock", f"{name}"])
 
 

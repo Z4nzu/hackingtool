@@ -33,14 +33,14 @@ class SubDomainFinder(HackingTool):
     DESCRIPTION = "Sublist3r is a python tool designed to enumerate " \
                   "subdomains of websites using OSINT \n " \
                   "Usage:\n\t" \
-                  "[1] python sublist3r.py -d example.com \n" \
-                  "[2] python sublist3r.py -d example.com -p 80,443"
+                  "[1] python3 sublist3r.py -d example.com \n" \
+                  "[2] python3 sublist3r.py -d example.com -p 80,443"
     INSTALL_COMMANDS = [
-        "sudo pip install requests argparse dnspython",
+        "sudo pip3 install requests argparse dnspython",
         "sudo git clone https://github.com/aboul3la/Sublist3r.git",
-        "cd Sublist3r && sudo pip install -r requirements.txt"
+        "cd Sublist3r && sudo pip3 install -r requirements.txt"
     ]
-    RUN_COMMANDS = ["cd Sublist3r && python sublist3r.py -h"]
+    RUN_COMMANDS = ["cd Sublist3r && python3 sublist3r.py -h"]
     PROJECT_URL = "https://github.com/aboul3la/Sublist3r"
 
 
@@ -59,9 +59,9 @@ class Blazy(HackingTool):
     DESCRIPTION = "Blazy is a modern login page bruteforcer"
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/UltimateHackers/Blazy.git",
-        "cd Blazy && sudo pip install -r requirements.txt"
+        "cd Blazy && sudo pip2.7 install -r requirements.txt"
     ]
-    RUN_COMMANDS = ["cd Blazy && sudo python blazy.py"]
+    RUN_COMMANDS = ["cd Blazy && sudo python2.7 blazy.py"]
     PROJECT_URL = "https://github.com/UltimateHackers/Blazy"
 
 
@@ -81,7 +81,6 @@ class SubDomainTakeOver(HackingTool):
     def __init__(self):
         super(SubDomainTakeOver, self).__init__(runnable = False)
 
-
 class Dirb(HackingTool):
     TITLE = "Dirb"
     DESCRIPTION = "DIRB is a Web Content Scanner. It looks for existing " \
@@ -90,7 +89,7 @@ class Dirb(HackingTool):
                   "attack against \n a web server and analizing the response."
     INSTALL_COMMANDS = [
         "sudo git clone https://gitlab.com/kalilinux/packages/dirb.git",
-        "cd dirb;sudo ./configure;make"
+        "cd dirb;sudo bash configure;make"
     ]
     PROJECT_URL = "https://gitlab.com/kalilinux/packages/dirb"
 

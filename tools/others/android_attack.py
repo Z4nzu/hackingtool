@@ -42,7 +42,7 @@ class Droidcam(HackingTool):
         "sudo git clone https://github.com/kinghacker0/WishFish.git;"
         "sudo apt install php wget openssh-client"
     ]
-    RUN_COMMANDS = ["cd wishfish && sudo bash wishfish.sh"]
+    RUN_COMMANDS = ["cd WishFish && sudo bash wishfish.sh"]
     PROJECT_URL = "https://github.com/kinghacker0/WishFish"
 
 
@@ -52,7 +52,7 @@ class EvilApp(HackingTool):
                   "hijack authenticated sessions in cookies."
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/crypticterminal/EvilApp.git"]
-    RUN_COMMANDS = ["cd evilapp && bash evilapp.sh"]
+    RUN_COMMANDS = ["cd EvilApp && bash evilapp.sh"]
     PROJECT_URL = "https://github.com/crypticterminal/EvilApp"
 
 

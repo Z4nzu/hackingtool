@@ -11,14 +11,14 @@ class InstaBrute(HackingTool):
     DESCRIPTION = "Brute force attack against Instagram"
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/chinoogawa/instaBrute.git",
-        "cd instaBrute;sudo pip install -r requirements.txt"
+        "cd instaBrute;sudo pip2.7 install -r requirements.txt"
     ]
     PROJECT_URL = "https://github.com/chinoogawa/instaBrute"
 
     def run(self):
         name = input("Enter Username >> ")
         wordlist = input("Enter wordword list >> ")
-        os.system("cd instaBrute;")
+        os.chdir("instaBrute")
         subprocess.run(
             ["sudo", "python", "instaBrute.py", "-u", f"{name}", "-d",
              f"{wordlist}"])
@@ -48,7 +48,7 @@ class Faceshell(HackingTool):
     def run(self):
         name = input("Enter Username >> ")
         wordlist = input("Enter Wordlist >> ")
-        os.system("cd Brute_Force;")
+        os.chdir("Brute_Force")
         subprocess.run(
             ["python3", "Brute_Force.py", "-f", f"{name}", "-l", f"{wordlist}"])
 

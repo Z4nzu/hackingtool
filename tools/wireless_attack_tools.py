@@ -14,9 +14,9 @@ class WIFIPumpkin(HackingTool):
     INSTALL_COMMANDS = [
         "sudo apt install libssl-dev libffi-dev build-essential",
         "sudo git clone https://github.com/P0cL4bs/wifipumpkin3.git",
-        "chmod -R 755 wifipumpkin3 && cd wifipumpkin3",
+        "chmod -R 755 wifipumpkin3",
         "sudo apt install python3-pyqt5",
-        "sudo python3 setup.py install"
+        "cd wifipumpkin3;sudo python3 setup.py install"
     ]
     RUN_COMMANDS = ["sudo wifipumpkin3"]
     PROJECT_URL = "https://github.com/P0cL4bs/wifipumpkin3"
@@ -53,10 +53,10 @@ class BluePot(HackingTool):
                   "You must install/libbluetooth-dev on " \
                   "Ubuntu/bluez-libs-devel on Fedora/bluez-devel on openSUSE"
     INSTALL_COMMANDS = [
-        "wget https://github.com/andrewmichaelsmith/bluepot/raw/master/bin/bluepot-0.1.tar.gz "
-        "&& tar xfz bluepot-0.1.tar.gz && sudo java -jar bluepot/BluePot-0.1.jar"
+        "sudo wget https://raw.githubusercontent.com/andrewmichaelsmith/bluepot/master/bin/bluepot-0.2.tar.gz"
+        "sudo tar xfz bluepot-0.2.tar.gz;sudo rm bluepot-0.2.tar.gz"
     ]
-    RUN_COMMANDS = ["cd bluepot-0.1 && sudo java -jar bluepot/BluePot-0.1.jar"]
+    RUN_COMMANDS = ["cd bluepot && sudo java -jar bluepot.jar"]
     PROJECT_URL = "https://github.com/andrewmichaelsmith/bluepot"
 
 
@@ -91,10 +91,10 @@ class Wifiphisher(HackingTool):
 
 class Wifite(HackingTool):
     TITLE = "Wifite"
+    DESCRIPTION = "Wifite is an automated wireless attack tool"
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/derv82/wifite2.git",
         "cd wifite2 && sudo python3 setup.py install"
-        ";sudo pip3 install -r requirements.txt"
     ]
     RUN_COMMANDS = ["cd wifite2; sudo wifite"]
     PROJECT_URL = "https://github.com/derv82/wifite2"

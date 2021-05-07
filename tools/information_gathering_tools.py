@@ -30,11 +30,11 @@ class Dracnmap(HackingTool):
         "sudo git clone https://github.com/Screetsec/Dracnmap.git",
         "cd Dracnmap && chmod +x dracnmap-v2.2-dracOs.sh  dracnmap-v2.2.sh"
     ]
-    RUN_COMMANDS = ["sudo ./dracnmap-v2.2.sh"]
+    RUN_COMMANDS = ["cd Dracnmap;sudo ./dracnmap-v2.2.sh"]
     PROJECT_URL = "https://github.com/Screetsec/Dracnmap"
 
-    def __init__(self):
-        super(Dracnmap, self).__init__(runnable = False)
+#    def __init__(self):
+#        super(Dracnmap, self).__init__(runnable = False)
 
 
 class PortScan(HackingTool):
@@ -93,10 +93,11 @@ class ReconSpider(HackingTool):
         "sudo git clone https://github.com/bhavsec/reconspider.git",
         "sudo apt install python3 python3-pip && cd reconspider && sudo python3 setup.py install"
     ]
+    RUN_COMMANDS = ["cd reconspider;python3 reconspider.py"]
     PROJECT_URL = "https://github.com/bhavsec/reconspider"
 
-    def __init__(self):
-        super(ReconSpider, self).__init__(runnable = False)
+#    def __init__(self):
+#        super(ReconSpider, self).__init__(runnable = False)
 
 
 class IsItDown(HackingTool):
@@ -117,9 +118,9 @@ class Infoga(HackingTool):
                   "(ip, hostname, country,...) from different public source"
     INSTALL_COMMANDS = [
         "git clone https://github.com/m4ll0k/Infoga.git",
-        "cd infoga;sudo python setup.py install"
+        "cd Infoga;sudo python3 setup.py install"
     ]
-    RUN_COMMANDS = ["cd infoga;python infoga.py"]
+    RUN_COMMANDS = ["cd Infoga;python3 infoga.py"]
     PROJECT_URL = "https://github.com/m4ll0k/Infoga"
 
 
@@ -142,7 +143,7 @@ class Striker(HackingTool):
 
     def run(self):
         site = input("Enter Site Name (example.com) >> ")
-        os.system("cd Striker;")
+        os.chdir("Striker")
         subprocess.run(["sudo", "python3", "striker.py", site])
 
 
@@ -185,7 +186,7 @@ class PortScannerRanger(HackingTool):
 
     def run(self):
         ip = input("Enter Ip >> ")
-        os.system("cd rang3r;")
+        os.chdir("rang3r")
         subprocess.run(["sudo", "python", "rang3r.py", "--ip", ip])
 
 
@@ -194,10 +195,11 @@ class Breacher(HackingTool):
     DESCRIPTION = "An advanced multithreaded admin panel finder written in python."
     INSTALL_COMMANDS = ["git clone https://github.com/s0md3v/Breacher.git"]
     PROJECT_URL = "https://github.com/s0md3v/Breacher"
-
-    def __init__(self):
-        super(Breacher, self).__init__(runnable = False)
-
+    
+    def run(self):
+        domain = input("Enter domain (example.com) >> ")
+        os.chdir("Breacher")
+        subprocess.run(["python3", "breacher.py", "-u", domain])
 
 class InformationGatheringTools(HackingToolsCollection):
     TITLE = "Information gathering tools"
