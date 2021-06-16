@@ -1,4 +1,4 @@
-### All in One Hacking tool For Hackers🥇
+### All in One Hacking tool For Hacker
 ![](https://img.shields.io/github/license/Z4nzu/hackingtool)
 ![](https://img.shields.io/github/issues/Z4nzu/hackingtool)
 ![](https://img.shields.io/github/issues-closed/Z4nzu/hackingtool)
