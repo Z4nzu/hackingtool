@@ -19,6 +19,8 @@
     - [x] Payload Injector
 - [x] Multitor Tools update
 - [X] Added Tool in wifijamming
+- [X] Added Tool in steganography
+
 
 
 # Hackingtool Menu 🧰
@@ -159,6 +161,7 @@
 ### Steganograhy tools
 - SteganoHide
 - StegnoCracker
+- [StegoCracker](https://github.com/W1LDN16H7/StegoCracker)
 - [Whitespace](https://github.com/beardog108/snow10)
 ### Other tools
 #### SocialMedia Bruteforce

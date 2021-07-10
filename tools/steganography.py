@@ -47,6 +47,20 @@ class StegnoCracker(HackingTool):
         passfile = input("Enter Wordlist Filename:- ")
         subprocess.run(["stegcracker", filename, passfile])
 
+        
+class StegoCracker(HackingTool):
+    TITLE = "StegoCracker"
+    DESCRIPTION = "StegoCracker is a tool that let's you hide data into image or audio files and can retrieve from a file " 
+                  
+    INSTALL_COMMANDS = [
+        "sudo git clone https://github.com/W1LDN16H7/StegoCracker.git",
+        "sudo chmod -R 755 StegoCracker"
+    ]
+    RUN_COMMANDS = ["cd StegoCracker && python3 -m pip install -r requirements.txt ",
+                   "./install.sh"
+    ]
+    PROJECT_URL = "https://github.com/W1LDN16H7/StegoCracker"
+    
 
 class Whitespace(HackingTool):
     TITLE = "Whitespace"
@@ -55,7 +69,7 @@ class Whitespace(HackingTool):
         "sudo git clone https://github.com/beardog108/snow10.git",
         "sudo chmod -R 755 snow10"
     ]
-    RUN_COMMANDS = ["cd snow10 && firefox index.html"]
+    RUN_COMMANDS = ["cd snow10 && ./install.sh"]
     PROJECT_URL = "https://github.com/beardog108/snow10"
 
 
@@ -64,5 +78,8 @@ class SteganographyTools(HackingToolsCollection):
     TOOLS = [
         SteganoHide(),
         StegnoCracker(),
+        StegoCracker(),
         Whitespace()
+        
+        
     ]
