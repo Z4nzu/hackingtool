@@ -141,6 +141,7 @@
 - [Apk2Gold](https://github.com/lxdvs/apk2gold )
 - [JadX](https://github.com/skylot/jadx)
 ### DDOS Attack Tools
+- [ddos | Best DDoS Attack Script With 36 Plus Methods](https://github.com/the-deepnet/ddos)
 - SlowLoris
 - [Asyncrone | Multifunction SYN Flood DDoS Weapon](https://github.com/fatihsnsy/aSYNcrone)
 - [UFOnet](https://github.com/epsylon/ufonet)
