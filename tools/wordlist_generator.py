@@ -8,7 +8,7 @@ class Cupp(HackingTool):
     DESCRIPTION = "WlCreator is a C program that can create all possibilities of passwords,\n " \
                   "and you can choose Length, Lowercase, Capital, Numbers and Special Chars"
     INSTALL_COMMANDS = ["git clone https://github.com/Mebus/cupp.git"]
-    RUN_COMMANDS = ["python3 cupp.py -i"]
+    RUN_COMMANDS = ["cd cupp && python3 cupp.py -i"]
     PROJECT_URL = "https://github.com/Mebus/cupp"
 
 
