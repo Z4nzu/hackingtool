@@ -43,7 +43,7 @@ if [ $choice == 1 ]; then
 	if [[ $? -eq 0 ]]; then
 	    echo -e ${BLUE}"[✔] Loading ... "
 	    sudo apt-get update && apt-get upgrade 
-	    sudo apt-get install python-pip
+	    sudo apt-get install python3-pip
 	    echo "[✔] Checking directories..."
 	    if [ -d "$INSTALL_DIR" ]; then
 	        echo "[!] A Directory hackingtool Was Found.. Do You Want To Replace It ? [y/n]:" ;
