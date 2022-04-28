@@ -82,7 +82,7 @@ if [ $choice == 1 ] || [ $choice == 2 ]; then
         sudo pip3 install lolcat
         sudo pacman -S figlet
         sudo pip3 install boxes
-        sudo yay -S boxes --noconfirm
+        yay -S boxes --noconfirm
         sudo pip3 install flask
         sudo pip3 install requests
     fi
