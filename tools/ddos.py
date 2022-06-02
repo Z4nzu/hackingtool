@@ -26,7 +26,7 @@ class ddos(HackingTool):
         timer = input(" Enter Timer >> ")
         os.system("cd ddos;")
         subprocess.run([
-            "sudo", "python3 ddos", method, url, socks_type5.4.1, threads, proxylist, multiple, timer])
+            "sudo", "python3 ddos", method, url, "socks_type5.4.1", threads, proxylist, multiple, timer])
 
 
 class SlowLoris(HackingTool):
