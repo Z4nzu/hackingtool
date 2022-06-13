@@ -43,7 +43,7 @@ class HackingTool(object):
 
     def __init__(self, options = None, installable: bool = True,
                  runnable: bool = True):
-        options  = options or []
+        options = options or []
         if isinstance(options, list):
             self.OPTIONS = []
             if installable:
