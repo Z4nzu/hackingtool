@@ -45,7 +45,7 @@ if [ $choice == 1 ] || [ $choice == 2 ]; then
 	    echo -e ${BLUE}"[✔] Loading ... "
       if [ $choice == 1 ]; then
 	        sudo apt-get update && apt-get upgrade
-	        sudo apt-get install python-pip
+	        sudo apt-get install python3-pip
       elif [ $choice == 2 ]; then # added arch linux support because of feature request #231
           sudo pacman -Suy
           sudo pacman -S python-pip
