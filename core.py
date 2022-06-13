@@ -21,7 +21,7 @@ def validate_input(ip, val_range):
         if ip in val_range:
             return ip
     except Exception:
-        pass
+        return None
     return None
 
 
