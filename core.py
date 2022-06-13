@@ -11,21 +11,18 @@ from typing import Tuple
 
 
 def clear_screen():
-    if system() == "Linux":
-        os.system("clear")
-    if system() == "Windows":
-        os.system("cls")
+    os.system("cls" if system() == "Windows" else "clear")
 
 
 def validate_input(ip, val_range):
+    val_range = val_range or []
     try:
         ip = int(ip)
         if ip in val_range:
             return ip
-        else:
-            return None
-    except:
-        return None
+    except Exception:
+        pass
+    return None
 
 
 class HackingTool(object):
@@ -46,8 +43,7 @@ class HackingTool(object):
 
     def __init__(self, options = None, installable: bool = True,
                  runnable: bool = True):
-        if options is None:
-            options = []
+        options  = options or []
         if isinstance(options, list):
             self.OPTIONS = []
             if installable:
@@ -176,7 +172,7 @@ class HackingToolsCollection(object):
         except (TypeError, ValueError):
             print("Please enter a valid option")
             input("\n\nPress ENTER to continue:")
-        except Exception as e:
+        except Exception:
             print_exc()
             input("\n\nPress ENTER to continue:")
         return self.show_options(parent = parent)
