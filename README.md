@@ -158,6 +158,7 @@
 - [XanXSS](https://github.com/Ekultek/XanXSS)
 - [Advanced XSS Detection Suite](https://github.com/UltimateHackers/XSStrike)
 - [RVuln](https://github.com/iinc0gnit0/RVuln)
+- [Cyclops](https://github.com/v8blink/Chromium-based-XSS-Taint-Tracking) 
 ### Steganograhy tools
 - SteganoHide
 - StegnoCracker
