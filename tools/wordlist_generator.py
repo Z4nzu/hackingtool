@@ -15,7 +15,7 @@ class Cupp(HackingTool):
 class WlCreator(HackingTool):
     TITLE = "WordlistCreator"
     DESCRIPTION = "WlCreator is a C program that can create all possibilities" \
-                  " of passwords,\n and you can choose Lenght, Lowercase, " \
+                  " of passwords,\n and you can choose Length, Lowercase, " \
                   "Capital, Numbers and Special Chars"
     INSTALL_COMMANDS = ["sudo git clone https://github.com/Z4nzu/wlcreator.git"]
     RUN_COMMANDS = [
