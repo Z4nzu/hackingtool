@@ -105,13 +105,14 @@ if __name__ == "__main__":
                 if not os.path.exists(archive):
                     os.mkdir(archive)
                 os.chdir(archive)
-                all_tools = AllTools()
-                all_tools.show_options()
+                AllTools().show_options()
 
         # If not Linux and probably Windows
         elif system() == "Windows":
             print(
-                "\033[91m Please Run This Tool On A Debian System For Best Results " "\e[00m")
+                "\033[91m Please Run This Tool On A Debian System For Best Results "
+               r"\e[00m"
+            )
             sleep(2)
             webbrowser.open_new_tab("https://tinyurl.com/y522modc")
 
