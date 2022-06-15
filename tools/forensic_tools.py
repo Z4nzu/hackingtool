@@ -8,10 +8,10 @@ from core import HackingToolsCollection
 class Autopsy(HackingTool):
     TITLE = "Autopsy"
     DESCRIPTION = "Autopsy is a platform that is used by Cyber Investigators.\n" \
-                  "[!] Works in any Os\n" \
-                  "[!] Recover Deleted Files from any OS & MEdia \n" \
+                  "[!] Works in any OS\n" \
+                  "[!] Recover Deleted Files from any OS & Media \n" \
                   "[!] Extract Image Metadata"
-    RUN_COMMANDS = "sudo autopsy"
+    RUN_COMMANDS = ["sudo autopsy"]
 
     def __init__(self):
         super(Autopsy, self).__init__(installable = False)
