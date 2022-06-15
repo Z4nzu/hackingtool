@@ -110,8 +110,7 @@ if __name__ == "__main__":
         # If not Linux and probably Windows
         elif system() == "Windows":
             print(
-                "\033[91m Please Run This Tool On A Debian System For Best Results "
-               r"\e[00m"
+                r"\033[91m Please Run This Tool On A Debian System For Best Results\e[00m"
             )
             sleep(2)
             webbrowser.open_new_tab("https://tinyurl.com/y522modc")
