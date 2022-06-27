@@ -37,7 +37,7 @@
 - [Exploit framework](#exploit-framework)
 - [Reverse engineering tools](#reverse-engineering-tools)
 - [DDOS Attack Tools](#ddos-attack-tools)
-- [Remote Administrator Tools (RAT)](#remote-administrator-tools--rat-)
+- [Remote Administrator Tools (RAT)](#remote-administrator-tools-rat)
 - [XSS Attack Tools](#xss-attack-tools)
 - [Steganograhy tools](#steganograhy-tools)
 - [Other tools](#other-tools)
