@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -e
+
 clear
 
 BLACK='\e[30m'
@@ -26,11 +29,8 @@ echo "  ███    █▀      ███    █▀  ████████�
 echo "                                         ▀                                                                            ▀         ";
 
 echo -e "${BLUE}                                    https://github.com/Z4nzu/hackingtool ${NC}"
-
-echo -e "${RED}                                   [!] This Tool Must Run As ROOT [!]${NC}"
-echo ""
-echo -e ${CYAN}              "Select Best Option : "
-echo ""
+echo -e "${RED}                                     [!] This Tool Must Run As ROOT [!]${NC}\n"
+echo -e ${CYAN}                "Select Best Option : \n"
 echo -e "${WHITE}              [1] Kali Linux / Parrot-Os (apt)"
 echo -e "${WHITE}              [2] Arch Linux (pacman)" # added arch linux support because of feature request #231
 echo -e "${WHITE}              [0] Exit "
@@ -42,15 +42,15 @@ if [ $choice == 1 ] || [ $choice == 2 ]; then
 	echo "[*] Checking Internet Connection .."
 	wget -q --tries=10 --timeout=20 --spider https://google.com
 	if [[ $? == 0 ]]; then
-	    echo -e ${BLUE}"[✔] Loading ... "
-      if [ $choice == 1 ]; then
-	        sudo apt-get update && apt-get upgrade
-	        sudo apt-get install python3-pip
-      elif [ $choice == 2 ]; then # added arch linux support because of feature request #231
-          sudo pacman -Suy
-          sudo pacman -S python-pip
-          sudo pacman -S yay
-      fi
+        echo -e ${BLUE}"[✔] Loading ... "
+        if [ $choice == 1 ]; then
+            sudo apt-get update -y && apt-get upgrade -y
+            sudo apt-get install python3-pip -y
+        elif [ $choice == 2 ]; then # added arch linux support because of feature request #231
+            sudo pacman -Suy
+            sudo pacman -S python-pip yay
+        fi
+
 	    echo "[✔] Checking directories..."
 	    if [ -d "$INSTALL_DIR" ]; then
 	        echo "[!] A Directory hackingtool Was Found.. Do You Want To Replace It ? [y/n]:" ;
@@ -61,45 +61,36 @@ if [ $choice == 1 ] || [ $choice == 2 ]; then
 	            exit
 	        fi
 	    fi
-    		echo "[✔] Installing ...";
-		echo "";
-		sudo git clone https://github.com/Z4nzu/hackingtool.git "$INSTALL_DIR";
-		echo "#!/bin/bash
-		python3 $INSTALL_DIR/hackingtool.py" '${1+"$@"}' > hackingtool;
-		sudo chmod +x hackingtool;
-		sudo cp hackingtool /usr/bin/;
-		rm hackingtool;
-		echo "";
-		echo "[✔] Trying to installing Requirements ..."
-    if [ $choice == 1 ]; then
-		    sudo pip3 install lolcat
-		    sudo apt-get install -y figlet
-		    sudo pip3 install boxes
-		    sudo apt-get install boxes
-		    sudo pip3 install flask
-		    sudo pip3 install requests
-    elif [ $choice == 2 ]; then # added arch linux support because of feature request #231
-        sudo pip3 install lolcat
-        sudo pacman -S figlet
-        sudo pip3 install boxes
-        yay -S boxes --noconfirm
-        sudo pip3 install flask
-        sudo pip3 install requests
-    fi
+
+        echo "[✔] Installing ...\n";
+        sudo git clone https://github.com/Z4nzu/hackingtool.git "$INSTALL_DIR";
+        echo "#!/bin/bash
+        python3 $INSTALL_DIR/hackingtool.py" '${1+"$@"}' > hackingtool;
+        sudo chmod +x hackingtool;
+        sudo cp hackingtool /usr/bin/ && rm hackingtool;
+
+        echo "\n[✔] Trying to installing Requirements ..."
+        if [ $choice == 1 ]; then
+            sudo pip3 install lolcat boxes flask requests
+            sudo apt-get install -y figlet
+        elif [ $choice == 2 ]; then # added arch linux support because of feature request #231
+            sudo pip3 install lolcat boxes flask requests
+            yay -S boxes --noconfirm
+            sudo pacman -S figlet
+        fi
+
 	else
 		  echo -e $RED "Please Check Your Internet Connection ..!!"
 	fi
 
     if [ -d "$INSTALL_DIR" ]; then
         echo "";
-        echo "[✔] Successfuly Installed !!! ";
-        echo "";
-        echo "";
-        echo -e $ORANGE "		[+]+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[+]"
-        echo 		"		[+]						      		[+]"
-        echo -e $ORANGE  "		[+]     ✔✔✔ Now Just Type In Terminal (hackingtool) ✔✔✔ 	[+]"
-        echo 		"		[+]						      		[+]"
-        echo -e $ORANGE "		[+]+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[+]"
+        echo "[✔] Successfuly Installed !!! \n\n";
+        echo -e $ORANGE "       [+]+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[+]"
+        echo            "       [+]                                                             [+]"
+        echo -e $ORANGE "       [+]     ✔✔✔ Now Just Type In Terminal (hackingtool) ✔✔✔         [+]"
+        echo            "       [+]                                                             [+]"
+        echo -e $ORANGE "       [+]+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[+]"
     else
         echo "[✘] Installation Failed !!! [✘]";
         exit
