@@ -5,7 +5,7 @@ from core import HackingTool
 from core import HackingToolsCollection
 
 class autophisher(HackingTool):
-    TITLE = "Autophisher RK - Automated Phishing Toolkit"
+    TITLE = "Autophisher RK "
     DESCRIPTION = "Automated Phishing Toolkit"
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/CodingRanjith/autophisher.git",
@@ -16,7 +16,7 @@ class autophisher(HackingTool):
 
 
 class Setoolkit(HackingTool):
-    TITLE = "Setoolkit - The Social-Engineer Toolkit is an open-source penetration"
+    TITLE = "Setoolkit"
     DESCRIPTION = "The Social-Engineer Toolkit is an open-source penetration\n" \
                   "testing framework designed for social enginee"
     INSTALL_COMMANDS = [
@@ -28,7 +28,7 @@ class Setoolkit(HackingTool):
 
 
 class SocialFish(HackingTool):
-    TITLE = "SocialFish - Automated Phishing Tool & Information Collector"
+    TITLE = "SocialFish"
     DESCRIPTION = "Automated Phishing Tool & Information Collector NOTE: username is 'root' and password is 'pass'"
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/UndeadSec/SocialFish.git && sudo apt-get install python3 python3-pip python3-dev -y",
@@ -39,7 +39,7 @@ class SocialFish(HackingTool):
 
 
 class HiddenEye(HackingTool):
-    TITLE = "HiddenEye - Modern Phishing Tool With Advanced Functionality"
+    TITLE = "HiddenEye"
     DESCRIPTION = "Modern Phishing Tool With Advanced Functionality And " \
                   "Multiple Tunnelling Services \n" \
                   "\t [!]https://github.com/DarkSecDevelopers/HiddenEye"
@@ -52,7 +52,7 @@ class HiddenEye(HackingTool):
 
 
 class Evilginx2(HackingTool):
-    TITLE = "Evilginx2 - Man-in-the-middle attack framework used"
+    TITLE = "Evilginx2"
     DESCRIPTION = "evilginx2 is a man-in-the-middle attack framework used " \
                   "for phishing login credentials along with session cookies,\n" \
                   "which in turn allows to bypass 2-factor authentication protection.\n\n\t " \
@@ -71,7 +71,7 @@ class Evilginx2(HackingTool):
 
 
 class ISeeYou(HackingTool):
-    TITLE = "I-See_You - Get Location using phishing attack "
+    TITLE = "I-See_You"
     DESCRIPTION = "[!] ISeeYou is a tool to find Exact Location of Victom By" \
                   " User SocialEngineering or Phishing Engagment..\n" \
                   "[!] Users can expose their local servers to the Internet " \
@@ -85,7 +85,7 @@ class ISeeYou(HackingTool):
 
 
 class SayCheese(HackingTool):
-    TITLE = "SayCheese - Grab target's Webcam Shots "
+    TITLE = "SayCheese"
     DESCRIPTION = "Take webcam shots from target just sending a malicious link"
     INSTALL_COMMANDS = ["sudo git clone https://github.com/hangetzzu/saycheese"]
     RUN_COMMANDS = ["cd saycheese && sudo bash saycheese.sh"]
@@ -93,7 +93,7 @@ class SayCheese(HackingTool):
 
 
 class QRJacking(HackingTool):
-    TITLE = "QR Code Jacking - QR Code Jacking Any Website"
+    TITLE = "QR Code Jacking"
     DESCRIPTION = "QR Code Jacking (Any Website)"
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/cryptedwolf/ohmyqr.git && sudo apt -y install scrot"]
@@ -102,14 +102,14 @@ class QRJacking(HackingTool):
 
 
 class ShellPhish(HackingTool):
-    TITLE = "ShellPhish - Phishing Tool for 18 social media"
+    TITLE = "ShellPhish"
     DESCRIPTION = "Phishing Tool for 18 social media"
     INSTALL_COMMANDS = ["git clone https://github.com/An0nUD4Y/shellphish.git"]
     RUN_COMMANDS = ["cd shellphish;sudo bash shellphish.sh"]
     PROJECT_URL = "https://github.com/An0nUD4Y/shellphish"
     
 class Thanos(HackingTool):
-    TITLE = "Thanos - Browser to Browser Phishingtoolkit"
+    TITLE = "Thanos"
     DESCRIPTION = "Browser to Browser Phishingtoolkit"
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/TridevReddy/Thanos.git",
@@ -119,7 +119,7 @@ class Thanos(HackingTool):
     PROJECT_URL = "https://github.com/TridevReddy/Thanos"    
     
 class QRLJacking(HackingTool):
-    TITLE = "QRLJacking - QRLJacking For Whatsapp"
+    TITLE = "QRLJacking"
     DESCRIPTION = "QRLJacking"
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/OWASP/QRLJacking.git"
@@ -130,7 +130,7 @@ class QRLJacking(HackingTool):
 
 
 class BlackPhish(HackingTool):
-    TITLE = "BlackPhish - Phishing Tool Pro"
+    TITLE = "BlackPhish"
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/iinc0gnit0/BlackPhish.git",
         "cd BlackPhish;sudo bash install.sh"
