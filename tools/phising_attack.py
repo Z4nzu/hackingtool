@@ -4,11 +4,21 @@ import os
 from core import HackingTool
 from core import HackingToolsCollection
 
+class autophisher(HackingTool):
+    TITLE = "Autophisher RK "
+    DESCRIPTION = "Automated Phishing Toolkit"
+    INSTALL_COMMANDS = [
+        "sudo git clone https://github.com/CodingRanjith/autophisher.git",
+        "cd autophisher"
+    ]
+    RUN_COMMANDS = ["cd autophisher;sudo bash autophisher.sh"]
+    PROJECT_URL = "https://github.com/CodingRanjith/autophisher"
+
 
 class Setoolkit(HackingTool):
     TITLE = "Setoolkit"
     DESCRIPTION = "The Social-Engineer Toolkit is an open-source penetration\n" \
-                  "testing framework designed for social engineering"
+                  "testing framework designed for social enginee"
     INSTALL_COMMANDS = [
         "git clone https://github.com/trustedsec/social-engineer-toolkit/",
         "cd social-engineer-toolkit && sudo python3 setup.py"
@@ -61,7 +71,7 @@ class Evilginx2(HackingTool):
 
 
 class ISeeYou(HackingTool):
-    TITLE = "I-See_You(Get Location using phishing attack)"
+    TITLE = "I-See_You"
     DESCRIPTION = "[!] ISeeYou is a tool to find Exact Location of Victom By" \
                   " User SocialEngineering or Phishing Engagment..\n" \
                   "[!] Users can expose their local servers to the Internet " \
@@ -75,7 +85,7 @@ class ISeeYou(HackingTool):
 
 
 class SayCheese(HackingTool):
-    TITLE = "SayCheese (Grab target's Webcam Shots)"
+    TITLE = "SayCheese"
     DESCRIPTION = "Take webcam shots from target just sending a malicious link"
     INSTALL_COMMANDS = ["sudo git clone https://github.com/hangetzzu/saycheese"]
     RUN_COMMANDS = ["cd saycheese && sudo bash saycheese.sh"]
@@ -93,10 +103,30 @@ class QRJacking(HackingTool):
 
 class ShellPhish(HackingTool):
     TITLE = "ShellPhish"
-    DESCRIPTION = "Fhishing Tool for 18 social media"
+    DESCRIPTION = "Phishing Tool for 18 social media"
     INSTALL_COMMANDS = ["git clone https://github.com/An0nUD4Y/shellphish.git"]
     RUN_COMMANDS = ["cd shellphish;sudo bash shellphish.sh"]
     PROJECT_URL = "https://github.com/An0nUD4Y/shellphish"
+    
+class Thanos(HackingTool):
+    TITLE = "Thanos"
+    DESCRIPTION = "Browser to Browser Phishingtoolkit"
+    INSTALL_COMMANDS = [
+        "sudo git clone https://github.com/TridevReddy/Thanos.git",
+        "cd Thanos && sudo chmod -R 777 Thanos.sh"
+    ]
+    RUN_COMMANDS = ["cd Thanos;sudo bash Thanos.sh"]
+    PROJECT_URL = "https://github.com/TridevReddy/Thanos"    
+    
+class QRLJacking(HackingTool):
+    TITLE = "QRLJacking"
+    DESCRIPTION = "QRLJacking"
+    INSTALL_COMMANDS = [
+        "sudo git clone https://github.com/OWASP/QRLJacking.git"
+        "cd QRLJacking;cd QRLJacker;sudo pip3 install -r requirements.txt;"
+    ]
+    RUN_COMMANDS = ["cd QRLJacking;cd QRLJacker;sudo python3 qrlJacker.py"]
+    PROJECT_URL = "https://github.com/OWASP/QRLJacking"      
 
 
 class BlackPhish(HackingTool):
@@ -118,6 +148,7 @@ class BlackPhish(HackingTool):
 class PhishingAttackTools(HackingToolsCollection):
     TITLE = "Phishing attack tools"
     TOOLS = [
+        autophisher(),
         Setoolkit(),
         SocialFish(),
         HiddenEye(),
@@ -126,5 +157,7 @@ class PhishingAttackTools(HackingToolsCollection):
         SayCheese(),
         QRJacking(),
         ShellPhish(),
+        Thanos(),
+        QRLJacking(),
         BlackPhish()
     ]
