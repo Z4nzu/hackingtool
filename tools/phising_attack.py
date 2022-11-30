@@ -32,13 +32,13 @@ class HiddenEye(HackingTool):
     TITLE = "HiddenEye"
     DESCRIPTION = "Modern Phishing Tool With Advanced Functionality And " \
                   "Multiple Tunnelling Services \n" \
-                  "\t [!]https://github.com/DarkSecDevelopers/HiddenEye"
+                  "\t [!]https://github.com/Morsmalleo/HiddenEye"
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/DarkSecDevelopers/HiddenEye.git ;sudo chmod 777 HiddenEye",
+        "sudo git clone https://github.com/Morsmalleo/HiddenEye.git ;sudo chmod 777 HiddenEye",
         "cd HiddenEye;sudo pip3 install -r requirements.txt;sudo pip3 install requests;pip3 install pyngrok"
     ]
     RUN_COMMANDS = ["cd HiddenEye;sudo python3 HiddenEye.py"]
-    PROJECT_URL = "https://github.com/DarkSecDevelopers/HiddenEye"
+    PROJECT_URL = "https://github.com/Morsmalleo/HiddenEye.git"
 
 
 class Evilginx2(HackingTool):
