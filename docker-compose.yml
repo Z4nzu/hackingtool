@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  hackingtool:
+    build: .
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    volumes:
+      - .:/root/hackingtool
+    ports:
+      - 22:22

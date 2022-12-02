@@ -9,7 +9,7 @@
 [![HitCount](http://hits.dwyl.com/Z4nzu/hackingtool.svg)](http://hits.dwyl.com/Z4nzu/hackingtool)
 ![](https://img.shields.io/badge/platform-Linux%20%7C%20KaliLinux%20%7C%20ParrotOs-blue)
 
-#### Install Kali Linux in WIndows10 Without VirtualBox [YOUTUBE](https://youtu.be/BsFhpIDcd9I)
+#### Install Kali Linux in WIndows10 Without VirtualBox [YOUTUBE](https://youtu.be/BsFhpIDcd9I) or use Docker
 
 ## Update Available V1.1.0 🚀 
 - [x] Added New Tools 
@@ -223,6 +223,20 @@
     sudo hackingtool
 
  After Following All Steps Just Type In Terminal **root@kaliLinux:~** **hackingtool**
+
+## Use image with Docker
+
+### Run in one click
+`docker run -it vgpastor/hackingtool`
+
+### Build locally
+`docker-compose build`
+
+`docker-compose run hackingtool`
+
+- If need open other ports you can edit the docker-compose.yml file
+- Volumes are mounted in the container to persist data and can share files between the host and the container
+
 
 #### Thanks to original Author of the tools used in hackingtool
 
