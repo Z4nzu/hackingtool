@@ -126,6 +126,14 @@ class Enigma(HackingTool):
     RUN_COMMANDS = ["cd Enigma;sudo python enigma.py"]
     PROJECT_URL = "https://github.com/UndeadSec/Enigma"
 
+class PhantomEvasion(HackingTool):
+    TITLE = "Phantom-Evasion"
+    DESCRIPTION = "Phantom-Evasion is an antivirus evasion tool written in python (both compatible with python  python3) capable to generate (almost) fully undetectable executable" \
+		  "even with the most common x86 msfvenom payload."
+    INSTALL_COMMANDS = [
+        "sudo git clone https://github.com/oddcod3/Phantom-Evasion.git"]
+    RUN_COMMANDS = ["cd Phantom-Evasion;sudo python3 phantom-evasion.py"]
+    PROJECT_URL = "https://github.com/oddcod3/Phantom-Evasion"
 
 class PayloadCreatorTools(HackingToolsCollection):
     TITLE = "Payload creation tools"
@@ -137,5 +145,8 @@ class PayloadCreatorTools(HackingToolsCollection):
         Venom(),
         Spycam(),
         MobDroid(),
-        Enigma()
+        Enigma(),
+	PhantomEvasion()
     ]
+
+
