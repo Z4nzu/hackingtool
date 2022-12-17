@@ -89,12 +89,12 @@ if __name__ == "__main__":
                     inpath = input("Enter Path (with Directory Name) >> ")
                     with open(fpath, "w") as f:
                         f.write(inpath)
-                    print("Successfully Set Path to: {}".format(inpath))
+                    print(f"Successfully Set Path to: {inpath}")
                 elif choice == "2":
                     autopath = "/home/hackingtool/"
                     with open(fpath, "w") as f:
                         f.write(autopath)
-                    print("Your Default Path Is: {}".format(autopath))
+                    print(f"Your Default Path Is: {autopath}")
                     sleep(3)
                 else:
                     print("Try Again..!!")
