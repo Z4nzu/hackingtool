@@ -1,4 +1,5 @@
 # coding=utf-8
+import pathlib
 import re
 
 from core import HackingTool
@@ -38,9 +39,7 @@ def generate_readme():
     toc = get_toc(all_tools[:-1])
     tools_desc = get_tools_toc(all_tools[:-1])
 
-    with open("README_template.md") as fh:
-        readme_template = fh.read()
-
+    readme_template = pathlib.Path("README_template.md").read_text()
     readme_template = readme_template.replace("{{toc}}", toc)
     readme_template = readme_template.replace("{{tools}}", tools_desc)
 
