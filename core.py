@@ -148,7 +148,7 @@ class HackingToolsCollection(object):
         pass
 
     def show_info(self):
-        os.system("figlet -f standard -c {} | lolcat".format(self.TITLE))
+        os.system(f"figlet -f standard -c {self.TITLE} | lolcat")
         # os.system(f'echo "{self.DESCRIPTION}"|boxes -d boy | lolcat')
         # print(self.DESCRIPTION)
 
@@ -157,7 +157,7 @@ class HackingToolsCollection(object):
         self.show_info()
         for index, tool in enumerate(self.TOOLS):
             print(f"[{index} {tool.TITLE}")
-        print(f"[{99}] Back to {parent.TITLE if parent is not None else 'Exit'}")
+        print(f"[99] Back to {parent.TITLE if parent is not None else 'Exit'}")
         tool_index = input("Choose a tool to proceed: ")
         try:
             tool_index = int(tool_index)
