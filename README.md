@@ -21,8 +21,6 @@
 - [X] Added Tool in wifijamming
 - [X] Added Tool in steganography
 
-
-
 # Hackingtool Menu 🧰
 - [Anonymously Hiding Tools](#anonymously-hiding-tools)
 - [Information gathering tools](#information-gathering-tools)
@@ -52,18 +50,24 @@
     - [Web crawling](#web-crawling)
     - [Mix tools](#mix-tools)
 
-
 ### Anonymously Hiding Tools
+![](https://github.com/CodingRanjith/hackingtoolkit/blob/main/images/h0.jpg)
 - [Anonmously Surf](https://github.com/Und3rf10w/kali-anonsurf)
 - [Multitor](https://github.com/trimstray/multitor)
+- [Localtonet](https://localtonet.com)
+- [Pagekite](https://pagekite.net)
+- [Portmap](https://portmap.io)
+- [Ngrok](https://ngrok.com/download)
 ### Information gathering tools
+![](https://github.com/CodingRanjith/hackingtoolkit/blob/main/images/h1.jpg)
 - [Network Map (nmap)](https://github.com/nmap/nmap)
+- [PhoneInfoga](https://github.com/sundowndev/phoneinfoga)
 - [Dracnmap](https://github.com/Screetsec/Dracnmap)
 - Port scanning
 - Host to IP 
 - [Xerosploit](https://github.com/LionSec/xerosploit)
 - [RED HAWK (All In One Scanning)](https://github.com/Tuhinshubhra/RED_HAWK)
-- [ReconSpider(For All Scaning)](https://github.com/bhavsec/reconspider)
+- [ReconSpider(For All Scanning)](https://github.com/bhavsec/reconspider)
 - IsItDown (Check Website Down/Up)
 - [Infoga - Email OSINT](https://github.com/m4ll0k/Infoga)
 - [ReconDog](https://github.com/s0md3v/ReconDog)
@@ -74,11 +78,13 @@
 - [Port Scanner - Ranger Reloaded (Python 3+)](https://github.com/joeyagreco/ranger-reloaded)
 - [Breacher](https://github.com/s0md3v/Breacher)
 ### Wordlist Generator
+![](https://github.com/CodingRanjith/hackingtoolkit/blob/main/images/h2.jpg)
 - [Cupp](https://github.com/Mebus/cupp.git)
 - [WordlistCreator](https://github.com/Z4nzu/wlcreator)
 - [Goblin WordGenerator](https://github.com/UndeadSec/GoblinWordGenerator.git)
 - [Password list (1.4 Billion Clear Text Password)](https://github.com/Viralmaniar/SMWYG-Show-Me-What-You-Got)
 ### Wireless attack tools
+![](https://github.com/CodingRanjith/hackingtoolkit/blob/main/images/h3.jpg)
 - [WiFi-Pumpkin](https://github.com/P0cL4bs/wifipumpkin3)
 - [pixiewps](https://github.com/wiire/pixiewps)
 - [Bluetooth Honeypot GUI Framework](https://github.com/andrewmichaelsmith/bluepot)
@@ -89,6 +95,7 @@
 - [Fastssh](https://github.com/Z4nzu/fastssh)
 - Howmanypeople
 ### SQL Injection Tools
+![](https://github.com/CodingRanjith/hackingtoolkit/blob/main/images/h4.jpg)
 - [Sqlmap tool](https://github.com/sqlmapproject/sqlmap)
 - [NoSqlMap](https://github.com/codingo/NoSQLMap)
 - [Damn Small SQLi Scanner](https://github.com/stamparm/DSSS)
@@ -97,16 +104,26 @@
 - [Leviathan - Wide Range Mass Audit Toolkit](https://github.com/leviathan-framework/leviathan)
 - [SQLScan](https://github.com/Cvar1984/sqlscan)
 ### Phishing attack tools
+![](https://github.com/CodingRanjith/hackingtoolkit/blob/main/images/h5.jpg)
+- [AutoPhisher](https://github.com/CodingRanjith/autophisher)
+- [PyPhisher](https://github.com/KasRoudra/PyPhisher)
+- [AdvPhishing](https://github.com/Ignitetch/AdvPhishing)
 - [Setoolkit](https://github.com/trustedsec/social-engineer-toolkit)
 - [SocialFish](https://github.com/UndeadSec/SocialFish)
-- [HiddenEye](https://github.com/DarkSecDevelopers/HiddenEye)
+- [HiddenEye](https://github.com/Morsmalleo/HiddenEye.git)
 - [Evilginx2](https://github.com/kgretzky/evilginx2)
 - [I-See_You(Get Location using phishing attack)](https://github.com/Viralmaniar/I-See-You)
 - [SayCheese (Grab target's Webcam Shots)](https://github.com/hangetzzu/saycheese)
 - [QR Code Jacking](https://github.com/cryptedwolf/ohmyqr)
+- [WifiPhisher](https://github.com/wifiphisher/wifiphisher)
+- [BlackEye](https://github.com/An0nUD4Y/blackeye)
 - [ShellPhish](https://github.com/An0nUD4Y/shellphish)
+- [Thanos](https://github.com/TridevReddy/Thanos)
+- [QRLJacking](https://github.com/OWASP/QRLJacking)
 - [BlackPhish](https://github.com/iinc0gnit0/BlackPhish)
+- [MashPhish](https://github.com/jaykali/maskphish)
 ### Web Attack tools
+![](https://github.com/CodingRanjith/hackingtoolkit/blob/main/images/h6.jpg)
 - [Web2Attack](https://github.com/santatic/web2attack)
 - Skipfish
 - [SubDomain Finder](https://github.com/aboul3la/Sublist3r)
@@ -115,15 +132,18 @@
 - [Sub-Domain TakeOver](https://github.com/m4ll0k/takeover)
 - [Dirb](https://gitlab.com/kalilinux/packages/dirb)
 ### Post exploitation tools
+![](https://github.com/CodingRanjith/hackingtoolkit/blob/main/images/h7.jpg)
 - [Vegile - Ghost In The Shell](https://github.com/Screetsec/Vegile)
 - [Chrome Keylogger](https://github.com/UndeadSec/HeraKeylogger)
 ### Forensic tools
+![](https://github.com/CodingRanjith/hackingtoolkit/blob/main/images/h8.jpg)
 - Autopsy
 - Wireshark
 - [Bulk extractor](https://github.com/simsong/bulk_extractor)
-- [Disk Clone and ISO Image Aquire](https://guymager.sourceforge.io/)
+- [Disk Clone and ISO Image Acquire](https://guymager.sourceforge.io/)
 - [Toolsley](https://www.toolsley.com/)
 ### Payload creation tools
+![](https://github.com/CodingRanjith/hackingtoolkit/blob/main/images/h9.jpg)
 - [The FatRat](https://github.com/Screetsec/TheFatRat)
 - [Brutal](https://github.com/Screetsec/Brutal)
 - [Stitch](https://nathanlopez.github.io/Stitch)
@@ -133,23 +153,28 @@
 - [Mob-Droid](https://github.com/kinghacker0/Mob-Droid)
 - [Enigma](https://github.com/UndeadSec/Enigma)
 ### Exploit framework
+![](https://github.com/CodingRanjith/hackingtoolkit/blob/main/images/h10.jpg)
 - [RouterSploit](https://github.com/threat9/routersploit)
 - [WebSploit](https://github.com/The404Hacking/websploit )
 - [Commix](https://github.com/commixproject/commix)
 - [Web2Attack](https://github.com/santatic/web2attack)
 ### Reverse engineering tools
+![](https://github.com/CodingRanjith/hackingtoolkit/blob/main/images/h11.jpg)
 - [Androguard](https://github.com/androguard/androguard )
 - [Apk2Gold](https://github.com/lxdvs/apk2gold )
 - [JadX](https://github.com/skylot/jadx)
 ### DDOS Attack Tools
+![](https://github.com/CodingRanjith/hackingtoolkit/blob/main/images/h12.jpg)
 - SlowLoris
 - [Asyncrone | Multifunction SYN Flood DDoS Weapon](https://github.com/fatihsnsy/aSYNcrone)
 - [UFOnet](https://github.com/epsylon/ufonet)
 - [GoldenEye](https://github.com/jseidl/GoldenEye)
 ### Remote Administrator Tools (RAT)
+![](https://github.com/CodingRanjith/hackingtoolkit/blob/main/images/h13.jpg)
 - [Stitch](https://github.com/nathanlopez/Stitch)
 - [Pyshell](https://github.com/knassar702/pyshell)
 ### XSS Attack Tools
+![](https://github.com/CodingRanjith/hackingtoolkit/blob/main/images/h14.jpg)
 - [DalFox(Finder of XSS)](https://github.com/hahwul/dalfox)
 - [XSS Payload Generator](https://github.com/capture0x/XSS-LOADER.git)
 - [Extended XSS Searcher and Finder](https://github.com/Damian89/extended-xss-search)
@@ -160,6 +185,7 @@
 - [Advanced XSS Detection Suite](https://github.com/UltimateHackers/XSStrike)
 - [RVuln](https://github.com/iinc0gnit0/RVuln)
 ### Steganograhy tools
+![](https://github.com/CodingRanjith/hackingtoolkit/blob/main/images/h15.jpg)
 - SteganoHide
 - StegnoCracker
 - [StegoCracker](https://github.com/W1LDN16H7/StegoCracker)
@@ -198,13 +224,6 @@
 - [Gospider](https://github.com/jaeles-project/gospider)
 #### Mix tools
 - Terminal Multiplexer
-
-
-![](https://github.com/Z4nzu/hackingtool/blob/master/images/A00.png)
-![](https://github.com/Z4nzu/hackingtool/blob/master/images/A0.png)
-![](https://github.com/Z4nzu/hackingtool/blob/master/images/A1.png)
-![](https://github.com/Z4nzu/hackingtool/blob/master/images/A2.png)
-![](https://github.com/Z4nzu/hackingtool/blob/master/images/A4.png)
 
 ## Installation For Linux <img src="https://konpa.github.io/devicon/devicon.git/icons/linux/linux-original.svg" alt="linux" width="25" height="25"/></p><p align="center">
 
