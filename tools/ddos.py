@@ -76,7 +76,7 @@ class UFONet(HackingTool):
 
 class GoldenEye(HackingTool):
     TITLE = "GoldenEye"
-    DESCRIPTION = "GoldenEye is an python3 app for SECURITY TESTING PURPOSES ONLY!\n" \
+    DESCRIPTION = "GoldenEye is a python3 app for SECURITY TESTING PURPOSES ONLY!\n" \
                   "GoldenEye is a HTTP DoS Test Tool."
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/jseidl/GoldenEye.git;"
@@ -87,8 +87,25 @@ class GoldenEye(HackingTool):
     def run(self):
         os.system("cd GoldenEye ;sudo ./goldeneye.py")
         print("\033[96m Go to Directory \n "
-              "[*] USAGE: ./goldeneye.py <url> [OPTIONS]")
-
+              "[*] USAGE: ./goldeneye.py <url> [OPTIONS]")\
+ class Saphyra(HackingTool):
+     TITLE = "SaphyraDDoS"
+     DESCRIPTION = "A complex python code to DDoS any website with a very easy usage.!\n"
+     INSTALL_COMMANDS = [
+         "sudo su",
+         "git clone https://github.com/anonymous24x7/Saphyra-DDoS.git",
+         "cd Saphyra-DDoS",
+         "chmod +x saphyra.py",
+         "python saphyra.py"
+     ]
+     PROJECT_URL = "https://github.com/anonymous24x7/Saphyra-DDoS"
+     
+    def run(self):
+        url = input("Enter url>>> ")
+        try:
+            os.system("python saphyra.py " + url)
+        except:
+            print("Enter a valid url.")
 
 class DDOSTools(HackingToolsCollection):
     TITLE = "DDOS Attack Tools"
@@ -96,5 +113,6 @@ class DDOSTools(HackingToolsCollection):
         SlowLoris(),
         Asyncrone(),
         UFONet(),
-        GoldenEye()
+        GoldenEye(),
+        Syphra()
     ]
