@@ -73,8 +73,8 @@ class AllTools(HackingToolsCollection):
 
 if __name__ == "__main__":
     try:
-        if system() == 'Linux':
-            fpath = "/home/hackingtoolpath.txt"
+        if system() == 'Linux' or system() == 'Darwin':
+            fpath = "/home/hackingtoolpath.txt" if system() == 'Linux' else os.path.expanduser('~')  +  "/hackingtoolpath.txt"
             if not os.path.exists(fpath):
                 os.system('clear')
                 # run.menu()
@@ -91,7 +91,7 @@ if __name__ == "__main__":
                         f.write(inpath)
                     print("Successfully Set Path to: {}".format(inpath))
                 elif choice == "2":
-                    autopath = "/home/hackingtool/"
+                    autopath = "/home/hackingtool/" if system() == 'Linux' else os.path.expanduser('~')  +  "/hackingtool/"
                     with open(fpath, "w") as f:
                         f.write(autopath)
                     print("Your Default Path Is: {}".format(autopath))
