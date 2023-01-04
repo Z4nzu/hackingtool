@@ -102,7 +102,7 @@
 - [AdvPhishing](https://github.com/Ignitetch/AdvPhishing)
 - [Setoolkit](https://github.com/trustedsec/social-engineer-toolkit)
 - [SocialFish](https://github.com/UndeadSec/SocialFish)
-- [HiddenEye](https://github.com/Morsmalleo/HiddenEye.git)
+- [HiddenEye](https://github.com/DarkSecDevelopers/HiddenEye)
 - [Evilginx2](https://github.com/kgretzky/evilginx2)
 - [I-See_You(Get Location using phishing attack)](https://github.com/Viralmaniar/I-See-You)
 - [SayCheese (Grab target's Webcam Shots)](https://github.com/hangetzzu/saycheese)
