@@ -40,7 +40,7 @@ INSTALL_DIR="/usr/share/doc/hackingtool"
 BIN_DIR="/usr/bin/"
 if [ $choice == 1 ] || [ $choice == 2 ]; then
 	echo "[*] Checking Internet Connection .."
-	wget -q --tries=10 --timeout=20 --spider https://google.com
+	wget -q --tries=10 --timeout=20 --spider https://github.com
 	if [[ $? == 0 ]]; then
         echo -e ${BLUE}"[✔] Loading ... "
         if [ $choice == 1 ]; then
