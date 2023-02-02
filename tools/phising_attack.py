@@ -201,6 +201,7 @@ class dnstwist(HackingTool):
     Run_commands=['cd dnstwist;sudo python3 dnstwist.py']
     project_url='https://github.com/elceef/dnstwist'
 
+
 class PhishingAttackTools(HackingToolsCollection):
     TITLE = "Phishing attack tools"
     TOOLS = [
