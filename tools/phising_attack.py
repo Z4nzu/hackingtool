@@ -195,6 +195,11 @@ class BlackPhish(HackingTool):
     def update(self):
         os.system("cd BlackPhish;sudo bash update.sh")
 
+class dnstwist(HackingTool):
+    Title='dnstwist'
+    Install_commands=['sudo git clone https://github.com/elceef/dnstwist.git','cd dnstwist']
+    Run_commands=['cd dnstwist;sudo python3 dnstwist.py']
+    project_url='https://github.com/elceef/dnstwist'
 
 class PhishingAttackTools(HackingToolsCollection):
     TITLE = "Phishing attack tools"
