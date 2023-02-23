@@ -48,7 +48,14 @@ if [ $choice == 1 ] || [ $choice == 2 ]; then
             sudo apt-get install python3-pip -y
         elif [ $choice == 2 ]; then # added arch linux support because of feature request #231
             sudo pacman -Suy
-            sudo pacman -S python-pip yay
+            sudo pacman -S python-pip
+	    sudo git clone https://aur.archlinux.org/yay-git.git 
+	    sudo chown -R $USER:$USER yay-git
+	    cd yay-git
+	    makepkg -si
+	    cd ..
+	    rm -rf yay-git
+	    
         fi
 
 	    echo "[✔] Checking directories..."
