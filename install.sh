@@ -85,7 +85,7 @@ if [ $choice == 1 ] || [ $choice == 2 ]; then
 
     if [ -d "$INSTALL_DIR" ]; then
         echo "";
-        echo "[✔] Successfuly Installed !!! \n\n";
+        echo "[✔] Successfully Installed !!! \n\n";
         echo -e $ORANGE "       [+]+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[+]"
         echo            "       [+]                                                             [+]"
         echo -e $ORANGE "       [+]     ✔✔✔ Now Just Type In Terminal (hackingtool) ✔✔✔         [+]"
