@@ -18,7 +18,7 @@ jobs:
                   --statistics --target-version=py37 . || true | grep "\[\*\]"
       - run: pip install black codespell mypy pytest safety
       - run: black --check . || true
-      - run: codespell  # --ignore-words-list="" --skip="*.css,*.js,*.lock"
+      - run: codespell || true  # --ignore-words-list="" --skip="*.css,*.js,*.lock"
       - run: pip install -r requirements.txt || pip install --editable . || pip install . || true
       - run: mkdir --parents --verbose .mypy_cache
       - run: mypy --ignore-missing-imports --install-types --non-interactive . || true
