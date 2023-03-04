@@ -63,7 +63,7 @@
 - Host to IP 
 - [Xerosploit](https://github.com/LionSec/xerosploit)
 - [RED HAWK (All In One Scanning)](https://github.com/Tuhinshubhra/RED_HAWK)
-- [ReconSpider(For All Scaning)](https://github.com/bhavsec/reconspider)
+- [ReconSpider(For All Scanning)](https://github.com/bhavsec/reconspider)
 - IsItDown (Check Website Down/Up)
 - [Infoga - Email OSINT](https://github.com/m4ll0k/Infoga)
 - [ReconDog](https://github.com/s0md3v/ReconDog)
@@ -121,7 +121,7 @@
 - Autopsy
 - Wireshark
 - [Bulk extractor](https://github.com/simsong/bulk_extractor)
-- [Disk Clone and ISO Image Aquire](https://guymager.sourceforge.io/)
+- [Disk Clone and ISO Image Acquire](https://guymager.sourceforge.io/)
 - [Toolsley](https://www.toolsley.com/)
 ### Payload creation tools
 - [The FatRat](https://github.com/Screetsec/TheFatRat)
@@ -159,6 +159,7 @@
 - [XanXSS](https://github.com/Ekultek/XanXSS)
 - [Advanced XSS Detection Suite](https://github.com/UltimateHackers/XSStrike)
 - [RVuln](https://github.com/iinc0gnit0/RVuln)
+- [Cyclops](https://github.com/v8blink/Chromium-based-XSS-Taint-Tracking) 
 ### Steganograhy tools
 - SteganoHide
 - StegnoCracker
