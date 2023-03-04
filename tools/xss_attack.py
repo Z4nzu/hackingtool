@@ -104,7 +104,7 @@ class XanXSS(HackingTool):
 
 class XSSStrike(HackingTool):
     TITLE = "Advanced XSS Detection Suite"
-    DESCRIPTION = "XSStrike is a python script designed to detect and exploit XSS vulnerabilites."
+    DESCRIPTION = "XSStrike is a python script designed to detect and exploit XSS vulnerabilities."
     INSTALL_COMMANDS = [
         "sudo rm -rf XSStrike",
         "git clone https://github.com/UltimateHackers/XSStrike.git "

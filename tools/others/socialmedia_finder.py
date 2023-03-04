@@ -50,7 +50,7 @@ class FindUser(HackingTool):
 class Sherlock(HackingTool):
     TITLE = "Sherlock"
     DESCRIPTION = "Hunt down social media accounts by username across social networks \n " \
-                  "For More Usege \n" \
+                  "For More Usage \n" \
                   "\t >>python3 sherlock --help"
     INSTALL_COMMANDS = [
         "git clone https://github.com/sherlock-project/sherlock.git",

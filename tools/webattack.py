@@ -86,7 +86,7 @@ class Dirb(HackingTool):
     DESCRIPTION = "DIRB is a Web Content Scanner. It looks for existing " \
                   "(and/or hidden) Web Objects.\n" \
                   "It basically works by launching a dictionary based " \
-                  "attack against \n a web server and analizing the response."
+                  "attack against \n a web server and analyzing the response."
     INSTALL_COMMANDS = [
         "sudo git clone https://gitlab.com/kalilinux/packages/dirb.git",
         "cd dirb;sudo bash configure;make"
