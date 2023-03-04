@@ -15,7 +15,7 @@ jobs:
         run: ruff --exit-zero --select=ALL --statistics --target-version=py37 .
       - name: "Ruff: All fixable (ruff --fix) issues"
         run: ruff --exit-zero --select=ALL --ignore=ANN204,COM812,ERA001,RSE102
-                  --statistics --target-version=py37 . || true | grep "\[\*\]"
+                  --statistics --target-version=py37 . | grep "\[\*\]"
       - run: pip install black codespell mypy pytest safety
       - run: black --check . || true
       - run: codespell || true  # --ignore-words-list="" --skip="*.css,*.js,*.lock"
