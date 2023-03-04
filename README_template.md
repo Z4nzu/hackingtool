@@ -39,7 +39,7 @@
     
     cd hackingtool
     
-    sudo pip3 install -r requirement.txt
+    sudo pip3 install -r requirements.txt
     
     bash install.sh
     
