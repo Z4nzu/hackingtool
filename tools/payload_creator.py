@@ -86,7 +86,7 @@ class Venom(HackingTool):
     TITLE = "Venom Shellcode Generator"
     DESCRIPTION = "venom 1.0.11 (malicious_server) was build to take " \
                   "advantage of \n apache2 webserver to deliver payloads " \
-                  "(LAN) using a fake webpage writen in html"
+                  "(LAN) using a fake webpage written in html"
     INSTALL_COMMANDS = [
         "sudo git clone https://github.com/r00t-3xp10it/venom.git",
         "sudo chmod -R 775 venom*/ && cd venom*/ && cd aux && sudo bash setup.sh",
