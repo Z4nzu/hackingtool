@@ -218,9 +218,7 @@
     
     cd hackingtool
     
-    sudo pip3 install -r requirements.txt
-    
-    bash install.sh
+    sudo bash install.sh
     
     sudo hackingtool
 
