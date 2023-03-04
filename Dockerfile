@@ -11,7 +11,7 @@ WORKDIR /root/hackingtool
 COPY . .
 
 RUN true && \
-pip3 install -r requirement.txt;
+pip3 install -r requirements.txt;
 
 RUN true && \
 pip3 install lolcat boxes flask requests;

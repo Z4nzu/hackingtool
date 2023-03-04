@@ -1,4 +1,0 @@
-lolcat
-boxes
-flask
-requests

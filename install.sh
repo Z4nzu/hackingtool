@@ -104,10 +104,10 @@ if [[ $choice =~ ^[1-2]+$ ]]; then
             echo "";
             echo -e "${YELLOW}[*] Installing requirements...${NC}"
             if [[ $choice == 1 ]]; then
-                pip3 install -r $install_dir/requirement.txt
+                pip3 install -r $install_dir/requirements.txt
                 sudo apt install figlet -y
             elif [[ $choice == 2 ]]; then
-                pip3 install -r $install_dir/requirement.txt
+                pip3 install -r $install_dir/requirements.txt
                 yay -S boxes --noconfirm
                 sudo pacman -S figlet -y
             fi

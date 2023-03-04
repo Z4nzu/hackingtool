@@ -17,7 +17,7 @@ jobs:
       - run: flake8 --ignore=E124,E128,E225,E251,E302,R502,R503,W291,W293,W605
                     --max-complexity=11 --max-line-length=265 --show-source --statistics .
       - run: isort --check-only --profile black . || true
-      - run: pip install -r requirement.txt || pip install -r requirements.txt || pip install --editable .  || pip install . || true
+      - run: pip install -r requirements.txt || pip install -r requirements.txt || pip install --editable .  || pip install . || true
       - run: mkdir --parents --verbose .mypy_cache
       - run: mypy --ignore-missing-imports --install-types --non-interactive . || true
       - run: pytest . || true
