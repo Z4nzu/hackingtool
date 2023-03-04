@@ -57,7 +57,7 @@ class BulkExtractor(HackingTool):
 
 
 class Guymager(HackingTool):
-    TITLE = "Disk Clone and ISO Image Aquire"
+    TITLE = "Disk Clone and ISO Image Acquire"
     DESCRIPTION = "Guymager is a free forensic imager for media acquisition."
     INSTALL_COMMANDS = ["sudo apt install guymager"]
     RUN_COMMANDS = ["sudo guymager"]

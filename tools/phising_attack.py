@@ -37,7 +37,7 @@ class AdvPhishing(HackingTool):
 class Setoolkit(HackingTool):
     TITLE = "Setoolkit"
     DESCRIPTION = "The Social-Engineer Toolkit is an open-source penetration\n" \
-                  "testing framework designed for social enginee"
+                  "testing framework designed for social engine"
     INSTALL_COMMANDS = [
         "git clone https://github.com/trustedsec/social-engineer-toolkit/",
         "cd social-engineer-toolkit && sudo python3 setup.py"
@@ -92,7 +92,7 @@ class Evilginx2(HackingTool):
 class ISeeYou(HackingTool):
     TITLE = "I-See_You"
     DESCRIPTION = "[!] ISeeYou is a tool to find Exact Location of Victom By" \
-                  " User SocialEngineering or Phishing Engagment..\n" \
+                  " User SocialEngineering or Phishing Engagement..\n" \
                   "[!] Users can expose their local servers to the Internet " \
                   "and decode the location coordinates by looking at the log file"
     INSTALL_COMMANDS = [

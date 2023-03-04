@@ -84,7 +84,7 @@ class RedHawk(HackingTool):
 
 
 class ReconSpider(HackingTool):
-    TITLE = "ReconSpider(For All Scaning)"
+    TITLE = "ReconSpider(For All Scanning)"
     DESCRIPTION = "ReconSpider is most Advanced Open Source Intelligence (OSINT)" \
                   " Framework for scanning IP Address, Emails, \n" \
                   "Websites, Organizations and find out information from" \
@@ -114,7 +114,7 @@ class IsItDown(HackingTool):
 
 class Infoga(HackingTool):
     TITLE = "Infoga - Email OSINT"
-    DESCRIPTION = "Infoga is a tool gathering email accounts informations\n" \
+    DESCRIPTION = "Infoga is a tool gathering email accounts information\n" \
                   "(ip, hostname, country,...) from different public source"
     INSTALL_COMMANDS = [
         "git clone https://github.com/m4ll0k/Infoga.git",
@@ -165,7 +165,7 @@ class SecretFinder(HackingTool):
 
 class Shodan(HackingTool):
     TITLE = "Find Info Using Shodan"
-    DESCRIPTION = "Get ports, vulnerabilities, informations, banners,..etc \n " \
+    DESCRIPTION = "Get ports, vulnerabilities, information, banners,..etc \n " \
                   "for any IP with Shodan (no apikey! no rate limit!)\n" \
                   "[X] Don't use this tool because your ip will be blocked by Shodan!"
     INSTALL_COMMANDS = ["git clone https://github.com/m4ll0k/Shodanfy.py.git"]
