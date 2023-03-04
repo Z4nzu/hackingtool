@@ -11,7 +11,8 @@
 
 #### Install Kali Linux in WIndows10 Without VirtualBox [YOUTUBE](https://youtu.be/BsFhpIDcd9I) or use Docker
 
-## Update Available V1.1.0 🚀 
+## Update Available V1.2.0 🚀 
+- [✔] Installation Bug Fixed
 - [x] Added New Tools 
     - [x] Reverse Engineering
     - [x] RAT Tools
@@ -217,9 +218,7 @@
     
     cd hackingtool
     
-    sudo pip3 install -r requirement.txt
-    
-    bash install.sh
+    sudo bash install.sh
     
     sudo hackingtool
 
@@ -254,8 +253,6 @@
 [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github&link=https://github.com/Z4nzu/)](https://github.com/Z4nzu/)
 ##### Your Favourite Tool is not in hackingtool or Suggestions Please [CLICK HERE](https://forms.gle/b235JoCKyUq5iM3t8)
 ![Z4nzu's github stats](https://github-readme-stats.vercel.app/api?username=Z4nzu&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
-
-<a href="https://www.buymeacoffee.com/Zinzu" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/arial-yellow.png" alt="Buy Me A Coffee" style="height: 50px !important;width: 50px !important;"></a>
 
 #### Don't Forgot to share with Your Friends 
 ### The new Update get will soon stay updated
