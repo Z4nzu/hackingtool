@@ -93,7 +93,11 @@ if [[ $choice =~ ^[1-2]+$ ]]; then
         if sudo git clone https://github.com/Z4nzu/hackingtool.git $install_dir; then
             # Install virtual environment
             echo -e "${YELLOW}[*] Installing Virtual Environment...${NC}"
-            #sudo apt install python3-venv -y
+            if [[ $choice == 1 ]]; then
+              sudo apt install python3-venv -y
+            elif [[ $choice == 2 ]]; then
+              echo "Python 3.3+ comes with a module called venv.";
+            fi
             echo "";
             # Create a virtual environment for the tool
             echo -e "${YELLOW}[*] Creating virtual environment..."
