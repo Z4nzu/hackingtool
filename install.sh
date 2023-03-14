@@ -71,7 +71,7 @@ if [[ $choice =~ ^[1-2]+$ ]]; then
             sudo apt-get install -y git python3-pip figlet boxes php curl xdotool wget -y ;
         elif [[ $choice == 2 ]]; then
             sudo pacman -Suy -y
-            sudo pacman -S python-pip-19.1.1-1 yay -y
+            sudo pacman -S python-pip -y  
         else
             exit
         fi
@@ -93,7 +93,7 @@ if [[ $choice =~ ^[1-2]+$ ]]; then
         if sudo git clone https://github.com/Z4nzu/hackingtool.git $install_dir; then
             # Install virtual environment
             echo -e "${YELLOW}[*] Installing Virtual Environment...${NC}"
-            sudo apt install python3-venv -y
+            #sudo apt install python3-venv -y
             echo "";
             # Create a virtual environment for the tool
             echo -e "${YELLOW}[*] Creating virtual environment..."
@@ -108,7 +108,8 @@ if [[ $choice =~ ^[1-2]+$ ]]; then
                 sudo apt install figlet -y
             elif [[ $choice == 2 ]]; then
                 pip3 install -r $install_dir/requirements.txt
-                yay -S boxes --noconfirm
+                sudo -u $SUDO_USER git clone https://aur.archlinux.org/boxes.git && cd boxes
+                sudo -u $SUDO_USER makepkg -si
                 sudo pacman -S figlet -y
             fi
             # Create a shell script to launch the tool
