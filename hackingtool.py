@@ -1,7 +1,7 @@
-#!/usr/bin/env python3
+##!/usr/bin/env python3
+# -*- coding: UTF-8 -*-
 # Version 1.1.0
 import os
-import sys
 import webbrowser
 from platform import system
 from time import sleep
@@ -83,10 +83,10 @@ if __name__ == "__main__":
                         [1] Manual 
                         [2] Default
                 """)
-                choice = input("Z4nzu =>> ").strip()
+                choice = input("Z4nzu =>> ")
 
                 if choice == "1":
-                    inpath = input("Enter Path (with Directory Name) >> ").strip()
+                    inpath = input("Enter Path (with Directory Name) >> ")
                     with open(fpath, "w") as f:
                         f.write(inpath)
                     print("Successfully Set Path to: {}".format(inpath))
@@ -98,7 +98,7 @@ if __name__ == "__main__":
                     sleep(3)
                 else:
                     print("Try Again..!!")
-                    sys.exit(0)
+                    exit(0)
 
             with open(fpath) as f:
                 archive = f.readline()
