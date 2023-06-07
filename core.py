@@ -1,3 +1,4 @@
+# coding=utf-8
 import os
 import sys
 import webbrowser
@@ -68,13 +69,13 @@ class HackingTool(object):
         if self.PROJECT_URL:
             print(f"[{98}] Open project page")
         print(f"[{99}] Back to {parent.TITLE if parent is not None else 'Exit'}")
-        option_index = input("Select an option : ").strip()
+        option_index = input("Select an option : ")
         try:
             option_index = int(option_index)
             if option_index - 1 in range(len(self.OPTIONS)):
                 ret_code = self.OPTIONS[option_index - 1][1]()
                 if ret_code != 99:
-                    input("\n\nPress ENTER to continue:").strip()
+                    input("\n\nPress ENTER to continue:")
             elif option_index == 98:
                 self.show_project_page()
             elif option_index == 99:
@@ -83,10 +84,10 @@ class HackingTool(object):
                 return 99
         except (TypeError, ValueError):
             print("Please enter a valid option")
-            input("\n\nPress ENTER to continue:").strip()
+            input("\n\nPress ENTER to continue:")
         except Exception:
             print_exc()
-            input("\n\nPress ENTER to continue:").strip()
+            input("\n\nPress ENTER to continue:")
         return self.show_options(parent = parent)
 
     def before_install(self):
@@ -156,21 +157,21 @@ class HackingToolsCollection(object):
         for index, tool in enumerate(self.TOOLS):
             print(f"[{index} {tool.TITLE}")
         print(f"[{99}] Back to {parent.TITLE if parent is not None else 'Exit'}")
-        tool_index = input("Choose a tool to proceed: ").strip()
+        tool_index = input("Choose a tool to proceed: ")
         try:
             tool_index = int(tool_index)
             if tool_index in range(len(self.TOOLS)):
                 ret_code = self.TOOLS[tool_index].show_options(parent = self)
                 if ret_code != 99:
-                    input("\n\nPress ENTER to continue:").strip()
+                    input("\n\nPress ENTER to continue:")
             elif tool_index == 99:
                 if parent is None:
                     sys.exit()
                 return 99
         except (TypeError, ValueError):
             print("Please enter a valid option")
-            input("\n\nPress ENTER to continue:").strip()
+            input("\n\nPress ENTER to continue:")
         except Exception:
             print_exc()
-            input("\n\nPress ENTER to continue:").strip()
+            input("\n\nPress ENTER to continue:")
         return self.show_options(parent = parent)

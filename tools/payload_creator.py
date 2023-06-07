@@ -1,3 +1,4 @@
+# coding=utf-8
 import os
 
 from core import HackingTool
@@ -48,7 +49,7 @@ class Brutal(HackingTool):
             >> Arduino Software (I used v1.6.7)
             >> TeensyDuino
             >> Linux udev rules
-            >> Copy and paste the PaensyLib folder inside your Arduino libraries
+            >> Copy and paste the PaensyLib folder inside your Arduino\libraries
     
         [!] Kindly Visit below link for Installation for Arduino 
             >> https://github.com/Screetsec/Brutal/wiki/Install-Requirements 
