@@ -220,5 +220,6 @@ class PhishingAttackTools(HackingToolsCollection):
         Thanos(),
         QRLJacking(),
         BlackPhish(),
-        Maskphish()
+        Maskphish(),
+        dnstwist()
     ]
