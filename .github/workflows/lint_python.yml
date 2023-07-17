@@ -1,9 +1,9 @@
 name: lint_python
 on:
   pull_request:
-    branches: [master]
+    branches: [development, master]
   push:
-    branches: [master]
+    branches: [development, master]
 jobs:
   lint_python:
     runs-on: ubuntu-latest
@@ -12,17 +12,17 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
-      - run: pip install --upgrade pip ruff setuptools wheel
+      - run: pip install --upgrade codespell pip ruff setuptools wheel
+      - run: codespell --quiet-level=3
       - name: "Ruff: Show stopper (must-fix) issues"
-        run: ruff . --select=E9,F63,F7,F82,PLE,YTT --show-source .
+        run: ruff . --format=github --select=E9,F63,F7,F82,PLE,YTT .
       - name: "Ruff: All issues"
         run: ruff --exit-zero --select=ALL --statistics --target-version=py37 .
       - name: "Ruff: All fixable (ruff --fix) issues"
         run: ruff --exit-zero --select=ALL --ignore=ANN204,COM812,ERA001,RSE102
                   --statistics --target-version=py37 . | grep "\[\*\]"
-      - run: pip install black codespell mypy pytest safety
+      - run: pip install black mypy pytest safety
       - run: black --check . || true
-      - run: codespell
       - run: pip install -r requirements.txt || pip install --editable . || pip install . || true
       - run: mkdir --parents --verbose .mypy_cache
       - run: mypy --ignore-missing-imports --install-types --non-interactive . || true
