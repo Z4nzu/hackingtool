@@ -87,7 +87,9 @@ class GoldenEye(HackingTool):
     def run(self):
         os.system("cd GoldenEye ;sudo ./goldeneye.py")
         print("\033[96m Go to Directory \n "
-              "[*] USAGE: ./goldeneye.py <url> [OPTIONS]")\
+              "[*] USAGE: ./goldeneye.py <url> [OPTIONS]")
+
+
  class Saphyra(HackingTool):
      TITLE = "SaphyraDDoS"
      DESCRIPTION = "A complex python code to DDoS any website with a very easy usage.!\n"
