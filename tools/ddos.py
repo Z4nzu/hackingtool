@@ -90,7 +90,7 @@ class GoldenEye(HackingTool):
               "[*] USAGE: ./goldeneye.py <url> [OPTIONS]")
 
 
- class Saphyra(HackingTool):
+class Saphyra(HackingTool):
      TITLE = "SaphyraDDoS"
      DESCRIPTION = "A complex python code to DDoS any website with a very easy usage.!\n"
      INSTALL_COMMANDS = [
