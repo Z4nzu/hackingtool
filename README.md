@@ -210,19 +210,33 @@
 
 ## Installation For Linux <img src="https://konpa.github.io/devicon/devicon.git/icons/linux/linux-original.svg" alt="linux" width="25" height="25"/></p><p align="center">
 
-#### This Tool Must Run As ROOT !!!
+
+### !! RUN HACKINGTOOL AS ROOT !! 
+
+
+## Steps are given below : 
+
+
+## Step : 1 Download hackingtool
 
     git clone https://github.com/Z4nzu/hackingtool.git
+
+## Step : 2 Give Permission to hackingtool
     
     chmod -R 755 hackingtool  
-    
+
+## Step : 3 Move to hackingtool directory
+
     cd hackingtool
+
+## Step : 4 Run hackingtool
     
     sudo bash install.sh
-    
+
+## Step : 5 For installing tools in directory
+
     sudo hackingtool
 
- After Following All Steps Just Type In Terminal **root@kaliLinux:~** **hackingtool**
 
 ## Use image with Docker
 
