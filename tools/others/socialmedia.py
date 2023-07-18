@@ -1,4 +1,5 @@
 # coding=utf-8
+import contextlib
 import os
 import subprocess
 
@@ -48,7 +49,9 @@ class Faceshell(HackingTool):
     def run(self):
         name = input("Enter Username >> ")
         wordlist = input("Enter Wordlist >> ")
-        os.chdir("Brute_Force")
+        # Ignore a FileNotFoundError if we are already in the Brute_Force directory
+        with contextlib.suppress(FileNotFoundError):
+            os.chdir("Brute_Force")
         subprocess.run(
             ["python3", "Brute_Force.py", "-f", f"{name}", "-l", f"{wordlist}"])
 
