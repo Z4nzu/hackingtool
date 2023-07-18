@@ -109,9 +109,7 @@ class GoldenEye(HackingTool):
 
     def run(self):
         os.system("cd GoldenEye ;sudo ./goldeneye.py")
-        print(
-            "\033[96m Go to Directory \n " "[*] USAGE: ./goldeneye.py <url> [OPTIONS]"
-        )
+        print("\033[96m Go to Directory \n [*] USAGE: ./goldeneye.py <url> [OPTIONS]")
 
 
 class Saphyra(HackingTool):
@@ -130,7 +128,7 @@ class Saphyra(HackingTool):
         url = input("Enter url>>> ")
         try:
             os.system("python saphyra.py " + url)
-        except:
+        except Exception:
             print("Enter a valid url.")
 
 
