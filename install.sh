@@ -51,7 +51,6 @@ echo -e "${WHITE}              [0] Exit "
 
 echo -e "${COLOR}┌──($USER㉿$HOST)-[$(pwd)]"
 choice=$1
-echo "choice is $choice"
 if [[ ! $choice =~ ^[1-2]+$ ]]; then
     read -p "└─$>>" choice
 fi
