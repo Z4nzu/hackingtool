@@ -22,4 +22,5 @@ jobs:
       - run: sudo ./install.sh 1
       - run: pwd && ls -hal
       # `2` should use the default path /home/hackingtool/
-      - run: echo "2\n" | hackingtool
+      - run: echo "2\n" | hackingtool  # Does not take the echoed input
+      - run: echo "2\n" | hackingtool.py
