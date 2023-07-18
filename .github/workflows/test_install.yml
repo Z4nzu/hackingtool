@@ -17,5 +17,5 @@ jobs:
       - run: pwd
       - run: ls -hal
       - env:
-          TERM: "whatever"
+          TERM: "linux"
         run: echo "1\n" | ./install.sh
