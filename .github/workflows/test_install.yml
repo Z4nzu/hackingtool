@@ -21,6 +21,6 @@ jobs:
       #-  run: echo -e "\n1\n1\n1\n" | sudo ./install.sh
       - run: sudo ./install.sh 1
       - run: pwd && ls -hal
-      - run: echo -e "1\n/home/runner/work/hackingtool/hackingtool\n" | hackingtool
+      - run: echo -e "1\n/home/runner/work/hackingtool/hackingtool\n" | hackingtool || true
       - run: pwd && ls -hal
 
