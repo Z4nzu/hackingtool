@@ -51,10 +51,10 @@ echo -e "${WHITE}              [0] Exit "
 
 echo -e "${COLOR}┌──($USER㉿$HOST)-[$(pwd)]"
 choice=$1
-if [[ $choice =~ ^[1-2]+$ ]]; then
+echo "choice is $choice"
+if [[ ! $choice =~ ^[1-2]+$ ]]; then
     read -p "└─$>>" choice
 fi
-
 
 # Define installation directories
 install_dir="/usr/share/hackingtool"
