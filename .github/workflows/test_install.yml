@@ -19,4 +19,6 @@ jobs:
       #- env:
       #    TERM: "linux"
       #  run: echo -e "\n1\n1\n1\n" | sudo ./install.sh
-      - run: sudo ./install.sh 1
+      - env:
+          TERM: "linux"
+        run: sudo ./install.sh 1
