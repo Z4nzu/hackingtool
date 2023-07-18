@@ -134,4 +134,4 @@ class Saphyra(HackingTool):
 
 class DDOSTools(HackingToolsCollection):
     TITLE = "DDOS Attack Tools"
-    TOOLS = [SlowLoris(), Asyncrone(), UFONet(), GoldenEye(), Syphra()]
+    TOOLS = [SlowLoris(), Asyncrone(), UFONet(), GoldenEye(), Saphyra()]
