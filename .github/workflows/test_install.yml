@@ -7,6 +7,8 @@ on:
 jobs:
   test_install:
     runs-on: ubuntu-latest
+    env:
+      TERM: "linux"
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
@@ -16,9 +18,8 @@ jobs:
       - run: pip install --upgrade pip
       - run: pwd && ls -hal
       # How can we pipe in responses to `read` prompts?
-      #- env:
-      #    TERM: "linux"
       #  run: echo -e "\n1\n1\n1\n" | sudo ./install.sh
-      - env:
-          TERM: "linux"
-        run: sudo ./install.sh 1
+      - run: sudo ./install.sh 1
+      - run: pwd && ls -hal
+      # `2` should use the default path /home/hackingtool/
+      - run: echo "2\n" | hackingtool
