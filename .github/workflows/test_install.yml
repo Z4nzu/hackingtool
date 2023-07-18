@@ -15,6 +15,8 @@ jobs:
           cache: 'pip'
       - run: pip install --upgrade pip
       - run: pwd && ls -hal
-      - env:
-          TERM: "linux"
-        run: echo -e "\n1\n1\n1\n" | sudo ./install.sh
+      # How can we pipe in responses to `read` prompts?
+      #- env:
+      #    TERM: "linux"
+      #  run: echo -e "\n1\n1\n1\n" | sudo ./install.sh
+      - run: sudo ./install.sh 1
