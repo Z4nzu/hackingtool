@@ -1,0 +1,19 @@
+name: test_install
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+jobs:
+  test_install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+          cache: 'pip'
+      - run: pip install --upgrade pip
+      - run: pwd
+      - run: ls -hal
+      - run: echo "1\n" | ./install.sh
