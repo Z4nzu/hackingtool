@@ -102,8 +102,7 @@ if __name__ == "__main__":
 
             with open(fpath) as f:
                 archive = f.readline()
-                if not os.path.exists(archive):
-                    os.mkdir(archive)
+                os.mkdirs(archive, exist_ok=True)
                 os.chdir(archive)
                 AllTools().show_options()
 
