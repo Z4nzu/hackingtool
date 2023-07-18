@@ -50,7 +50,10 @@ echo -e "${WHITE}              [2] Arch Linux (pacman)" # added arch linux suppo
 echo -e "${WHITE}              [0] Exit "
 
 echo -e "${COLOR}┌──($USER㉿$HOST)-[$(pwd)]"
-read -p "└─$>>" choice
+choice=$1
+if [[ $choice =~ ^[1-2]+$ ]]; then
+    read -p "└─$>>" choice
+fi
 
 
 # Define installation directories
