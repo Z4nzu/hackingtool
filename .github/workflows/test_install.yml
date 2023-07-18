@@ -14,8 +14,7 @@ jobs:
           python-version: 3.x
           cache: 'pip'
       - run: pip install --upgrade pip
-      - run: pwd
-      - run: ls -hal
+      - run: pwd && ls -hal
       - env:
           TERM: "linux"
-        run: echo "\n1\n" | sudo ./install.sh
+        run: echo -e "\n1\n1\n1\n" | sudo ./install.sh
