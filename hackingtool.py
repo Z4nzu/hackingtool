@@ -74,9 +74,7 @@ class AllTools(HackingToolsCollection):
 if __name__ == "__main__":
     try:
         if system() == 'Linux':
-            # Testing platforms like GitHub Actions define a $CI environment variable
-            print(f'{os.getenv("CI") = }')
-            fpath = "/tmp/hackingtoolpath.txt"  # if os.getenv("CI") else "/home/hackingtoolpath.txt"
+            os.path.expanduser("~/hackingtoolpath.txt")
             if not os.path.exists(fpath):
                 os.system('clear')
                 # run.menu()
