@@ -74,7 +74,7 @@ class AllTools(HackingToolsCollection):
 if __name__ == "__main__":
     try:
         if system() == 'Linux':
-            fpath = "~/hackingtoolpath.txt"
+            fpath = os.path.expanduser("~/hackingtoolpath.txt")
             if not os.path.exists(fpath):
                 os.system('clear')
                 # run.menu()
