@@ -16,4 +16,6 @@ jobs:
       - run: pip install --upgrade pip
       - run: pwd
       - run: ls -hal
-      - run: echo "1\n" | ./install.sh
+      - env:
+          TERM: "whatever"
+        run: echo "1\n" | ./install.sh
