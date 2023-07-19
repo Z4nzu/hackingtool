@@ -9,6 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TERM: "linux"
+    strategy:
+      fail-fast: false
+      matrix:
+        commands:
+          # Typing "1" will allow us to manually enter a path.
+          # Provide a path to a writable directory: /tmp
+          # Typing "99" will quit hackingtool. 
+          - "1\n${HOME}\n99\n"  # Install, run, quit
+          - "1\n/tmp\n17\n"  # Install, run, uninstall
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
@@ -19,9 +28,6 @@ jobs:
       - run: pwd && ls -hal
       - run: sudo ./install.sh 1
       - run: pwd && ls -hal
-      # Typing "1" will allow us to manually enter a path.
-      # Provide a path to a writable directory: /home/runner/work/hackingtool/hackingtool
-      # Typing "99" will quit hackingtool. 
-      - run: echo -e "1\n/home/runner/work/hackingtool/hackingtool\n99\n" | hackingtool
+      - run: echo -e ${{ matrix.commands }} | hackingtool
       - run: pwd && ls -hal
 
