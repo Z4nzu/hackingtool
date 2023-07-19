@@ -16,8 +16,8 @@ jobs:
           # Typing "1" will allow us to manually enter a path.
           # Provide a path to a writable directory: /tmp
           # Typing "99" will quit hackingtool. 
-          - "1\n${HOME}\n99\n"  # Install, run, quit
-          - "1\n/tmp\n17\n"  # Install, run, uninstall
+          - "1\n${HOME}/hackingtool.config\n99\n"  # Install, run, quit
+          - "1\n/tmp/hackingtool\n17\n"  # Install, run, uninstall
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
