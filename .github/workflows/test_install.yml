@@ -17,10 +17,11 @@ jobs:
           cache: 'pip'
       - run: pip install --upgrade pip
       - run: pwd && ls -hal
-      # How can we pipe in responses to `read` prompts?
-      #-  run: echo -e "\n1\n1\n1\n" | sudo ./install.sh
       - run: sudo ./install.sh 1
       - run: pwd && ls -hal
-      - run: echo -e "1\n/home/runner/work/hackingtool/hackingtool\n" | hackingtool || true
+      # Typing "1" will allow us to manually enter a path.
+      # Provide a path to a writable directory: /home/runner/work/hackingtool/hackingtool
+      # Typing "99" will quit hackingtool. 
+      - run: echo -e "1\n/home/runner/work/hackingtool/hackingtool\n99\n" | hackingtool
       - run: pwd && ls -hal
 
