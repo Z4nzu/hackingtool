@@ -13,11 +13,9 @@ jobs:
       fail-fast: false
       matrix:
         commands:
-          # Typing "1" will allow us to manually enter a path.
-          # Provide a path to a writable directory: /tmp
-          # Typing "99" will quit hackingtool. 
-          - "1\n${HOME}/hackingtool.config\n99\n"  # Install, run, quit
-          - "1\n/tmp/hackingtool\n17\n"  # Install, run, uninstall
+          # Enter hackingtool starting from the main menu with \n as the delimiter. 
+          - "17"  # Install, run, uninstall
+          - "99"  # Install, run, quit
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
@@ -28,6 +26,9 @@ jobs:
       - run: pwd && ls -hal
       - run: sudo ./install.sh 1
       - run: pwd && ls -hal
-      - run: echo -e ${{ matrix.commands }} | hackingtool
+      # Typing "1" will allow us to manually enter the filepath to hackingtool
+      # Provide the filepath ${HOME}/work/hackingtool/hackingtool
+      # Type the matrix.commands
+      - run: echo -e "1\n${HOME}/work/hackingtool/hackingtool\n${{ matrix.commands }}\n" | hackingtool
       - run: pwd && ls -hal
 
