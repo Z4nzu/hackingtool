@@ -1,5 +1,6 @@
 # coding=utf-8
 import os
+import sys
 from time import sleep
 
 from core import HackingTool
@@ -53,9 +54,8 @@ class UninstallTool(HackingTool):
                   "sudo rm -rf /usr/share/doc/hackingtool/;"
                   "cd /etc/;"
                   "sudo rm -rf /etc/hackingtool/;")
-        print("\nHackingtool Successfully Uninstalled..")
-        print("Happy Hacking..!!")
-        sleep(1)
+        print("\nHackingtool Successfully Uninstalled... Goodbye.")
+        sys.exit()
 
 
 class ToolManager(HackingToolsCollection):
