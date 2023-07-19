@@ -14,7 +14,8 @@ jobs:
       matrix:
         commands:
           # Enter hackingtool starting from the main menu with \n as the delimiter. 
-          - "17"  # Install, run, uninstall
+          - "17\n0"  # Install, run, update
+          - "17\n1"  # Install, run, uninstall
           - "99"  # Install, run, quit
     steps:
       - uses: actions/checkout@v3
