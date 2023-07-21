@@ -9,6 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TERM: "linux"
+    strategy:
+      fail-fast: false
+      matrix:
+        commands:
+          # Enter hackingtool starting from the main menu with \n as the delimiter. 
+          - "17\n0\n1\n\n99\n99\n99"  # Install, run, update, update system,      press ENTER to continue, back to main menu, quit
+          - "17\n0\n2\n\n99\n99\n99"  # Install, run, update, update hackingtool, press ENTER to continue, back to main menu, quit
+          # - "17\n1\n1\n"  # Install, run, uninstall, press ENTER to continue
+          - "99"  # Install, run, quit
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
@@ -19,9 +28,9 @@ jobs:
       - run: pwd && ls -hal
       - run: sudo ./install.sh 1
       - run: pwd && ls -hal
-      # Typing "1" will allow us to manually enter a path.
-      # Provide a path to a writable directory: /home/runner/work/hackingtool/hackingtool
-      # Typing "99" will quit hackingtool. 
-      - run: echo -e "1\n/home/runner/work/hackingtool/hackingtool\n99\n" | hackingtool
+      # Typing "1" will allow us to manually enter the filepath to hackingtool.
+      # Provide the filepath ${HOME}/work/hackingtool/hackingtool
+      # Type the matrix.commands.
+      - run: echo -e "1\n${HOME}/work/hackingtool/hackingtool\n${{ matrix.commands }}\n" | hackingtool
       - run: pwd && ls -hal
 
