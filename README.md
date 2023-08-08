@@ -40,7 +40,7 @@
 - [DDOS Attack Tools](#ddos-attack-tools)
 - [Remote Administrator Tools (RAT)](#remote-administrator-tools--rat-)
 - [XSS Attack Tools](#xss-attack-tools)
-- [Steganograhy tools](#steganograhy-tools)
+- [Steganography tools](#steganography-tools)
 - [Other tools](#other-tools)
     - [SocialMedia Bruteforce](#socialmedia-bruteforce)
     - [Android Hacking tools](#android-hacking-tools)
@@ -161,7 +161,7 @@
 - [Advanced XSS Detection Suite](https://github.com/UltimateHackers/XSStrike)
 - [RVuln](https://github.com/iinc0gnit0/RVuln)
 - [Cyclops](https://github.com/v8blink/Chromium-based-XSS-Taint-Tracking) 
-### Steganograhy tools
+### Steganography tools
 - SteganoHide
 - StegnoCracker
 - [StegoCracker](https://github.com/W1LDN16H7/StegoCracker)
