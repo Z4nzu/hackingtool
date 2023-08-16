@@ -9,7 +9,7 @@
 [![HitCount](http://hits.dwyl.com/Z4nzu/hackingtool.svg)](http://hits.dwyl.com/Z4nzu/hackingtool)
 ![](https://img.shields.io/badge/platform-Linux%20%7C%20KaliLinux%20%7C%20ParrotOs-blue)
 
-#### Install Kali Linux in WIndows10 Without VirtualBox [YOUTUBE](https://youtu.be/BsFhpIDcd9I) or use Docker
+#### Install Kali Linux in Windows10 Without VirtualBox [YOUTUBE](https://youtu.be/BsFhpIDcd9I) or use Docker
 
 ## Update Available V1.2.0 🚀 
 - [✔] Installation Bug Fixed
@@ -40,7 +40,7 @@
 - [DDOS Attack Tools](#ddos-attack-tools)
 - [Remote Administrator Tools (RAT)](#remote-administrator-tools--rat-)
 - [XSS Attack Tools](#xss-attack-tools)
-- [Steganograhy tools](#steganograhy-tools)
+- [Steganography tools](#steganography-tools)
 - [Other tools](#other-tools)
     - [SocialMedia Bruteforce](#socialmedia-bruteforce)
     - [Android Hacking tools](#android-hacking-tools)
@@ -161,7 +161,7 @@
 - [Advanced XSS Detection Suite](https://github.com/UltimateHackers/XSStrike)
 - [RVuln](https://github.com/iinc0gnit0/RVuln)
 - [Cyclops](https://github.com/v8blink/Chromium-based-XSS-Taint-Tracking) 
-### Steganograhy tools
+### steganography tools
 - SteganoHide
 - StegnoCracker
 - [StegoCracker](https://github.com/W1LDN16H7/StegoCracker)
