@@ -1,9 +1,10 @@
 version: "3.9"
 services:
   hackingtool:
-    build: .
-    stdin_open: true # docker run -i
-    tty: true        # docker run -t
+    image: vgpastor/hackingtool
+    container_name: hackingtool
+    stdin_open: true
+    tty: true
     volumes:
       - .:/root/hackingtool
     ports:

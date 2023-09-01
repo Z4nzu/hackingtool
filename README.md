@@ -240,13 +240,34 @@
 
 ## Use image with Docker
 
-### Run in one click
-`docker run -it vgpastor/hackingtool`
+### Create Docker Image
+- Create the docker image 
 
-### Build locally
-`docker-compose build`
+```bash
+docker buitl -t vgpastor/hackingtool .
+```
 
-`docker-compose run hackingtool`
+### Run as container 
+
+```bash
+docker-compose up -d
+```
+
+### Interact with terminal
+
+- Get into the container 
+```bash
+docker exec -it hackingtool bash
+```
+**OUTPUT:**
+```bash
+Select Best Option : 
+
+              [1] Kali Linux / Parrot-Os (apt)
+              [2] Arch Linux (pacman)
+              [0] Exit 
+```
+Enter the options and continue.
 
 - If need open other ports you can edit the docker-compose.yml file
 - Volumes are mounted in the container to persist data and can share files between the host and the container
