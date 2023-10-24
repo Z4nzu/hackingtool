@@ -124,6 +124,7 @@
 - [Bulk extractor](https://github.com/simsong/bulk_extractor)
 - [Disk Clone and ISO Image Acquire](https://guymager.sourceforge.io/)
 - [Toolsley](https://www.toolsley.com/)
+- [Volatility3](https://github.com/volatilityfoundation/volatility3/)
 ### Payload creation tools
 - [The FatRat](https://github.com/Screetsec/TheFatRat)
 - [Brutal](https://github.com/Screetsec/Brutal)
