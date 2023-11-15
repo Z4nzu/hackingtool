@@ -115,6 +115,7 @@
 - [Blazy(Also Find ClickJacking)](https://github.com/UltimateHackers/Blazy)
 - [Sub-Domain TakeOver](https://github.com/m4ll0k/takeover)
 - [Dirb](https://gitlab.com/kalilinux/packages/dirb)
+- [secret-web](https://github.com/Tony-Linux/secret-web)
 ### Post exploitation tools
 - [Vegile - Ghost In The Shell](https://github.com/Screetsec/Vegile)
 - [Chrome Keylogger](https://github.com/UndeadSec/HeraKeylogger)
