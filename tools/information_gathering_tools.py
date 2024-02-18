@@ -117,11 +117,11 @@ class Infoga(HackingTool):
     DESCRIPTION = "Infoga is a tool gathering email accounts information\n" \
                   "(ip, hostname, country,...) from different public source"
     INSTALL_COMMANDS = [
-        "git clone https://github.com/m4ll0k/Infoga.git",
+        "git clone https://github.com/robertswin/Infoga.git",
         "cd Infoga;sudo python3 setup.py install"
     ]
     RUN_COMMANDS = ["cd Infoga;python3 infoga.py"]
-    PROJECT_URL = "https://github.com/m4ll0k/Infoga"
+    PROJECT_URL = "https://github.com/robertswin/Infoga"
 
 
 class ReconDog(HackingTool):
