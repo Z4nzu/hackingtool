@@ -1,4 +1,9 @@
-#!/usr/bin/env python3
+git clone https://github.com/Z4nzu/hackingtool.git#!/us
+chmod -R 755 hackingtool
+cd hackingtool
+sudo pip3 install -r requirement.txt
+sudo hackingtool
+r/bin/env python3
 # Version 1.1.0
 import os
 import sys
