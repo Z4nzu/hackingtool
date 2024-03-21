@@ -66,12 +66,21 @@ class AppCheck(HackingTool):
     RUN_COMMANDS = ["cd underhanded;sudo bash underhanded.sh"]
     PROJECT_URL = "https://github.com/jakuta-tech/underhanded"
 
-
+class SnapHack(HackingTool):
+    TITLE = "SnapHack"
+    DESCRIPTION = "Snapchat account hacking tool..Snapchat was programmed by Skar Hack"
+    INSTALL_COMMANDS = [
+        "sudo git clone https://github.com/skar44/SnapHack.git",
+        "cd SnapHack && sudo chmod +x Snaphack.sh"
+    ]
+    RUN_COMMANDS = ["cd SnapHack;sudo bash Snaphack.sh"]
+    PROJECT_URL = "https://github.com/skar44/Snaphack/"
 class SocialMediaBruteforceTools(HackingToolsCollection):
     TITLE = "SocialMedia Bruteforce"
     TOOLS = [
         InstaBrute(),
         BruteForce(),
         Faceshell(),
-        AppCheck()
+        AppCheck(),
+        SnapHack()
     ]
