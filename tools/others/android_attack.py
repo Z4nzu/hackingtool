@@ -55,6 +55,14 @@ class EvilApp(HackingTool):
     RUN_COMMANDS = ["cd EvilApp && bash evilapp.sh"]
     PROJECT_URL = "https://github.com/crypticterminal/EvilApp"
 
+class EvilAppv2(HackingTool):
+    TITLE = "EvilAppv2 (Hijack Session)"
+    DESCRIPTION = "EvilApp v2 is a updated script to generate Android App that can " 
+    "hijack authenticated sessions in cookies."
+    INSTALL_COMMANDS = [
+        "sudo git clone https://github.com/SoundPhoenix/EvilApp-v2.git"]
+    RUN_COMMANDS = ["cd EvilApp-v2 && bash evilappv2-.sh"]
+    PROJECT_URL = "https://github.com/SoundPhoenix/EvilApp-v2"
 
 class AndroidAttackTools(HackingToolsCollection):
     TITLE = "Android Hacking tools"
@@ -63,5 +71,6 @@ class AndroidAttackTools(HackingToolsCollection):
         MySMS(),
         LockPhish(),
         Droidcam(),
-        EvilApp()
+        EvilApp(),
+        EvilAppv2()
     ]
