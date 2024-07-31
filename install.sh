@@ -144,7 +144,7 @@ if [[ $choice =~ ^[1-2]+$ ]]; then
         echo "";
         echo -e  "${ORANGE}[+]+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[+]"
         echo     "[+]                                                             [+]"
-        echo -e  "${ORANGE}[+]     ✔✔✔ Now Just Type In Terminal (hackingtool) ✔✔✔      [+]"
+        echo -e  "${ORANGE}[+]     ✔✔✔ Now Just Type In Terminal (hackingtool) ✔✔✔         [+]"
         echo     "[+]                                                             [+]"
         echo -e  "${ORANGE}[+]+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[+]"
     else
