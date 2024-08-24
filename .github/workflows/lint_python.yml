@@ -16,12 +16,12 @@ jobs:
       - name: "Ruff: Show stopper (must-fix) issues"
         run: ruff check --select=E9,F63,F7,F82,PLE,YTT --output-format=github
       - name: "Ruff: All issues"
-        run: ruff --exit-zero --select=ALL --statistics --target-version=py37 .
+        run: ruff check --exit-zero --select=ALL --statistics --target-version=py38
       - name: "Ruff: All fixable (ruff --fix) issues"
-        run: ruff --exit-zero --select=ALL --ignore=ANN204,COM812,ERA001,RSE102
-                  --statistics --target-version=py37 . | grep "\[\*\]"
-      - run: pip install black codespell mypy pytest safety
-      - run: black --check . || true
+        run: ruff check --exit-zero --select=ALL --ignore=ANN204,COM812,ERA001,RSE102
+                  --statistics --target-version=py38 . | grep "\[\*\]"
+      - run: ruff format || true
+      - run: pip install codespell mypy pytest safety
       - run: codespell
       - run: pip install -r requirements.txt || pip install --editable . || pip install . || true
       - run: mkdir --parents --verbose .mypy_cache
