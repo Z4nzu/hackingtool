@@ -14,7 +14,7 @@ jobs:
           python-version: 3.x
       - run: pip install --upgrade pip ruff setuptools wheel
       - name: "Ruff: Show stopper (must-fix) issues"
-        run: ruff check --select=E9,F63,F7,F82,PLE,YTT --show-source
+        run: ruff check --select=E9,F63,F7,F82,PLE,YTT --output-format=github
       - name: "Ruff: All issues"
         run: ruff --exit-zero --select=ALL --statistics --target-version=py37 .
       - name: "Ruff: All fixable (ruff --fix) issues"
