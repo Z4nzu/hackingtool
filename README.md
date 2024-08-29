@@ -23,7 +23,6 @@
 - [X] Added Tool in steganography
 
 
-
 # Hackingtool Menu 🧰
 - [Anonymously Hiding Tools](#anonymously-hiding-tools)
 - [Information gathering tools](#information-gathering-tools)
