@@ -245,7 +245,7 @@
 - Create the docker image 
 
 ```bash
-docker buitl -t vgpastor/hackingtool .
+docker buitd -t vgpastor/hackingtool .
 ```
 
 ### Run as container 
