@@ -5,8 +5,8 @@ from core import HackingToolsCollection
 
 class Cupp(HackingTool):
     TITLE = "Cupp"
-    DESCRIPTION = "WlCreator is a C program that can create all possibilities of passwords,\n " \
-                  "and you can choose Length, Lowercase, Capital, Numbers and Special Chars"
+    DESCRIPTION = """Cupp is a tool that can create all possibilities of passwords,
+and you can choose Length, Lowercase, Capital, Numbers, and Special Chars"""
     INSTALL_COMMANDS = ["git clone https://github.com/Mebus/cupp.git"]
     RUN_COMMANDS = ["cd cupp && python3 cupp.py -i"]
     PROJECT_URL = "https://github.com/Mebus/cupp"
@@ -14,9 +14,8 @@ class Cupp(HackingTool):
 
 class WlCreator(HackingTool):
     TITLE = "WordlistCreator"
-    DESCRIPTION = "WlCreator is a C program that can create all possibilities" \
-                  " of passwords,\n and you can choose Length, Lowercase, " \
-                  "Capital, Numbers and Special Chars"
+    DESCRIPTION = """WlCreator is a C program that can create all possibilities of passwords,
+and you can choose Length, Lowercase, Capital, Numbers, and Special Chars"""
     INSTALL_COMMANDS = ["sudo git clone https://github.com/Z4nzu/wlcreator.git"]
     RUN_COMMANDS = [
         "cd wlcreator && sudo gcc -o wlcreator wlcreator.c && ./wlcreator 5"]
@@ -43,7 +42,7 @@ class showme(HackingTool):
         "sudo git clone https://github.com/Viralmaniar/SMWYG-Show-Me-What-You-Got.git",
         "cd SMWYG-Show-Me-What-You-Got && pip3 install -r requirements.txt"
     ]
-    RUN_COMMANDS = ["cd SMWYG-Show-Me-What-You-Got && python SMWYG.py"]
+    RUN_COMMANDS = ["cd SMWYG-Show-Me-What-You-Got && python3 SMWYG.py"]
     PROJECT_URL = "https://github.com/Viralmaniar/SMWYG-Show-Me-What-You-Got"
 
 
