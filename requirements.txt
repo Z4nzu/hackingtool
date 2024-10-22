@@ -1,4 +1,4 @@
 boxes
-flask
-lolcat
-requests
+Flask==3.0.3 
+lolcat==1.4 
+requests==2.31.0 
