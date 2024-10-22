@@ -293,3 +293,17 @@ Enter the options and continue.
 #### Don't Forgot to share with Your Friends 
 ### The new Update get will soon stay updated
 #### Thank you..!!
+# Want to install docker package in one whole command here you go!
+```
+docker built -t vgpastor/hackingtool
+docker -compose up -d
+docker exec -it hackingtool bash
+```
+#Want to install manually in one whole command here youu go
+```
+git clone https://github.com/Z4nzu/hackingtool.git
+chmod -R 755 hackingtool
+cd hackingtool
+sudo bash install.sh
+sudo hackingtool
+```
