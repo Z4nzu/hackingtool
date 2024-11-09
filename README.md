@@ -413,6 +413,11 @@ echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.d
   sudo tee /etc/apt/sources.list.d/docker.list
 ```
 
+Import the gpg key
+```gpg
+curl -fsSL https://download.docker.com/linux/debian/gpg |
+  sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+```
 #### Thanks to original Author of the tools used in hackingtool
 
 <img src ="https://img.shields.io/badge/Important-notice-red" />
