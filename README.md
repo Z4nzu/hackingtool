@@ -325,11 +325,10 @@
 
 ![](https://github.com/Z4nzu/hackingtool/blob/master/images/A4.png)
 
+</details>
 
-
-
-Installation For Linux <img src="https://konpa.github.io/devicon/devicon.git/icons/linux/linux-original.svg" alt="linux" width="25" height="25"/></p><p align="center">
-
+![](https://www.vectorlogo.zone/logos/linux/linux-icon.svg)
+Installation For Linux 
 
 ### Hackingtool Manual Installation Guide
 
