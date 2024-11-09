@@ -24,17 +24,9 @@
 - [X] Add Table of Contents
 - [X] Finish Making anchor links to the Table of Contents
 - [X] Add the hacking menu to the Table of Contents
-- [ ] Finish the Table of Contents
+- [X] Finish the Table of Contents
 - [X] Add tutorial of how to install docker.io
 - [ ] add tutorial of how to install docker compose
-
-
-# Table of Contents
-<summary>Text Here</summary>
-
-</details>
-
-</details>
 
 # Table of Contents
 <details><summary>Hackingtool Menu</summary>
