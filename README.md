@@ -376,6 +376,26 @@ Enter the options and continue.
 </details>
 
 # Dont Have docker heres a Guide on how to install docker.io
+First update all your packages by doing
+```bash
+sudo apt update
+```
+After you update all your packages then it is time to install docker.io by doing 
+```bash
+sudo apt install -y docker.io
+```
+To add systemctl to docker put the command below in your terminal
+```bash
+sudo systemctl enable docker --now
+```
+To verify that you docker put the following command below on your terminal
+```bash
+docker
+```
+To use docker without doing sudo every time put the command below in your terminal
+```bash
+sudo usermod -aG docker $USER
+```
 
 #### Thanks to original Author of the tools used in hackingtool
 
