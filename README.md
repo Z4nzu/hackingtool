@@ -42,6 +42,7 @@
 - [Remote Administrator Tools (RAT)](#remote-administrator-tools--rat-)
 - [XSS Attack Tools](#xss-attack-tools)
 - [Steganograhy tools](#steganograhy-tools)
+
 - [Other tools](#other-tools)
     - [SocialMedia Bruteforce](#socialmedia-bruteforce)
     - [Android Hacking tools](#android-hacking-tools)
@@ -54,6 +55,7 @@
     - [Web crawling](#web-crawling)
     - [Mix tools](#mix-tools)
 
+</details>
 
 ### Anonymously Hiding Tools
 - [Anonmously Surf](https://github.com/Und3rf10w/kali-anonsurf)
