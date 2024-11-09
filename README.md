@@ -407,6 +407,7 @@ sudo usermod -aG docker $USER
 # Kali Docker-ce Installation Guide
 > [!NOTE]
 > *Kali linux is based off debian, so this will probably only install on debian based distros and might not work on non-debian based distros.*
+
 First use echo command to add docker ce bookworm to your file manager/terminal
 ```debian
 echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable" | \
