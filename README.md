@@ -404,6 +404,13 @@ To use docker without doing sudo every time put the command below in your termin
 ```bash
 sudo usermod -aG docker $USER
 ```
+# Kali Docker-ce Installation Guide
+*note kali linux is based off debian, so this will probably install on ubuntu and other debian based distros*
+First use echo command to add docker ce bookworm to your file manager/terminal
+```debian
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list
+```
 
 #### Thanks to original Author of the tools used in hackingtool
 
