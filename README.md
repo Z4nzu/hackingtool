@@ -25,6 +25,8 @@
 - [ ] Finish Making anchor links to the Table of Contents
 
 # Table of Contents
+<details><summary>Text Here</summary>
+</details>
 
 
 # Hackingtool Menu 🧰
