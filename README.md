@@ -93,6 +93,8 @@
 - [Leviathan - Wide Range Mass Audit Toolkit](https://github.com/leviathan-framework/leviathan)
 - [SQLScan](https://github.com/Cvar1984/sqlscan)
 
+</details>
+
 <details><summary>Web Attack Tools</summary>
 
  - [Web2Attack](https://github.com/santatic/web2attack)
