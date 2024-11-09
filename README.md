@@ -293,7 +293,7 @@
 
 <details><summary>Whole Commands Guides</summary>
     
-- [Whole Manual Command](#
+- [Whole Manual Command](#Want-to-install-docker-package-in-one-whole-command-here-you-go!)
 - [Whole Docker Command](#Want-to-manually-install-hackingtool-in-one-whole-command-here-you-go)
 
 </details>
