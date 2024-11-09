@@ -293,7 +293,7 @@
 
 <details><summary>Whole Commands Guides</summary>
     
-- [Whole Manual Command](#Want-to-install-docker-package-in-one-whole-command-here-you-go!)
+- [Whole Manual Command](#Want-to-install-docker-package-in-one-whole-command-here-you-go)
 - [Whole Docker Command](#Want-to-manually-install-hackingtool-in-one-whole-command-here-you-go)
 
 </details>
@@ -447,7 +447,7 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io
 #### Don't Forgot to share with Your Friends 
 ### The new Update get will soon stay updated
 #### Thank you..!!
-# Want to install docker package in one whole command here you go!
+# Want to install docker package in one whole command here you go
 ```
 docker built -t vgpastor/hackingtool
 docker -compose up -d
