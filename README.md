@@ -25,6 +25,8 @@
 - [X] Finish Making anchor links to the Table of Contents
 - [X] Add the hacking menu to the Table of Contents
 - [ ] Finish the Table of Contents
+- [ ] Add tutorial of how to install docker.io
+- [ ] add tutorial of how to install docker compose
 
 
 # Table of Contents
@@ -289,9 +291,18 @@
 
 </details>
 
-<details><summary>Installation Guides</summary>
+<details><summary>Install and Run Hackingtool</summary>
+
+- [Manual Installation](#Hackingtool-Manual-Installation-Guide)
+- [Docker Setup](#Using-Hacktool-with-Docker)
 
 </details>
+
+<details><summary>Whole Command</summary>
+    
+- [Whole Manual Command](#
+- [Whole Docker Command](#Want-to-manually-install-hackingtool-in-one-whole-command-here-you-go)
+
 
 ![](https://github.com/Z4nzu/hackingtool/blob/master/images/A00.png)
 ![](https://github.com/Z4nzu/hackingtool/blob/master/images/A0.png)
@@ -302,13 +313,10 @@
 Installation For Linux <img src="https://konpa.github.io/devicon/devicon.git/icons/linux/linux-original.svg" alt="linux" width="25" height="25"/></p><p align="center">
 
 
-### !! RUN HACKINGTOOL AS ROOT !! 
+### Hackingtool Manual Installation Guide
 
-
-## Steps are given below : 
-
-
-## Step : 1 Download hackingtool
+## Steps to guide are given below:
+## Step: 1 Download hackingtool
 
     git clone https://github.com/Z4nzu/hackingtool.git
 
@@ -329,7 +337,7 @@ Installation For Linux <img src="https://konpa.github.io/devicon/devicon.git/ico
     sudo hackingtool
 
 
-## Use image with Docker
+## Using Hacktool with Docker
 
 ### Create Docker Image
 - Create the docker image 
@@ -363,6 +371,8 @@ Enter the options and continue.
 - If need open other ports you can edit the docker-compose.yml file
 - Volumes are mounted in the container to persist data and can share files between the host and the container
 
+</details>
+# Dont Have docker heres a Guide on how to install docker.io
 
 #### Thanks to original Author of the tools used in hackingtool
 
@@ -389,7 +399,7 @@ docker built -t vgpastor/hackingtool
 docker -compose up -d
 docker exec -it hackingtool bash
 ```
-#Want to install manually in one whole command here youu go
+# Want to manually install hackingtool in one whole command here you go
 ```
 git clone https://github.com/Z4nzu/hackingtool.git
 chmod -R 755 hackingtool
