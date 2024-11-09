@@ -353,7 +353,8 @@ Installation For Linux
 
     sudo hackingtool
 
-
+![](https://www.vectorlogo.zone/logos/docker/docker-icon.svg)
+Docker installation
 ## Using Hacktool with Docker
 
 ### Create Docker Image
