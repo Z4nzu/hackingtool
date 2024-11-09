@@ -418,6 +418,15 @@ Import the gpg key
 curl -fsSL https://download.docker.com/linux/debian/gpg |
   sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 ```
+Installing the latest version of docker-ce
+Update all packages
+```bash
+sudo apt update
+```
+Now Finally it is time to install docker-ce, docker-ce-cli, and containerd.io
+```bash
+sudo apt install -y docker-ce docker-ce-cli containerd.io
+```
 #### Thanks to original Author of the tools used in hackingtool
 
 <img src ="https://img.shields.io/badge/Important-notice-red" />
