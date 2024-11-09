@@ -22,7 +22,8 @@
 - [X] Added Tool in wifijamming
 - [X] Added Tool in steganography
 - [X] Add Table of Contents
-- [ ] Finish Making anchor links to the Table of Contents
+- [X] Finish Making anchor links to the Table of Contents
+- [X] Add the hacking menu to the Table of Contents
 
 # Table of Contents
 <details><summary>Text Here</summary>
@@ -33,6 +34,7 @@
 </details>
 
 # Table of Contents
+<details><summary>Hackingtool Menu</summary>
 <details><summary>Anonymous Hiding Tools</summary>
 
 - [Anonmously Surf](https://github.com/Und3rf10w/kali-anonsurf)
@@ -203,35 +205,86 @@
 
 </details>
 
-# Hackingtool Menu 🧰
-- [Anonymously Hiding Tools](#anonymously-hiding-tools)
-- [Information gathering tools](#information-gathering-tools)
-- [Wordlist Generator](#wordlist-generator)
-- [Wireless attack tools](#wireless-attack-tools)
-- [SQL Injection Tools](#sql-injection-tools)
-- [Phishing attack tools](#phishing-attack-tools)
-- [Web Attack tools](#web-attack-tools)
-- [Post exploitation tools](#post-exploitation-tools)
-- [Forensic tools](#forensic-tools)
-- [Payload creation tools](#payload-creation-tools)
-- [Exploit framework](#exploit-framework)
-- [Reverse engineering tools](#reverse-engineering-tools)
-- [DDOS Attack Tools](#ddos-attack-tools)
-- [Remote Administrator Tools (RAT)](#remote-administrator-tools--rat-)
-- [XSS Attack Tools](#xss-attack-tools)
-- [Steganograhy tools](#steganograhy-tools)
+<details><summary>Steganograhy tools</summary>
+    
+- SteganoHide
+- StegnoCracker
+- [StegoCracker](https://github.com/W1LDN16H7/StegoCracker)
+- [Whitespace](https://github.com/beardog108/snow10)
 
-- [Other tools](#other-tools)
-    - [SocialMedia Bruteforce](#socialmedia-bruteforce)
-    - [Android Hacking tools](#android-hacking-tools)
-    - [IDN Homograph Attack](#idn-homograph-attack)
-    - [Email Verify tools](#email-verify-tools)
-    - [Hash cracking tools](#hash-cracking-tools)
-    - [Wifi Deauthenticate](#wifi-deauthenticate)
-    - [SocialMedia Finder](#socialmedia-finder)
-    - [Payload Injector](#payload-injector)
-    - [Web crawling](#web-crawling)
-    - [Mix tools](#mix-tools)
+</details>
+
+<details><summary>Other tools</summary>
+<details><summary>SocialMedia Bruteforce</summary>
+    
+- [Instagram Attack](https://github.com/chinoogawa/instaBrute)
+- [AllinOne SocialMedia Attack](https://github.com/Matrix07ksa/Brute_Force)
+- [Facebook Attack](https://github.com/Matrix07ksa/Brute_Force)
+- [Application Checker](https://github.com/jakuta-tech/underhanded)
+
+</details>
+
+<details><summary>Android Hacking tools</summary>
+    
+- [Keydroid](https://github.com/F4dl0/keydroid)
+- [MySMS](https://github.com/papusingh2sms/mysms)
+- [Lockphish (Grab target LOCK PIN)](https://github.com/JasonJerry/lockphish)
+- [DroidCam (Capture Image)](https://github.com/kinghacker0/WishFish)
+- [EvilApp (Hijack Session)](https://github.com/crypticterminal/EvilApp)
+- [HatCloud(Bypass CloudFlare for IP)](https://github.com/HatBashBR/HatCloud)
+
+</details>
+
+<details><summary>IDN Homograph Attack</summary>
+    
+- [EvilURL](https://github.com/UndeadSec/EvilURL)
+
+</details>
+
+<details><summary>Email Verify tools</summary>
+    
+- [Knockmail](https://github.com/4w4k3/KnockMail)
+
+</details>
+
+<details><summary>Hash cracking tool</summary>
+    
+- [Hash Buster](https://github.com/s0md3v/Hash-Buster)
+
+</details>
+
+<details><summary>Wifi Deauthenticate</summary>
+
+- [WifiJammer-NG](https://github.com/MisterBianco/wifijammer-ng)
+- [KawaiiDeauther](https://github.com/aryanrtm/KawaiiDeauther)
+
+</details>
+
+<details><summary>SocialMedia Finder</summary>
+    
+- [Find SocialMedia By Facial Recognation System](https://github.com/Greenwolf/social_mapper)
+- [Find SocialMedia By UserName](https://github.com/xHak9x/finduser)
+- [Sherlock](https://github.com/sherlock-project/sherlock)
+- [SocialScan | Username or Email](https://github.com/iojw/socialscan)
+
+</details>
+
+<details><summary>Payload Injector</summary>
+    
+- [Debinject](https://github.com/UndeadSec/Debinject)
+- [Pixload](https://github.com/chinarulezzz/pixload)
+
+</details>
+
+<details><summary>Web crawling</summary>
+    
+- [Gospider](https://github.com/jaeles-project/gospider)
+
+</details>
+
+<details><summary>Mix tools</summary>
+  
+- Terminal Multiplexer
 
 </details>
 
