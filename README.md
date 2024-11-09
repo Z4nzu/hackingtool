@@ -30,7 +30,7 @@
 
 
 # Table of Contents
-<details><summary>Text Here</summary>
+<summary>Text Here</summary>
 
 </details>
 
@@ -38,7 +38,6 @@
 
 # Table of Contents
 <details><summary>Hackingtool Menu</summary>
-</details>
 <details><summary>Anonymous Hiding Tools</summary>
 
 - [Anonmously Surf](https://github.com/Und3rf10w/kali-anonsurf)
@@ -65,7 +64,7 @@
 - [Port Scanner - Ranger Reloaded (Py- [Dracnmap](https://github.com/Screetsec/Dracnmap)
 
 </details>
-    
+
 <details><summary>Wordlist Generator</summary>
 
 - [Cupp](https://github.com/Mebus/cupp.git)
@@ -81,7 +80,7 @@
 - [pixiewps](https://github.com/wiire/pixiewps)
 - [Bluetooth Honeypot GUI Framework](https://github.com/andrewmichaelsmith/bluepot)
 - [Fluxion](https://github.com/thehackingsage/Fluxion)
-- [Wifiphisher](https://github.com/wifiphisher/wifiphisher)
+- [wifiphisher](https://github.com/wifiphisher/wifiphisher)
 - [Wifite](https://github.com/derv82/wifite2)
 - [EvilTwin](https://github.com/Z4nzu/fakeap)
 - [Fastssh](https://github.com/Z4nzu/fastssh)
@@ -291,6 +290,8 @@
 
 </details>
 
+</details>
+
 <details><summary>Install and Run Hackingtool</summary>
 
 - [Manual Installation](#Hackingtool-Manual-Installation-Guide)
@@ -298,7 +299,7 @@
 
 </details>
 
-<details><summary>Whole Command</summary>
+<details><summary>Whole Commands Guides</summary>
     
 - [Whole Manual Command](#
 - [Whole Docker Command](#Want-to-manually-install-hackingtool-in-one-whole-command-here-you-go)
@@ -307,10 +308,25 @@
 
 
 ![](https://github.com/Z4nzu/hackingtool/blob/master/images/A00.png)
+
+</details>
+
 ![](https://github.com/Z4nzu/hackingtool/blob/master/images/A0.png)
+
+</details>
+
 ![](https://github.com/Z4nzu/hackingtool/blob/master/images/A1.png)
+
+</details>
+
 ![](https://github.com/Z4nzu/hackingtool/blob/master/images/A2.png)
+
+</details>
+
 ![](https://github.com/Z4nzu/hackingtool/blob/master/images/A4.png)
+
+
+
 
 Installation For Linux <img src="https://konpa.github.io/devicon/devicon.git/icons/linux/linux-original.svg" alt="linux" width="25" height="25"/></p><p align="center">
 
