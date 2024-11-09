@@ -21,8 +21,10 @@
 - [x] Multitor Tools update
 - [X] Added Tool in wifijamming
 - [X] Added Tool in steganography
-- [ ] add Dropdown to Anchor Links
- 
+- [X] Add Table of Contents
+- [ ] Finish Making anchor links to the Table of Contents
+
+# Table of Contents
 
 
 # Hackingtool Menu 🧰
