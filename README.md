@@ -303,6 +303,8 @@
 - [Whole Manual Command](#
 - [Whole Docker Command](#Want-to-manually-install-hackingtool-in-one-whole-command-here-you-go)
 
+</details>
+
 
 ![](https://github.com/Z4nzu/hackingtool/blob/master/images/A00.png)
 ![](https://github.com/Z4nzu/hackingtool/blob/master/images/A0.png)
