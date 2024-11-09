@@ -95,17 +95,7 @@
 
 </details>
 
-<details><summary>Web Attack Tools</summary>
 
- - [Web2Attack](https://github.com/santatic/web2attack)
-- Skipfish
-- [SubDomain Finder](https://github.com/aboul3la/Sublist3r)
-- [CheckURL](https://github.com/UndeadSec/checkURL)
-- [Blazy(Also Find ClickJacking)](https://github.com/UltimateHackers/Blazy)
-- [Sub-Domain TakeOver](https://github.com/m4ll0k/takeover)
-- [Dirb](https://gitlab.com/kalilinux/packages/dirb)
-
-</details>
 
 <details><summary>Phishing attack tools</summary>
     
@@ -118,6 +108,82 @@
 - [QR Code Jacking](https://github.com/cryptedwolf/ohmyqr)
 - [ShellPhish](https://github.com/An0nUD4Y/shellphish)
 - [BlackPhish](https://github.com/iinc0gnit0/BlackPhish)
+
+</details>
+
+<details><summary>Web Attack Tools</summary>
+
+- [Web2Attack](https://github.com/santatic/web2attack)
+- Skipfish
+- [SubDomain Finder](https://github.com/aboul3la/Sublist3r)
+- [CheckURL](https://github.com/UndeadSec/checkURL)
+- [Blazy(Also Find ClickJacking)](https://github.com/UltimateHackers/Blazy)
+- [Sub-Domain TakeOver](https://github.com/m4ll0k/takeover)
+- [Dirb](https://gitlab.com/kalilinux/packages/dirb)
+
+</details>
+
+<details><summary>Post exploitation tools></summary>
+    
+- [Vegile - Ghost In The Shell](https://github.com/Screetsec/Vegile)
+- [Chrome Keylogger](https://github.com/UndeadSec/HeraKeylogger)
+
+</details>
+
+<details><summary>Forensic tools</summary>
+    
+- Autopsy
+- Wireshark
+- [Bulk extractor](https://github.com/simsong/bulk_extractor)
+- [Disk Clone and ISO Image Acquire](https://guymager.sourceforge.io/)
+- [Toolsley](https://www.toolsley.com/)
+- [Volatility3](https://github.com/volatilityfoundation/volatility3/)
+
+</details>
+
+<details><summary>Payload creation tools</summary>
+    
+- [The FatRat](https://github.com/Screetsec/TheFatRat)
+- [Brutal](https://github.com/Screetsec/Brutal)
+- [Stitch](https://nathanlopez.github.io/Stitch)
+- [MSFvenom Payload Creator](https://github.com/g0tmi1k/msfpc)
+- [Venom Shellcode Generator](https://github.com/r00t-3xp10it/venom)
+- [Spycam](https://github.com/indexnotfound404/spycam)
+- [Mob-Droid](https://github.com/kinghacker0/Mob-Droid)
+- [Enigma](https://github.com/UndeadSec/Enigma)
+
+</details>
+
+<details><summary>Exploit framework</summary>
+    
+- [RouterSploit](https://github.com/threat9/routersploit)
+- [WebSploit](https://github.com/The404Hacking/websploit )
+- [Commix](https://github.com/commixproject/commix)
+- [Web2Attack](https://github.com/santatic/web2attack)
+
+</details>
+
+<details><summary>Reverse engineering tools</summary>
+    
+- [Androguard](https://github.com/androguard/androguard )
+- [Apk2Gold](https://github.com/lxdvs/apk2gold )
+- [JadX](https://github.com/skylot/jadx)
+
+</details>
+
+<details><summary> DDOS Attack Tools</summary>
+    
+- SlowLoris
+- [Asyncrone | Multifunction SYN Flood DDoS Weapon](https://github.com/fatihsnsy/aSYNcrone)
+- [UFOnet](https://github.com/epsylon/ufonet)
+- [GoldenEye](https://github.com/jseidl/GoldenEye)
+
+</details>
+
+<details><summary>Remote Administrator Tools (RAT)</summary>
+   
+- [Stitch](https://github.com/nathanlopez/Stitch)
+- [Pyshell](https://github.com/knassar702/pyshell)
 
 </details>
 
