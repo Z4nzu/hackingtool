@@ -113,7 +113,7 @@
 - [SubDomain Finder](https://github.com/aboul3la/Sublist3r)
 - [CheckURL](https://github.com/UndeadSec/checkURL)
 - [Blazy(Also Find ClickJacking)](https://github.com/UltimateHackers/Blazy)
-- [Sub-Domain TakeOver](https://github.com/m4ll0k/takeover)
+- [Sub-Domain TakeOver](https://github.com/edoardottt/takeover)
 - [Dirb](https://gitlab.com/kalilinux/packages/dirb)
 ### Post exploitation tools
 - [Vegile - Ghost In The Shell](https://github.com/Screetsec/Vegile)
@@ -201,6 +201,7 @@
 - [Gospider](https://github.com/jaeles-project/gospider)
 #### Mix tools
 - Terminal Multiplexer
+- [Crivo](https://github.com/GMDSantana/crivo)
 
 
 ![](https://github.com/Z4nzu/hackingtool/blob/master/images/A00.png)
