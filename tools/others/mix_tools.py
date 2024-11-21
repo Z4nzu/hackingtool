@@ -21,7 +21,7 @@ class Crivo(HackingTool):
                   "with built-in web scraping capabilities.\n" \
                   "See: python3 crivo_cli.py -h"
     INSTALL_COMMANDS = [
-        "git clone https://github.com/GMDSantana/crivo",
+        "git clone https://github.com/GMDSantana/crivo.git",
         "cd crivo;pip install -r requirements.txt"
     ]
     PROJECT_URL = "https://github.com/GMDSantana/crivo"
