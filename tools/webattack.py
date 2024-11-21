@@ -76,7 +76,7 @@ class SubDomainTakeOver(HackingTool):
         "git clone https://github.com/edoardottt/takeover.git",
         "cd takeover;sudo python3 setup.py install"
     ]
-    PROJECT_URL = "https://github.com/edoardottt/takeover.git"
+    PROJECT_URL = "https://github.com/edoardottt/takeover"
 
     def __init__(self):
         super(SubDomainTakeOver, self).__init__(runnable = False)
