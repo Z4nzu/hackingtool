@@ -91,8 +91,8 @@ class XSSCon(HackingTool):
 
 class XanXSS(HackingTool):
     TITLE = "XanXSS"
-    DESCRIPTION = "XanXSS is a reflected XSS searching tool\n " \
-                  "that creates payloads based from templates"
+    DESCRIPTION = """XanXSS is a reflected XSS searching tool
+that creates payloads based from templates"""
     INSTALL_COMMANDS = ["git clone https://github.com/Ekultek/XanXSS.git"]
     PROJECT_URL = "https://github.com/Ekultek/XanXSS"
 
@@ -113,7 +113,7 @@ class XSSStrike(HackingTool):
     PROJECT_URL = "https://github.com/UltimateHackers/XSStrike"
 
     def __init__(self):
-        super(XSSStrike, self).__init__(runnable = False)
+        super().__init__(runnable = False)
 
 
 class RVuln(HackingTool):
@@ -121,10 +121,10 @@ class RVuln(HackingTool):
     DESCRIPTION = "RVuln is multi-threaded and Automated Web Vulnerability " \
                   "Scanner written in Rust"
     INSTALL_COMMANDS = [
-        "sudo git clone https://github.com/iinc0gnit0/RVuln.git;"
-        "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh;"
-        "source $HOME/.cargo/env;"
-        "sudo apt install librust-openssl-dev;"
+        "sudo git clone https://github.com/iinc0gnit0/RVuln.git"
+        "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
+        "source $HOME/.cargo/env"
+        "sudo apt install librust-openssl-dev"
         "cd RVuln;sudo su;cargo build --release;mv target/release/RVuln"
     ]
     RUN_COMMANDS = ["RVuln"]

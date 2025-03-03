@@ -154,7 +154,7 @@ class HackingToolsCollection(object):
         clear_screen()
         self.show_info()
         for index, tool in enumerate(self.TOOLS):
-            print(f"[{index} {tool.TITLE}")
+            print(f"[{index}] {tool.TITLE}")
         print(f"[{99}] Back to {parent.TITLE if parent is not None else 'Exit'}")
         tool_index = input("Choose a tool to proceed: ").strip()
         try:
