@@ -73,10 +73,10 @@ class SubDomainTakeOver(HackingTool):
                   "that has been removed or deleted.\n" \
                   "Usage:python3 takeover.py -d www.domain.com -v"
     INSTALL_COMMANDS = [
-        "git clone https://github.com/m4ll0k/takeover.git",
+        "git clone https://github.com/edoardottt/takeover.git",
         "cd takeover;sudo python3 setup.py install"
     ]
-    PROJECT_URL = "https://github.com/m4ll0k/takeover"
+    PROJECT_URL = "https://github.com/edoardottt/takeover"
 
     def __init__(self):
         super(SubDomainTakeOver, self).__init__(runnable = False)
