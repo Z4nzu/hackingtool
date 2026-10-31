@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased;
+    background-color: theme('colors.background');
+    color: theme('colors.text');
+  }
+
+  ::selection {
+    background-color: theme('colors.primary');
+    color: theme('colors.black');
+  }
+}
+
+@layer components {
+  .card {
+    @apply border rounded-lg p-6 transition-colors duration-200;
+    background-color: theme('colors.surface');
+    border-color: theme('colors.divider');
+  }
+  
+  .card:hover {
+    background-color: theme('colors.surfaceHover');
+    border-color: theme('colors.dividerHover');
+  }
+
+  .btn-primary {
+    @apply font-medium py-2 px-4 rounded-md transition-colors flex items-center justify-center gap-2;
+    background-color: theme('colors.primary');
+    color: theme('colors.black');
+  }
+
+  .btn-primary:hover {
+    background-color: theme('colors.primaryHover');
+  }
+  
+  .btn-secondary {
+    @apply border font-medium py-2 px-4 rounded-md transition-colors flex items-center justify-center gap-2;
+    background-color: transparent;
+    color: theme('colors.text');
+    border-color: theme('colors.divider');
+  }
+
+  .btn-secondary:hover {
+    background-color: theme('colors.surfaceHover');
+  }
+
+  .badge {
+    @apply px-2.5 py-0.5 rounded-md text-xs font-mono border uppercase tracking-wider;
+    background-color: theme('colors.surface');
+    color: theme('colors.muted');
+    border-color: theme('colors.divider');
+  }
+}
