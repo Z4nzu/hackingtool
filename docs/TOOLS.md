@@ -28,6 +28,18 @@ Back to the [README](../README.md) · [How to use hackingtool](HOW-TO-USE.md)
 - [proxychains-ng (chain traffic through proxies/Tor)](https://github.com/rofl0r/proxychains-ng) — <sub>anonymity, tunneling, network</sub>
 - [Whonix — Anonymity & Tor OpSec (docs)](https://www.whonix.org/wiki/Documentation) — <sub>anonymity, reference, learning</sub>
 
+<br>
+<div align="center">
+  <sub>Sponsored by</sub><br>
+  <a href="https://webvetted.com/hacking-tools?utm_source=github&utm_medium=sponsor&utm_campaign=tools-catalogue">
+    <img width="600" alt="WebVetted Intelligence - OSINT & Recon Platform" src="https://github.com/user-attachments/assets/20cb2526-c3b4-4217-a41f-42cb7e7d568e" />
+  </a>
+  <br><br>
+  <i><b>Go beyond manual recon.</b> WebVetted turns an email, phone or username into a complete identity investigation with deep OSINT enrichment, breach intel, AI analysis, and an interactive identity graph.</i><br>
+  <br>
+  <a href="https://webvetted.com/hacking-tools?utm_source=github&utm_medium=sponsor&utm_campaign=tools-catalogue"><b>Start an Investigation →</b></a>
+</div>
+
 ## 🔍 Information gathering tools
 
 - [Network Map (nmap)](https://github.com/nmap/nmap) — <sub>scanner, port-scan, recon, network</sub>
