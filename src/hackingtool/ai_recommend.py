@@ -18,7 +18,16 @@ import urllib.request
 from hackingtool import config, skill
 from hackingtool.tags import TAXONOMY
 
-_OLLAMA_URL = "http://localhost:11434/api/generate"
+def _ollama_url() -> str:
+    """Return the Ollama API URL, using config.ai_base_url() if set, else default."""
+    base = config.ai_base_url()
+    if base:
+        return base.rstrip("/") + "/api/generate"
+    return "http://127.0.0.1:11434/api/generate"
+
+
+# Backward compatibility - deprecated, use _ollama_url() instead
+_OLLAMA_URL = _ollama_url()
 
 # Shared operator charter (persona + safety + anti-fabrication) + AI1 output contract.
 _PROMPT = skill.charter() + "\n\n" + (
@@ -51,7 +60,7 @@ def _parse_tags(reply: str | None) -> list[str]:
 
 def _ollama(prompt: str) -> str | None:
     payload = json.dumps({"model": config.ai_model(), "prompt": prompt, "stream": False}).encode()
-    req = urllib.request.Request(_OLLAMA_URL, data=payload,
+    req = urllib.request.Request(_ollama_url(), data=payload,
                                  headers={"Content-Type": "application/json"})
     try:
         with urllib.request.urlopen(req, timeout=60) as resp:
@@ -148,7 +157,8 @@ def _probe_byo() -> tuple[bool, str]:
 def _probe_ollama() -> tuple[bool, str]:
     model = config.ai_model()
     payload = json.dumps({"model": model, "prompt": "Reply with: connected", "stream": False}).encode()
-    req = urllib.request.Request(_OLLAMA_URL, data=payload, headers={"Content-Type": "application/json"})
+    url = _ollama_url()
+    req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
             reply = (json.loads(resp.read()).get("response") or "").strip()

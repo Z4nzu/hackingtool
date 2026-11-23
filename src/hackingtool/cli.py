@@ -785,7 +785,8 @@ def _run_headless(args) -> None:
     if args.ai_summary:
         summary = ai_summary.summarize(e)
         if summary is None:
-            console.print("[yellow]No local model reachable (Ollama at :11434) — "
+            base = config.ai_base_url() or "http://127.0.0.1:11434"
+            console.print(f"[yellow]No local model reachable (Ollama at {base}) — "
                           "skipping AI summary.[/yellow]")
         else:
             (e.workspace / "summary.md").write_text(summary)
@@ -794,8 +795,9 @@ def _run_headless(args) -> None:
     if args.ai_report:
         path = ai_report.draft_report(e)
         if path is None:
-            console.print("[yellow]No findings to draft, or no model reachable "
-                          "(Ollama at :11434 / BYO-key) — skipping AI report.[/yellow]")
+            base = config.ai_base_url() or "http://127.0.0.1:11434"
+            console.print(f"[yellow]No findings to draft, or no model reachable "
+                          f"(Ollama at {base} / BYO-key) — skipping AI report.[/yellow]")
         else:
             console.print(f"[green]AI report draft ->[/green] {path} "
                           "[dim](verify before use)[/dim]")
