@@ -24,19 +24,21 @@ class Crivo(HackingTool):
     TITLE = "Crivo"
     DESCRIPTION = (
         "A tool for extracting and filtering URLs, IPs, domains, and subdomains\n"
-        "from web pages or text, with built-in web scraping capabilities.\n"
-        "See: python3 crivo_cli.py -h"
+        "from web pages or text, with built-in web scraping and crawling.\n"
+        "Requires Python 3.10+. See: crivo/.venv/bin/crivo -h"
     )
     INSTALL_COMMANDS = [
         "git clone https://github.com/GMDSantana/crivo.git",
-        # Bug 18 verify: this is correct — cd and pip in same string works
-        "cd crivo && pip install --user -r requirements.txt",
+        # Crivo's own installer creates crivo/.venv (works on PEP 668 distros
+        # such as Kali/Debian/Ubuntu) and installs the `crivo` command into it.
+        "crivo/scripts/install_dependencies.sh",
     ]
+    RUN_COMMANDS = ["crivo/.venv/bin/crivo -h"]
     PROJECT_URL = "https://github.com/GMDSantana/crivo"
 
     def __init__(self):
         # Py3-4 fix: super(Crivo, self) → super()
-        super().__init__(runnable=False)
+        super().__init__()
 
 
 class MixTools(HackingToolsCollection):
